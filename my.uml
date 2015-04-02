@@ -2,9 +2,7 @@
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_yxSyMNYmEeS73NSiKaEIjA" name="SixesWild">
   <packagedElement xmi:type="uml:Class" xmi:id="_w_OH4NY3EeSYcu2GyFGebA" name="Block"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_z-BbUNY3EeSYcu2GyFGebA" name="Grid"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_04JhQNY3EeSYcu2GyFGebA" name="Square">
-    <generalization xmi:id="_YmwSwNY4EeSYcu2GyFGebA" general="_w_OH4NY3EeSYcu2GyFGebA"/>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_04JhQNY3EeSYcu2GyFGebA" name="Square"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_IC0mYNY4EeSYcu2GyFGebA" name="gridsToSquares" memberEnd="_IC0mYdY4EeSYcu2GyFGebA _IC3psdY4EeSYcu2GyFGebA" navigableOwnedEnd="_IC3psdY4EeSYcu2GyFGebA">
     <ownedEnd xmi:id="_IC0mYdY4EeSYcu2GyFGebA" name="grids" type="_z-BbUNY3EeSYcu2GyFGebA" aggregation="shared" association="_IC0mYNY4EeSYcu2GyFGebA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IC3CoNY4EeSYcu2GyFGebA" value="1"/>
@@ -15,10 +13,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IC430dY4EeSYcu2GyFGebA" value="*"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_dcRQMNY4EeSYcu2GyFGebA" name="Level">
-    <generalization xmi:id="_jLomwNY4EeSYcu2GyFGebA" general="_z-BbUNY3EeSYcu2GyFGebA"/>
-    <generalization xmi:id="_wJ2wsNY4EeSYcu2GyFGebA" general="_tmp0INY4EeSYcu2GyFGebA"/>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_dcRQMNY4EeSYcu2GyFGebA" name="Level"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_tmp0INY4EeSYcu2GyFGebA" name="Score"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_D6CWoNY5EeSYcu2GyFGebA" name="Game Watchdog"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_TKvgkNY5EeSYcu2GyFGebA" name="Move"/>
@@ -33,6 +28,61 @@
     <ownedEnd xmi:id="_rd3GMNY5EeSYcu2GyFGebA" name="levels" type="_dcRQMNY4EeSYcu2GyFGebA" association="_rd2fINY5EeSYcu2GyFGebA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rd3GMdY5EeSYcu2GyFGebA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rd3GMtY5EeSYcu2GyFGebA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FRoQINi0EeSNxNzv9fGjow" name="PuzzleLevel">
+    <generalization xmi:id="_CI1ZkNi8EeSNxNzv9fGjow" general="_dcRQMNY4EeSYcu2GyFGebA"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="__0AFoNi6EeSNxNzv9fGjow" name="PuzzleLevel"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_c97GUNi0EeSNxNzv9fGjow" name="EliminationLevel">
+    <generalization xmi:id="_brtBwNi6EeSNxNzv9fGjow" general="_dcRQMNY4EeSYcu2GyFGebA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_YYp8oNi6EeSNxNzv9fGjow" name="levelsToScores" memberEnd="_YYqjsNi6EeSNxNzv9fGjow _YYsY4Ni6EeSNxNzv9fGjow" navigableOwnedEnd="_YYqjsNi6EeSNxNzv9fGjow _YYsY4Ni6EeSNxNzv9fGjow">
+    <ownedEnd xmi:id="_YYqjsNi6EeSNxNzv9fGjow" name="levels" type="_dcRQMNY4EeSYcu2GyFGebA" association="_YYp8oNi6EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YYrx0Ni6EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YYrx0di6EeSNxNzv9fGjow" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_YYsY4Ni6EeSNxNzv9fGjow" name="scores" type="_tmp0INY4EeSYcu2GyFGebA" association="_YYp8oNi6EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YYtnANi6EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YYuOENi6EeSNxNzv9fGjow" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZFdYQNi6EeSNxNzv9fGjow" name="levelsToGrids" memberEnd="_ZFdYQdi6EeSNxNzv9fGjow _ZFfNcdi6EeSNxNzv9fGjow" navigableOwnedEnd="_ZFdYQdi6EeSNxNzv9fGjow _ZFfNcdi6EeSNxNzv9fGjow">
+    <ownedEnd xmi:id="_ZFdYQdi6EeSNxNzv9fGjow" name="levels" type="_dcRQMNY4EeSYcu2GyFGebA" association="_ZFdYQNi6EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZFemYNi6EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZFfNcNi6EeSNxNzv9fGjow" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ZFfNcdi6EeSNxNzv9fGjow" name="grids" type="_z-BbUNY3EeSYcu2GyFGebA" association="_ZFdYQNi6EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZFgbkNi6EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZFgbkdi6EeSNxNzv9fGjow" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_jcIRINi6EeSNxNzv9fGjow" name="Squares" memberEnd="_jcI4MNi6EeSNxNzv9fGjow _jcKGUti6EeSNxNzv9fGjow" navigableOwnedEnd="_jcKGUti6EeSNxNzv9fGjow">
+    <ownedEnd xmi:id="_jcI4MNi6EeSNxNzv9fGjow" name="squares" type="_04JhQNY3EeSYcu2GyFGebA" association="_jcIRINi6EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jcKGUNi6EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jcKGUdi6EeSNxNzv9fGjow" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_jcKGUti6EeSNxNzv9fGjow" name="blocks" type="_w_OH4NY3EeSYcu2GyFGebA" association="_jcIRINi6EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jcLUcNi6EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jcL7gNi6EeSNxNzv9fGjow" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_A6ZF8Ni7EeSNxNzv9fGjow" name="ReleaseLevel">
+    <generalization xmi:id="_l7idYNi7EeSNxNzv9fGjow" general="_dcRQMNY4EeSYcu2GyFGebA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FfBHsNi7EeSNxNzv9fGjow" name="LightningLevel">
+    <generalization xmi:id="_15crkNi7EeSNxNzv9fGjow" general="_dcRQMNY4EeSYcu2GyFGebA"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_FfBHsti7EeSNxNzv9fGjow" name="PuzzleLevel"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_TFtxcNi8EeSNxNzv9fGjow" name="Game"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_g4KNoNi8EeSNxNzv9fGjow" name="gamesToLevels" memberEnd="_g4K0sNi8EeSNxNzv9fGjow _g4MC0di8EeSNxNzv9fGjow" navigableOwnedEnd="_g4MC0di8EeSNxNzv9fGjow">
+    <ownedEnd xmi:id="_g4K0sNi8EeSNxNzv9fGjow" name="games" type="_TFtxcNi8EeSNxNzv9fGjow" aggregation="shared" association="_g4KNoNi8EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g4LbwNi8EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g4MC0Ni8EeSNxNzv9fGjow" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_g4MC0di8EeSNxNzv9fGjow" name="levels" type="_dcRQMNY4EeSYcu2GyFGebA" association="_g4KNoNi8EeSNxNzv9fGjow">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g4NQ8Ni8EeSNxNzv9fGjow"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g4N4ANi8EeSNxNzv9fGjow" value="*"/>
     </ownedEnd>
   </packagedElement>
 </uml:Model>
