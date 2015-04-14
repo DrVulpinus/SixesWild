@@ -13,16 +13,29 @@ import net.miginfocom.swing.MigLayout;
 public abstract class SelectView extends JPanel {
 	private JScrollPane scrollPane;
 	ArrayList<JLabel> items = new ArrayList<JLabel>();
+	private JPanel panel;
 	public SelectView() {
-		setLayout(new MigLayout("", "[450px]", "[300px]"));
-		add(getScrollPane(), "cell 0 0,grow");
+		setLayout(new BorderLayout(0, 0));
+		add(getScrollPane());
 	}
 
 	JScrollPane getScrollPane() {
 		if (scrollPane == null) {
 			scrollPane = new JScrollPane();
+			scrollPane.setViewportView(getPanel());
 		}
 		return scrollPane;
 	}
-	abstract void loadItems();
+	void loadItems(){
+		for (JLabel jLabel : items) {
+			getPanel().add(jLabel);
+		}
+	}
+	JPanel getPanel() {
+		if (panel == null) {
+			panel = new JPanel();
+			panel.setLayout(new MigLayout("", "[]", "[]"));
+		}
+		return panel;
+	}
 }
