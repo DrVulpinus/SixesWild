@@ -1,5 +1,7 @@
 package entities;
 
+import icons.Icon;
+
 import java.util.ArrayList;
 
 public class Level
