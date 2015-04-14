@@ -6,10 +6,6 @@ public abstract class Icon {
 	Image image;
 	String text;
 	
-	public Icon(Image image, String text){
-		this.image = image;
-		this.text = text;
-	}
 	
 	public Image getImage(){
 		return image;
@@ -18,5 +14,15 @@ public abstract class Icon {
 	public String getText(){
 		return text;
 	}
+	
+	public void setImage(Image i){
+		image = i;
+	}
+	
+	public void setText(String s){
+		text = s;
+	}
+
+
 	
 }
