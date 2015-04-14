@@ -24,16 +24,24 @@ public class SplashScreenView extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
 				try {
 					SplashScreenView frame = new SplashScreenView();
 					frame.setVisible(true);
+					//Thread.sleep(10000);
+					//frame.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			
 			}
 		});
 	}
 
+	// Set splash screen on timer go to main men
+	
+	
+	
 	/**
 	 * Create the frame.
 	 */
