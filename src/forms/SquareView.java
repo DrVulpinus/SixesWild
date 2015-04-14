@@ -23,13 +23,13 @@ public class SquareView extends JPanel
 	public SquareView(Square square) {
 		super();
 		this.square = square;
-		setLayout(new MigLayout("", "[10px][382.00px][10px]", "[10px][35.00,grow][10px]"));
+		setLayout(new MigLayout("", "[5px][382.00px][5px]", "[5px][35.00,grow][5px]"));
 		add(getBlockView(), "cell 1 1,grow");
 	}
 	
 	BlockView getBlockView() {
 		if (blockView == null) {
-			blockView = new BlockView(square.getBlock());			//**** review later *****************************88
+			blockView = new BlockView(square.getBlock());			//**** review later *****************************
 		}
 		return blockView;
 	}
@@ -42,12 +42,15 @@ public class SquareView extends JPanel
 
 	public void update() {
 		
-		if (square.getBlock() == null) {		//update view for the absence of a BlockView
-			remove(blockView);
-			setBlockView(null);
-		} else if (getBlockView() == null && square.getBlock() != null) {	//update view for the presence of a BlockView
-			setBlockView(new BlockView(square.getBlock()));
-		}
+//		if (square.getBlock() == null) {		//update view for the absence of a BlockView
+//			//remove(blockView);
+//			//setBlockView(null);
+//			blockView.setVisible(false);
+//		} else if (getBlockView() == null && square.getBlock() != null) {	//update view for the presence of a BlockView
+//			setBlockView(new BlockView(square.getBlock()));
+//		}
+//		else 
+//			blockView.setVisible(true);
 				
 		if (square.getEliminated())
 			setBackground(new Color(ELIMINATED_COLOR));

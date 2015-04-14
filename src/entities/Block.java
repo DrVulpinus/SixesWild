@@ -2,7 +2,7 @@ package entities;
 
 public class Block
 {
-	private int number;
+	private int value;
 	private int multiplier;
 	boolean selected;
 	
@@ -10,7 +10,7 @@ public class Block
 		if (number > 6 || number < 1)
 			throw new IllegalArgumentException("A block number must be between 1 and 6.");
 		
-		this.number = number;
+		this.value = number;
 		this.multiplier = multiplier;
 	}
 	
@@ -20,12 +20,12 @@ public class Block
 		this.selected = selected;
 	}
 
-	public int getNumber() {
-		return number;
+	public int getValue() {
+		return value;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
+	public void setValue(int value) {
+		this.value = value;
 	}
 
 	public int getMultiplier() {

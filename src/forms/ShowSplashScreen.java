@@ -6,8 +6,9 @@ import java.util.TimerTask;
 
 
 public class ShowSplashScreen {
+	
 	public static void main(String[] args) throws InterruptedException {
-		
+		int splashscreenTime = 3000;
 		   Timer timer = new Timer(); 
            TimerTask task = new TimerTask() {  
         	   SplashScreenView s =new SplashScreenView();
@@ -16,7 +17,7 @@ public class ShowSplashScreen {
                           s.setVisible(true);
                  }
            };
-           timer.schedule(task,3000);
+           timer.schedule(task,splashscreenTime);
           
            //Thread.sleep(100000);      
 	}
