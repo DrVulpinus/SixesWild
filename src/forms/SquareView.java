@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -23,9 +24,12 @@ public class SquareView extends JPanel
 	public SquareView(Square square) {
 		super();
 		this.square = square;
-		setLayout(new MigLayout("", "[5px][382.00px,grow,fill][5px]", "[5px][35.00,grow,fill][5px]"));
-		setSize(50, 50);
-		add(getBlockView(), "cell 1 1,grow");
+		//setLayout(new MigLayout("", "[5px][382.00px,grow,fill][5px]", "[5px][35.00,grow,fill][5px]"));
+		setLayout(new BorderLayout());
+		setSize(381, 239);
+		//add(getBlockView(), "cell 1 1,grow");
+		add(getBlockView(), BorderLayout.CENTER);
+		
 	}
 	
 	BlockView getBlockView() {
@@ -40,20 +44,20 @@ public class SquareView extends JPanel
 //		this.blockView = blockView;
 //		add(getBlockView(), "cell 1 1,grow");
 //	}
-	
+	/*
 	@Override
 	public void setSize(int width, int height)
 	{
 		super.setSize(width, height);
 		
 		try {
-			blockView.setSize(width - 10, height - 10);
+			//blockView.setSize(width - 10, height - 10);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		
 		
-	}
+	}*/
 
 	public void update() {
 		

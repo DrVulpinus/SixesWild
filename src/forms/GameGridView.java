@@ -51,7 +51,7 @@ public class GameGridView extends JPanel {
 
 
 		rect = new Rectangle2D.Double(0, 0, width, height);
-		g2.draw(rect);
+		//g2.draw(rect);
 
 
 
@@ -59,7 +59,7 @@ public class GameGridView extends JPanel {
 		while(linesX<xNumLines){
 
 
-			g2.draw(new Line2D.Double(rect.getX(), lineY, rect.getX()+ rect.getWidth(), lineY));
+			//g2.draw(new Line2D.Double(rect.getX(), lineY, rect.getX()+ rect.getWidth(), lineY));
 			linesX++;
 			xIncrement= rect.getHeight()/xNumLines;
 			lineY+=rect.getHeight()/xNumLines;
@@ -68,14 +68,14 @@ public class GameGridView extends JPanel {
 		}
 
 		while (linesY<yNumLines){
-			g2.draw(new Line2D.Double(lineX, rect.getY(), lineX, rect.getY()+ rect.getHeight()));  
+			//g2.draw(new Line2D.Double(lineX, rect.getY(), lineX, rect.getY()+ rect.getHeight()));  
 			linesY++;
 			yIncrement= rect.getWidth()/yNumLines;
 
 			lineX+=rect.getWidth()/yNumLines;
 		}
 		
-		if (!isFilled)
+		//if (!isFilled)
 			fillGrid();
 	}
 
@@ -83,9 +83,10 @@ public class GameGridView extends JPanel {
 		
 		if (rect == null)
 			return;
-		
+		squareViews.clear();
 		for (int y = 0; y < yNumLines; y++)
 			for (int x = 0; x < xNumLines; x++) {
+				
 				Square s = new Square();
 				s.setBlock(new Block(1, 2));
 				SquareView sV = new SquareView(s);

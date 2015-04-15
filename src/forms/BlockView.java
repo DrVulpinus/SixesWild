@@ -10,13 +10,15 @@ import entities.Block;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
+
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
-public class BlockView extends JPanel
+public class BlockView extends JLabel
 {
 	static final int NORMAL_COLOR = 0xFFFF00;
 	static final int SELECTED_COLOR = 0xFF0000;
@@ -58,30 +60,29 @@ public class BlockView extends JPanel
 
 	public BlockView(Block block) {
 		super();
-		addComponentListener(new ComponentAdapter() {
+		/*addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent arg0) {
 
 				update();
 			}
-		});
+		});*/
 		this.block = block;
-		setLayout(new BorderLayout());
-		add(getLabel(), BorderLayout.CENTER);
-		update();
+		this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(100, 100));
+		//update();
 		
 	}
 	
-	JLabel getLabel() {
+	/*JLabel getLabel() {
 		if (label == null)
 			label = new JLabel("");
 		return label;
-	}
+	}*/
 	
 	public void addActionListener(ActionListener al) {
 		this.addActionListener(al);
 	}
-	
+	/*
 	public void update() {
 //		if (block == null) {
 //			this.setVisible(false);
@@ -103,7 +104,9 @@ public class BlockView extends JPanel
 		else
 			getLabel().setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(21, 21));	//TODO: fix 
 	}
-
+*/
+	
+	
 	public Block getBlock() {
 		return block;
 	}
