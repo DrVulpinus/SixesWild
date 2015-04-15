@@ -22,8 +22,7 @@ public class PanelTester extends JFrame
 		bv.update();
 		sv.update();
 		
-		
-		pt.add(sv);
+		pt.setContentPane(sv);
 		pt.setBounds(0, 0, 100, 100);
 		pt.setVisible(true);
 

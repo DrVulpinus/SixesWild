@@ -7,7 +7,7 @@ import java.util.TimerTask;
 
 public class StartProgram {
 	static SplashScreenView s =new SplashScreenView();
-	static Timer timer = new Timer(); 
+	//static Timer timer = new Timer(); 
 	public static void main(String[] args) {
 		int splashscreenTime = 3000;		   
 		   s.setVisible(true);
@@ -18,10 +18,12 @@ public class StartProgram {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		   s.setVisible(false);
-           MainMenuView mMV = new MainMenuView();
+		   s.dispose();
+		  
+		   
+           MainFrame mMV = new MainFrame();
            mMV.setVisible(true);
-          
+           
            /*TimerTask task = new TimerTask() {          	   
                  @Override
                   public void run() {  

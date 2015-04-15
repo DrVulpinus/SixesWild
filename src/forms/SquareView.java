@@ -23,7 +23,8 @@ public class SquareView extends JPanel
 	public SquareView(Square square) {
 		super();
 		this.square = square;
-		setLayout(new MigLayout("", "[5px][382.00px][5px]", "[5px][35.00,grow][5px]"));
+		setLayout(new MigLayout("", "[5px][382.00px,grow,fill][5px]", "[5px][35.00,grow,fill][5px]"));
+		setSize(50, 50);
 		add(getBlockView(), "cell 1 1,grow");
 	}
 	
@@ -57,5 +58,7 @@ public class SquareView extends JPanel
 			setBackground(new Color(ELIMINATED_COLOR));
 		else
 			setBackground(new Color(NORMAL_COLOR));
-	}	
+	}
+	
+
 }
