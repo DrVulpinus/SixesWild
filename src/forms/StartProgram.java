@@ -5,7 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class ShowSplashScreen {
+public class StartProgram {
 	
 	public static void main(String[] args) throws InterruptedException {
 		int splashscreenTime = 3000;
