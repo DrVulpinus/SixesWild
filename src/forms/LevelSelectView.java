@@ -18,6 +18,8 @@ import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JInternalFrame;
 import javax.swing.JScrollPane;
+import javax.swing.ImageIcon;
+
 
 public class LevelSelectView extends SelectView {
 	public LevelSelectView() {
@@ -89,6 +91,7 @@ public class LevelSelectView extends SelectView {
 	private JLabel lblRelease_3;
 	private JPanel panel_15;
 	private JLabel lblElimination_3;
+	private JLabel lblNewLabel;
 	@Override
 	void loadItems() {
 		for (Level level : levels) {
@@ -220,6 +223,7 @@ public class LevelSelectView extends SelectView {
 			panel = new JPanel();
 			panel.add(getLblLevel_15());
 			panel.add(getLblPuzzle());
+			panel.add(getLblNewLabel());
 		}
 		return panel;
 	}
@@ -438,5 +442,12 @@ public class LevelSelectView extends SelectView {
 			lblElimination_3 = new JLabel("Elimination");
 		}
 		return lblElimination_3;
+	}
+	private JLabel getLblNewLabel() {
+		if (lblNewLabel == null) {
+			lblNewLabel = new JLabel("Level_Label_Elimination");
+			lblNewLabel.setIcon(new ImageIcon(LevelSelectView.class.getResource("/Images/Level_Label_Elimination.png")));
+		}
+		return lblNewLabel;
 	}
 }
