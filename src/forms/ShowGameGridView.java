@@ -28,6 +28,7 @@ public class ShowGameGridView {
 	            //frame.add(BorderLayout.CENTER,coolDrawing);
 	            GameGridView grid = new GameGridView();
 	            frame.add(BorderLayout.CENTER,grid);
+	          
 	            frame.setVisible(true);
 	           
 	} });

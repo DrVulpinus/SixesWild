@@ -2,6 +2,7 @@ package forms;
 
 import java.awt.EventQueue;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import src.SixesWildWindow;
@@ -15,8 +16,8 @@ public class LevelPlayView extends JPanel {
 			public void run() {
 				
 				try {
-					SixesWildWindow stats = new SixesWildWindow();
-					stats.setVisible(true);
+					LevelPlayView w = new LevelPlayView();
+					w.setVisible(true);
 					//Thread.sleep(10000);
 					//frame.setVisible(false);
 				} catch (Exception e) {
@@ -30,6 +31,9 @@ public class LevelPlayView extends JPanel {
 		
 		SixesWildWindow sixesWildWindow = new SixesWildWindow();
 		add(sixesWildWindow);
+		
+		GameGridView gameGridView = new GameGridView();
+		add(gameGridView);
 
 	}
 

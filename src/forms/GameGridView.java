@@ -3,18 +3,14 @@ package forms;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
-
-import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 
 public class GameGridView extends JComponent {
-
+	public GameGridView() {
+	}
 	
 Color color = new Color(0,0,0); 
 double currentXVal= 0;
