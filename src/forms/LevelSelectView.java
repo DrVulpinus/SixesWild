@@ -224,6 +224,8 @@ public class LevelSelectView extends SelectView {
 		}
 		return lblLevel_15;
 	}
+
+	
 	public JPanel getPanel_1() {
 		if (panel == null) {
 			panel = new JPanel();
@@ -485,4 +487,6 @@ public class LevelSelectView extends SelectView {
 		}
 		return lblNewLabel;
 	}
+	
+	
 }

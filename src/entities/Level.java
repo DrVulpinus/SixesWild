@@ -9,7 +9,7 @@ import src.LevelStats;
 public class Level
 {
 	Grid grid;
-	ArrayList<Move> moves;
+	//ArrayList<Move> moves;
 	LevelStats stats;
 	Icon icon;
 	
@@ -28,6 +28,7 @@ public class Level
 		this.grid = grid;
 	}
 
+	/*
 	public ArrayList<Move> getMoves() {
 		return moves;
 	}
@@ -36,6 +37,7 @@ public class Level
 		this.moves = moves;
 	}
 
+*/
 	public LevelStats getStats() {
 		return stats;
 	}
