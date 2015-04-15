@@ -89,6 +89,13 @@ public class MainForm extends JFrame {
 
 		});
 		
+		leveleditor.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				dispose();
+			}
+		});
+		
 	}
 	/*
 	private JMenuBar getMenuBar_1() {
