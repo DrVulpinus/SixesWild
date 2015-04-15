@@ -24,6 +24,7 @@ import java.awt.event.WindowEvent;
 
 public class MainMenuView extends JFrame{
 
+
 	public JButton btnLevels = new JButton("Levels");	
 	public JButton btnAchievements = new JButton("Achievements");
 	/**
