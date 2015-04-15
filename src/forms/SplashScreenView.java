@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.GraphicsDevice.WindowTranslucency;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -29,7 +30,7 @@ public class SplashScreenView extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				
@@ -45,7 +46,7 @@ public class SplashScreenView extends JFrame {
 			}
 		});
 	}
-
+*/
 	// Set splash screen on timer go to main men
 	
 	
@@ -63,8 +64,9 @@ public class SplashScreenView extends JFrame {
 		setContentPane(contentPane);
 		contentPane.add(getLblTeamPhoebe(), BorderLayout.CENTER);
 		setSize(500, 350);
+		setLocationRelativeTo(null);
 		setResizable(false);
-		
+		setUndecorated(true);
 		
 	}
 	private JLabel getLblTeamPhoebe() {
