@@ -12,20 +12,14 @@ public class LevelPlayView extends JPanel {
 	 * Create the panel.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				
-				try {
-					LevelPlayView w = new LevelPlayView();
-					w.setVisible(true);
+		SixesWildWindow sixesWildWindow = new SixesWildWindow();
+		GameGridView gameGridView = new GameGridView();
+					sixesWildWindow .setVisible(true);
+					gameGridView .setVisible(true);
 					//Thread.sleep(10000);
 					//frame.setVisible(false);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			
-			}
-		});
+				
+		
 	}
 	public LevelPlayView() {
 		
