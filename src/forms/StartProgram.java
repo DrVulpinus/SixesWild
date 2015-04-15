@@ -19,6 +19,7 @@ public class StartProgram {
 			e.printStackTrace();
 		}
 		   s.setVisible(false);
+		   
            MainMenuView mMV = new MainMenuView();
            mMV.setVisible(true);
           
