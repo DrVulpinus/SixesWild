@@ -2,17 +2,26 @@ package src;
 
 import javax.swing.JFrame;
 import javax.swing.Timer;
+
 import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+
 import java.awt.Font;
+
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.SystemColor;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class SixesWildWindow extends JFrame{
 
@@ -45,7 +54,7 @@ public class SixesWildWindow extends JFrame{
 		textField.setText("0");
 		textField.setColumns(10);
 		
-		JPanel panel_2 = new JPanel();
+		JPanel panel_2 =new JPanel();
 		panel_2.setBackground(SystemColor.inactiveCaptionBorder);
 		panel_2.setBounds(10, 121, 207, 164);
 		getContentPane().add(panel_2);
@@ -75,7 +84,10 @@ public class SixesWildWindow extends JFrame{
 		JLabel lblPoints = new JLabel("Points:");
 		lblPoints.setBounds(95, 362, 74, 14);
 		getContentPane().add(lblPoints);
+		
+		
 	}
+	
 	
 	public static void main(String[] arg) {
 		stats = new LevelStats();
