@@ -16,6 +16,7 @@ import java.awt.Component;
 import java.awt.Cursor;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import java.awt.Dimension;
 
 public class MainMenuView extends JFrame{
 
@@ -24,6 +25,7 @@ public class MainMenuView extends JFrame{
 	 * Create the panel.
 	 */
 	public MainMenuView() {
+		getContentPane().setMinimumSize(new Dimension(500, 500));
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
 		
@@ -50,6 +52,7 @@ public class MainMenuView extends JFrame{
 		);
 		getContentPane().setLayout(groupLayout);
 		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnLevels, btnAchievements}));
+		setSize(500, 250);
 
 	}
 
