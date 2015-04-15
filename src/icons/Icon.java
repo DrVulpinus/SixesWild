@@ -2,12 +2,20 @@ package icons;
 
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 public abstract class Icon {
-	Image image;
+	ImageIcon image;
 	String text;
 	
 	
-	public Image getImage(){
+	public Image getScaledImage(int width, int height)
+	{
+		return image.getImage().getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
+	}
+	
+	
+	public ImageIcon getImage(){
 		return image;
 	}
 	
@@ -15,7 +23,7 @@ public abstract class Icon {
 		return text;
 	}
 	
-	public void setImage(Image i){
+	public void setImage(ImageIcon i){
 		image = i;
 	}
 	
