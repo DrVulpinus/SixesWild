@@ -17,6 +17,8 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
+
+
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -24,6 +26,8 @@ import java.awt.EventQueue;
 
 import net.miginfocom.swing.MigLayout;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
@@ -68,18 +72,52 @@ public class MainFrame extends JFrame{
 				getContentPane().repaint();
 				System.out.println("other");
 			}
-			 
+			
 			
 		});
 		
-		lvlSelectView.getPnlLevel().addActionListener(new ActionListener(){
-			@Override
+		lvlSelectView.getPanel_1().addMouseListener(new MouseListener() {
+			/*@Override
 			public void actionPerformed(ActionEvent e){
 				getContentPane().removeAll();
 				getContentPane().add(levelPlay, BorderLayout.CENTER);
 				
 				getContentPane().validate();
 				getContentPane().repaint();
+				
+			}
+			 */
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				getContentPane().removeAll();
+				getContentPane().add(levelPlay, BorderLayout.CENTER);
+				
+				getContentPane().validate();
+				getContentPane().repaint();
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
 				
 			}
 		});

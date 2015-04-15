@@ -8,10 +8,10 @@ import javax.swing.JPanel;
 import src.SixesWildWindow;
 
 import java.awt.FlowLayout;
-public class LevelPlayView extends JFrame {
+public class LevelPlayView extends JPanel {
 
 	public LevelPlayView() {
-		getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		/*
 		SixesWildWindow sixesWildWindow = new SixesWildWindow();
 		getContentPane().add(sixesWildWindow);
