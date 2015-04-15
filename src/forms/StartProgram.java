@@ -4,6 +4,8 @@ package forms;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.JButton;
+
 
 public class StartProgram {
 	static SplashScreenView s =new SplashScreenView();
@@ -23,6 +25,7 @@ public class StartProgram {
 		   
            MainFrame mMV = new MainFrame();
            mMV.setVisible(true);
+           
            
            /*TimerTask task = new TimerTask() {          	   
                  @Override
