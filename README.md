@@ -7,7 +7,7 @@ In the zip file, open the project SixesWild in Eclipse. Expand src >> forms and 
 Select the option Run As >> Java Application.
 The game will load a splash screen and then load the main menu. Currently, the Achievements button has no functionality.
 
-Left-click the Level button to bring up the Level Selection screen.
+Double-click the Level button to bring up the Level Selection screen.
 Grey panels indicate that a level is not currently accessible.  Currently, the only accessible level will be level 1, which
 is a puzzle level.
 
@@ -21,7 +21,8 @@ In the zip file, open the project SixesWild in Eclipse. Expand LevelBuilder >> f
 Select the option Run As >> Java Application
 The game will load a splash screen and the load the main menu.
 
-Left-click the Create New Level button to begin creating a new level. Currently, the application does not save the user's progress;
-exiting the application and running it again will cause a new level to be generated.
+Left-click the Create New Level button to begin creating a new level. Left-clicking the Exit Without Saving will cause the application
+to quit without saving the user's progress in creating the level. When the application is run again, it will generate a new
+template on the screen.
 
 The Menu Bar contains various tools that will eventually have functionality, but cannot presently be used.

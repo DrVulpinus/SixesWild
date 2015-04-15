@@ -2,6 +2,7 @@ package forms;
 
 import java.awt.EventQueue;
 
+import javax.swing.AbstractButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -10,11 +11,17 @@ import src.TestJPanel;
 
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
-import javax.swing.BoxLayout;
-import java.awt.GridLayout;
-import net.miginfocom.swing.MigLayout;
-public class LevelPlayView extends JPanel {
 
+import javax.swing.BoxLayout;
+
+import java.awt.GridLayout;
+
+import net.miginfocom.swing.MigLayout;
+
+import javax.swing.JButton;
+public class LevelPlayView extends JPanel {
+	private JButton btnBack;
+	
 	public LevelPlayView() {
 		/*setLayout(new MigLayout("", "[][][grow][][grow]", "[][][grow]"));
 		
@@ -40,8 +47,20 @@ public class LevelPlayView extends JPanel {
 		testJPanel.setBounds(6, -25, 143, 360);
 		add(testJPanel);
 		
+		//btnBack.setBounds(395, 20, 117, 29);
+		add(getbtnBack());
+		
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
+	}
+
+	JButton getbtnBack() {
+		if (btnBack == null) {
+			btnBack = new JButton("Back");
+			btnBack.setSize(117, 29);
+			btnBack.setLocation(395, 20);
+		}
+		return btnBack;
 	}
 }
 
