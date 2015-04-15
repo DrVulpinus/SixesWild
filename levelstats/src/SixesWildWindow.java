@@ -31,7 +31,7 @@ public class SixesWildWindow extends JFrame {
 		panel.setBounds(10, 26, 207, 61);
 		getContentPane().add(panel);
 		
-		JLabel lblPuzzle = DefaultComponentFactory.getInstance().createLabel("Puzzle Mode");
+		JLabel lblPuzzle = new JLabel("Puzzle Mode");
 		lblPuzzle.setFont(new Font("Tahoma", Font.BOLD, 30));
 		panel.add(lblPuzzle);
 		
@@ -72,7 +72,7 @@ public class SixesWildWindow extends JFrame {
 		lblMovesLeft.setBounds(85, 470, 94, 15);
 		getContentPane().add(lblMovesLeft);
 		
-		JLabel lblPoints = DefaultComponentFactory.getInstance().createLabel("Points:");
+		JLabel lblPoints = new JLabel("Points:");
 		lblPoints.setBounds(95, 362, 74, 14);
 		getContentPane().add(lblPoints);
 	}
