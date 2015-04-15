@@ -52,17 +52,21 @@ public class MainFrame extends JFrame{
 		setSize(302, 175);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
+		
 		mainMenu.getBtnLevel().addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				System.out.println("abc");
 				getContentPane().removeAll();
 				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
+				getContentPane().validate();
+				getContentPane().repaint();
+				System.out.println("other");
 			}
 		});
 	}
-	
 	
 
 }

@@ -9,8 +9,15 @@ public class MenuSelectController implements MouseListener, ActionListener{
 
 	MainGameForm menu = new MainGameForm();
 	MainMenuView menuview = new MainMenuView();
+	MainFrame mainframe = new MainFrame();
 	boolean mouseDown = false;
 
+	/*
+	MenuSelectController(MainFrame a){
+		this.mainframe = a;
+	}
+	*/
+	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
@@ -44,6 +51,7 @@ public class MenuSelectController implements MouseListener, ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == menuview.getBtnLevel()){
+			menuview.dispose();
 			
 		}
 		

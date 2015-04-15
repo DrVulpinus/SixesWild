@@ -27,6 +27,8 @@ public class StartProgram {
            mMV.setVisible(true);
            
            
+           
+           
            /*TimerTask task = new TimerTask() {          	   
                  @Override
                   public void run() {  
