@@ -64,13 +64,13 @@ public class MainFrame extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("abc");
+				
 				getContentPane().removeAll();
 				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
 
 				getContentPane().validate();
 				getContentPane().repaint();
-				System.out.println("other");
+				System.out.println("to Level Select View");
 			}
 			
 			
@@ -96,7 +96,7 @@ public class MainFrame extends JFrame{
 				
 				getContentPane().validate();
 				getContentPane().repaint();
-				System.out.println("other");				
+				System.out.println("back to main menu");				
 			}
 			
 		});
