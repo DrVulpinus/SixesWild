@@ -16,8 +16,8 @@ public class LevelPlayView extends JFrame {
 		SixesWildWindow sixesWildWindow = new SixesWildWindow();
 		getContentPane().add(sixesWildWindow);
 		
-		GameGridView gameGridView = new GameGridView();
-		getContentPane().add(gameGridView);
+		//GameGridView gameGridView = new GameGridView();
+		//getContentPane().add(gameGridView);
 	}
 
 }
