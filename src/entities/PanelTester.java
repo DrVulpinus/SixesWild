@@ -7,6 +7,8 @@ import forms.SquareView;
 
 public class PanelTester extends JFrame
 {
+	public PanelTester() {
+	}
 	static PanelTester pt;
 	
 	public static void main(String[] args)
