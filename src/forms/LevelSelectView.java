@@ -480,6 +480,7 @@ public class LevelSelectView extends SelectView {
 	private JLabel getLblNewLabel() {
 		if (lblNewLabel == null) {
 			lblNewLabel = new JLabel("");
+			lblNewLabel.setIcon(new ImageIcon(LevelSelectView.class.getResource("/Images/Level_Label_Puzzle copy.png")));
 			lblNewLabel.setBounds(10, 10, 10, 10);
 		}
 		return lblNewLabel;
