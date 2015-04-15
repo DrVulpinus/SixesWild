@@ -14,9 +14,11 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
+
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.EventQueue;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -30,11 +32,18 @@ public class MainMenuView extends JFrame{
 	public JButton btnLevels = new JButton("Levels");	
 	public JButton btnAchievements = new JButton("Achievements");
 	public LevelSelectView lvlSelectView = new LevelSelectView();
+	SplashScreenView splashScreen = new SplashScreenView();
 	/**
 	 * Create the panel.
 	 */
+	
 	public MainMenuView() {
-		
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+				dispose();
+			}
+		});
 		getContentPane().setMinimumSize(new Dimension(500, 500));
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
@@ -50,7 +59,11 @@ public class MainMenuView extends JFrame{
 		getContentPane().add(btnAchievements, "cell 2 1,grow");
 		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnLevels, btnAchievements}));
 		setSize(302, 175);
+	
 
+	}
+	public void initialize(){
+		
 	}
 
 
