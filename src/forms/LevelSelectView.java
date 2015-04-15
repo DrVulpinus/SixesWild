@@ -224,7 +224,7 @@ public class LevelSelectView extends SelectView {
 		}
 		return lblLevel_15;
 	}
-	private JPanel getPanel_1() {
+	public JPanel getPanel_1() {
 		if (panel == null) {
 			panel = new JPanel();
 			panel.setBackground(Color.ORANGE);
