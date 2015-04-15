@@ -237,7 +237,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_1_1() {
 		if (panel_1 == null) {
 			panel_1 = new JPanel();
-			panel_1.setBackground(Color.YELLOW);
+			panel_1.setBackground(Color.LIGHT_GRAY);
 			panel_1.add(getLblLevel_4());
 			panel_1.add(getLblLightning());
 		}
@@ -253,7 +253,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_2() {
 		if (panel_2 == null) {
 			panel_2 = new JPanel();
-			panel_2.setBackground(Color.BLUE);
+			panel_2.setBackground(Color.LIGHT_GRAY);
 			panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			panel_2.add(getLblLevel_1());
 			panel_2.add(getLblElimination());
@@ -270,7 +270,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_3() {
 		if (panel_3 == null) {
 			panel_3 = new JPanel();
-			panel_3.setBackground(Color.RED);
+			panel_3.setBackground(Color.LIGHT_GRAY);
 			panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			panel_3.add(getLblLevel_2());
 			panel_3.add(getLblRelease());
@@ -287,7 +287,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_4() {
 		if (panel_4 == null) {
 			panel_4 = new JPanel();
-			panel_4.setBackground(Color.ORANGE);
+			panel_4.setBackground(Color.LIGHT_GRAY);
 			panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			panel_4.add(getLblLevel_3());
 			panel_4.add(getLblPuzzle_1());
@@ -304,7 +304,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_5() {
 		if (panel_5 == null) {
 			panel_5 = new JPanel();
-			panel_5.setBackground(Color.YELLOW);
+			panel_5.setBackground(Color.LIGHT_GRAY);
 			panel_5.add(getLblLevel_5());
 			panel_5.add(getLblLightning_1());
 		}
@@ -320,7 +320,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_6() {
 		if (panel_6 == null) {
 			panel_6 = new JPanel();
-			panel_6.setBackground(Color.BLUE);
+			panel_6.setBackground(Color.LIGHT_GRAY);
 			panel_6.add(getLblLevel_11());
 			panel_6.add(getLblElimination_1());
 		}
@@ -336,7 +336,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_7() {
 		if (panel_7 == null) {
 			panel_7 = new JPanel();
-			panel_7.setBackground(Color.RED);
+			panel_7.setBackground(Color.LIGHT_GRAY);
 			panel_7.add(getLblLevel_7());
 			panel_7.add(getLblRelease_1());
 		}
@@ -352,7 +352,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_8() {
 		if (panel_8 == null) {
 			panel_8 = new JPanel();
-			panel_8.setBackground(Color.ORANGE);
+			panel_8.setBackground(Color.LIGHT_GRAY);
 			panel_8.add(getLblLevel_8());
 			panel_8.add(getLblPuzzle_2());
 		}
@@ -368,7 +368,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_9() {
 		if (panel_9 == null) {
 			panel_9 = new JPanel();
-			panel_9.setBackground(Color.BLUE);
+			panel_9.setBackground(Color.LIGHT_GRAY);
 			panel_9.add(getLblLevel());
 			panel_9.add(getLblElimination_2());
 		}
@@ -384,7 +384,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_10() {
 		if (panel_10 == null) {
 			panel_10 = new JPanel();
-			panel_10.setBackground(Color.YELLOW);
+			panel_10.setBackground(Color.LIGHT_GRAY);
 			panel_10.add(getLblLevel_6());
 			panel_10.add(getLblLightning_2());
 		}
@@ -400,7 +400,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_11() {
 		if (panel_11 == null) {
 			panel_11 = new JPanel();
-			panel_11.setBackground(Color.RED);
+			panel_11.setBackground(Color.LIGHT_GRAY);
 			panel_11.add(getLblLevel_9());
 			panel_11.add(getLblRelease_2());
 		}
@@ -416,7 +416,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_12() {
 		if (panel_12 == null) {
 			panel_12 = new JPanel();
-			panel_12.setBackground(Color.ORANGE);
+			panel_12.setBackground(Color.LIGHT_GRAY);
 			panel_12.add(getLblLevel_10());
 			panel_12.add(getLblPuzzle_3());
 		}
@@ -432,7 +432,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_13() {
 		if (panel_13 == null) {
 			panel_13 = new JPanel();
-			panel_13.setBackground(Color.YELLOW);
+			panel_13.setBackground(Color.LIGHT_GRAY);
 			panel_13.add(getLblLevel_12());
 			panel_13.add(getLblLightnin());
 		}
@@ -448,7 +448,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_14() {
 		if (panel_14 == null) {
 			panel_14 = new JPanel();
-			panel_14.setBackground(Color.RED);
+			panel_14.setBackground(Color.LIGHT_GRAY);
 			panel_14.add(getLblLevel_13());
 			panel_14.add(getLblRelease_3());
 		}
@@ -464,7 +464,7 @@ public class LevelSelectView extends SelectView {
 	private JPanel getPanel_15() {
 		if (panel_15 == null) {
 			panel_15 = new JPanel();
-			panel_15.setBackground(Color.BLUE);
+			panel_15.setBackground(Color.LIGHT_GRAY);
 			panel_15.add(getLblLevel_14());
 			panel_15.add(getLblElimination_3());
 		}
