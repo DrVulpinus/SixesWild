@@ -4,6 +4,8 @@ import icons.Icon;
 
 import java.util.ArrayList;
 
+import src.LevelStats;
+
 public class Level
 {
 	Grid grid;

@@ -5,7 +5,6 @@ import javax.swing.Timer;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTextPane;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
