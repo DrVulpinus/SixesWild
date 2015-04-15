@@ -6,29 +6,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import src.SixesWildWindow;
-public class LevelPlayView extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
-	public static void main(String[] args) {
-		SixesWildWindow sixesWildWindow = new SixesWildWindow();
-		GameGridView gameGridView = new GameGridView();
-					sixesWildWindow .setVisible(true);
-					gameGridView .setVisible(true);
-					//Thread.sleep(10000);
-					//frame.setVisible(false);
-				
-		
-	}
+import java.awt.FlowLayout;
+public class LevelPlayView extends JFrame {
+
 	public LevelPlayView() {
+		getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		SixesWildWindow sixesWildWindow = new SixesWildWindow();
-		add(sixesWildWindow);
+		getContentPane().add(sixesWildWindow);
 		
 		GameGridView gameGridView = new GameGridView();
-		add(gameGridView);
-
+		getContentPane().add(gameGridView);
 	}
 
 }
+
