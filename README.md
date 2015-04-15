@@ -2,6 +2,7 @@
 This is the code for Software Engineering group Phoebe
 
 SIXES WILD - HOW TO START THE GAME:
+
 In the zip file, open the project SixesWild in Eclipse. Expand src >> forms and then right-click on the file "StartProgram".
 Select the option Run As >> Java Application.
 The game will load a splash screen and then load the main menu. Currently, the Achievements button has no functionality.
@@ -15,6 +16,7 @@ Exit the application by left-clicking the red 'X' in the top right corner of the
 
 
 SIXES WILD - HOW TO START THE LEVEL EDITOR:
+
 In the zip file, open the project SixesWild in Eclipse. Expand LevelBuilder >> forms and right-click on the file "StartBuilder".
 Select the option Run As >> Java Application
 The game will load a splash screen and the load the main menu.
