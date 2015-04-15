@@ -68,8 +68,22 @@ public class MainFrame extends JFrame{
 				getContentPane().repaint();
 				System.out.println("other");
 			}
+			 
 			
 		});
+		
+		lvlSelectView.getPnlLevel().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				getContentPane().removeAll();
+				getContentPane().add(levelPlay, BorderLayout.CENTER);
+				
+				getContentPane().validate();
+				getContentPane().repaint();
+				
+			}
+		});
+		
 	}
 	
 
