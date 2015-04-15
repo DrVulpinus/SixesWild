@@ -7,7 +7,7 @@ In the zip file, open the project SixesWild in Eclipse. Expand src >> forms and 
 Select the option Run As >> Java Application.
 The game will load a splash screen and then load the main menu. Currently, the Achievements button has no functionality.
 
-Left-click the Level button to bring up the Level Selection screen.
+Double-click the Level button to bring up the Level Selection screen.
 Grey panels indicate that a level is not currently accessible.  Currently, the only accessible level will be level 1, which
 is a puzzle level.
 
