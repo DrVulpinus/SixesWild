@@ -34,11 +34,11 @@ public class SquareView extends JPanel
 		return blockView;
 	}
 	
-	public void setBlockView(BlockView blockView) {
-		remove(this.blockView);
-		this.blockView = blockView;
-		add(getBlockView(), "cell 1 1,grow");
-	}
+//	public void setBlockView(BlockView blockView) {
+//		remove(this.blockView);
+//		this.blockView = blockView;
+//		add(getBlockView(), "cell 1 1,grow");
+//	}
 
 	public void update() {
 		
@@ -51,6 +51,7 @@ public class SquareView extends JPanel
 //		}
 //		else 
 //			blockView.setVisible(true);
+		blockView.setBlock(square.getBlock());
 				
 		if (square.getEliminated())
 			setBackground(new Color(ELIMINATED_COLOR));
