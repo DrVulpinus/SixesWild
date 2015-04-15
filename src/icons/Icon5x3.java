@@ -1,18 +1,18 @@
 package icons;
 
-import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Icon5x3 extends Icon{
 	
 	public Icon5x3(){
-		Image i = null;
+		ImageIcon i = new ImageIcon("Block_5x1.png");
 		String t = null;
 		super.setImage(i);
 		super.setText(t);
 	}
 
 	
-	public Image getImage(){
+	public ImageIcon getImage(){
 		return super.getImage();
 	}
 	
@@ -20,7 +20,7 @@ public class Icon5x3 extends Icon{
 		return super.getText();
 	}
 	
-	public void setImage(Image i){
+	public void setImage(ImageIcon i){
 		super.setImage(i);
 	}
 	
