@@ -445,7 +445,8 @@ public class LevelSelectView extends SelectView {
 	}
 	private JLabel getLblNewLabel() {
 		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Level_Label_Elimination");
+			lblNewLabel = new JLabel("");
+			lblNewLabel.setBounds(10, 10, 10, 10);
 			lblNewLabel.setIcon(new ImageIcon(LevelSelectView.class.getResource("/Images/Level_Label_Elimination.png")));
 		}
 		return lblNewLabel;
