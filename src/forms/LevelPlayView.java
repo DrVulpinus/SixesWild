@@ -13,6 +13,7 @@ import java.awt.BorderLayout;
 import javax.swing.BoxLayout;
 import java.awt.GridLayout;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.JButton;
 public class LevelPlayView extends JPanel {
 
 	public LevelPlayView() {
@@ -39,6 +40,10 @@ public class LevelPlayView extends JPanel {
 		TestJPanel testJPanel = new TestJPanel();
 		testJPanel.setBounds(6, -25, 143, 360);
 		add(testJPanel);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setBounds(395, 20, 117, 29);
+		add(btnBack);
 		
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
