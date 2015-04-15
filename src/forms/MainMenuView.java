@@ -59,8 +59,8 @@ public class MainMenuView extends JFrame{
 		getContentPane().add(btnAchievements, "cell 2 1,grow");
 		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnLevels, btnAchievements}));
 		setSize(302, 175);
-	
-
+		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
+		setTitle("Sixes Wild");
 	}
 	public void initialize(){
 		
