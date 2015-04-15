@@ -33,6 +33,7 @@ public class MainFrame extends JFrame{
 	public LevelSelectView lvlSelectView = new LevelSelectView();
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
+	LevelPlayView levelPlay = new LevelPlayView();
 	/**
 	 * Create the panel.
 	 */
@@ -47,6 +48,7 @@ public class MainFrame extends JFrame{
 		getContentPane().setMinimumSize(new Dimension(500, 500));
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		getContentPane().add(mainMenu, BorderLayout.CENTER);
+		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
 		setSize(302, 175);
@@ -61,10 +63,12 @@ public class MainFrame extends JFrame{
 				System.out.println("abc");
 				getContentPane().removeAll();
 				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
+
 				getContentPane().validate();
 				getContentPane().repaint();
 				System.out.println("other");
 			}
+			
 		});
 	}
 	

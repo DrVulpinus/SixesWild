@@ -4,6 +4,7 @@ import icons.*;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 import entities.Block;
 

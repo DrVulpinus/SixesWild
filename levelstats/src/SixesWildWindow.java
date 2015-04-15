@@ -14,14 +14,14 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.SystemColor;
 
-public class SixesWildWindow extends JFrame {
+public class SixesWildWindow extends JFrame{
 
 	static LevelStats stats;
 	static LevelStatsView statsview;
 	private JTextField textField;
 	private JTextField textField_1;
 	
-	public SixesWildWindow(){
+	public SixesWildWindow() {
 		setSize(800, 600);
 		getContentPane().setLayout(null);
 		
@@ -82,7 +82,7 @@ public class SixesWildWindow extends JFrame {
 		statsview = new LevelStatsView(stats);
 		
 		SixesWildWindow w = new SixesWildWindow();
-		w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		w.setVisible(true);
 	}
 }

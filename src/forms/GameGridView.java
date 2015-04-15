@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 public class GameGridView extends JPanel {
 	public GameGridView() {
+		
 	}
 	
 Color color = new Color(0,0,0); 
