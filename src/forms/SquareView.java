@@ -29,6 +29,7 @@ public class SquareView extends JPanel
 		setSize(381, 239);
 		//add(getBlockView(), "cell 1 1,grow");
 		add(getBlockView(), BorderLayout.CENTER);
+		this.setVisible(true);
 		
 	}
 	

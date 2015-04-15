@@ -51,6 +51,7 @@ public class GameGridView extends JPanel {
 
 
 		rect = new Rectangle2D.Double(0, 0, width, height);
+		//rect = new Rectangle2D.Double(0, 0, 100,100);
 		//g2.draw(rect);
 
 
@@ -84,10 +85,11 @@ public class GameGridView extends JPanel {
 		if (rect == null)
 			return;
 		squareViews.clear();
-		for (int y = 0; y < yNumLines; y++)
+		for (int y = 0; y < yNumLines; y++){
 			for (int x = 0; x < xNumLines; x++) {
 				
 				Square s = new Square();
+				
 				s.setBlock(new Block(1, 2));
 				SquareView sV = new SquareView(s);
 				
@@ -99,9 +101,9 @@ public class GameGridView extends JPanel {
 				this.add(sV);
 			}
 		
-		isFilled = true;
+		//isFilled = true;
 	}
-
+	}
 
 }
 
