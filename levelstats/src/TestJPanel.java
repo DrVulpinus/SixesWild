@@ -7,42 +7,49 @@ import java.awt.SystemColor;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
+//import javax.swing.ImageIcon;
+//import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
+//import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import net.miginfocom.swing.MigLayout;
+//import net.miginfocom.swing.MigLayout;
 
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 
 public class TestJPanel extends JPanel {
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	
 	public TestJPanel() {
 		setLayout(null);
 		add(getpanel());
 		add(getlblPuzzle());
 		add(getpanel_1());
-		add(gettextField());
 		add(getpanel_2());
-		add(getprogressBar());
 		add(getpanel_3());
-		add(gettextField_1());
 		add(getlblStarCount());
-		add(getlblPuzzle());
-		add(getpanel());
-		add(getlblPuzzle());
+		add(getlblMovesLeft());
+		add(getlblPoints());
+		
 	}
+	
 	
 	private JPanel getpanel() {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.inactiveCaptionBorder);
 		panel.setBorder(new LineBorder(Color.GREEN, 7, true));
 		panel.setBounds(10, 26, 207, 61);
+		{
+			JLabel lblNewLabel = new JLabel("Puzzle Mode");
+			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+			panel.add(lblNewLabel);
+		}
 		return panel;
 	}
 	
@@ -53,48 +60,50 @@ public class TestJPanel extends JPanel {
 		return lblPuzzle;
 	}
 	
-	private JPanel getlblMoves() {
+	private JPanel getpanel_1() {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 387, 207, 43);
-	
+		{
+			textField_3 = new JTextField();
+			textField_3.setHorizontalAlignment(SwingConstants.CENTER);
+			panel_1.add(textField_3);
+			textField_3.setLocation(10, 387);
+			textField_3.setEditable(false);
+			textField_3.setText("0");
+			textField_3.setColumns(10);
+		}
 		
 		return panel_1;
 	}
 	
-	private JTextField gettextField(){
-	JTextField textField = new JTextField();
-	textField.setEditable(false);
-	textField.setText("0");
-	textField.setColumns(10);
-	return textField;
-	}
+
 	
 	private JPanel getpanel_2(){
 	JPanel panel_2 =new JPanel();
 	panel_2.setBackground(SystemColor.inactiveCaptionBorder);
 	panel_2.setBounds(10, 121, 207, 164);
-	return panel_2;
+	{
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setOrientation(SwingConstants.VERTICAL);
+		panel_2.add(progressBar);
 	}
-	
-	private JProgressBar getprogressBar(){
-	JProgressBar progressBar = new JProgressBar(JProgressBar.VERTICAL);
-	return progressBar;
+	return panel_2;
 	}
 	
 	private JPanel getpanel_3(){
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(10, 496, 207, 34);
+		{
+			textField_4 = new JTextField();
+			textField_4.setHorizontalAlignment(SwingConstants.CENTER);
+			panel_3.add(textField_4);
+			textField_4.setEditable(false);
+			textField_4.setText("20");
+			textField_4.setColumns(10);
+		}
 		return panel_3;
 	}
 	
-	private JTextField gettextField_1(){
-		JTextField textField_1 = new JTextField();
-		textField_1.setEditable(false);
-		textField_1.setText("20");
-		textField_1.setColumns(10);	
-		return textField_1;
-		
-	}
 	
 	private JLabel getlblStarCount(){
 	JLabel lblStarCount = new JLabel("Star Count");

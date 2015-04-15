@@ -1,4 +1,4 @@
-package forms;
+	package forms;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
