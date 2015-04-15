@@ -21,7 +21,7 @@ public class StartProgram {
 		   s.dispose();
 		  
 		   
-           MainMenuView mMV = new MainMenuView();
+           MainFrame mMV = new MainFrame();
            mMV.setVisible(true);
            
            /*TimerTask task = new TimerTask() {          	   
