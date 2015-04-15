@@ -9,9 +9,15 @@ public abstract class Icon {
 	String text;
 	
 	
-	public Image getScaledImage(int width, int height)
+	public ImageIcon getScaledImage(int width, int height)
 	{
-		return image.getImage().getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
+		if (width == 0 || height == 0){
+			width = 1;
+			height = 1;
+		}
+		
+		Image i = image.getImage().getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
+		return new ImageIcon(i);
 	}
 	
 	

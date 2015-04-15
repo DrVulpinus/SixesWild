@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 public class Icon1x3 extends Icon{
 	
 	public Icon1x3(){
-		ImageIcon i = new ImageIcon("Block_1x3.png");
+		ImageIcon i = new ImageIcon("Images/Block_1x3.png");
 		String t = null;
 		super.setImage(i);
 		super.setText(t);
