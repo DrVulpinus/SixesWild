@@ -51,7 +51,7 @@ public class MenuSelectController implements MouseListener, ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == menuview.getBtnLevel()){
-			menuview.dispose();
+			
 			
 		}
 		
