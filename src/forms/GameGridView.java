@@ -8,7 +8,7 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-public class GameGridView extends JComponent {
+public class GameGridView extends JPanel {
 	public GameGridView() {
 	}
 	
