@@ -38,6 +38,7 @@ public class LevelView extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[]", "[]"));
+	
 	}
 
 }

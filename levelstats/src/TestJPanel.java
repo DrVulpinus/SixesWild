@@ -27,6 +27,8 @@ public class TestJPanel extends JPanel {
 	private JTextField textField_4;
 	
 	public TestJPanel() {
+		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
+		
 		setLayout(null);
 		add(getpanel());
 		add(getlblPuzzle());
@@ -44,10 +46,10 @@ public class TestJPanel extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.inactiveCaptionBorder);
 		panel.setBorder(new LineBorder(Color.GREEN, 7, true));
-		panel.setBounds(10, 26, 207, 61);
+		panel.setBounds(10, 26, 112, 34);
 		{
 			JLabel lblNewLabel = new JLabel("Puzzle Mode");
-			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
 			panel.add(lblNewLabel);
 		}
 		return panel;
@@ -55,14 +57,14 @@ public class TestJPanel extends JPanel {
 	
 	private JLabel getlblPuzzle() {
 		JLabel lblPuzzle = new JLabel("Puzzle Mode");
-		lblPuzzle.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblPuzzle.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		return lblPuzzle;
 	}
 	
 	private JPanel getpanel_1() {
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 387, 207, 43);
+		panel_1.setBounds(28, 225, 73, 28);
 		{
 			textField_3 = new JTextField();
 			textField_3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -81,7 +83,7 @@ public class TestJPanel extends JPanel {
 	private JPanel getpanel_2(){
 	JPanel panel_2 =new JPanel();
 	panel_2.setBackground(SystemColor.inactiveCaptionBorder);
-	panel_2.setBounds(10, 121, 207, 164);
+	panel_2.setBounds(37, 72, 64, 101);
 	{
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setOrientation(SwingConstants.VERTICAL);
@@ -92,7 +94,7 @@ public class TestJPanel extends JPanel {
 	
 	private JPanel getpanel_3(){
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(10, 496, 207, 34);
+		panel_3.setBounds(0, 275, 128, 28);
 		{
 			textField_4 = new JTextField();
 			textField_4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -107,21 +109,21 @@ public class TestJPanel extends JPanel {
 	
 	private JLabel getlblStarCount(){
 	JLabel lblStarCount = new JLabel("Star Count");
-	lblStarCount.setFont(new Font("Tahoma", Font.PLAIN, 17));
-	lblStarCount.setBounds(79, 282, 100, 34);
+	lblStarCount.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	lblStarCount.setBounds(37, 185, 64, 28);
 	return lblStarCount;
 	}
 	
 	private JLabel getlblMovesLeft(){
 	JLabel lblMovesLeft = new JLabel("Moves Left:");
-	lblMovesLeft.setBounds(85, 470, 94, 15);
+	lblMovesLeft.setBounds(28, 253, 94, 15);
 	
 	return lblMovesLeft;
 	
 	}
 	private JLabel getlblPoints(){
 	JLabel lblPoints = new JLabel("Points:");
-	lblPoints.setBounds(95, 362, 74, 14);
+	lblPoints.setBounds(47, 210, 43, 13);
 	return lblPoints;
 	}
 	
