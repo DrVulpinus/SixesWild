@@ -1,6 +1,8 @@
 package forms;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,10 +12,16 @@ import javax.swing.JToolBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.UIManager;
+
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MainForm extends JFrame {
-
+/*
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenuItem mntmAddBlock;
@@ -22,7 +30,11 @@ public class MainForm extends JFrame {
 	private JMenuItem mntmChangeWinConditions;
 	private JMenuItem mntmRemoveBloc;
 	private JMenuItem mntmRemoveSpecialMove;
-
+*/
+	
+	MenuView menu = new MenuView();
+	BuildLevelView leveleditor = new BuildLevelView();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -43,14 +55,42 @@ public class MainForm extends JFrame {
 	 * Create the frame.
 	 */
 	public MainForm() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1200, 900);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		contentPane.add(getMenuBar_1());
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+				dispose();
+			}
+		});
+		
+		getContentPane().setMinimumSize(new Dimension(500, 500));
+		getContentPane().setLayout(new BorderLayout(0, 0));
+		getContentPane().add(menu, BorderLayout.CENTER);
+		
+		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		setBackground(UIManager.getColor("ToolTip.background"));
+		setSize(500, 500);
+		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
+		setTitle("Sixes Wild Builder");
+		
+		menu.getBtnCreateNewLevel().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("abc");
+				getContentPane().removeAll();
+				getContentPane().add(leveleditor, BorderLayout.CENTER);
+
+				getContentPane().validate();
+				getContentPane().repaint();
+				System.out.println("other");
+			}
+
+
+		});
+		
 	}
+	/*
 	private JMenuBar getMenuBar_1() {
 		if (menuBar == null) {
 			menuBar = new JMenuBar();
@@ -100,4 +140,5 @@ public class MainForm extends JFrame {
 		}
 		return mntmRemoveSpecialMove;
 	}
+	*/
 }

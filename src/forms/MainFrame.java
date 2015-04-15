@@ -55,7 +55,7 @@ public class MainFrame extends JFrame{
 		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
-		setSize(302, 175);
+		setSize(520, 400);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
 		
@@ -64,15 +64,40 @@ public class MainFrame extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("abc");
+				
 				getContentPane().removeAll();
 				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
 
 				getContentPane().validate();
 				getContentPane().repaint();
-				System.out.println("other");
+				System.out.println("to Level Select View");
 			}
 			
+			
+		});
+		
+		/*
+		mainMenu.getBtnAchievments().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		
+		});
+		*/
+		lvlSelectView.getBtnNewButton().addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().removeAll();
+				getContentPane().add(mainMenu, BorderLayout.CENTER);
+				
+				getContentPane().validate();
+				getContentPane().repaint();
+				System.out.println("back to main menu");				
+			}
 			
 		});
 		
