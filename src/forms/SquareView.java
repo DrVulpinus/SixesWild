@@ -40,6 +40,20 @@ public class SquareView extends JPanel
 //		this.blockView = blockView;
 //		add(getBlockView(), "cell 1 1,grow");
 //	}
+	
+	@Override
+	public void setSize(int width, int height)
+	{
+		super.setSize(width, height);
+		
+		try {
+			blockView.setSize(width - 10, height - 10);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+	}
 
 	public void update() {
 		

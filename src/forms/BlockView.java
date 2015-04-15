@@ -61,7 +61,7 @@ public class BlockView extends JPanel
 		addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent arg0) {
-				System.out.println("resized");
+
 				update();
 			}
 		});
@@ -96,10 +96,12 @@ public class BlockView extends JPanel
 //		else
 //			getLabel().setText(icons[block.getValue() - 1][block.getMultiplier() - 1]);
 		
+	//	System.out.println(getWidth() + " " + getHeight());
+		
 		if (block == null)
 			getLabel().setIcon(null);
 		else
-			getLabel().setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+			getLabel().setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(21, 21));	//TODO: fix 
 	}
 
 	public Block getBlock() {
