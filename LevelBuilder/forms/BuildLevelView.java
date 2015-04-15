@@ -34,10 +34,10 @@ public class BuildLevelView extends JPanel{
 		add(getMenuBar());
 		add(getMenuBar_1());
 		
-		GameGridView gameGridView = new GameGridView();
-		gameGridView.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.BLACK, null, null, null));
-		gameGridView.setBounds(150, 73, 359, 360);
-		add(gameGridView);
+		LevelBuilderGridView LevelBuilderGridView = new LevelBuilderGridView();
+		LevelBuilderGridView.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.BLACK, null, null, null));
+		LevelBuilderGridView.setBounds(150, 73, 359, 360);
+		add(LevelBuilderGridView);
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
 		specialMoveView.setBounds(514, 167, 155, 137);
