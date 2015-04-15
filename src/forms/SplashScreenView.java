@@ -2,6 +2,7 @@ package forms;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -55,12 +56,14 @@ public class SplashScreenView extends JFrame {
 	public SplashScreenView() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 456, 307);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.add(getLblTeamPhoebe(), BorderLayout.CENTER);
+		setSize(500, 350);
+		setResizable(false);
 		
 		
 	}
