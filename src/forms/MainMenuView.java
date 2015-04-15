@@ -24,9 +24,9 @@ import java.awt.event.WindowEvent;
 
 public class MainMenuView extends JFrame{
 
-	JButton btnLevels = new JButton("Levels");
-	
-	JButton btnAchievements = new JButton("Achievements");
+
+	public JButton btnLevels = new JButton("Levels");	
+	public JButton btnAchievements = new JButton("Achievements");
 	/**
 	 * Create the panel.
 	 */
