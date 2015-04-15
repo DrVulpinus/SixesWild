@@ -7,22 +7,35 @@ import java.util.TimerTask;
 
 public class StartProgram {
 	static SplashScreenView s =new SplashScreenView();
-	
-	public static void main(String[] args) throws InterruptedException {
-		int splashscreenTime = 3000;
-		   Timer timer = new Timer(); 
+	static Timer timer = new Timer(); 
+	public static void main(String[] args) {
+		int splashscreenTime = 3000;		   
 		   s.setVisible(true);
-           TimerTask task = new TimerTask() {          	   
+		   
+		   try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		   s.setVisible(false);
+           MainMenuView mMV = new MainMenuView();
+           mMV.setVisible(true);
+          
+           /*TimerTask task = new TimerTask() {          	   
                  @Override
                   public void run() {  
-                          s.setVisible(false);
-                          MainMenuView mMV = new MainMenuView();
-                          mMV.setVisible(true);
+                	 s.setVisible(false);
+                     s.dispose();
+                     MainMenuView mMV = new MainMenuView();
+                     mMV.setVisible(true);
+                     timer.cancel();
+                         
                  }
            };
-           timer.schedule(task,splashscreenTime);
+           timer.schedule(task,splashscreenTime);*/
           
-           //Thread.sleep(100000);      
+                 
 	}
 }
 
