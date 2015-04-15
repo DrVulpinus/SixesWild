@@ -24,7 +24,6 @@ public class BlockView extends JPanel
 				icons[value - 1][mult - 1] = new String(value + " x" + mult);
 			}
 		}
-		System.out.println("static" + icons[0][1]);
 	}
 	
 	
@@ -53,6 +52,7 @@ public class BlockView extends JPanel
 //		else
 //			this.setVisible(true);
 		
+
 		if (block == null)
 			getLabel().setText("");
 		else
@@ -64,5 +64,13 @@ public class BlockView extends JPanel
 			label = new JLabel("");
 		}
 		return label;
+	}
+
+	public Block getBlock() {
+		return block;
+	}
+
+	public void setBlock(Block block) {
+		this.block = block;
 	}
 }
