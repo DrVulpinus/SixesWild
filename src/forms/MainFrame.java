@@ -58,7 +58,7 @@ public class MainFrame extends JFrame{
 		setSize(520, 400);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
-		setResizable(false);
+		//setResizable(false);
 		
 		mainMenu.getBtnLevel().addActionListener(new ActionListener() {
 			

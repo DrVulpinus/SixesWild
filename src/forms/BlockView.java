@@ -69,7 +69,8 @@ public class BlockView extends JLabel
 		});*/
 		this.block = block;
 		System.out.println(getSize().toString());
-		this.setSize(21,21);
+		
+		//this.setSize(21,21);
 		//this.setText("Hi");
 		this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
 		this.setVisible(true);

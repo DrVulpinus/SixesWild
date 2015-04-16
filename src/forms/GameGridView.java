@@ -24,7 +24,7 @@ public class GameGridView extends JPanel {
 	boolean isFilled = false;
 	
 	Color color = new Color(0,0,0); 
-	double currentXVal= 0;
+	double currentXVal = 0;
 	double currentYVal = 0;
 	int yNumLines =9;
 	int xNumLines =9;
@@ -86,8 +86,7 @@ public class GameGridView extends JPanel {
 			return;
 		squareViews.clear();
 		for (int y = 0; y < yNumLines; y++){
-			for (int x = 0; x < xNumLines; x++) {
-				
+			for (int x = 0; x < xNumLines; x++) {				
 				Square s = new Square();
 				
 				s.setBlock(new Block(1, 2));
