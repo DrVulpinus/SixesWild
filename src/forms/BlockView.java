@@ -60,6 +60,12 @@ public class BlockView extends JLabel
 
 	public BlockView(Block block) {
 		super();
+		addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentResized(ComponentEvent e) {
+				onResize();
+			}
+		});
 		/*addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent arg0) {
@@ -68,16 +74,20 @@ public class BlockView extends JLabel
 			}
 		});*/
 		this.block = block;
-		System.out.println(getSize().toString());
+		//System.out.println(getSize().toString());
 		
 		//this.setSize(21,21);
 		//this.setText("Hi");
+		this.setIcon(null);
 		this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
 		this.setVisible(true);
 		//update();
 		
 	}
-	
+	public void onResize(){
+		setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+		setVisible(true);
+	}
 	/*JLabel getLabel() {
 		if (label == null)
 			label = new JLabel("");

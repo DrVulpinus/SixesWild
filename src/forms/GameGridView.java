@@ -1,6 +1,7 @@
 package forms;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Line2D;
@@ -15,6 +16,7 @@ import entities.Square;
 
 public class GameGridView extends JPanel {
 	public GameGridView() {
+		setLayout(null);
 		
 
 	}
@@ -84,6 +86,10 @@ public class GameGridView extends JPanel {
 		
 		if (rect == null)
 			return;
+		
+		for (SquareView squareView : squareViews) {
+			this.remove(squareView);
+		}
 		squareViews.clear();
 		for (int y = 0; y < yNumLines; y++){
 			for (int x = 0; x < xNumLines; x++) {				
@@ -95,13 +101,16 @@ public class GameGridView extends JPanel {
 				squareViews.add(sV);
 				sV.setLocation((int) (x*rect.getWidth()/yNumLines), (int) (y*rect.getHeight()/xNumLines));
 				sV.setSize((int) rect.getWidth()/yNumLines, (int) rect.getHeight()/xNumLines);
-				System.out.println(sV.getLocation().toString() + " " + sV.getSize().toString());
+				//System.out.println(squareViews.size());
+				//System.out.println(sV.getLocation().toString() + " " + sV.getSize().toString());
 				sV.update();
 				this.add(sV);
 			}
 		
 		//isFilled = true;
 	}
+		
+		
 	}
 
 }
