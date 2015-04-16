@@ -23,7 +23,7 @@ public class LevelPlayView extends JPanel {
 	private JButton btnBack;
 	
 	public LevelPlayView() {
-		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,fill][]"));
+		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,grow,fill][]"));
 		
 		TestJPanel testJPanel = new TestJPanel();
 		add(testJPanel, "cell 0 0,grow");
