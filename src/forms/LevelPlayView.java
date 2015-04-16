@@ -23,32 +23,19 @@ public class LevelPlayView extends JPanel {
 	private JButton btnBack;
 	
 	public LevelPlayView() {
-		/*setLayout(new MigLayout("", "[][][grow][][grow]", "[][][grow]"));
+		setLayout(new MigLayout("", "[][143px][212px][26px][144px]", "[grow][]"));
 		
 		TestJPanel testJPanel = new TestJPanel();
-		add(testJPanel, "flowx,cell 0 0 3 3,grow");
+		add(testJPanel, "cell 0 0,grow");
 		
 		GameGridView gameGridView = new GameGridView();
-		add(gameGridView, "cell 4 2,grow");
-
-		*/
-		
-		setLayout(null);
-		
-		GameGridView gameGridView = new GameGridView();
-		gameGridView.setBounds(157, 55, 212, 196);
-		add(gameGridView);
+		add(gameGridView, "cell 1 0,grow");
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
-		specialMoveView.setBounds(360, 73, 179, 155);
-		add(specialMoveView);
-		
-		TestJPanel testJPanel = new TestJPanel();
-		testJPanel.setBounds(6, -25, 143, 360);
-		add(testJPanel);
+		add(specialMoveView, "cell 2 0 3 1,alignx right,aligny top");
 		
 		//btnBack.setBounds(395, 20, 117, 29);
-		add(getbtnBack());
+		add(getbtnBack(), "cell 4 1,growx,aligny bottom");
 		
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
@@ -57,8 +44,6 @@ public class LevelPlayView extends JPanel {
 	JButton getbtnBack() {
 		if (btnBack == null) {
 			btnBack = new JButton("Back");
-			btnBack.setSize(117, 29);
-			btnBack.setLocation(395, 20);
 		}
 		return btnBack;
 	}
