@@ -11,6 +11,8 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 
 import entities.Square;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class SquareView extends JPanel
 {
@@ -23,10 +25,18 @@ public class SquareView extends JPanel
 
 	public SquareView(Square square) {
 		super();
+		addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentResized(ComponentEvent arg0) {
+			if(blockView != null){
+				blockView.setSize(getWidth() - 10, getHeight() -10);
+			}
+			}
+		});
 		this.square = square;
 		//setLayout(new MigLayout("", "[5px][382.00px,grow,fill][5px]", "[5px][35.00,grow,fill][5px]"));
 		setLayout(new BorderLayout());
-		setSize(381, 239);
+		//setSize(381, 239);
 		//add(getBlockView(), "cell 1 1,grow");
 		add(getBlockView(), BorderLayout.CENTER);
 		this.setVisible(true);
