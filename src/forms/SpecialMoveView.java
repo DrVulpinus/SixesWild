@@ -15,6 +15,7 @@ public class SpecialMoveView extends JPanel {
 	 * Create the panel.
 	 */
 	public SpecialMoveView() {
+		setMinimumSize(new Dimension(130, 150));
 		setLayout(new MigLayout("", "[grow,center]", "[grow,bottom][][][grow,top]"));
 		
 		JLabel lblSpecialMoves = new JLabel("Special Moves");

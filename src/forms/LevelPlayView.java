@@ -23,7 +23,7 @@ public class LevelPlayView extends JPanel {
 	private JButton btnBack;
 	
 	public LevelPlayView() {
-		setLayout(new MigLayout("", "[][143px][212px][26px][144px]", "[grow][]"));
+		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,fill][]"));
 		
 		TestJPanel testJPanel = new TestJPanel();
 		add(testJPanel, "cell 0 0,grow");
@@ -32,10 +32,10 @@ public class LevelPlayView extends JPanel {
 		add(gameGridView, "cell 1 0,grow");
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
-		add(specialMoveView, "cell 2 0 3 1,alignx right,aligny top");
+		add(specialMoveView, "cell 2 0,alignx right,aligny top");
 		
 		//btnBack.setBounds(395, 20, 117, 29);
-		add(getbtnBack(), "cell 4 1,growx,aligny bottom");
+		add(getbtnBack(), "cell 2 1,growx,aligny bottom");
 		
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
