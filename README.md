@@ -11,7 +11,9 @@ Double-click the Level button to bring up the Level Selection screen.
 Grey panels indicate that a level is not currently accessible.  Currently, the only accessible level will be level 1, which
 is a puzzle level.
 
-Left-click Level 1 to open a non-playable puzzle level. Left-clicking the Back button will return the screen to the main menu.
+Left-click Level 1 to open a non-playable puzzle level.
+
+Left-clicking the Back button will return the screen to the main menu.
 Exit the application by left-clicking the red 'X' in the top right corner of the screen.
 
 

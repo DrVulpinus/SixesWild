@@ -35,6 +35,7 @@ import java.awt.BorderLayout;
 
 public class MainFrame extends JFrame{
 	public LevelSelectView lvlSelectView = new LevelSelectView();
+	public AchievementSelectView achvSelectView = new AchievementSelectView();
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
 	LevelPlayView levelPlay = new LevelPlayView();
@@ -49,15 +50,16 @@ public class MainFrame extends JFrame{
 				dispose();
 			}
 		});
-		getContentPane().setMinimumSize(new Dimension(500, 500));
+		getContentPane().setMinimumSize(new Dimension(200, 200));
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		getContentPane().add(mainMenu, BorderLayout.CENTER);
 		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
-		setSize(520, 400);
+		setSize(700, 400);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
+		//setResizable(false);
 		
 		mainMenu.getBtnLevel().addActionListener(new ActionListener() {
 			
@@ -70,23 +72,28 @@ public class MainFrame extends JFrame{
 
 				getContentPane().validate();
 				getContentPane().repaint();
-				System.out.println("to Level Select View");
+				System.out.println("to Achievement Select View");
 			}
 			
 			
 		});
 		
-		/*
+		
 		mainMenu.getBtnAchievments().addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				getContentPane().removeAll();
+				getContentPane().add(achvSelectView, BorderLayout.CENTER);
+
+				getContentPane().validate();
+				getContentPane().repaint();
+				System.out.println("to Level Select View");
 				
 			}
 		
 		});
-		*/
+		
 		lvlSelectView.getBtnNewButton().addActionListener(new ActionListener(){
 
 			@Override

@@ -27,5 +27,9 @@ public class Location
 	public void setCol(int col) {
 		this.col = col;
 	}
+	@Override
+	public String toString(){
+		return "Column: " + col + " Row: " + row;
+	}
 
 }

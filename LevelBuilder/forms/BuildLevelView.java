@@ -40,6 +40,7 @@ public class BuildLevelView extends JPanel{
 		add(getMenuBar_1(), "cell 0 1 3 1");
 		add(getTestJPanel(), "cell 0 3,grow");
 		add(getGameGridView(), "cell 1 3,grow");
+
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 2 3,grow");
