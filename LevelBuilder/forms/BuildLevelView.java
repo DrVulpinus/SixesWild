@@ -15,6 +15,8 @@ import java.awt.Color;
 
 import javax.swing.JButton;
 
+import net.miginfocom.swing.MigLayout;
+
 public class BuildLevelView extends JPanel{
 	
 	
@@ -28,35 +30,21 @@ public class BuildLevelView extends JPanel{
 	private JMenuBar menuBar_1;
 	private JMenuItem mntmEditGameType;
 	private JMenuItem mntmEditStarPoints;
+	private TestJPanel testJPanel;
+	private GameGridView gameGridView;
 	private JButton btnExitWithoutSaving;
+	
 	public BuildLevelView() {
-		setLayout(null);
-		add(getMenuBar());
-		add(getMenuBar_1());
-		
-		GameGridView gameGridView = new GameGridView();
-		gameGridView.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.BLACK, null, null, null));
-		gameGridView.setBounds(150, 73, 359, 360);
-		add(gameGridView);
+		setLayout(new MigLayout("", "[250,center][215.00,grow,center][90.00,center]", "[center][29.00,top][10px][71.00,grow,center][]"));
+		add(getMenuBar(), "cell 0 0 3 1,aligny top");
+		add(getMenuBar_1(), "cell 0 1 3 1");
+		add(getTestJPanel(), "cell 0 3,grow");
+		add(getGameGridView(), "cell 1 3,grow");
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
-		specialMoveView.setBounds(514, 167, 155, 137);
-		add(specialMoveView);
+		add(specialMoveView, "cell 2 3,grow");
+		//add(getBtnExitWithoutSaving(), "cell 2 3");
 		
-		TestJPanel testJPanel = new TestJPanel();
-		testJPanel.setBounds(0, 73, 143, 360);
-		add(testJPanel);
-		add(getBtnExitWithoutSaving());
-		
-	}
-
-	public JButton getBtnExitWithoutSaving() {
-		if (btnExitWithoutSaving == null) {
-			btnExitWithoutSaving = new JButton("Exit Without Saving");
-			btnExitWithoutSaving.setSize(146, 29);
-			btnExitWithoutSaving.setLocation(514, 369);
-		}
-		return btnExitWithoutSaving;
 	}
 	
 	private JMenuBar getMenuBar() {
@@ -129,14 +117,22 @@ public class BuildLevelView extends JPanel{
 		}
 		return mntmEditStarPoints;
 	}
-	/*
-	public JButton getBtnExitWithoutSaving() {
-		if (btnExitWithoutSaving == null) {
-			btnExitWithoutSaving = new JButton("Exit Without Saving");
-			btnExitWithoutSaving.setBounds(519, 360, 140, 23);
+	private TestJPanel getTestJPanel() {
+		if (testJPanel == null) {
+			testJPanel = new TestJPanel();
 		}
+		return testJPanel;
+	}
+	private GameGridView getGameGridView() {
+		if (gameGridView == null) {
+			gameGridView = new GameGridView();
+		}
+		return gameGridView;
+	}
+
+	public JButton getBtnExitWithoutSaving() {
+		if (btnExitWithoutSaving == null)
+			btnExitWithoutSaving = new JButton("Exit Without Saving");
 		return btnExitWithoutSaving;
 	}
-	*/
-
 }
