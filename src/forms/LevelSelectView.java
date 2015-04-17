@@ -34,7 +34,7 @@ import net.miginfocom.swing.MigLayout;
 public class LevelSelectView extends SelectView {
 	public LevelSelectView() {
 		setMinimumSize(new Dimension(100, 100));
-		setLayout(new MigLayout("", "[90px][90px][90px][90px][90px]", "[75px,center][75px][75px][75px,fill]"));
+		setLayout(new MigLayout("", "[90px,center][90px][90px][90px][90px]", "[75px,center][75px][75px][75px,bottom]"));
 		add(getPanel_1(), "cell 1 0,grow");
 		add(getPanel_1_1(), "cell 2 0,grow");
 		add(getPanel_2(), "cell 3 0,grow");

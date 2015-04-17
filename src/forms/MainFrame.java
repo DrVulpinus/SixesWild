@@ -35,6 +35,7 @@ import java.awt.BorderLayout;
 
 public class MainFrame extends JFrame{
 	public LevelSelectView lvlSelectView = new LevelSelectView();
+	public AchievementSelectView achvSelectView = new AchievementSelectView();
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
 	LevelPlayView levelPlay = new LevelPlayView();
@@ -49,7 +50,7 @@ public class MainFrame extends JFrame{
 				dispose();
 			}
 		});
-		getContentPane().setMinimumSize(new Dimension(500, 500));
+		getContentPane().setMinimumSize(new Dimension(200, 200));
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		getContentPane().add(mainMenu, BorderLayout.CENTER);
 		
@@ -67,27 +68,32 @@ public class MainFrame extends JFrame{
 				// TODO Auto-generated method stub
 				
 				getContentPane().removeAll();
+				getContentPane().add(achvSelectView, BorderLayout.CENTER);
+
+				getContentPane().validate();
+				getContentPane().repaint();
+				System.out.println("to Achievement Select View");
+			}
+			
+			
+		});
+		
+		
+		mainMenu.getBtnAchievments().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().removeAll();
 				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
 
 				getContentPane().validate();
 				getContentPane().repaint();
 				System.out.println("to Level Select View");
-			}
-			
-			
-		});
-		
-		/*
-		mainMenu.getBtnAchievments().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 		
 		});
-		*/
+		
 		lvlSelectView.getBtnNewButton().addActionListener(new ActionListener(){
 
 			@Override

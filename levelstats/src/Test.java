@@ -11,7 +11,7 @@ public class Test extends JFrame
 		public static void main(String[] args)
 		{
 			Test t = new Test();
-			LevelPlayView test = new LevelPlayView();
+			TestJPanel test = new TestJPanel();
 			
 			test.setVisible(true);
 			t.setContentPane(test);
