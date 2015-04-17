@@ -1,6 +1,7 @@
 package forms;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class AchievementSelectView extends SelectView{
 	private JLabel lblLvlIcon;
@@ -25,13 +26,14 @@ public class AchievementSelectView extends SelectView{
 
 	private JLabel getLblLvlIcon() {
 		if (lblLvlIcon == null) {
-			lblLvlIcon = new JLabel("Lvl Icon");
+			lblLvlIcon = new JLabel("");
+			lblLvlIcon.setIcon(new ImageIcon(AchievementSelectView.class.getResource("/Images/Level_Label_Puzzle copy.png")));
 		}
 		return lblLvlIcon;
 	}
 	private JLabel getLblLvlNumber() {
 		if (lblLvlNumber == null) {
-			lblLvlNumber = new JLabel("Lvl Number");
+			lblLvlNumber = new JLabel("Level 1:");
 		}
 		return lblLvlNumber;
 	}

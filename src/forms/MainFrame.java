@@ -68,7 +68,7 @@ public class MainFrame extends JFrame{
 				// TODO Auto-generated method stub
 				
 				getContentPane().removeAll();
-				getContentPane().add(achvSelectView, BorderLayout.CENTER);
+				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
 
 				getContentPane().validate();
 				getContentPane().repaint();
@@ -84,7 +84,7 @@ public class MainFrame extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				getContentPane().removeAll();
-				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
+				getContentPane().add(achvSelectView, BorderLayout.CENTER);
 
 				getContentPane().validate();
 				getContentPane().repaint();
