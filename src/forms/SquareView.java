@@ -20,6 +20,14 @@ public class SquareView extends JPanel
 	static final int ELIMINATED_COLOR = 0xFF0000;
 	
 	Square square;
+	public Square getSquare() {
+		return square;
+	}
+
+	public void setSquare(Square square) {
+		this.square = square;
+	}
+
 	BlockView blockView;
 
 
