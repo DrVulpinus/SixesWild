@@ -89,7 +89,7 @@ public class GameGridView extends JPanel {
 		//g2.draw(rect);
 
 
-
+/*
 		//g2.draw(new Line2D.Double(rect.getX(), rect.getY(), rect.getX()+ rect.getWidth(), rect.getY() + rect.getHeight()));
 		while(linesX<rows){
 
@@ -109,7 +109,7 @@ public class GameGridView extends JPanel {
 
 			lineX+=rect.getWidth()/columns;
 		}
-		
+		*/
 		//if (!isFilled)
 			fillGrid();
 	}
