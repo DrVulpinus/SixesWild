@@ -11,7 +11,7 @@ public class Test extends JFrame
 		public static void main(String[] args)
 		{
 			Test t = new Test();
-			TestJPanel test = new TestJPanel();
+			StatsView test = new StatsView();
 			
 			test.setVisible(true);
 			t.setContentPane(test);

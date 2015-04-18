@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import src.SixesWildWindow;
-import src.TestJPanel;
+import src.StatsView;
 
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
@@ -25,7 +25,7 @@ public class LevelPlayView extends JPanel {
 	public LevelPlayView() {
 		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,grow,fill][]"));
 		
-		TestJPanel testJPanel = new TestJPanel();
+		StatsView testJPanel = new StatsView();
 		add(testJPanel, "cell 0 0,grow");
 		
 		GameGridView gameGridView = new GameGridView();

@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import src.SixesWildWindow;
-import src.TestJPanel;
+import src.StatsView;
 
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
@@ -37,7 +37,7 @@ public class GameLevelPlayView extends JPanel {
 		specialMoveView.setBounds(360, 73, 179, 155);
 		add(specialMoveView);
 		
-		TestJPanel testJPanel = new TestJPanel();
+		StatsView testJPanel = new StatsView();
 		testJPanel.setBounds(6, -25, 143, 360);
 		add(testJPanel);
 		
