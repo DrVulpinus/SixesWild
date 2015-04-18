@@ -24,7 +24,7 @@ public class GameGridView extends JPanel {
 		addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {
-				//fillGrid();
+				
 			}
 		});
 		setLayout(null);//Make sure it is absolute layout
