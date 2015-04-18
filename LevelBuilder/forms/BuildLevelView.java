@@ -4,18 +4,13 @@ import javax.swing.AbstractButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-
 import java.awt.FlowLayout;
-
 import javax.swing.border.BevelBorder;
-
 import src.TestJPanel;
-
 import java.awt.Color;
-
 import javax.swing.JButton;
-
 import net.miginfocom.swing.MigLayout;
+
 
 public class BuildLevelView extends JPanel{
 	
@@ -35,7 +30,7 @@ public class BuildLevelView extends JPanel{
 	private JButton btnExitWithoutSaving;
 	
 	public BuildLevelView() {
-		setLayout(new MigLayout("", "[250,center][215.00,grow,center][90.00,center]", "[center][29.00,top][10px][71.00,grow,center][]"));
+		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,center]", "[center][29.00,top][10px][71.00,grow,center][bottom]"));
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 3 1");
 		add(getTestJPanel(), "cell 0 3,grow");
@@ -44,7 +39,7 @@ public class BuildLevelView extends JPanel{
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 2 3,grow");
-		//add(getBtnExitWithoutSaving(), "cell 2 3");
+		add(getBtnExitWithoutSaving(), "cell 2 4");
 		
 	}
 	
