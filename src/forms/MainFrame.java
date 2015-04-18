@@ -61,6 +61,19 @@ public class MainFrame extends JFrame{
 		setTitle("Sixes Wild");
 		//setResizable(false);
 		
+		achvSelectView.getBtnBack().addActionListener(new ActionListener(){
+			
+			@Override
+			public void actionPerformed(ActionEvent e){
+			getContentPane().removeAll();
+			getContentPane().add(mainMenu, BorderLayout.CENTER);
+			
+			getContentPane().validate();
+			getContentPane().repaint();
+			System.out.println("back to main menu");
+			}
+		});
+		
 		mainMenu.getBtnLevel().addActionListener(new ActionListener() {
 			
 			@Override

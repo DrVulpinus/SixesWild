@@ -2,6 +2,8 @@ package forms;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
 
 public class AchievementSelectView extends SelectView{
 	private JLabel lblLvlIcon;
@@ -9,13 +11,15 @@ public class AchievementSelectView extends SelectView{
 	private JLabel lblStar;
 	private JLabel lblStar_1;
 	private JLabel lblStar_2;
+	private JButton btnBack;
 	public AchievementSelectView() {
-		setLayout(new MigLayout("", "[][][][][][][][]", "[]"));
+		setLayout(new MigLayout("", "[][][][][][][][][][][][grow]", "[][][][][][][][][][][][][grow]"));
 		add(getLblLvlIcon(), "cell 0 0");
 		add(getLblLvlNumber(), "cell 1 0");
 		add(getLblStar(), "cell 3 0");
 		add(getLblStar_1(), "cell 5 0");
 		add(getLblStar_2(), "cell 7 0");
+		add(getBtnBack(), "cell 10 0");
 	}
 
 	@Override
@@ -54,5 +58,11 @@ public class AchievementSelectView extends SelectView{
 			lblStar_2 = new JLabel("Star 3");
 		}
 		return lblStar_2;
+	}
+	public JButton getBtnBack() {
+		if (btnBack == null) {
+			btnBack = new JButton("Back");
+		}
+		return btnBack;
 	}
 }
