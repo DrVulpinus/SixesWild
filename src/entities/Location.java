@@ -32,4 +32,9 @@ public class Location
 		return "Column: " + col + " Row: " + row;
 	}
 
+	//returns true if this Location and other Location are vertically or horizontally adjacent
+	public boolean isAdjacentTo(Location other) {
+		return (this.getRow() - this.getRow() == 1 || other.getRow() - other.getRow() == -1) &&
+				(this.getCol() - this.getCol() == 1 || other.getCol() - other.getCol() == -1);
+	}
 }
