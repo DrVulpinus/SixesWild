@@ -14,8 +14,10 @@ import javax.swing.JPanel;
 import entities.Block;
 import entities.Location;
 import entities.Square;
+
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.MouseEvent;
 
 public class GameGridView extends JPanel {
 	public GameGridView() {
@@ -89,7 +91,7 @@ public class GameGridView extends JPanel {
 		//g2.draw(rect);
 
 
-/*
+
 		//g2.draw(new Line2D.Double(rect.getX(), rect.getY(), rect.getX()+ rect.getWidth(), rect.getY() + rect.getHeight()));
 		while(linesX<rows){
 
@@ -109,7 +111,7 @@ public class GameGridView extends JPanel {
 
 			lineX+=rect.getWidth()/columns;
 		}
-		*/
+		
 		//if (!isFilled)
 			fillGrid();
 	}
@@ -139,6 +141,18 @@ public class GameGridView extends JPanel {
 			}
 		*/
 		//isFilled = true;
+	}
+	
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		currentXVal= e.getX()/xIncrement;
+		currentYVal= e.getY()/yIncrement;
+		int roundXOutput = (int)Math.round(currentXVal);
+		int roundYOutput = (int)Math.round(currentYVal);
+		int YOutput = (columns - roundYOutput);
+		//int XOutput = (yNumLines - roundYOutput);
+		System.out.println(roundXOutput+","+YOutput);
+	
 	}
 		
 		
