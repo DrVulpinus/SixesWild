@@ -22,12 +22,12 @@ import net.miginfocom.swing.MigLayout;
 
 //import java.awt.BorderLayout;
 
-public class TestJPanel extends JPanel {
+public class StatsView extends JPanel {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
 	
-	public TestJPanel() {
+	public StatsView() {
 		setLayout(new MigLayout("", "[center]", "[center][][][][][][]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
 		add(getpanel(), "cell 0 0,aligny top");
@@ -126,7 +126,7 @@ public class TestJPanel extends JPanel {
 		//stats = new LevelStats();
 		 //statsview = new LevelStatsView(stats);
 		
-		TestJPanel w = new TestJPanel();
+		StatsView w = new StatsView();
 		//w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		w.setVisible(true);
 	}

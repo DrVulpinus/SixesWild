@@ -6,7 +6,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import java.awt.FlowLayout;
 import javax.swing.border.BevelBorder;
-import src.TestJPanel;
+import src.StatsView;
 import java.awt.Color;
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
@@ -25,7 +25,7 @@ public class BuildLevelView extends JPanel{
 	private JMenuBar menuBar_1;
 	private JMenuItem mntmEditGameType;
 	private JMenuItem mntmEditStarPoints;
-	private TestJPanel testJPanel;
+	private StatsView testJPanel;
 	private GameGridView gameGridView;
 	private JButton btnExitWithoutSaving;
 	
@@ -113,9 +113,9 @@ public class BuildLevelView extends JPanel{
 		}
 		return mntmEditStarPoints;
 	}
-	private TestJPanel getTestJPanel() {
+	private StatsView getTestJPanel() {
 		if (testJPanel == null) {
-			testJPanel = new TestJPanel();
+			testJPanel = new StatsView();
 		}
 		return testJPanel;
 	}
