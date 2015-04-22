@@ -2,12 +2,17 @@ package entities;
 
 import icons.Icon;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import src.LevelStats;
 
-public class Level
+public class Level implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9210169210519298978L;
 	Grid grid;
 	//ArrayList<Move> moves;
 	LevelStats stats;
@@ -16,6 +21,7 @@ public class Level
 	public Level(LevelStats stats, Grid grid) {
 		this.stats = stats;
 		this.grid = grid;
+		
 	}
 
 	

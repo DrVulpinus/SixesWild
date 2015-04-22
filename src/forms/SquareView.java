@@ -10,18 +10,21 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JLabel;
 
+import Interfaces.MoveControlListener;
 import entities.Square;
+
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.util.ArrayList;
 
 public class SquareView extends JPanel
 {
 	static final int NORMAL_COLOR = 0xFFFFFF;
 	static final int ELIMINATED_COLOR = 0xFF0000;
-	
+	ArrayList<MoveControlListener> listeners = new ArrayList<MoveControlListener>();
 	Square square;
 	public Square getSquare() {
 		return square;
@@ -32,21 +35,32 @@ public class SquareView extends JPanel
 	}
 
 	BlockView blockView;
-
+	public void addMoveControlListener(MoveControlListener mcl){
+		listeners.add(mcl);
+	}
 
 	public SquareView(Square square) {
 		super();
 		addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseMoved(MouseEvent arg0) {//Trigger the square selected code
+				for (MoveControlListener moveControlListener : listeners) {
+					moveControlListener.selectBlock(SquareView.this);				
+				}
 			}
 		});
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {//Trigger the event to start a move
+				for (MoveControlListener moveControlListener : listeners) {
+					moveControlListener.startMove();				
+				}
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {//Trigger the event to end a move
+				for (MoveControlListener moveControlListener : listeners) {
+					moveControlListener.endMove();				
+				}
 			}
 		});
 		addComponentListener(new ComponentAdapter() {
