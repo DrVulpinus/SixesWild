@@ -16,6 +16,11 @@ public class Square
 		block = null;
 	}
 	
+	public Square(Location loc) {
+		block = null;
+		this.loc = loc;
+	}
+	
 	public void setEliminated(boolean eliminated) {
 		this.eliminated = eliminated;
 	}

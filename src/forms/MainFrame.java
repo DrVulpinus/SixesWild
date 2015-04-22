@@ -20,7 +20,10 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
+
 import com.sun.org.apache.xml.internal.serialize.XML11Serializer;
+
+import controllers.LevelController;
 
 import java.awt.Component;
 import java.awt.Cursor;
@@ -42,6 +45,8 @@ public class MainFrame extends JFrame{
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
 	LevelPlayView levelPlay = new LevelPlayView();
+	
+	LevelController levelController;
 	/**
 	 * Create the panel.
 	 */
@@ -141,9 +146,10 @@ public class MainFrame extends JFrame{
 				getContentPane().removeAll();
 				getContentPane().add(levelPlay, BorderLayout.CENTER);
 				
+				levelController = new LevelController(null, levelPlay);		//temp *************************************
+				
 				getContentPane().validate();
 				getContentPane().repaint();
-				
 			}
 
 			@Override

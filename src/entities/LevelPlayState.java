@@ -15,7 +15,7 @@ public class LevelPlayState {
 	
 	public void setSelectedMove(int move) {
 		this.selectedMove = move;
-		System.out.println("Move Selected: " + move);
+		System.out.println("LevelPlayState::Move Selected: " + move);
 	}
 	
 	public int getSelectedMove() {
