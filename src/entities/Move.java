@@ -12,6 +12,8 @@ public abstract class Move {
 		this.squaresInvolved = squares;
 	}
 	
+
+	
 	public abstract boolean performMove();
 	public abstract boolean isValid();
 

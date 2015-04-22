@@ -19,6 +19,8 @@ public class MoveRegular extends Move {
 			i.next().setBlock(null);
 		}
 
+
+		
 		return true;
 	}
 
