@@ -24,6 +24,7 @@ public class StartBuilder {
 		  
 		   
            MainForm MF = new MainForm();
+          
            MF.setVisible(true);
            
            
