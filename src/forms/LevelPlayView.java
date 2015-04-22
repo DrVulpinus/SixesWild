@@ -19,8 +19,16 @@ import java.awt.GridLayout;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JButton;
+
+import entities.Level;
 public class LevelPlayView extends JPanel {
 	private JButton btnBack;
+	
+	StatsView statsView;
+	GameGridView gridView;
+	SpecialMoveView specialMoveView;
+	
+	Level level;
 	
 	public LevelPlayView() {
 		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,grow,fill][]"));
@@ -46,6 +54,22 @@ public class LevelPlayView extends JPanel {
 			btnBack = new JButton("Back");
 		}
 		return btnBack;
+	}
+
+	public StatsView getStatsView() {
+		return statsView;
+	}
+
+	public GameGridView getGridView() {
+		return gridView;
+	}
+
+	public SpecialMoveView getSpecialMoveView() {
+		return specialMoveView;
+	}
+	
+	public void setLevel(Level level) {
+		this.level = level;
 	}
 }
 

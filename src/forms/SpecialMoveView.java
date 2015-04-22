@@ -14,6 +14,12 @@ public class SpecialMoveView extends JPanel {
 	/**
 	 * Create the panel.
 	 */
+	
+	JButton swapSquareButton;
+	JButton removeSquareButton;
+	JButton resetBoardButton;
+	
+	
 	public SpecialMoveView() {
 		setMinimumSize(new Dimension(130, 150));
 		setLayout(new MigLayout("", "[grow,center]", "[grow,bottom][][][grow,top]"));
@@ -22,30 +28,47 @@ public class SpecialMoveView extends JPanel {
 		lblSpecialMoves.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblSpecialMoves, "cell 0 0");
 		
-		JButton swapSquareButton = new JButton("Swap Square");
+		swapSquareButton = new JButton("Swap Square");
 		swapSquareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		add(swapSquareButton, "cell 0 1,aligny center");
 		
-		JButton removeSquareButton = new JButton("Remove Square");
+		removeSquareButton = new JButton("Remove Square");
 		add(removeSquareButton, "cell 0 2");
 		
-		JButton resetBoardButton = new JButton("Reset Board");
+		resetBoardButton = new JButton("Reset Board");
 		resetBoardButton.setMinimumSize(new Dimension(0, 0));
 		add(resetBoardButton, "cell 0 3");
 
-		public JButton getBtnNewButton() {
-			if (btnNewButton == null) {
-				btnNewButton = new JButton("Back\n");
-				btnNewButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-					}
-				});
-			}
-			return btnNewButton;
-		}
+//		public JButton getBtnNewButton() {
+//			if (btnNewButton == null) {
+//				btnNewButton = new JButton("Back\n");
+//				btnNewButton.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//					}
+//				});
+//			}
+//			return btnNewButton;
+//		}
+		
+		
+	}
+
+
+	public JButton getSwapSquareButton() {
+		return swapSquareButton;
+	}
+
+
+	public JButton getRemoveSquareButton() {
+		return removeSquareButton;
+	}
+
+
+	public JButton getResetBoardButton() {
+		return resetBoardButton;
 	}
 
 }
