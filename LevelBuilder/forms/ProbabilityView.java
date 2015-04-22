@@ -5,6 +5,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JButton;
 
 public class ProbabilityView extends JPanel{
 	private JPanel panel;
@@ -35,6 +36,7 @@ public class ProbabilityView extends JPanel{
 	private JLabel lblTotal;
 	private JTextField textField_6;
 	private JLabel label_12;
+	private JButton btnApplyChanges;
 	public ProbabilityView() {
 		setLayout(new MigLayout("", "[][grow][304.00,grow][33.00,grow][grow]", "[][29.00][23.00][][][bottom][grow,bottom]"));
 		add(getPanel(), "cell 2 0,grow");
@@ -43,6 +45,7 @@ public class ProbabilityView extends JPanel{
 		add(getPanel_3(), "cell 2 3,grow");
 		add(getPanel_4(), "cell 2 4,grow");
 		add(getPanel_5(), "cell 2 5,grow");
+		add(getBtnApplyChanges(), "cell 2 6");
 		add(getPanel_6(), "cell 4 6,grow");
 	}
 
@@ -249,5 +252,11 @@ public class ProbabilityView extends JPanel{
 			label_12 = new JLabel("%");
 		}
 		return label_12;
+	}
+	private JButton getBtnApplyChanges() {
+		if (btnApplyChanges == null) {
+			btnApplyChanges = new JButton("Apply Changes");
+		}
+		return btnApplyChanges;
 	}
 }
