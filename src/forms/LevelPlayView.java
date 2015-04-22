@@ -33,13 +33,13 @@ public class LevelPlayView extends JPanel {
 	public LevelPlayView() {
 		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,grow,fill][]"));
 		
-		StatsView testJPanel = new StatsView();
-		add(testJPanel, "cell 0 0,grow");
+		statsView = new StatsView();
+		add(statsView, "cell 0 0,grow");
 		
-		GameGridView gameGridView = new GameGridView();
-		add(gameGridView, "cell 1 0,grow");
+		gridView = new GameGridView();
+		add(gridView, "cell 1 0,grow");
 		
-		SpecialMoveView specialMoveView = new SpecialMoveView();
+		specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 2 0,alignx right,aligny top");
 		
 		//btnBack.setBounds(395, 20, 117, 29);

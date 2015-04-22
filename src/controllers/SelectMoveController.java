@@ -28,15 +28,15 @@ SpecialMoveView moveView = new SpecialMoveView();
 				this.playState = playState;
 		    
 //		        this.swap = new JButton("1");
-//		        this.swap.addActionListener(this);
+		        this.swap.addActionListener(this);
 //		        this.swap = swap;
 //		        
 //		        this.remove = new JButton("2");
-//		        this.remove.addActionListener(this);
+		        this.remove.addActionListener(this);
 //		        this.remove = remove;
 //		        
 //		        this.reset = new JButton("3");
-//		        this.reset.addActionListener(this);
+		        this.reset.addActionListener(this);
 //		        this.remove = remove;
 		    }
 
