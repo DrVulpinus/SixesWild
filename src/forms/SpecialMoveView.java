@@ -22,20 +22,30 @@ public class SpecialMoveView extends JPanel {
 		lblSpecialMoves.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblSpecialMoves, "cell 0 0");
 		
-		JButton btnNewButton = new JButton("Swap Square");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton swapSquareButton = new JButton("Swap Square");
+		swapSquareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		add(btnNewButton, "cell 0 1,aligny center");
+		add(swapSquareButton, "cell 0 1,aligny center");
 		
-		JButton btnNewButton_1 = new JButton("Remove Square");
-		add(btnNewButton_1, "cell 0 2");
+		JButton removeSquareButton = new JButton("Remove Square");
+		add(removeSquareButton, "cell 0 2");
 		
-		JButton btnNewButton_2 = new JButton("Reset Board");
-		btnNewButton_2.setMinimumSize(new Dimension(0, 0));
-		add(btnNewButton_2, "cell 0 3");
+		JButton resetBoardButton = new JButton("Reset Board");
+		resetBoardButton.setMinimumSize(new Dimension(0, 0));
+		add(resetBoardButton, "cell 0 3");
 
+		public JButton getBtnNewButton() {
+			if (btnNewButton == null) {
+				btnNewButton = new JButton("Back\n");
+				btnNewButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					}
+				});
+			}
+			return btnNewButton;
+		}
 	}
 
 }
