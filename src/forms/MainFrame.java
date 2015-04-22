@@ -19,6 +19,9 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
+
+import com.sun.org.apache.xml.internal.serialize.XML11Serializer;
+
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -122,6 +125,7 @@ public class MainFrame extends JFrame{
 		});
 		
 		lvlSelectView.getPanel_1().addMouseListener(new MouseListener() {
+			
 			/*@Override
 			public void actionPerformed(ActionEvent e){
 				getContentPane().removeAll();
