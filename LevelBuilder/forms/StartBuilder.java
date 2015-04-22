@@ -5,6 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 
 public class StartBuilder {
@@ -24,7 +25,7 @@ public class StartBuilder {
 		  
 		   
            MainForm MF = new MainForm();
-          
+           MF.setExtendedState(JFrame.MAXIMIZED_BOTH);
            MF.setVisible(true);
            
            
