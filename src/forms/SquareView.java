@@ -13,6 +13,9 @@ import javax.swing.JLabel;
 import entities.Square;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 public class SquareView extends JPanel
 {
@@ -33,6 +36,19 @@ public class SquareView extends JPanel
 
 	public SquareView(Square square) {
 		super();
+		addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent arg0) {//Trigger the square selected code
+			}
+		});
+		addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {//Trigger the event to start a move
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {//Trigger the event to end a move
+			}
+		});
 		addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent arg0) {
