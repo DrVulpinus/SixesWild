@@ -59,7 +59,7 @@ public class MainFrame extends JFrame{
 		setSize(1400, 1400);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
-		setResizable(false);
+		//setResizable(false);
 		
 		achvSelectView.getBtnBack().addActionListener(new ActionListener(){
 			

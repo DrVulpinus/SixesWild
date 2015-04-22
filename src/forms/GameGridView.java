@@ -24,7 +24,7 @@ public class GameGridView extends JPanel {
 		addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {
-				
+				fillGrid();
 			}
 		});
 		setLayout(null);//Make sure it is absolute layout
@@ -113,12 +113,15 @@ public class GameGridView extends JPanel {
 		}
 		
 		//if (!isFilled)
-			fillGrid();
+			//fillGrid();
 	}
 
 	public void fillGrid() {		
 		if (rect == null)
 			return;
+		
+		this.setVisible(false);
+		
 		System.out.println(this.getSize().toString());
 		for (SquareView squareView : squareViews) {
 			int col = squareView.getSquare().getLoc().getCol();
@@ -128,7 +131,7 @@ public class GameGridView extends JPanel {
 			squareView.setSize((int) Math.floor(rect.getWidth()/columns), (int) Math.floor(rect.getHeight()/rows));
 			//System.out.println(squareView.getLocation().toString() + squareView.getSize().toString());
 		}
-		
+		this.setVisible(true);
 	/*	
 		for (int y = 0; y < columns; y++){
 			for (int x = 0; x < rows; x++) {				
