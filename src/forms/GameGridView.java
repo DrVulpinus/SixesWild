@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
+import Interfaces.MoveControlListener;
 import entities.Block;
+import entities.Grid;
 import entities.Location;
 import entities.Square;
 
@@ -22,6 +24,7 @@ import java.awt.event.MouseEvent;
 public class GameGridView extends JPanel {
 	
 	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
+	MoveControlListener moveControlListener = null;
 
 	boolean isFilled = false;
 	
@@ -65,10 +68,15 @@ public class GameGridView extends JPanel {
 	}
 	
 	
+	public GameGridView(Grid grid, MoveControlListener moveControlListener) {
+		this.moveControlListener = moveControlListener;
+		this.setSquares(grid);
+	}
 	public void setSquares(ArrayList<Square> squares) {
-		setLayout(null);//Make sure it is absolute layout
+		setLayout(null); //Make sure it is absolute layout
 		for (Square square : squares) {
 			SquareView sV = new SquareView(square);
+			sV.addMoveControlListener(moveControlListener);
 			squareViews.add(sV);
 			this.add(sV);
 			columns = Math.max(columns, square.getLoc().getCol());
@@ -132,7 +140,7 @@ public class GameGridView extends JPanel {
 		
 		this.setVisible(false);
 		
-		System.out.println(this.getSize().toString());
+		//System.out.println(this.getSize().toString());
 		for (SquareView squareView : squareViews) {
 			int col = squareView.getSquare().getLoc().getCol();
 			int row = squareView.getSquare().getLoc().getRow();

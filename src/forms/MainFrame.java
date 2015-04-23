@@ -15,13 +15,6 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
-
-
-
-
-
-
-
 import src.LevelStats;
 
 import com.sun.org.apache.xml.internal.serialize.XML11Serializer;
@@ -152,17 +145,8 @@ public class MainFrame extends JFrame{
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 
-				
-				levelPlay = new LevelPlayView(getSampleLevel());
-				addLevelPlayListeners();
-				levelController = new LevelController(null, levelPlay);		//temp *************************************
-				
-				
-				getContentPane().removeAll();
-				getContentPane().add(levelPlay, BorderLayout.CENTER);
-				
-				getContentPane().validate();
-				getContentPane().repaint();
+				levelController = new LevelController(getSampleLevel(), MainFrame.this);		//temp *************************************
+
 			}
 
 			@Override
@@ -206,22 +190,21 @@ public class MainFrame extends JFrame{
 		
 	}
 	
-	private void addLevelPlayListeners() {
-		levelPlay.getbtnBack().addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				getContentPane().removeAll();
-				getContentPane().add(mainMenu, BorderLayout.CENTER);
-				
-				getContentPane().validate();
-				getContentPane().repaint();
-				System.out.println("back to main menu");				
-			}
-			
-		});
+//	private void addLevelPlayListeners() {
+//		levelPlay.getbtnBack().addActionListener(new ActionListener(){
+//
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				getContentPane().removeAll();
+//				getContentPane().add(mainMenu, BorderLayout.CENTER);
+//				
+//				getContentPane().validate();
+//				getContentPane().repaint();
+//				System.out.println("back to main menu");				
+//			}
+//			
+//		});
 		
-	}
 	
 
 
@@ -240,6 +223,11 @@ public class MainFrame extends JFrame{
 		
 		return new Level(stats, grid);
 			
+	}
+	
+	
+	public MainMenuView getMainMenuView() {
+		return this.mainMenu; 
 	}
 
 }
