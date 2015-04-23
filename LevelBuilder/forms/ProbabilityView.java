@@ -58,7 +58,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return panel;
 	}
-	private JTextField getTextField() {
+	public JTextField getTextField() {
 		if (textField == null) {
 			textField = new JTextField();
 			textField.setText("0");
@@ -93,7 +93,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return label_2;
 	}
-	private JTextField getTextField_1() {
+	public JTextField getTextField_1() {
 		if (textField_1 == null) {
 			textField_1 = new JTextField();
 			textField_1.setText("0");
@@ -131,7 +131,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return label_4;
 	}
-	private JTextField getTextField_2() {
+	public JTextField getTextField_2() {
 		if (textField_2 == null) {
 			textField_2 = new JTextField();
 			textField_2.setText("0");
@@ -160,7 +160,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return label_6;
 	}
-	private JTextField getTextField_3() {
+	public JTextField getTextField_3() {
 		if (textField_3 == null) {
 			textField_3 = new JTextField();
 			textField_3.setText("0");
@@ -189,7 +189,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return label_8;
 	}
-	private JTextField getTextField_4() {
+	public JTextField getTextField_4() {
 		if (textField_4 == null) {
 			textField_4 = new JTextField();
 			textField_4.setText("0");
@@ -209,7 +209,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return label_10;
 	}
-	private JTextField getTextField_5() {
+	public JTextField getTextField_5() {
 		if (textField_5 == null) {
 			textField_5 = new JTextField();
 			textField_5.setText("0");
@@ -238,7 +238,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return lblTotal;
 	}
-	private JTextField getTextField_6_1() {
+	public JTextField getTextField_6_1() {
 		if (textField_6 == null) {
 			textField_6 = new JTextField();
 			textField_6.setText("0");
@@ -253,7 +253,7 @@ public class ProbabilityView extends JPanel{
 		}
 		return label_12;
 	}
-	private JButton getBtnApplyChanges() {
+	public JButton getBtnApplyChanges() {
 		if (btnApplyChanges == null) {
 			btnApplyChanges = new JButton("Apply Changes");
 		}

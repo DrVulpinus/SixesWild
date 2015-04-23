@@ -23,8 +23,6 @@ public class Level implements Serializable
 		this.grid = grid;
 		
 	}
-
-	
 	
 	public Grid getGrid() {
 		return grid;
