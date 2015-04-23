@@ -30,13 +30,13 @@ public class LevelPlayView extends JPanel {
 	
 	Level level;
 	
-	public LevelPlayView() {
+	public LevelPlayView(Level level) {
 		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,grow,fill][]"));
 		
 		statsView = new StatsView();
 		add(statsView, "cell 0 0,grow");
 		
-		gridView = new GameGridView();
+		gridView = new GameGridView(level.getGrid());
 		add(gridView, "cell 1 0,grow");
 		
 		specialMoveView = new SpecialMoveView();
@@ -70,6 +70,7 @@ public class LevelPlayView extends JPanel {
 	
 	public void setLevel(Level level) {
 		this.level = level;
+		
 	}
 }
 

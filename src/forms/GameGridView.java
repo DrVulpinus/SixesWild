@@ -20,6 +20,22 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.MouseEvent;
 
 public class GameGridView extends JPanel {
+	
+	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
+
+	boolean isFilled = false;
+	
+	Color color = new Color(0,0,0); 
+	double currentXVal = 0;
+	double currentYVal = 0;
+	int columns = 1;
+	int rows = 1;
+	double xIncrement = 0;
+	double yIncrement = 0;
+	
+	Rectangle2D rect = null;
+	
+	
 	public GameGridView() {
 		addComponentListener(new ComponentAdapter() {
 			@Override
@@ -45,6 +61,11 @@ public class GameGridView extends JPanel {
 		fillGrid();
 	}
 	public GameGridView(ArrayList<Square> squares) {
+		this.setSquares(squares);
+	}
+	
+	
+	public void setSquares(ArrayList<Square> squares) {
 		setLayout(null);//Make sure it is absolute layout
 		for (Square square : squares) {
 			SquareView sV = new SquareView(square);
@@ -53,21 +74,10 @@ public class GameGridView extends JPanel {
 			columns = Math.max(columns, square.getLoc().getCol());
 			rows = Math.max(rows, square.getLoc().getRow());
 		}
-		fillGrid();
 	}
-	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
+	
+	
 
-	boolean isFilled = false;
-	
-	Color color = new Color(0,0,0); 
-	double currentXVal = 0;
-	double currentYVal = 0;
-	int columns = 1;
-	int rows = 1;
-	double xIncrement = 0;
-	double yIncrement = 0;
-	
-	Rectangle2D rect = null;
 
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
@@ -112,8 +122,8 @@ public class GameGridView extends JPanel {
 			lineX+=rect.getWidth()/columns;
 		}
 		
-		//if (!isFilled)
-			//fillGrid();
+		if (!isFilled)
+			fillGrid();
 	}
 
 	public void fillGrid() {		

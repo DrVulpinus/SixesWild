@@ -21,9 +21,17 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
+
+import src.LevelStats;
+
 import com.sun.org.apache.xml.internal.serialize.XML11Serializer;
 
 import controllers.LevelController;
+import entities.Block;
+import entities.Grid;
+import entities.Level;
+import entities.Location;
+import entities.Square;
 
 import java.awt.Component;
 import java.awt.Cursor;
@@ -44,7 +52,7 @@ public class MainFrame extends JFrame{
 	public AchievementSelectView achvSelectView = new AchievementSelectView();
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
-	LevelPlayView levelPlay = new LevelPlayView();
+	LevelPlayView levelPlay; // = new LevelPlayView();
 	
 	LevelController levelController;
 	/**
@@ -143,10 +151,15 @@ public class MainFrame extends JFrame{
 			 */
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+
+				
+				levelPlay = new LevelPlayView(getSampleLevel());
+				addLevelPlayListeners();
+				levelController = new LevelController(null, levelPlay);		//temp *************************************
+				
+				
 				getContentPane().removeAll();
 				getContentPane().add(levelPlay, BorderLayout.CENTER);
-				
-				levelController = new LevelController(null, levelPlay);		//temp *************************************
 				
 				getContentPane().validate();
 				getContentPane().repaint();
@@ -177,6 +190,23 @@ public class MainFrame extends JFrame{
 			}
 		});
 		
+//		levelPlay.getbtnBack().addActionListener(new ActionListener(){
+//
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				getContentPane().removeAll();
+//				getContentPane().add(mainMenu, BorderLayout.CENTER);
+//				
+//				getContentPane().validate();
+//				getContentPane().repaint();
+//				System.out.println("back to main menu");				
+//			}
+//			
+//		});
+		
+	}
+	
+	private void addLevelPlayListeners() {
 		levelPlay.getbtnBack().addActionListener(new ActionListener(){
 
 			@Override
@@ -193,5 +223,23 @@ public class MainFrame extends JFrame{
 		
 	}
 	
+
+
+	private Level getSampleLevel() {
+		Grid grid = new Grid();
+		LevelStats stats = new LevelStats();
+	
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				Square s = new Square(new Location(row, col));
+				s.setBlock(new Block(col % 6 + 1, 3));
+				grid.add(s);
+			}
+		}
+		
+		
+		return new Level(stats, grid);
+			
+	}
 
 }
