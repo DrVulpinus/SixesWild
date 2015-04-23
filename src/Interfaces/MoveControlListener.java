@@ -7,9 +7,9 @@ import forms.SquareView;
 
 public interface MoveControlListener  extends EventListener{
 
-	void performMove();
-	void startMove();
-	void selectBlock(SquareView sV);
-	void endMove() ;
+	public void performMove();
+	public void startMove();
+	public void selectBlock(SquareView sV);
+	public void endMove() ;
 
 }

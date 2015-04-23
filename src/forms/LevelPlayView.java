@@ -20,6 +20,7 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JButton;
 
+import Interfaces.MoveControlListener;
 import entities.Level;
 public class LevelPlayView extends JPanel {
 	private JButton btnBack;
@@ -27,16 +28,25 @@ public class LevelPlayView extends JPanel {
 	StatsView statsView;
 	GameGridView gridView;
 	SpecialMoveView specialMoveView;
+	MoveControlListener moveControlListener;
 	
 	Level level;
 	
-	public LevelPlayView(Level level) {
+	
+	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
+		this.moveControlListener = moveControlListener;
+		
 		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,grow,fill][]"));
 		
 		statsView = new StatsView();
 		add(statsView, "cell 0 0,grow");
 		
-		gridView = new GameGridView(level.getGrid());
+		if (level == null)
+			gridView = new GameGridView(level.getGrid());
+		else
+			gridView = new GameGridView(level.getGrid(), moveControlListener);
+		
+		
 		add(gridView, "cell 1 0,grow");
 		
 		specialMoveView = new SpecialMoveView();
@@ -48,8 +58,12 @@ public class LevelPlayView extends JPanel {
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
 	}
+	
+	public LevelPlayView(Level level) {
+		this(level, null);
+	}
 
-	JButton getbtnBack() {
+	public JButton getbtnBack() {
 		if (btnBack == null) {
 			btnBack = new JButton("Back");
 		}

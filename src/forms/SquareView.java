@@ -43,10 +43,12 @@ public class SquareView extends JPanel
 		super();
 		addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
-			public void mouseMoved(MouseEvent arg0) {//Trigger the square selected code
+			public void mouseDragged(MouseEvent arg0) {//Trigger the square selected code
 				for (MoveControlListener moveControlListener : listeners) {
 					moveControlListener.selectBlock(SquareView.this);				
 				}
+				
+				System.out.println("mouseMoved for select block");
 			}
 		});
 		addMouseListener(new MouseAdapter() {

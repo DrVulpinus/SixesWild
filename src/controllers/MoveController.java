@@ -2,6 +2,7 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import Interfaces.MoveControlListener;
 import entities.Level;
 import entities.LevelPlayState;
 import entities.Move;
@@ -11,30 +12,38 @@ import forms.GameGridView;
 import forms.SquareView;
 
 
-public class MoveController {
+public class MoveController implements MoveControlListener {
 
 	ArrayList<SquareView> selectedSquareViews;
 	Level level;
 	LevelPlayState playState;
+	Boolean started;
 	
 	public MoveController(Level level, LevelPlayState playState) {
 		selectedSquareViews = new ArrayList<SquareView>();
 		this.level = level;
 		this.playState = playState;
+		
+		this.started = false;
 	}
 	
-	void startMove() {
+	public void startMove() {
 		System.out.println("Move started");
+		this.started = true;
 	}
 	
-	void selectBlock(SquareView sV) {
+	public void selectBlock(SquareView sV) {
+		
+		if (!this.started || selectedSquareViews.contains(sV))
+			return;
+
 		selectedSquareViews.add(sV);
 		sV.getSquare().getBlock().setSelected(true);
 
 		System.out.println("Block Selected: " + sV.getSquare().getBlock());
 	}
 	
-	void endMove() {
+	public void endMove() {
 		
 		performMove();
 		
@@ -44,10 +53,12 @@ public class MoveController {
 		
 		selectedSquareViews.clear();
 		
+		this.started = false;
+		
 		System.out.println("End Move");
 	}
 	
-	void performMove() {
+	public void performMove() {
 		Move m = null;
 		ArrayList<Square> squares = new ArrayList<Square>();
 		

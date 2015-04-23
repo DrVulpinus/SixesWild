@@ -97,7 +97,7 @@ public class BlockView extends JLabel
 	public void addActionListener(ActionListener al) {
 		this.addActionListener(al);
 	}
-	/*
+	
 	public void update() {
 //		if (block == null) {
 //			this.setVisible(false);
@@ -119,7 +119,11 @@ public class BlockView extends JLabel
 		else
 			getLabel().setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(21, 21));	//TODO: fix 
 	}
-*/
+
+	
+	public JLabel getLabel() {
+		return label;
+	}
 	
 	
 	public Block getBlock() {
@@ -128,6 +132,7 @@ public class BlockView extends JLabel
 
 	public void setBlock(Block block) {
 		this.block = block;
+		update();
 	}
 	
 //	@Override
