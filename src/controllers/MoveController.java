@@ -7,6 +7,8 @@ import entities.Level;
 import entities.LevelPlayState;
 import entities.Move;
 import entities.MoveRegular;
+import entities.MoveRemove;
+import entities.MoveSwap;
 import entities.Square;
 import forms.GameGridView;
 import forms.SquareView;
@@ -27,28 +29,48 @@ public class MoveController implements MoveControlListener {
 		this.started = false;
 	}
 	
-	public void startMove() {
+	public void startMove(SquareView sV) {
+		
+		if (this.started)
+			return;
+		
 		System.out.println("Move started");
 		this.started = true;
+		this.selectBlock(sV);
 	}
 	
 	public void selectBlock(SquareView sV) {
 		
+		if (sV.getSquare().getBlock() == null) {
+			endMove();
+			return;
+		}
+			
 		if (!this.started || selectedSquareViews.contains(sV))
 			return;
 
 		selectedSquareViews.add(sV);
 		sV.getSquare().getBlock().setSelected(true);
+		sV.getBlockView().update();
 
-		System.out.println("Block Selected: " + sV.getSquare().getBlock());
+		System.out.println("Block Selected: " + sV.getSquare().getBlock() + " in " + sV.getSquare());
 	}
 	
 	public void endMove() {
 		
+		if (!this.started)
+			return;
+		
 		performMove();
 		
 		for (Iterator<SquareView> i = selectedSquareViews.iterator(); i.hasNext();) {
-			i.next().getSquare().getBlock().setSelected(false);
+			SquareView sV = i.next();
+			
+			if (sV.getSquare().getBlock() != null)
+				sV.getSquare().getBlock().setSelected(false);
+			
+			sV.update();
+			sV.getBlockView().update();
 		}
 		
 		selectedSquareViews.clear();
@@ -71,7 +93,13 @@ public class MoveController implements MoveControlListener {
 				m = new MoveRegular(level, squares);
 				break;
 				
-			//TODO: add other moves ***********************************
+			case LevelPlayState.MOVE_REMOVE:
+				m = new MoveRemove(level, squares);
+				break;
+				
+			case LevelPlayState.MOVE_SWAP:
+				m = new MoveSwap(level, squares);
+				break;
 		}
 		
 		if (m == null)

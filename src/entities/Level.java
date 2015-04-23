@@ -23,6 +23,10 @@ public class Level implements Serializable
 		this.grid = grid;
 		
 	}
+	
+	public void resetBoard() {
+		
+	}
 
 	
 	

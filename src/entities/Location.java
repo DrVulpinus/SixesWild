@@ -34,7 +34,9 @@ public class Location
 
 	//returns true if this Location and other Location are vertically or horizontally adjacent
 	public boolean isAdjacentTo(Location other) {
-		return (this.getRow() - this.getRow() == 1 || other.getRow() - other.getRow() == -1) &&
-				(this.getCol() - this.getCol() == 1 || other.getCol() - other.getCol() == -1);
+		System.out.println("s2: " + this + " s1: " + other);
+		
+		return (this.getRow() - other.getRow() == 1 || this.getRow() - other.getRow() == -1) ^
+				(this.getCol() - other.getCol() == 1 || this.getCol() - other.getCol() == -1);
 	}
 }

@@ -7,6 +7,7 @@ import javax.swing.JButton;
 
 import entities.LevelPlayState;
 import entities.Move;
+import entities.MoveResetBoard;
 import forms.LevelPlayView;
 import forms.SpecialMoveView;
 
@@ -18,9 +19,11 @@ SpecialMoveView moveView = new SpecialMoveView();
 		JButton reset;
 		
 		LevelPlayState playState;
+		LevelPlayView levelPlayView;
 
 		public SelectMoveController(LevelPlayView levelPlayView, LevelPlayState playState) {
 		
+				this.levelPlayView = levelPlayView;
 				this.swap = levelPlayView.getSpecialMoveView().getSwapSquareButton();
 				this.remove = levelPlayView.getSpecialMoveView().getRemoveSquareButton();
 				this.reset = levelPlayView.getSpecialMoveView().getResetBoardButton();
@@ -54,8 +57,13 @@ SpecialMoveView moveView = new SpecialMoveView();
 			
 			if (e.getSource() == reset){
 				playState.setSelectedMove(LevelPlayState.MOVE_RESET);
+				
+				Move m = new MoveResetBoard(levelPlayView.getLevel());
+				m.performMove();
 			}	
 		}
+		
+		
 	}	
 	
 	

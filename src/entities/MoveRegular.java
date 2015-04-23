@@ -7,6 +7,7 @@ public class MoveRegular extends Move {
 
 	public MoveRegular(Level level, ArrayList<Square> squares) {
 		super(level, squares);
+		System.out.println("Construct Move Regular");
 	}
 	
 	@Override
@@ -20,6 +21,7 @@ public class MoveRegular extends Move {
 		}
 
 
+		System.out.println("Regular Move Performed");
 		
 		return true;
 	}
@@ -39,6 +41,7 @@ public class MoveRegular extends Move {
 			sum += s.getBlock().getValue();
 		}
 		
+		System.out.println("Block Value Sum: " + sum);
 		if (sum != 6)							//move invalid if the sum of block values is not 6
 			return false;
 		

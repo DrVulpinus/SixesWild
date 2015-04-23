@@ -34,10 +34,12 @@ public abstract class Move {
 			//iterates through squares and sets adjacent to true if s2 is adjacent to at least one other Square
 			for (Square s2 : squaresInvolved) {
 				if (s2.getLoc().isAdjacentTo(s1.getLoc())) {
-					adjacent = true;
+					adjacent = true;		//adjacent block found
 					break;
 				}
 			}
+//			if (squaresInvolved.get(n).getLoc().isAdjacentTo(squaresInvolved.get(n+1).getLoc()))
+//				adjacent = true;
 			
 			if (adjacent == false)		//if there is at least one Square that is not adjacent to any other square
 				return false;
