@@ -1,13 +1,19 @@
 package forms;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JPanel;
+
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
 public class ProbabilityView extends JPanel{
+	
 	private JPanel panel;
 	private JTextField textField;
 	private JLabel label;
@@ -37,6 +43,8 @@ public class ProbabilityView extends JPanel{
 	private JTextField textField_6;
 	private JLabel label_12;
 	private JButton btnApplyChanges;
+	
+	
 	public ProbabilityView() {
 		setLayout(new MigLayout("", "[][grow][304.00,grow][33.00,grow][grow]", "[][29.00][23.00][][][bottom][grow,bottom]"));
 		add(getPanel(), "cell 2 0,grow");
@@ -256,6 +264,10 @@ public class ProbabilityView extends JPanel{
 	public JButton getBtnApplyChanges() {
 		if (btnApplyChanges == null) {
 			btnApplyChanges = new JButton("Apply Changes");
+			btnApplyChanges.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
 		}
 		return btnApplyChanges;
 	}
