@@ -7,7 +7,7 @@ import entities.MoveRegular;
 
 public class LightningStats extends LevelStats{
 
-	LightningStats(int selectedType, int score, int points, MoveRegular move) {
+	LightningStats(int selectedType, int score, int points) {
 		super(selectedType, score, points);
 		// TODO Auto-generated constructor stub
 	}
@@ -34,9 +34,13 @@ public class LightningStats extends LevelStats{
 	}
 
 	@Override
-	public int getPoints() {
+	public int getScore() {
 		// TODO Auto-generated method stub
-		return 0;
+		return score;
+	}
+	
+	public void update(){
+		score = score + points;
 	}
 
 }

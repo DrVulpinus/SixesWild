@@ -20,12 +20,18 @@ public class MoveRegular extends Move {
 			i.next().setBlock(null);
 		}
 
+		level.getStats().update();
 
 		System.out.println("Regular Move Performed");
 		
 		return true;
 	}
 
+	@Override
+	public int getPoints(){
+		return 100;
+	}
+	
 	@Override
 	public boolean isValid() {
 		

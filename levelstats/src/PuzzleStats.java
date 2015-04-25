@@ -1,8 +1,5 @@
 package src;
 
-import entities.MoveRegular;
-
-
 public class PuzzleStats extends LevelStats {
 
 	PuzzleStats(int selectedType, int score, int points) {
@@ -31,9 +28,15 @@ public class PuzzleStats extends LevelStats {
 	}
 
 	@Override
-	public int getPoints() {
+	public int getScore() {
 		// TODO Auto-generated method stub
-		return 0;
+		return score;
+	}
+	
+	@Override
+	public void update(){
+		score = score + points;
+		numMovesLeft--;
 	}
 
 }

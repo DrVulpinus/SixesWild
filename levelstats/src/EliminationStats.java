@@ -31,9 +31,18 @@ public class EliminationStats extends LevelStats{
 	}
 
 	@Override
-	public int getPoints() {
+	public int getScore() {
 		// TODO Auto-generated method stub
-		return 0;
+		return score;
 	}
 
+	@Override
+	public void update(){
+		score = score + points;
+		releaseBlocksLeft--;
+	}
+	
+	public int getReleaseBlocksLeft(){
+		return releaseBlocksLeft;
+	}
 }

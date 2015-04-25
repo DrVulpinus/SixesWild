@@ -1,7 +1,5 @@
 package src;
 
-import entities.MoveRegular;
-
 
 public class ReleaseStats extends LevelStats{
 
@@ -31,9 +29,18 @@ public class ReleaseStats extends LevelStats{
 	}
 
 	@Override
-	public int getPoints() {
+	public int getScore() {
 		// TODO Auto-generated method stub
-		return 0;
+		return score;
 	}
-
+	
+	@Override
+	public void update(){
+		score = score + points;
+		markedSquares++;
+	}
+	
+	public int getNumMarkedSquares(){
+		return markedSquares;
+	}
 }

@@ -210,7 +210,7 @@ public class MainFrame extends JFrame{
 
 	private Level getSampleLevel() {
 		Grid grid = new Grid();
-		LevelStats stats = new LevelStats();
+		LevelStats stats = new LevelStats(0, 0, 0);
 	
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {

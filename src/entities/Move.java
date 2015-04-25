@@ -2,10 +2,13 @@ package entities;
 
 import java.util.ArrayList;
 
+import src.PuzzleStats;
+
 public abstract class Move {
 	
 	Level level;
 	ArrayList<Square> squaresInvolved;
+	int points;
 	
 	public Move(Level level, ArrayList<Square> squares) {
 		this.level = level;
@@ -18,17 +21,13 @@ public abstract class Move {
 	public Level getLevel() {
 		return level;
 	}
+	
+	public int getPoints(){
+		return 0;
+	}
 
 	public ArrayList<Square> getSquaresInvolved() {
 		return squaresInvolved;
-	}
-	
-	public int updateScore(){
-		int score = getLevel().getStats().getScore();
-		if(performMove()){
-			 score = score + getLevel().getStats().getPoints();
-		}
-		return score;
 	}
 	
 	public boolean areSquaresAdjacent() {

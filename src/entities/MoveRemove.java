@@ -15,9 +15,14 @@ public class MoveRemove extends Move {
 
 		this.getSquaresInvolved().get(0).setBlock(null);;
 		
+		level.getStats().update();
+		
 		return true;
 	}
 
+	public int getPoints(){
+		return 10;
+	}
 	@Override
 	public boolean isValid() {
 		if (this.getSquaresInvolved().size() != 1)
