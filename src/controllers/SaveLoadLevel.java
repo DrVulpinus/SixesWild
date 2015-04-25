@@ -3,24 +3,25 @@ package controllers;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
 import entities.Level;
+import entities.XMLFilter;
 
 public final class SaveLoadLevel {
 private XStream xstream = null;
 private File saveFile;
-private SaveLoadLevel(){
+public ArrayList<Level> loadedLevels = new ArrayList<Level>();
+public SaveLoadLevel(){
 	xstream = new XStream(new StaxDriver());
 	xstream.ignoreUnknownElements();
 	
 	
-}
-public static SaveLoadLevel getInstance(){
-	return new SaveLoadLevel();
 }
 	public void saveLevel(Level lvl, String lvlName){
 		saveFile  = new File(lvlName + ".xml");
@@ -41,8 +42,17 @@ public static SaveLoadLevel getInstance(){
 			e.printStackTrace();
 		}
 	}
-	public Level getLevel(){
-		return (Level) xstream.fromXML(saveFile);
+	public Level getLevel(File savedLevel){
+		return (Level) xstream.fromXML(savedLevel);
 	}
+	ArrayList<Level> getLevels(){
+		File directory = new File("/levels");
+		loadedLevels.clear();
+		for (File file: directory.listFiles(new XMLFilter())) {
+			loadedLevels.add(getLevel(file));
+		}
+		return loadedLevels;
+	}
+	
 	
 }
