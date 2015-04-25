@@ -38,7 +38,6 @@ public class Level
 	public void resetBoard() {
 		
 	}
-
 	
 	public Grid getGrid() {
 		return grid;
