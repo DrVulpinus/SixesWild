@@ -8,7 +8,7 @@ import entities.MoveRegular;
 public class LightningStats extends LevelStats{
 
 	LightningStats(int selectedType, int score, int points, MoveRegular move) {
-		super(selectedType, score, points, move);
+		super(selectedType, score, points);
 		// TODO Auto-generated constructor stub
 	}
 

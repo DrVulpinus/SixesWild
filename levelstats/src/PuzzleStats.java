@@ -5,8 +5,8 @@ import entities.MoveRegular;
 
 public class PuzzleStats extends LevelStats {
 
-	PuzzleStats(int selectedType, int score, int points, MoveRegular move) {
-		super(selectedType, score, points, move);
+	PuzzleStats(int selectedType, int score, int points) {
+		super(selectedType, score, points);
 		// TODO Auto-generated constructor stub
 	}
 

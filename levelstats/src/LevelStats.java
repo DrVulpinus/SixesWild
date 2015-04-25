@@ -22,15 +22,17 @@ public class LevelStats {
 	int selectedType;
 	
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
-	LevelStats(int selectedType, int score, int points, MoveRegular move){
+	LevelStats(int selectedType, int score, int points){
 		this.selectedType = selectedType;
+		this.score = score;
+		this.points = points;
 	}
 	
 	
 	String getType() {
 		return null;
 	}
-	int getStarCount() {
+	public int getStarCount() {
 		if (points >= starcount1){
 			if(points >= starcount2){
 				if(points >= starcount3){
@@ -42,22 +44,15 @@ public class LevelStats {
 		}
 		return 0;
 	}
-	int getPoints() {
+	public int getPoints() {
 		return points;
 	}
 	
-	int getScore(){
-		return score;
-	}
-	int updateScore(){
-		if(move.performMove()){
-			score = getScore() + getPoints();
-		}
+	public int getScore(){
 		return score;
 	}
 	
-	
-	boolean winCondition() {
+	public boolean winCondition() {
 		if(getStarCount() >= 1){
 			return true;
 		}

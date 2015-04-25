@@ -5,8 +5,8 @@ import entities.MoveRegular;
 
 public class EliminationStats extends LevelStats{
 
-	EliminationStats(int selectedType, int score, int points, MoveRegular move) {
-		super(selectedType, score, points, move);
+	EliminationStats(int selectedType, int score, int points) {
+		super(selectedType, score, points);
 		// TODO Auto-generated constructor stub
 	}
 
