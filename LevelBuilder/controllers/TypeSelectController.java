@@ -4,17 +4,10 @@
 
 	import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-	import javax.swing.JButton;
 import javax.swing.JRadioButton;
-
 import src.LevelStats;
-import src.LevelStatsView;
-import entities.LevelPlayState;
-import entities.Move;
-import forms.BuildLevelView;
-import forms.LevelPlayView;
-import forms.SpecialMoveView;
+import src.StatsView;
+
 import forms.TypeSelectView;
 
 	public class TypeSelectController implements ActionListener {
@@ -25,7 +18,7 @@ import forms.TypeSelectView;
 			JRadioButton elimination;
 			LevelStats levelStats;
 
-			public TypeSelectController(LevelStatsView levelStatsView, LevelStats levelStats) {
+			public TypeSelectController(StatsView statsView, LevelStats levelStats) {
 			
 					this.puzzle = typeSelectView.getRdbtnPuzzle();
 					this.lightning = typeSelectView.getRdbtnLightning();
