@@ -37,7 +37,9 @@ private JLabel lblLevelname;
 		return preferredSize;
 	
 	}
-	
+	public Level getLevel(){
+		return level;
+	}
 	public void setLevelName(String levelName){
 		getLblLevelName().setText(levelName);
 	}

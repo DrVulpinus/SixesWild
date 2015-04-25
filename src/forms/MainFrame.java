@@ -45,7 +45,7 @@ public class MainFrame extends JFrame{
 	public AchievementSelectView achvSelectView = new AchievementSelectView();
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
-	LevelPlayView levelPlay; // = new LevelPlayView();
+	LevelPlayView levelPlay;//  = new LevelPlayView();
 	
 	LevelController levelController;
 	/**
@@ -130,49 +130,48 @@ public class MainFrame extends JFrame{
 			
 		});*/
 	
-		lvlSelectView.getPanel_1().addMouseListener(new MouseListener() {
+		
+		for (int i = 0; i <  lvlSelectView.getLevelPanels().size(); i++) {
 			
-			@Override
-			public void actionPerformed(ActionEvent e){
-				getContentPane().removeAll();
-				getContentPane().add(levelPlay, BorderLayout.CENTER);
-				
-				getContentPane().validate();
-				getContentPane().repaint();
-				
-			}
-			 
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
+			lvlSelectView.getLevelPanels().get(i).addMouseListener(new MouseListener(){
 
-				levelController = new LevelController(getSampleLevel(), MainFrame.this);		//temp *************************************
+				@Override
+				public void mouseClicked(MouseEvent arg0) {
+					/*getContentPane().removeAll();
+					getContentPane().add(levelPlay, BorderLayout.CENTER);
+					
+					getContentPane().validate();
+					getContentPane().repaint();*/
+					levelController = new LevelController(((LevelPanel)arg0.getSource()).getLevel(), MainFrame.this);
+				}
 
-			}
+				@Override
+				public void mouseEntered(MouseEvent arg0) {
+					// TODO Auto-generated method stub
+					
+				}
 
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
+				@Override
+				public void mouseExited(MouseEvent arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void mousePressed(MouseEvent arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void mouseReleased(MouseEvent arg0) {
+					// TODO Auto-generated method stub
+					
+				}
 				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+			});
+		}
+	
 		
 //		levelPlay.getbtnBack().addActionListener(new ActionListener(){
 //
