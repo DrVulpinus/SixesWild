@@ -18,6 +18,7 @@ public class Level
 	LevelStats stats;
 	Icon icon;
 	String name;
+	String type;
 	public Level(LevelStats stats, Grid grid) {
 		this.stats = stats;
 		this.grid = grid;
@@ -28,6 +29,9 @@ public class Level
 		this.grid = grid;
 		this.name = name;
 		
+	}
+	public String getType(){
+		return type;
 	}
 	public String getName(){
 		return name;
