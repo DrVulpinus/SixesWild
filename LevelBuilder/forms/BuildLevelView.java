@@ -19,6 +19,7 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JComboBox;
 
+import builder_entities.LevelBuildState;
 import entities.Level;
 
 
@@ -159,11 +160,15 @@ public class BuildLevelView extends JPanel{
 			btnExitWithoutSaving = new JButton("Exit Without Saving");
 		return btnExitWithoutSaving;
 	}
-	private JComboBox getToolSelector() {
+	public JComboBox getToolSelector() {
 		if (toolSelector == null) {
 			
-			String[] toolNames = {"Add Square", "Add Release Square", "Remove Block", "Add Six", "Remove Six"};
-			toolSelector = new JComboBox(toolNames);
+			
+			toolSelector = new JComboBox(LevelBuildState.TOOL_STRINGS);
+			
+			
+				
+			
 		}
 		return toolSelector;
 	}
