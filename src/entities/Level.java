@@ -7,31 +7,38 @@ import java.util.ArrayList;
 
 import src.LevelStats;
 
-public class Level implements Serializable
+public class Level
 {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -9210169210519298978L;
+	
 	Grid grid;
 	//ArrayList<Move> moves;
 	LevelStats stats;
 	Icon icon;
-	
+	String name;
 	public Level(LevelStats stats, Grid grid) {
 		this.stats = stats;
 		this.grid = grid;
 		
 	}
-<<<<<<< HEAD
-=======
-	
+	public Level(LevelStats stats, Grid grid, String name) {
+		this.stats = stats;
+		this.grid = grid;
+		this.name = name;
+		
+	}
+	public String getName(){
+		return name;
+	}
+	public void setName(String newName){
+		name = newName;
+	}
 	public void resetBoard() {
 		
 	}
 
-	
->>>>>>> master
 	
 	public Grid getGrid() {
 		return grid;

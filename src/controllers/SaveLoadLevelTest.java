@@ -14,25 +14,32 @@ import entities.Level;
 
 
 public class SaveLoadLevelTest {
+	Level[] levels = {new Level(new LevelStats(), new Grid(), "Level1"),
+			new Level(new LevelStats(), new Grid(), "Level2"),
+			new Level(new LevelStats(), new Grid(), "Level3"),
+			new Level(new LevelStats(), new Grid(), "Level4")};
 	
 	@Test
-	public void testSaveLoadLevel() {
-		SaveLoadLevel sll;	
-		Level lvl = new Level(new LevelStats(), new Grid());
-		sll = SaveLoadLevel.getInstance();
-		sll.saveLevel(lvl,"Test");
-		assertEquals(lvl,sll.getLevel());
-	//	fail("Not yet implemented");
+	public void testSaveLoadLevel() throws Exception {
+		SaveLoadLevel sll = new SaveLoadLevel();
+		for (Level level : levels) {
+			sll.saveLevel(level,level.getName());
+		}
+		for (Level level : levels){
+			assertEquals(level, sll.getLevel(level));
+		}
+		
+	
 	}
 
 	@Test
 	public void testSaveLevel() {
-		fail("Not yet implemented");
+	//	fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetLevel() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }
