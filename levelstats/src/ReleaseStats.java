@@ -1,7 +1,14 @@
 package src;
 
+import entities.MoveRegular;
+
 
 public class ReleaseStats extends LevelStats{
+
+	ReleaseStats(int selectedType, int score, int points, MoveRegular move) {
+		super(selectedType, score, points, move);
+		// TODO Auto-generated constructor stub
+	}
 
 	int markedSquares;
 	
