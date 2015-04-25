@@ -79,13 +79,15 @@ public class BlockView extends JLabel
 		//this.setSize(21,21);
 		//this.setText("Hi");
 		this.setIcon(null);
-		this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+		//this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+		update();
 		this.setVisible(true);
 		//update();
 		
 	}
 	public void onResize(){
-		setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+		//setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+		update();
 		setVisible(true);
 	}
 	/*JLabel getLabel() {
@@ -115,9 +117,13 @@ public class BlockView extends JLabel
 	//	System.out.println(getWidth() + " " + getHeight());
 		
 		if (block == null)
-			getLabel().setIcon(null);
-		else
-			getLabel().setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(21, 21));	//TODO: fix 
+			this.setIcon(null);
+		else {
+			if (block.isSelected())
+				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+			else
+				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5));
+		}
 	}
 
 	

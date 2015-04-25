@@ -50,6 +50,7 @@ public class Square
 
 	public void setBlock(Block block) {
 		this.block = block;
+		System.out.println("Block set to " + block);
 	}
 
 	public Location getLoc() {
@@ -74,5 +75,10 @@ public class Square
 
 	public void setRelease(boolean isRelease) {
 		this.isRelease = isRelease;
+	}
+	
+	
+	public String toString(){
+		return "Square: " + loc;
 	}
 }

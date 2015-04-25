@@ -13,8 +13,11 @@ public class Block
 		this.value = number;
 		this.multiplier = multiplier;
 	}
+
 	
-	
+	public boolean isSelected() {
+		return this.selected;
+	}
 	
 	public void setSelected(boolean selected) {
 		this.selected = selected;
@@ -34,5 +37,9 @@ public class Block
 
 	public void setMultiplier(int multiplier) {
 		this.multiplier = multiplier;
-	}	
+	}
+	
+	public String toString(){
+		return "Block: " + value + " x" + multiplier;
+	}
 }

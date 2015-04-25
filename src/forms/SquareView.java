@@ -17,6 +17,7 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 
@@ -41,21 +42,19 @@ public class SquareView extends JPanel
 
 	public SquareView(Square square) {
 		super();
-		addMouseMotionListener(new MouseMotionAdapter() {
+		addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDragged(MouseEvent arg0) {//Trigger the square selected code
+			public void mouseEntered(MouseEvent arg0) {//Trigger the square selected code
 				for (MoveControlListener moveControlListener : listeners) {
 					moveControlListener.selectBlock(SquareView.this);				
 				}
-				
-				System.out.println("mouseMoved for select block");
 			}
 		});
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {//Trigger the event to start a move
 				for (MoveControlListener moveControlListener : listeners) {
-					moveControlListener.startMove();				
+					moveControlListener.startMove(SquareView.this);				
 				}
 			}
 			@Override
@@ -78,12 +77,13 @@ public class SquareView extends JPanel
 		setLayout(new BorderLayout());
 		//setSize(381, 239);
 		//add(getBlockView(), "cell 1 1,grow");
+
 		add(getBlockView(), BorderLayout.CENTER);
+		this.update();
 		this.setVisible(true);
-		
 	}
 	
-	BlockView getBlockView() {
+	public BlockView getBlockView() {
 		if (blockView == null) {
 			blockView = new BlockView(square.getBlock());			//**** review later *****************************
 		}
@@ -121,7 +121,8 @@ public class SquareView extends JPanel
 //		}
 //		else 
 //			blockView.setVisible(true);
-		blockView.setBlock(square.getBlock());
+		
+		getBlockView().setBlock(square.getBlock());
 				
 		if (square.getEliminated())
 			setBackground(new Color(ELIMINATED_COLOR));
@@ -129,5 +130,4 @@ public class SquareView extends JPanel
 			setBackground(new Color(NORMAL_COLOR));
 	}
 	
-
 }

@@ -86,5 +86,9 @@ public class LevelPlayView extends JPanel {
 		this.level = level;
 		
 	}
+	
+	public Level getLevel() {
+		return this.level;
+	}
 }
 

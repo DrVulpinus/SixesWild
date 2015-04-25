@@ -10,6 +10,7 @@ import src.StatsView;
 import java.awt.Color;
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.JComboBox;
 
 
 public class BuildLevelView extends JPanel{
@@ -20,7 +21,6 @@ public class BuildLevelView extends JPanel{
 	private JMenuItem mntmRemoveBlock;
 	private JMenuItem mntmAddMove;
 	private JMenuItem mntmRemoveMove;
-	private JMenuItem mntmEditProbability;
 	private JMenuItem mntmEditWinConditions;
 	private JMenuBar menuBar_1;
 	private JMenuItem mntmEditGameType;
@@ -28,13 +28,16 @@ public class BuildLevelView extends JPanel{
 	private StatsView testJPanel;
 	private GameGridView gameGridView;
 	private JButton btnExitWithoutSaving;
+	private JComboBox toolSelector;
 	
 	public BuildLevelView() {
-		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,center]", "[center][29.00,top][10px][71.00,grow,center][bottom]"));
+		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[center][29.00,top][30.00px][71.00,grow,center][bottom]"));
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 3 1");
 		add(getTestJPanel(), "cell 0 3,grow");
 		add(getGameGridView(), "cell 1 3,grow");
+		add(getToolSelector(), "cell 2 2,grow");
+		
 
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
@@ -78,12 +81,6 @@ public class BuildLevelView extends JPanel{
 		}
 		return mntmRemoveMove;
 	}
-	private JMenuItem getMntmEditProbability() {
-		if (mntmEditProbability == null) {
-			mntmEditProbability = new JMenuItem("Edit Probability");
-		}
-		return mntmEditProbability;
-	}
 	private JMenuItem getMntmEditWinConditions() {
 		if (mntmEditWinConditions == null) {
 			mntmEditWinConditions = new JMenuItem("Edit Win Conditions");
@@ -94,7 +91,6 @@ public class BuildLevelView extends JPanel{
 		if (menuBar_1 == null) {
 			menuBar_1 = new JMenuBar();
 			menuBar_1.setBounds(10, 40, 700, 24);
-			menuBar_1.add(getMntmEditProbability());
 			menuBar_1.add(getMntmEditWinConditions());
 			menuBar_1.add(getMntmEditGameType());
 			menuBar_1.add(getMntmEditStarPoints());
@@ -130,5 +126,13 @@ public class BuildLevelView extends JPanel{
 		if (btnExitWithoutSaving == null)
 			btnExitWithoutSaving = new JButton("Exit Without Saving");
 		return btnExitWithoutSaving;
+	}
+	private JComboBox getToolSelector() {
+		if (toolSelector == null) {
+			
+			String[] toolNames = {"Add Square", "Add Release Square", "Remove Block", "Add Six", "Remove Six"};
+			toolSelector = new JComboBox(toolNames);
+		}
+		return toolSelector;
 	}
 }
