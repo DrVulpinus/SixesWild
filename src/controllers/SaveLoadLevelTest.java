@@ -26,7 +26,7 @@ public class SaveLoadLevelTest {
 			sll.saveLevel(level,level.getName());
 		}
 		for (Level level : levels){
-			assertEquals(level,sll.getLevel(level));
+			assertEquals(level, sll.getLevel(level));
 		}
 		
 	

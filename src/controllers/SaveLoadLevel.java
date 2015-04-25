@@ -19,7 +19,7 @@ public final class SaveLoadLevel {
 private XStream xstream = null;
 private File saveFile;
 public ArrayList<Level> loadedLevels = new ArrayList<Level>();
-public final String LEVEL_DIRECTORY = "";
+public final String LEVEL_DIRECTORY = "levels/";
 public final String FILE_EXTENSION = ".xml";
 public SaveLoadLevel(){
 	xstream = new XStream(new StaxDriver());
@@ -34,8 +34,9 @@ public SaveLoadLevel(){
 
 	public void saveLevel(Level lvl, String lvlName) throws Exception{
 		saveFile  = new File(LEVEL_DIRECTORY + lvlName + FILE_EXTENSION);
-		if (!saveFile.exists()){
-			if (!saveFile.mkdirs()) {
+		File saveDir = new File(LEVEL_DIRECTORY);
+		if (!saveDir.exists()){
+			if (!saveDir.mkdirs()) {
 				throw new Exception("Unable to make directories");
 			}			
 		}
