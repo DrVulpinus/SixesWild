@@ -32,6 +32,10 @@ public class BuildingController {
 	
 	public BuildingController(Level level, MainForm window) {
 		this.level = level;
+		if (this.level == null)
+			this.level = new Level();
+		
+		
 		this.window = window;
 		this.buildState = new LevelBuildState();
 		this.buildLevelView = new BuildLevelView(level);
