@@ -12,7 +12,13 @@ public class MoveResetBoard extends Move {
 	@Override
 	public boolean performMove() {
 		level.resetBoard();
+		level.getStats().update();
 		return false;
+	}
+	
+	@Override
+	public int getPoints(){
+		return 50;
 	}
 
 	@Override

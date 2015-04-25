@@ -19,9 +19,16 @@ public class MoveSwap extends Move{
 		this.getSquaresInvolved().get(0).setBlock(b2);
 		this.getSquaresInvolved().get(1).setBlock(b1);
 		
+		level.getStats().update();
+		
 		return true;
 	}
 
+	
+	@Override
+	public int getPoints(){
+		return 10;
+	}
 	@Override
 	public boolean isValid() {
 		if (this.getSquaresInvolved().size() != 2)

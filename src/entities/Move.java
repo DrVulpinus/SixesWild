@@ -2,23 +2,28 @@ package entities;
 
 import java.util.ArrayList;
 
+import src.PuzzleStats;
+
 public abstract class Move {
 	
 	Level level;
 	ArrayList<Square> squaresInvolved;
+	int points;
 	
 	public Move(Level level, ArrayList<Square> squares) {
 		this.level = level;
 		this.squaresInvolved = squares;
 	}
 	
-
-	
 	public abstract boolean performMove();
 	public abstract boolean isValid();
 
 	public Level getLevel() {
 		return level;
+	}
+	
+	public int getPoints(){
+		return 0;
 	}
 
 	public ArrayList<Square> getSquaresInvolved() {

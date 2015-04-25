@@ -14,6 +14,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 
+import builder_controllers.BuildingController;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,7 +35,8 @@ public class MainForm extends JFrame {
 */
 	
 	MenuView menu = new MenuView();
-	BuildLevelView leveleditor = new BuildLevelView();
+	//BuildLevelView leveleditor = new BuildLevelView();
+	BuildingController buildingController;
 	
 	/**
 	 * Launch the application.
@@ -74,29 +77,34 @@ public class MainForm extends JFrame {
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild Builder");
 		
+		
+		
 		menu.getBtnCreateNewLevel().addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("abc");
-				getContentPane().removeAll();
-				getContentPane().add(leveleditor, BorderLayout.CENTER);
-
-				getContentPane().validate();
-				getContentPane().repaint();
-				System.out.println("other");
+				
+				buildingController = new BuildingController(null, MainForm.this);
+				
+				
+//				getContentPane().removeAll();
+//				getContentPane().add(leveleditor, BorderLayout.CENTER);
+//
+//				getContentPane().validate();
+//				getContentPane().repaint();
+//				System.out.println("other");
 			}
 
 
 		});
 		
-		leveleditor.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e){
-				dispose();
-			}
-		});
+//		leveleditor.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
+//			@Override
+//			public void actionPerformed(ActionEvent e){
+//				dispose();
+//			}
+//		});
 		
 	}
 	/*

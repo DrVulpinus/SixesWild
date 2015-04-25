@@ -2,10 +2,10 @@ package forms;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import src.SixesWildWindow;
 import src.StatsView;
 
 import java.awt.FlowLayout;
