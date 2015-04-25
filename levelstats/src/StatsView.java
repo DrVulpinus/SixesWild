@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 //import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.ImageIcon;
 
 //import net.miginfocom.swing.MigLayout;
 
@@ -38,6 +39,11 @@ public class StatsView extends JPanel {
 			JPanel panel = new JPanel();
 			add(panel, "cell 0 1,grow");
 			{
+				JLabel lblNewLabel_1 = new JLabel("");
+				lblNewLabel_1.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+				panel.add(lblNewLabel_1);
+			}
+			{
 				textField = new JTextField();
 				textField.setText("1000");
 				panel.add(textField);
@@ -48,6 +54,16 @@ public class StatsView extends JPanel {
 		{
 			JPanel panel = new JPanel();
 			add(panel, "cell 0 2,grow");
+			{
+				JLabel lblNewLabel_2 = new JLabel("");
+				lblNewLabel_2.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+				panel.add(lblNewLabel_2);
+			}
+			{
+				JLabel lblNewLabel_3 = new JLabel("");
+				lblNewLabel_3.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+				panel.add(lblNewLabel_3);
+			}
 			{
 				textField_1 = new JTextField();
 				textField_1.setText("2000");
@@ -60,6 +76,21 @@ public class StatsView extends JPanel {
 			JPanel panel = new JPanel();
 			add(panel, "cell 0 3,grow");
 			{
+				JLabel lblNewLabel_4 = new JLabel("");
+				lblNewLabel_4.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+				panel.add(lblNewLabel_4);
+			}
+			{
+				JLabel lblNewLabel_5 = new JLabel("");
+				lblNewLabel_5.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+				panel.add(lblNewLabel_5);
+			}
+			{
+				JLabel lblNewLabel_6 = new JLabel("");
+				lblNewLabel_6.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+				panel.add(lblNewLabel_6);
+			}
+			{
 				textField_5 = new JTextField();
 				textField_5.setText("3000");
 				panel.add(textField_5);
@@ -69,7 +100,6 @@ public class StatsView extends JPanel {
 		}
 		add(getpanel_1(), "cell 0 6");
 		add(getpanel_3(), "cell 0 8");
-		add(getlblStarCount(), "cell 0 4");
 		add(getlblMovesLeft(), "cell 0 7");
 		add(getlblPoints(), "cell 0 5");
 		
@@ -118,14 +148,6 @@ public class StatsView extends JPanel {
 			textField_4.setColumns(10);
 		}
 		return panel_3;
-	}
-	
-	
-	private JLabel getlblStarCount(){
-	JLabel lblStarCount = new JLabel("Star Count");
-	lblStarCount.setFont(new Font("Tahoma", Font.PLAIN, 12));
-	//lblStarCount.setBounds(37, 185, 64, 28);
-	return lblStarCount;
 	}
 	
 	private JLabel getlblMovesLeft(){
