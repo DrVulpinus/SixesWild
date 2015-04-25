@@ -26,17 +26,52 @@ public class StatsView extends JPanel {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_5;
 	
 	public StatsView() {
-		setLayout(new MigLayout("", "[center]", "[center][][][][][][]"));
+		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
 		add(getpanel(), "cell 0 0,aligny top");
-		add(getpanel_1(), "cell 0 4");
-		add(getpanel_2(), "cell 0 1");
-		add(getpanel_3(), "cell 0 6");
-		add(getlblStarCount(), "cell 0 2");
-		add(getlblMovesLeft(), "cell 0 5");
-		add(getlblPoints(), "cell 0 3");
+		{
+			JPanel panel = new JPanel();
+			add(panel, "cell 0 1,grow");
+			{
+				textField = new JTextField();
+				textField.setText("1000");
+				panel.add(textField);
+				textField.setColumns(10);
+				textField.setEditable(false);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			add(panel, "cell 0 2,grow");
+			{
+				textField_1 = new JTextField();
+				textField_1.setText("2000");
+				panel.add(textField_1);
+				textField_1.setColumns(10);
+				textField_1.setEditable(false);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			add(panel, "cell 0 3,grow");
+			{
+				textField_5 = new JTextField();
+				textField_5.setText("3000");
+				panel.add(textField_5);
+				textField_5.setColumns(10);
+				textField_5.setEditable(false);
+			}
+		}
+		add(getpanel_1(), "cell 0 6");
+		add(getpanel_3(), "cell 0 8");
+		add(getlblStarCount(), "cell 0 4");
+		add(getlblMovesLeft(), "cell 0 7");
+		add(getlblPoints(), "cell 0 5");
 		
 	}
 	
@@ -71,21 +106,6 @@ public class StatsView extends JPanel {
 		
 		return panel_1;
 	}
-	
-
-	
-	private JPanel getpanel_2(){
-	JPanel panel_2 =new JPanel();
-	panel_2.setBackground(SystemColor.inactiveCaptionBorder);
-	//panel_2.setBounds(37, 72, 64, 101);
-	{
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setOrientation(SwingConstants.VERTICAL);
-		panel_2.add(progressBar);
-	}
-	return panel_2;
-	}
-	
 	private JPanel getpanel_3(){
 		JPanel panel_3 = new JPanel();
 		//panel_3.setBounds(0, 275, 128, 28);
