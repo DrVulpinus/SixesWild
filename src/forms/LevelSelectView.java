@@ -57,10 +57,10 @@ import java.awt.event.ComponentEvent;
 
 public class LevelSelectView extends SelectView {
 	
-	SaveLoadLevel sll = new SaveLoadLevel();	
+	SaveLoadLevel sll;;	
 	private ArrayList<LevelPanel> levelPanels;
 	public LevelSelectView() {
-		
+		sll = SaveLoadLevel.getInstance();
 		setMinimumSize(new Dimension(100, 100));
 		setLayout(new BorderLayout(0, 0));
 		add(getBtnBack(), BorderLayout.SOUTH);

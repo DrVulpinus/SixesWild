@@ -15,17 +15,24 @@ import com.thoughtworks.xstream.io.xml.StaxDriver;
 import entities.Level;
 import entities.XMLFilter;
 
-public final class SaveLoadLevel {
+public class SaveLoadLevel {
 private XStream xstream = null;
 private File saveFile;
 public ArrayList<Level> loadedLevels = new ArrayList<Level>();
 public static final String LEVEL_DIRECTORY = "levels/";
 public static final String FILE_EXTENSION = ".xml";
-public SaveLoadLevel(){
+public static SaveLoadLevel sll;
+private SaveLoadLevel(){
 	xstream = new XStream(new StaxDriver());
 	xstream.ignoreUnknownElements();
 	
 	
+}
+public static SaveLoadLevel getInstance(){
+	if (sll == null){
+		sll = new SaveLoadLevel();
+	}
+	return sll;
 }
 
 	public void saveLevel(Level lvl) throws Exception{
@@ -33,7 +40,7 @@ public SaveLoadLevel(){
 	}
 
 	public void saveLevel(Level lvl, String lvlName) throws Exception{
-		saveFile  = new File(LEVEL_DIRECTORY + lvlName + FILE_EXTENSION);
+		File saveLevelFile  = new File(LEVEL_DIRECTORY + lvlName + FILE_EXTENSION);
 		File saveDir = new File(LEVEL_DIRECTORY);
 		if (!saveDir.exists()){
 			if (!saveDir.mkdirs()) {
@@ -43,7 +50,7 @@ public SaveLoadLevel(){
 		else{
 			System.out.println("File exists");
 		}
-		if (saveFile.canWrite()){
+		if (saveLevelFile.canWrite()){
 			System.out.println("File is ready to be written to");
 		}
 			
