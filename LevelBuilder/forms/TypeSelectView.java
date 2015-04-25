@@ -28,7 +28,7 @@ public class TypeSelectView extends JPanel{
 		}
 		return panel;
 	}
-	private JRadioButton getRdbtnPuzzle() {
+	public JRadioButton getRdbtnPuzzle() {
 		if (rdbtnPuzzle == null) {
 			rdbtnPuzzle = new JRadioButton("Puzzle");
 		}
@@ -41,7 +41,7 @@ public class TypeSelectView extends JPanel{
 		}
 		return panel_1;
 	}
-	private JRadioButton getRdbtnLightning() {
+	public JRadioButton getRdbtnLightning() {
 		if (rdbtnLightning == null) {
 			rdbtnLightning = new JRadioButton("Lightning");
 			rdbtnLightning.setHorizontalAlignment(SwingConstants.CENTER);
@@ -55,7 +55,7 @@ public class TypeSelectView extends JPanel{
 		}
 		return panel_2;
 	}
-	private JRadioButton getRdbtnRelease() {
+	public JRadioButton getRdbtnRelease() {
 		if (rdbtnRelease == null) {
 			rdbtnRelease = new JRadioButton("Release");
 			rdbtnRelease.setHorizontalAlignment(SwingConstants.CENTER);
@@ -69,7 +69,7 @@ public class TypeSelectView extends JPanel{
 		}
 		return panel_3;
 	}
-	private JRadioButton getRdbtnElimination() {
+	public JRadioButton getRdbtnElimination() {
 		if (rdbtnElimination == null) {
 			rdbtnElimination = new JRadioButton("Elimination");
 		}
