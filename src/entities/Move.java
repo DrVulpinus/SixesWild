@@ -12,8 +12,6 @@ public abstract class Move {
 		this.squaresInvolved = squares;
 	}
 	
-
-	
 	public abstract boolean performMove();
 	public abstract boolean isValid();
 
@@ -23,6 +21,14 @@ public abstract class Move {
 
 	public ArrayList<Square> getSquaresInvolved() {
 		return squaresInvolved;
+	}
+	
+	public int updateScore(){
+		int score = getLevel().getStats().getScore();
+		if(performMove()){
+			 score = score + getLevel().getStats().getPoints();
+		}
+		return score;
 	}
 	
 	public boolean areSquaresAdjacent() {

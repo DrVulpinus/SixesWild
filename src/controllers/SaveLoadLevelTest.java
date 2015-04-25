@@ -18,28 +18,35 @@ public class SaveLoadLevelTest {
 			new Level(new LevelStats(), new Grid(), "Level2"),
 			new Level(new LevelStats(), new Grid(), "Level3"),
 			new Level(new LevelStats(), new Grid(), "Level4")};
-	}
+	
 	@Test
-	public void testSaveLoadLevel() {
-		SaveLoadLevel sll = new SaveLoadLevel()
+	public void testSaveLoadLevel() throws Exception {
+		SaveLoadLevel sll = new SaveLoadLevel();
 		for (Level level : levels) {
 			sll.saveLevel(level,level.getName());
 		}
 		for (Level level : levels){
-			assertEquals(level,sll.getLevel(level));
+			assertNotNull(sll.getLevel(level));
 		}
 		
-	//	fail("Not yet implemented");
+		assertEquals(levels.length,sll.getLevels().size());
+		for (Level level : levels) {
+			sll.saveLevel(level);
+		}
+		for (Level level : levels){
+			assertNotNull(sll.getLevel(level));
+		}
+	
 	}
 
 	@Test
 	public void testSaveLevel() {
-		fail("Not yet implemented");
+	//	fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetLevel() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }

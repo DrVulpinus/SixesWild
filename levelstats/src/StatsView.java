@@ -158,7 +158,7 @@ public class StatsView extends JPanel {
 	
 	}
 	private JLabel getlblPoints(){
-	JLabel lblPoints = new JLabel("Points:");
+	JLabel lblPoints = new JLabel("Score:");
 	//lblPoints.setBounds(47, 210, 43, 13);
 	return lblPoints;
 	}

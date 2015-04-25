@@ -2,8 +2,15 @@ package src;
 
 import javax.swing.Timer;
 
+import entities.MoveRegular;
+
 
 public class LightningStats extends LevelStats{
+
+	LightningStats(int selectedType, int score, int points, MoveRegular move) {
+		super(selectedType, score, points);
+		// TODO Auto-generated constructor stub
+	}
 
 	Timer timer;
 	
