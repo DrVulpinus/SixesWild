@@ -19,8 +19,8 @@ public final class SaveLoadLevel {
 private XStream xstream = null;
 private File saveFile;
 public ArrayList<Level> loadedLevels = new ArrayList<Level>();
-public final String LEVEL_DIRECTORY = "levels/";
-public final String FILE_EXTENSION = ".xml";
+public static final String LEVEL_DIRECTORY = "levels/";
+public static final String FILE_EXTENSION = ".xml";
 public SaveLoadLevel(){
 	xstream = new XStream(new StaxDriver());
 	xstream.ignoreUnknownElements();
@@ -59,7 +59,7 @@ public SaveLoadLevel(){
 		File savedFile = new File(LEVEL_DIRECTORY + savedLevel.getName() + FILE_EXTENSION);
 		return getLevel(savedFile);
 	}
-	ArrayList<Level> getLevels(){
+	public ArrayList<Level> getLevels(){
 		File directory = new File(LEVEL_DIRECTORY);
 		loadedLevels.clear();
 		for (File file: directory.listFiles(new XMLFilter())) {

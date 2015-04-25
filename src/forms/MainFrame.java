@@ -116,7 +116,7 @@ public class MainFrame extends JFrame{
 		
 		});
 		
-		lvlSelectView.getBtnNewButton().addActionListener(new ActionListener(){
+		/*lvlSelectView.getBtnNewButton().addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -128,11 +128,11 @@ public class MainFrame extends JFrame{
 				System.out.println("back to main menu");				
 			}
 			
-		});
-		
+		});*/
+	
 		lvlSelectView.getPanel_1().addMouseListener(new MouseListener() {
 			
-			/*@Override
+			@Override
 			public void actionPerformed(ActionEvent e){
 				getContentPane().removeAll();
 				getContentPane().add(levelPlay, BorderLayout.CENTER);
@@ -141,7 +141,7 @@ public class MainFrame extends JFrame{
 				getContentPane().repaint();
 				
 			}
-			 */
+			 
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 

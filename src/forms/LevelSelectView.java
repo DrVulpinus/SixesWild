@@ -11,35 +11,69 @@ import javax.management.timer.TimerMBean;
 import javax.swing.JLabel;
 
 import entities.Level;
+
 import javax.swing.BoxLayout;
+
 import java.awt.GridLayout;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+
+import controllers.SaveLoadLevel;
+
 import java.awt.Font;
+
 import javax.swing.JPanel;
 import javax.swing.JInternalFrame;
 import javax.swing.JScrollPane;
 import javax.swing.ImageIcon;
+import javax.swing.JViewport;
+import javax.swing.Scrollable;
+
 import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.FlowLayout;
+import java.awt.Rectangle;
+
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+
 import net.miginfocom.swing.MigLayout;
+
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.BorderLayout;
+
+import javax.swing.ScrollPaneConstants;
+
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 
 public class LevelSelectView extends SelectView {
+	
+	SaveLoadLevel sll = new SaveLoadLevel();	
+	
 	public LevelSelectView() {
+		
 		setMinimumSize(new Dimension(100, 100));
-		setLayout(new MigLayout("", "[90px,center][90px][90px][90px][90px]", "[75px,center][75px][75px][75px,bottom]"));
-		add(getBtnNewButton(), "cell 4 3,growx,aligny bottom");
+		setLayout(new BorderLayout(0, 0));
+		add(getBtnBack(), BorderLayout.SOUTH);
+		add(getScrollPaneLevels(), BorderLayout.CENTER);
+		for (Level lvl : sll.getLevels()) {
+			getPnlLevelsContain().add(new LevelPanel(lvl));
+		}
 	}
 
 	ArrayList<Level> levels = new ArrayList<Level>();
-	private JButton btnNewButton;
+	private JButton btnBack;
+	private JScrollPane scrollPaneLevels;
+	private JPanel panel;
 	
 	
 	@Override
@@ -52,16 +86,29 @@ public class LevelSelectView extends SelectView {
 		
 		
 	}
-	
-	
-	public JButton getBtnNewButton() {
-		if (btnNewButton == null) {
-			btnNewButton = new JButton("Back\n");
-			btnNewButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
+	JButton getBtnBack() {
+		if (btnBack == null) {
+			btnBack = new JButton("Back");
 		}
-		return btnNewButton;
+		return btnBack;
 	}
+	JScrollPane getScrollPaneLevels() {
+		if (scrollPaneLevels == null) {
+			scrollPaneLevels = new JScrollPane();
+			scrollPaneLevels.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			scrollPaneLevels.setViewportView(getPnlLevelsContain());
+			scrollPaneLevels.getVerticalScrollBar().setUnitIncrement(25);
+			
+		}
+		return scrollPaneLevels;
+	}
+	JPanel getPnlLevelsContain() {
+		if (panel == null) {		
+			panel = new JPanel();		
+			panel.setLayout(new WrapLayout());
+			
+		}
+		return panel;
+	}
+	
 }
