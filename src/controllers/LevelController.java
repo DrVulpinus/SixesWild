@@ -80,9 +80,9 @@ public class LevelController {
 			
 		});
 		
-		levelPlayView.getStatsView().addMoveListener(){
-			
-		}
+//		levelPlayView.getStatsView().addMoveListener(){
+//			
+//		};
 	}
 	
 

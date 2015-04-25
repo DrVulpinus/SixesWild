@@ -4,5 +4,5 @@ import java.util.*;
 
 public interface MoveListener {
 
-	public void moveWasDone();
+	public void moveWasDone(MoveEvent me);
 }
