@@ -1,10 +1,10 @@
 package src;
 
 
-public class PuzzleStatsView extends LevelStatsView{
+public class PuzzleStatsView extends StatsView{
 
 	PuzzleStatsView(LevelStats stats) {
-		super(stats);
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

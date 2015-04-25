@@ -1,7 +1,14 @@
 package src;
 
+import entities.MoveRegular;
+
 
 public class EliminationStats extends LevelStats{
+
+	EliminationStats(int selectedType, int score, int points, MoveRegular move) {
+		super(selectedType, score, points, move);
+		// TODO Auto-generated constructor stub
+	}
 
 	int releaseBlocksLeft;
 	
