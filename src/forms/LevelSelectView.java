@@ -58,15 +58,18 @@ import java.awt.event.ComponentEvent;
 public class LevelSelectView extends SelectView {
 	
 	SaveLoadLevel sll = new SaveLoadLevel();	
-	
+	private ArrayList<LevelPanel> levelPanels;
 	public LevelSelectView() {
 		
 		setMinimumSize(new Dimension(100, 100));
 		setLayout(new BorderLayout(0, 0));
 		add(getBtnBack(), BorderLayout.SOUTH);
 		add(getScrollPaneLevels(), BorderLayout.CENTER);
+		levelPanels = new ArrayList<LevelPanel>();
 		for (Level lvl : sll.getLevels()) {
-			getPnlLevelsContain().add(new LevelPanel(lvl));
+			LevelPanel lvlPnl = new LevelPanel(lvl);
+			levelPanels.add(lvlPnl);
+			getPnlLevelsContain().add(lvlPnl);
 		}
 	}
 
@@ -85,6 +88,9 @@ public class LevelSelectView extends SelectView {
 		super.loadItems();//Do this last to add all of the items to the scrollPane
 		
 		
+	}
+	public ArrayList<LevelPanel> getLevelPanels(){
+		return levelPanels;
 	}
 	JButton getBtnBack() {
 		if (btnBack == null) {

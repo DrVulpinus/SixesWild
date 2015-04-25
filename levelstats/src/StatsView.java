@@ -30,8 +30,8 @@ public class StatsView extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_5;
-	
-	public StatsView() {
+
+	public StatsView(){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
 		add(getpanel(), "cell 0 0,aligny top");
@@ -102,10 +102,10 @@ public class StatsView extends JPanel {
 		add(getpanel_3(), "cell 0 8");
 		add(getlblMovesLeft(), "cell 0 7");
 		add(getlblPoints(), "cell 0 5");
-		
+
 	}
-	
-	
+
+
 	private JPanel getpanel() {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.inactiveCaptionBorder);
@@ -118,9 +118,9 @@ public class StatsView extends JPanel {
 		}
 		return panel;
 	}
-	
-	
-	
+
+
+
 	private JPanel getpanel_1() {
 		JPanel panel_1 = new JPanel();
 		//panel_1.setBounds(28, 225, 73, 28);
@@ -133,7 +133,7 @@ public class StatsView extends JPanel {
 			textField_3.setText("0");
 			textField_3.setColumns(10);
 		}
-		
+
 		return panel_1;
 	}
 	private JPanel getpanel_3(){
@@ -149,29 +149,29 @@ public class StatsView extends JPanel {
 		}
 		return panel_3;
 	}
-	
+
 	private JLabel getlblMovesLeft(){
-	JLabel lblMovesLeft = new JLabel("Moves Left:");
-	//lblMovesLeft.setBounds(28, 253, 94, 15);
-	
-	return lblMovesLeft;
-	
+		JLabel lblMovesLeft = new JLabel("Moves Left:");
+		//lblMovesLeft.setBounds(28, 253, 94, 15);
+
+		return lblMovesLeft;
+
 	}
 	private JLabel getlblPoints(){
-	JLabel lblPoints = new JLabel("Score:");
-	//lblPoints.setBounds(47, 210, 43, 13);
-	return lblPoints;
+		JLabel lblPoints = new JLabel("Score:");
+		//lblPoints.setBounds(47, 210, 43, 13);
+		return lblPoints;
 	}
-	
-	
+
+
 	public static void main(String[] arg) {
 		//stats = new LevelStats();
-		 //statsview = new LevelStatsView(stats);
-		
+		//statsview = new LevelStatsView(stats);
+
 		StatsView w = new StatsView();
 		//w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		w.setVisible(true);
 	}
 
-		
-	}
+
+}
