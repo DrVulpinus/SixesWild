@@ -7,8 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import src.LevelStats;
-import src.LevelStatsView;
 import entities.Probability;
 import forms.ProbabilityView;
 import forms.TypeSelectView;
