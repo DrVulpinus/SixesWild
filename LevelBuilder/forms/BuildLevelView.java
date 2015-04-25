@@ -4,13 +4,22 @@ import javax.swing.AbstractButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+
 import java.awt.FlowLayout;
+
 import javax.swing.border.BevelBorder;
+
 import src.StatsView;
+
 import java.awt.Color;
+
 import javax.swing.JButton;
+
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.JComboBox;
+
+import entities.Level;
 
 
 public class BuildLevelView extends JPanel{
@@ -30,7 +39,30 @@ public class BuildLevelView extends JPanel{
 	private JButton btnExitWithoutSaving;
 	private JComboBox toolSelector;
 	
+	private Level level;
+	
+	
 	public BuildLevelView() {
+		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[center][29.00,top][30.00px][71.00,grow,center][bottom]"));
+		add(getMenuBar(), "cell 0 0 3 1,aligny top");
+		add(getMenuBar_1(), "cell 0 1 3 1");
+		add(getTestJPanel(), "cell 0 3,grow");
+		add(getGameGridView(), "cell 1 3,grow");
+		add(getToolSelector(), "cell 2 2,grow");
+		
+
+		
+		SpecialMoveView specialMoveView = new SpecialMoveView();
+		add(specialMoveView, "cell 2 3,grow");
+		add(getBtnExitWithoutSaving(), "cell 2 4");
+		
+	}
+	
+	
+	public BuildLevelView(Level level) {
+		this.gameGridView = new GameGridView(level.getGrid());
+		
+		
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[center][29.00,top][30.00px][71.00,grow,center][bottom]"));
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 3 1");
@@ -117,7 +149,7 @@ public class BuildLevelView extends JPanel{
 	}
 	private GameGridView getGameGridView() {
 		if (gameGridView == null) {
-			gameGridView = new GameGridView();
+				gameGridView = new GameGridView();
 		}
 		return gameGridView;
 	}
