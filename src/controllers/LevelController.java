@@ -16,9 +16,6 @@ import entities.Square;
 import forms.LevelPlayView;
 import forms.MainFrame;
 
-
-
-
 public class LevelController {
 
 	Level level;
@@ -82,6 +79,10 @@ public class LevelController {
 			}
 			
 		});
+		
+		levelPlayView.getStatsView().addMoveListener(){
+			
+		}
 	}
 	
 

@@ -74,8 +74,6 @@ public class MoveController implements MoveControlListener {
 		}
 		
 		selectedSquareViews.clear();
-		
-		level.getStats().update();
 		this.started = false;
 		
 		System.out.println("End Move");
