@@ -2,13 +2,12 @@ package src;
 
 
 public class ReleaseStats extends LevelStats{
-
-	ReleaseStats(int selectedType, int score, int points) {
-		super(selectedType, score, points);
-		// TODO Auto-generated constructor stub
-	}
-
 	int markedSquares;
+	
+	public ReleaseStats(int score, int points, int markedSquares){
+		super(0, score, points);
+		this.markedSquares = markedSquares;
+	}
 	
 	@Override
 	public boolean winCondition() {

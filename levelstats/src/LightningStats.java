@@ -7,9 +7,9 @@ import entities.MoveRegular;
 
 public class LightningStats extends LevelStats{
 
-	LightningStats(int selectedType, int score, int points) {
-		super(selectedType, score, points);
-		// TODO Auto-generated constructor stub
+	public LightningStats(int score, int points, Timer timer) {
+		super(0, score, points);
+		this.timer = timer;
 	}
 
 	Timer timer;

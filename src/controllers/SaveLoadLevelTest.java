@@ -21,7 +21,7 @@ public class SaveLoadLevelTest {
 	
 	@Test
 	public void testSaveLoadLevel() throws Exception {
-		SaveLoadLevel sll = new SaveLoadLevel();
+		SaveLoadLevel sll = SaveLoadLevel.getInstance();
 		for (Level level : levels) {
 			sll.saveLevel(level,level.getName());
 		}

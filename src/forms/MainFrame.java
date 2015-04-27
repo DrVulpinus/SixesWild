@@ -15,6 +15,7 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
+
 import src.LevelStats;
 
 import com.sun.org.apache.xml.internal.serialize.XML11Serializer;
@@ -26,6 +27,7 @@ import entities.Level;
 import entities.Location;
 import entities.Square;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -65,7 +67,7 @@ public class MainFrame extends JFrame{
 		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
-		setSize(1400, 1400);
+		setSize(700, 700);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
 		//setResizable(false);

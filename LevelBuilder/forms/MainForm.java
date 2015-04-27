@@ -21,22 +21,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.JButton;
 
 public class MainForm extends JFrame {
-/*
-	private JPanel contentPane;
-	private JMenuBar menuBar;
-	private JMenuItem mntmAddBlock;
-	private JMenuItem mntmChangeFrequency;
-	private JMenuItem mntmAddSpecialMove;
-	private JMenuItem mntmChangeWinConditions;
-	private JMenuItem mntmRemoveBloc;
-	private JMenuItem mntmRemoveSpecialMove;
-*/
-	
-	MenuView menu = new MenuView();
 	//BuildLevelView leveleditor = new BuildLevelView();
 	BuildingController buildingController;
+	private JPanel panel;
+	private JButton btnCreatePuzzleLevel;
+	private JPanel panel_1;
+	private JButton btnCreateEliminationLevel;
+	private JPanel panel_2;
+	private JButton btnCreateLightningLevel;
+	private JPanel panel_3;
+	private JButton btnCreateReleaseLevel;
 	
 	/**
 	 * Launch the application.
@@ -68,8 +66,11 @@ public class MainForm extends JFrame {
 		});
 		
 		getContentPane().setMinimumSize(new Dimension(500, 500));
-		getContentPane().setLayout(new BorderLayout(0, 0));
-		getContentPane().add(menu, BorderLayout.CENTER);
+		getContentPane().setLayout(new MigLayout("", "[][46.00][48.00][127.00,grow][62.00][][]", "[130.00][34.00][30.00][42.00][101.00,grow][131.00]"));
+		getContentPane().add(getPanel_2(), "cell 3 1,grow");
+		getContentPane().add(getPanel(), "cell 3 2,grow");
+		getContentPane().add(getPanel_1(), "cell 3 3,grow");
+		getContentPane().add(getPanel_3(), "cell 3 4,grow");
 		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
@@ -77,26 +78,11 @@ public class MainForm extends JFrame {
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild Builder");
 		
-		
-		
-		menu.getBtnCreateNewLevel().addActionListener(new ActionListener() {
-
+		getBtnCreatePuzzleLevel().addActionListener(new ActionListener(){
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void actionPerformed(ActionEvent e){
 				buildingController = new BuildingController(null, MainForm.this);
-				
-				
-//				getContentPane().removeAll();
-//				getContentPane().add(leveleditor, BorderLayout.CENTER);
-//
-//				getContentPane().validate();
-//				getContentPane().repaint();
-//				System.out.println("other");
 			}
-
-
 		});
 		
 //		leveleditor.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
@@ -158,4 +144,56 @@ public class MainForm extends JFrame {
 		return mntmRemoveSpecialMove;
 	}
 	*/
+	private JPanel getPanel() {
+		if (panel == null) {
+			panel = new JPanel();
+			panel.add(getBtnCreateLightningLevel());
+		}
+		return panel;
+	}
+	private JButton getBtnCreatePuzzleLevel() {
+		if (btnCreatePuzzleLevel == null) {
+			btnCreatePuzzleLevel = new JButton("Create Puzzle Level");
+		}
+		return btnCreatePuzzleLevel;
+	}
+	private JPanel getPanel_1() {
+		if (panel_1 == null) {
+			panel_1 = new JPanel();
+			panel_1.add(getBtnCreateEliminationLevel());
+		}
+		return panel_1;
+	}
+	private JButton getBtnCreateEliminationLevel() {
+		if (btnCreateEliminationLevel == null) {
+			btnCreateEliminationLevel = new JButton("Create Elimination Level");
+		}
+		return btnCreateEliminationLevel;
+	}
+	private JPanel getPanel_2() {
+		if (panel_2 == null) {
+			panel_2 = new JPanel();
+			panel_2.add(getBtnCreatePuzzleLevel());
+		}
+		return panel_2;
+	}
+	private JButton getBtnCreateLightningLevel() {
+		if (btnCreateLightningLevel == null) {
+			btnCreateLightningLevel = new JButton("Create Lightning Level");
+		}
+		return btnCreateLightningLevel;
+	}
+	private JPanel getPanel_3() {
+		if (panel_3 == null) {
+			panel_3 = new JPanel();
+			panel_3.add(getBtnCreateReleaseLevel());
+		}
+		return panel_3;
+	}
+	private JButton getBtnCreateReleaseLevel() {
+		if (btnCreateReleaseLevel == null) {
+			btnCreateReleaseLevel = new JButton("Create Release Level");
+		}
+		return btnCreateReleaseLevel;
+	}
 }
