@@ -7,11 +7,16 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
+
 import javax.swing.JComponent;
+
+import entities.Grid;
+import entities.Location;
 
 public class BuilderGridView extends JComponent implements MouseListener {
 
-	
+int xLoc;
+int yLoc;
 Color color = new Color(0,0,0); 
 double currentXVal= 0;
 double currentYVal = 0;
@@ -19,9 +24,11 @@ int yNumLines =10;
 int xNumLines =10;
 double xIncrement = 0;
 double yIncrement = 0;
-	public BuilderGridView (){
-		
+	public BuilderGridView (Grid grid, Location location ){
+		//this.grid = grid;
+		//this.location = location;
 		addMouseListener(this);
+		
 	}
 	public void paintComponent(Graphics g) {
        Graphics2D g2 = (Graphics2D) g;
@@ -79,8 +86,22 @@ double yIncrement = 0;
 		int YOutput = (yNumLines - roundYOutput);
 		//int XOutput = (yNumLines - roundYOutput);
 		System.out.println(roundXOutput+","+YOutput);
+		xLoc = roundXOutput;
+		yLoc = YOutput;
 	
 	}
+	
+	public int[] getGridLocation(){
+		
+		int Location[];
+		Location= new int[1];
+		Location[0] =xLoc;
+		Location[1] =yLoc;
+		
+		return Location;
+		
+	}
+	
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
@@ -97,3 +118,10 @@ double yIncrement = 0;
 		// TODO Auto-generated method stub
 		
 	} }
+
+
+// sudo code
+
+/*
+ * int moveType
+ */
