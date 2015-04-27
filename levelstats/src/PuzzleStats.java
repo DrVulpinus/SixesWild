@@ -2,9 +2,12 @@ package src;
 
 public class PuzzleStats extends LevelStats {
 
-	PuzzleStats(int selectedType, int score, int points) {
+	public PuzzleStats(int score, int points) {
+		super(0, score, points);
+	}
+	
+	public PuzzleStats(int selectedType, int score, int points) {
 		super(selectedType, score, points);
-		// TODO Auto-generated constructor stub
 	}
 
 	int numMovesLeft;

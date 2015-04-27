@@ -9,6 +9,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.border.BevelBorder;
 
+import src.PuzzleStats;
 import src.StatsView;
 
 import java.awt.Color;
@@ -20,6 +21,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JComboBox;
 
 import builder_entities.LevelBuildState;
+import entities.Grid;
 import entities.Level;
 
 
@@ -61,7 +63,15 @@ public class BuildLevelView extends JPanel{
 	
 	
 	public BuildLevelView(Level level) {
-		this.gameGridView = new GameGridView(level.getGrid());
+		
+		this.level = level;
+		
+		if (this.level == null)
+			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
+		
+		
+		
+		this.gameGridView = new GameGridView(this.level.getGrid());
 		
 		
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[center][29.00,top][30.00px][71.00,grow,center][bottom]"));
