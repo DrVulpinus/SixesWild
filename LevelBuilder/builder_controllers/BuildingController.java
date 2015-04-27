@@ -7,8 +7,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import controllers.UseToolController;
 import builder_entities.LevelBuildState;
 import src.LevelStats;
+import src.PuzzleStats;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
@@ -27,18 +29,22 @@ public class BuildingController {
 
 	Level level;
 	BuildLevelView buildLevelView;
-	LevelBuildState buildState;
 	MainForm window;
+	ToolSelectionController toolSelect;
+	LevelBuildState buildState;
+	UseToolController useTool;
+
 	
 	public BuildingController(Level level, MainForm window) {
 		this.level = level;
-		if (this.level == null)
-			this.level = new Level();
 		
 		
 		this.window = window;
 		this.buildState = new LevelBuildState();
 		this.buildLevelView = new BuildLevelView(level);
+		
+		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
+		this.useTool = new UseToolController(level, buildState);
 		
 		
 		

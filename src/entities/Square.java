@@ -41,6 +41,11 @@ public class Square
 			return false;
 	}
 	
+	public void addNeighbors(ArrayList<Square> squares) {
+		for (Square sq : squares)
+			this.addNeighbor(sq);
+	}
+	
 	
 	
 	

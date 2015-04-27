@@ -39,4 +39,13 @@ public class Location
 		return (this.getRow() - other.getRow() == 1 || this.getRow() - other.getRow() == -1) ^
 				(this.getCol() - other.getCol() == 1 || this.getCol() - other.getCol() == -1);
 	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (!(other instanceof Location))
+			return false;
+		
+		return (this.getRow() == ((Location)other).getRow() && this.getCol() == ((Location)other).getCol());
+	}
+	
 }

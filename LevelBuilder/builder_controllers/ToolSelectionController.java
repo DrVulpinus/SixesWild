@@ -8,6 +8,12 @@ import javax.swing.JComboBox;
 import forms.BuildLevelView;
 import builder_entities.LevelBuildState;
 
+/**
+ * 
+ * @author Alex Wald
+ *
+ */
+
 public class ToolSelectionController implements ActionListener  {
 	
 	BuildLevelView buildLevelView;
