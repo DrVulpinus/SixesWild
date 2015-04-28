@@ -38,17 +38,14 @@ public class LevelController implements ChangeLevelPlayState{
 		this.levelPlayView = new LevelPlayView(level, moveController);
 		this.selectMoveController = new SelectMoveController(levelPlayView, playState);
 		levelPlayView.setLevel(level);
-		
-		
-		addLevelPlayListeners();
-		
-		
+		playState.addStateChangedListener(this);
+		playState.setSelectedMove(playState.MOVE_REGULAR);		
+		addLevelPlayListeners();		
 		window.getContentPane().removeAll();
-		window.getContentPane().add(levelPlayView, BorderLayout.CENTER);
-		
+		window.getContentPane().add(levelPlayView, BorderLayout.CENTER);		
 		window.getContentPane().validate();
 		window.getContentPane().repaint();
-		playState.addStateChangedListener(this);
+		
 		levelPlayView.getSpecialMoveView().getSwapSquareButton().addActionListener(new ActionListener() {
 			
 			@Override
