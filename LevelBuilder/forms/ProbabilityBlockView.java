@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
-public class ProbabilityView extends JPanel{
+public class ProbabilityBlockView extends JPanel{
 	
 	private JPanel panel;
 	private JTextField textField;
@@ -45,7 +45,7 @@ public class ProbabilityView extends JPanel{
 	private JButton btnApplyChanges;
 	
 	
-	public ProbabilityView() {
+	public ProbabilityBlockView() {
 		setLayout(new MigLayout("", "[][grow][304.00,grow][33.00,grow][grow]", "[][29.00][23.00][][][bottom][grow,bottom]"));
 		add(getPanel(), "cell 2 0,grow");
 		add(getPanel_1(), "cell 2 1,grow");
