@@ -49,7 +49,7 @@ public class BuildLevelView extends JPanel{
 	private JButton btnClose;
 	
 	
-	public BuildLevelView() {
+	/*public BuildLevelView() {
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][31.00,top][8.00][grow][grow][grow][bottom]"));
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 3 1");
@@ -66,16 +66,31 @@ public class BuildLevelView extends JPanel{
 		add(getPanel_1(), "cell 2 5,grow");
 		
 	}
-	
+	*/
 	
 	public BuildLevelView(Level level) {
-		this();
+		
 		this.level = level;
 		
 		if (this.level == null)
 			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
 		
 		this.builderGridView = new BuilderGridView(this.level.getGrid());
+		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][31.00,top][8.00][grow][grow][grow][bottom]"));
+		add(getMenuBar(), "cell 0 0 3 1,aligny top");
+		add(getMenuBar_1(), "cell 0 1 3 1");
+		add(getTestJPanel(), "cell 0 3 1 4,grow");
+		add(getBuilderGridView(), "cell 1 3,grow");
+		add(getToolSelector(), "cell 2 2,grow");
+		
+
+		
+		SpecialMoveView specialMoveView = new SpecialMoveView();
+		add(specialMoveView, "cell 2 3,grow");
+		add(getBtnExitWithoutSaving(), "cell 2 4");
+		add(getPanel(), "cell 2 4,grow");
+		add(getPanel_1(), "cell 2 5,grow");
+		
 		
 //		
 //		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26,00, center][104.00,top][8.00][71.00,grow,center][bottom]"));
