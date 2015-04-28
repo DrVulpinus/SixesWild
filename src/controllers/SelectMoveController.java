@@ -1,5 +1,6 @@
 package controllers;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -46,9 +47,9 @@ SpecialMoveView moveView = new SpecialMoveView();
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+			((JButton)(e.getSource())).setBackground(Color.GREEN);
 			if (e.getSource() == swap){
-				playState.setSelectedMove(LevelPlayState.MOVE_SWAP);
+				playState.setSelectedMove(LevelPlayState.MOVE_SWAP);				
 			}
 			
 			if (e.getSource() == remove){

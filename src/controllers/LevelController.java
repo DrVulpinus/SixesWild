@@ -1,9 +1,11 @@
 package controllers;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import src.LevelStats;
@@ -17,7 +19,7 @@ import entities.Square;
 import forms.LevelPlayView;
 import forms.MainFrame;
 
-public class LevelController {
+public class LevelController implements ChangeLevelPlayState{
 
 	Level level;
 	LevelPlayView levelPlayView;
@@ -25,7 +27,8 @@ public class LevelController {
 	SelectMoveController selectMoveController;
 	LevelPlayState playState;
 	MainFrame window;
-	
+	public static final Color SELECTED_MOVE_COLOR = Color.GREEN;
+	public static final Color UNSELECTED_MOVE_COLOR = Color.PINK;
 	public LevelController(Level level, MainFrame window) {
 
 		this.level = level;
@@ -45,7 +48,34 @@ public class LevelController {
 		
 		window.getContentPane().validate();
 		window.getContentPane().repaint();
+		playState.addStateChangedListener(this);
+		levelPlayView.getSpecialMoveView().getSwapSquareButton().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				playState.setSelectedMove(playState.MOVE_SWAP);
+				
+			}
+		});
+		levelPlayView.getSpecialMoveView().getRemoveSquareButton().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				playState.setSelectedMove(playState.MOVE_REMOVE);
+				
+			}
+		});
+		levelPlayView.getSpecialMoveView().getResetBoardButton().addActionListener(new ActionListener(
+				) {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				playState.setSelectedMove(playState.MOVE_RESET);
+				
+			}
+		});
 	}
+	
 	
 	
 	private void setSampleLevel() {
@@ -66,6 +96,8 @@ public class LevelController {
 	}
 	
 	
+	
+	
 	private void addLevelPlayListeners() {
 		levelPlayView.getbtnBack().addActionListener(new ActionListener(){
 
@@ -84,6 +116,35 @@ public class LevelController {
 //		levelPlayView.getStatsView().addMoveListener(){
 //			
 //		};
+	}
+
+
+
+	@Override
+	public void playStateChanged(int newState) {		
+		switch(newState){
+			case LevelPlayState.MOVE_REGULAR:
+					levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+					//levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(Color.GRAY);
+				break;
+			case LevelPlayState.MOVE_REMOVE:
+					levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(SELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+				break;
+			case LevelPlayState.MOVE_RESET:
+				levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+				levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(SELECTED_MOVE_COLOR);
+				levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+				break;
+			case LevelPlayState.MOVE_SWAP:
+				levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+				levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(UNSELECTED_MOVE_COLOR);
+				levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(SELECTED_MOVE_COLOR);
+				break;
+		}
 	}
 	
 
