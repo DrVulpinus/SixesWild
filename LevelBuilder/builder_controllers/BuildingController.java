@@ -36,15 +36,14 @@ public class BuildingController {
 
 	
 	public BuildingController(Level level, MainForm window) {
-		this.level = level;
 		
+		this.level = level;
 		
 		this.window = window;
 		this.buildState = new LevelBuildState();
-		this.buildLevelView = new BuildLevelView(level);
-		
-		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
 		this.useTool = new UseToolController(level, buildState);
+		this.buildLevelView = new BuildLevelView(level, useTool);
+		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
 		
 		
 		

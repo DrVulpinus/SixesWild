@@ -20,6 +20,7 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JComboBox;
 
+import Interfaces.ToolControlListener;
 import builder_entities.LevelBuildState;
 import entities.Grid;
 import entities.Level;
@@ -48,6 +49,8 @@ public class BuildLevelView extends JPanel{
 	private JPanel panel_1;
 	private JButton btnClose;
 	
+	private ToolControlListener useTool;
+	
 	
 	/*public BuildLevelView() {
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][31.00,top][8.00][grow][grow][grow][bottom]"));
@@ -68,14 +71,14 @@ public class BuildLevelView extends JPanel{
 	}
 	*/
 	
-	public BuildLevelView(Level level) {
+	public BuildLevelView(Level level, ToolControlListener useTool) {
 		
 		this.level = level;
 		
 		if (this.level == null)
 			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
 		
-		this.builderGridView = new BuilderGridView(this.level.getGrid());
+		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
 		setLayout(new MigLayout("", "[][203.00px,grow,fill][130px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
 		
 		add(getMenuBar(), "cell 0 0 4 1,aligny top");

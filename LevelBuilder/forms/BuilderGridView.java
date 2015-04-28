@@ -21,28 +21,49 @@ import entities.Grid;
 import entities.Location;
 import entities.Square;
 
-public class BuilderGridView extends JPanel implements MouseListener{
+public class BuilderGridView extends JPanel implements MouseListener {
 
 	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
-	MoveControlListener moveControlListener = null;
 	ToolControlListener toolListener;
 	boolean isFilled = false;
 	
 	Color color = new Color(0,0,0); 
 	double currentXVal = 0;
 	double currentYVal = 0;
-	int columns = 1;
-	int rows = 1;
+	int columns = 9;
+	int rows = 9;
 	double xIncrement = 0;
 	double yIncrement = 0;
 	
 	Rectangle2D rect = null;
 	Grid grid;
 	
-	public BuilderGridView(Grid grid, ToolControlListener toolListener ){
+	public BuilderGridView(Grid grid, ToolControlListener toolListener){
 		this.grid = grid;
 	    this.toolListener = toolListener;
-	}
+		this.setSquares(grid);
+	
+		this.addMouseListener(this);
+		this.setBackground(new Color(0xFFFFFF));
+	
+		
+		//isFilled = true;
+		}
+		
+//		setLayout(null);//Make sure it is absolute layout
+//		for (int y = 0; y < 9; y++){
+//			for (int x = 0; x < 9; x++) {				
+//				Square s = new Square();
+//				s.setLoc(new Location(y, x));
+//				s.setBlock(new Block(1, 2));
+//				SquareView sV = new SquareView(s);
+//				squareViews.add(sV);
+//				this.add(sV);
+//
+//			}
+//		//isFilled = true;
+//		}
+	
 	
 	public BuilderGridView() {
 		addComponentListener(new ComponentAdapter() {
@@ -69,29 +90,32 @@ public class BuilderGridView extends JPanel implements MouseListener{
 		}
 		fillGrid();
 	}
-	public BuilderGridView(ArrayList<Square> squares) {
-		this.setSquares(squares);
-	}
 	
 	
-	public BuilderGridView(Grid grid, MoveControlListener moveControlListener) {
-		this.moveControlListener = moveControlListener;
-		this.setSquares(grid);
-		
-	}
+
 	
 	public void setSquares(ArrayList<Square> squares) {
 		this.removeAll();
 		setLayout(null); //Make sure it is absolute layout
 		for (Square square : squares) {
 			SquareView sV = new SquareView(square);
-			sV.addMoveControlListener(moveControlListener);
 			squareViews.add(sV);
 			this.add(sV);
-			columns = Math.max(columns, square.getLoc().getCol());
-			rows = Math.max(rows, square.getLoc().getRow());
 			
 		}
+		
+//		for (int y = 0; y < 9; y++){
+//			for (int x = 0; x < 9; x++) {				
+//				Square s = new Square();
+//				s.setLoc(new Location(y, x));
+//				//s.setBlock(new Block(1, 2));
+//				SquareView sV = new SquareView(s);
+//				squareViews.add(sV);
+//				this.add(sV);
+//				//rows = 9;
+//				//columns = 9;
+//			}
+//		}
 	}
 	
 	
@@ -122,10 +146,13 @@ public class BuilderGridView extends JPanel implements MouseListener{
 
 
 		//g2.draw(new Line2D.Double(rect.getX(), rect.getY(), rect.getX()+ rect.getWidth(), rect.getY() + rect.getHeight()));
+
+		
+		if (!isFilled)
+			fillGrid();
+
 		while(linesX<rows){
-
-
-			//g2.draw(new Line2D.Double(rect.getX(), lineY, rect.getX()+ rect.getWidth(), lineY));
+			g2.draw(new Line2D.Double(rect.getX(), lineY, rect.getX()+ rect.getWidth(), lineY));
 			linesX++;
 			xIncrement= rect.getHeight()/rows;
 			lineY+=rect.getHeight()/rows;
@@ -134,18 +161,16 @@ public class BuilderGridView extends JPanel implements MouseListener{
 		}
 
 		while (linesY<columns){
-			//g2.draw(new Line2D.Double(lineX, rect.getY(), lineX, rect.getY()+ rect.getHeight()));  
+			g2.draw(new Line2D.Double(lineX, rect.getY(), lineX, rect.getY()+ rect.getHeight()));  
 			linesY++;
 			yIncrement = rect.getWidth()/columns;
 
 			lineX+= rect.getWidth()/columns;
 		}
-		
-		if (!isFilled)
-			fillGrid();
+	
 	}
 
-	public void fillGrid() {		
+	public void fillGrid() {	
 		if (rect == null)
 			return;
 		
@@ -179,21 +204,24 @@ public class BuilderGridView extends JPanel implements MouseListener{
 		// TODO Auto-generated method stub
 		currentXVal= e.getX()/xIncrement;
 		currentYVal= e.getY()/yIncrement;
-		int roundXOutput = (int)Math.round(currentXVal);
-		int roundYOutput = (int)Math.round(currentYVal);
+		int roundXOutput = (int)Math.floor(currentXVal);
+		int roundYOutput = (int)Math.floor(currentYVal);
 		int YOutput = (columns - roundYOutput);
 		//int XOutput = (yNumLines - roundYOutput);
 		System.out.println(roundXOutput+","+YOutput);
-		int row = roundXOutput;
-		int column = YOutput;
-		toolListener.useTool(new Location(row, column));
+		int row = roundYOutput;
+		int column = roundXOutput;
+		
+		Location loc = new Location(row, column);
+		System.out.println("Grid Clicked at: " + loc);
+		toolListener.useTool(loc);
+		
 		setSquares(this.grid);
 		repaint();
 	}
 		
 	
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 	public void mouseReleased(MouseEvent e) {

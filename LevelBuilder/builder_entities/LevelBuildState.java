@@ -12,7 +12,7 @@ public class LevelBuildState {
 	public static final String ADD_RELEASE_SQUARE = "Add Release Square";
 	public static final String REMOVE_SQUARE = "Remove Square";
 	public static final String ADD_SIX = "Add Six";
-	public static final String REMOVE_SIX = "Add Six";
+	public static final String REMOVE_SIX = "Remove Six";
 	
 	public static final String[] TOOL_STRINGS = {ADD_SQUARE, ADD_RELEASE_SQUARE, REMOVE_SQUARE, ADD_SIX, REMOVE_SIX};
 	
