@@ -18,11 +18,12 @@ public class SpecialMoveView extends JPanel {
 	JButton swapSquareButton;
 	JButton removeSquareButton;
 	JButton resetBoardButton;
+	JButton btnRegularMove;
 	
 	
 	public SpecialMoveView() {
 		setMinimumSize(new Dimension(130, 150));
-		setLayout(new MigLayout("", "[grow,center]", "[grow,bottom][][][grow,top]"));
+		setLayout(new MigLayout("", "[grow,center]", "[grow,bottom][][][][grow,top]"));
 		
 		JLabel lblSpecialMoves = new JLabel("Special Moves");
 		lblSpecialMoves.setHorizontalAlignment(SwingConstants.CENTER);
@@ -33,14 +34,17 @@ public class SpecialMoveView extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		add(swapSquareButton, "cell 0 1,aligny center");
+		
+		btnRegularMove = new JButton("Regular Move");
+		add(btnRegularMove, "cell 0 1");
+		add(swapSquareButton, "cell 0 2,aligny center");
 		
 		removeSquareButton = new JButton("Remove Square");
-		add(removeSquareButton, "cell 0 2");
+		add(removeSquareButton, "cell 0 3");
 		
 		resetBoardButton = new JButton("Reset Board");
 		resetBoardButton.setMinimumSize(new Dimension(0, 0));
-		add(resetBoardButton, "cell 0 3");
+		add(resetBoardButton, "cell 0 4");
 
 //		public JButton getBtnNewButton() {
 //			if (btnNewButton == null) {
@@ -57,6 +61,10 @@ public class SpecialMoveView extends JPanel {
 	}
 
 
+	public JButton getRegularMoveButton(){
+		return btnRegularMove;
+	}
+	
 	public JButton getSwapSquareButton() {
 		return swapSquareButton;
 	}
