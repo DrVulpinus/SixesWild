@@ -2,11 +2,12 @@ package src;
 
 public class PuzzleStats extends LevelStats {
 
-	public PuzzleStats(int score, int points) {
-		super(score, points);
-	}
-
 	int numMovesLeft;
+	
+	public PuzzleStats(int score, int numMovesLeft) {
+		super(score);
+		this.numMovesLeft = numMovesLeft;
+	}
 	
 	public boolean winCondition() {
 		if (numMovesLeft == 0){
@@ -21,21 +22,8 @@ public class PuzzleStats extends LevelStats {
 	}
 	
 	@Override
-	public int getStarCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getScore() {
-		// TODO Auto-generated method stub
-		return score;
-	}
-	
-	@Override
-	public void update(){
-		score = score + points;
+	public void update(int points, int releases, int eliminations) {
+		super.update(points, releases, eliminations);
 		numMovesLeft--;
 	}
-
 }

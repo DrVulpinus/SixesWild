@@ -2,45 +2,37 @@ package src;
 
 public class EliminationStats extends LevelStats{
 
-	public EliminationStats(int score, int points, int releaseBlocksLeft) {
-		super(score, points);
-		this.releaseBlocksLeft = releaseBlocksLeft;
-		// TODO Auto-generated constructor stub
+	int markedSquares;
+	int totalSquares;
+	
+	public EliminationStats(int score, int totalSquares){
+		super(score);
+		this.markedSquares = 0;
+		this.totalSquares = totalSquares;
 	}
-
-	int releaseBlocksLeft;
+	
+	public EliminationStats(int score, int points, int markedSquares){
+		super(score, points);
+		this.markedSquares = markedSquares;
+	}
 	
 	@Override
 	public boolean winCondition() {
-		// TODO Auto-generated method stub
-		return false;
+		return (this.markedSquares >= this.totalSquares);
 	}
 
 	@Override
 	public String getType() {
-		// TODO Auto-generated method stub
 		return "Elimination";
 	}
-
+	
 	@Override
-	public int getStarCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getScore() {
-		// TODO Auto-generated method stub
-		return score;
-	}
-
-	@Override
-	public void update(){
-		score = score + points;
-		releaseBlocksLeft--;
+	public void update(int points, int releases, int eliminations) {
+		super.update(points, releases, eliminations);
+		markedSquares += eliminations;
 	}
 	
-	public int getReleaseBlocksLeft(){
-		return releaseBlocksLeft;
+	public int getNumMarkedSquares(){
+		return markedSquares;
 	}
 }
