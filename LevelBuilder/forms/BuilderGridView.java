@@ -15,21 +15,32 @@ import entities.Location;
 
 public class BuilderGridView extends JComponent implements MouseListener {
 
-int xLoc;
-int yLoc;
-Color color = new Color(0,0,0); 
-double currentXVal= 0;
-double currentYVal = 0;
-int yNumLines =10;
-int xNumLines =10;
-double xIncrement = 0;
-double yIncrement = 0;
-	public BuilderGridView (Grid grid, Location location ){
+	int xLoc;
+	int yLoc;
+	Color color = new Color(0,0,0); 
+	double currentXVal= 0;
+	double currentYVal = 0;
+	int yNumLines =10;
+	int xNumLines =10;
+	double xIncrement = 0;
+	double yIncrement = 0;
+	
+	Grid grid;
+
+	
+	public BuilderGridView (Grid grid){
 		//this.grid = grid;
 		//this.location = location;
 		addMouseListener(this);
-		
+		this.grid = grid;
 	}
+
+//	public BuilderGridView (Grid grid, Location location){
+//		//this.grid = grid;
+//		//this.location = location;
+//		addMouseListener(this);
+//		
+//	}
 	public void paintComponent(Graphics g) {
        Graphics2D g2 = (Graphics2D) g;
        
