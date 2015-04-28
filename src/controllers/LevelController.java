@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 import src.LevelStats;
+import src.PuzzleStats;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
@@ -47,22 +48,22 @@ public class LevelController {
 	}
 	
 	
-//	private void setSampleLevel() {
-//		Grid grid = new Grid();
-//		LevelStats stats = new LevelStats();
-//	
-//		for (int row = 0; row < 9; row++) {
-//			for (int col = 0; col < 9; col++) {
-//				Square s = new Square(new Location(row, col));
-//				s.setBlock(new Block(1, 3));
-//				grid.add(s);
-//			}
-//		}
-//		
-//		
-//		this.level = new Level(stats, grid);
-//			
-//	}
+	private void setSampleLevel() {
+		Grid grid = new Grid();
+		LevelStats stats = new PuzzleStats(0,0);
+	
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				Square s = new Square(new Location(row, col));
+				s.setBlock(new Block(1, 3));
+				grid.add(s);
+			}
+		}
+		
+		
+		this.level = new Level(stats, grid);
+			
+	}
 	
 	
 	private void addLevelPlayListeners() {

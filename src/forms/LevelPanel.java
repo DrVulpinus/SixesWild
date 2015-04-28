@@ -62,4 +62,5 @@ private JLabel lblLevelname;
 		}
 		return lblLeveltype;
 	}
+	
 }

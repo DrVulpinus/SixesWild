@@ -3,7 +3,7 @@ package src;
 public class EliminationStats extends LevelStats{
 
 	public EliminationStats(int score, int points, int releaseBlocksLeft) {
-		super(0, score, points);
+		super(score, points);
 		this.releaseBlocksLeft = releaseBlocksLeft;
 		// TODO Auto-generated constructor stub
 	}

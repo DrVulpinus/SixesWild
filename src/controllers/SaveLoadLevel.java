@@ -17,7 +17,6 @@ import entities.XMLFilter;
 
 public class SaveLoadLevel {
 private XStream xstream = null;
-private File saveFile;
 public ArrayList<Level> loadedLevels = new ArrayList<Level>();
 public static final String LEVEL_DIRECTORY = "levels/";
 public static final String FILE_EXTENSION = ".xml";
@@ -55,7 +54,7 @@ public static SaveLoadLevel getInstance(){
 		}
 			
 		
-		FileOutputStream fos = new FileOutputStream(saveFile);	
+		FileOutputStream fos = new FileOutputStream(saveLevelFile);	
 		xstream.toXML(lvl, fos);
 		fos.close();
 	}

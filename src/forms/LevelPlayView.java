@@ -57,10 +57,6 @@ public class LevelPlayView extends JPanel {
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
 	}
-	
-	public LevelPlayView(Level level) {
-		this(level, null);
-	}
 
 	public JButton getbtnBack() {
 		if (btnBack == null) {

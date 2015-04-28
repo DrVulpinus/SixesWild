@@ -3,11 +3,7 @@ package src;
 public class PuzzleStats extends LevelStats {
 
 	public PuzzleStats(int score, int points) {
-		super(0, score, points);
-	}
-	
-	public PuzzleStats(int selectedType, int score, int points) {
-		super(selectedType, score, points);
+		super(score, points);
 	}
 
 	int numMovesLeft;
