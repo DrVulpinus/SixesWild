@@ -118,7 +118,7 @@ public class MainFrame extends JFrame{
 		
 		});
 		
-		/*lvlSelectView.getBtnNewButton().addActionListener(new ActionListener(){
+		lvlSelectView.getBtnBack().addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -130,7 +130,7 @@ public class MainFrame extends JFrame{
 				System.out.println("back to main menu");				
 			}
 			
-		});*/
+		});
 	
 		
 		for (int i = 0; i <  lvlSelectView.getLevelPanels().size(); i++) {
@@ -209,22 +209,7 @@ public class MainFrame extends JFrame{
 	
 
 
-	private Level getSampleLevel() {
-		Grid grid = new Grid();
-		LevelStats stats = new LevelStats(0, 0, 0);
 	
-		for (int row = 0; row < 9; row++) {
-			for (int col = 0; col < 9; col++) {
-				Square s = new Square(new Location(row, col));
-				s.setBlock(new Block(col % 6 + 1, 3));
-				grid.add(s);
-			}
-		}
-		
-		
-		return new Level(stats, grid);
-			
-	}
 	
 	
 	public MainMenuView getMainMenuView() {

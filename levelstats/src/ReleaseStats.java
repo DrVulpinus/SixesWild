@@ -5,7 +5,7 @@ public class ReleaseStats extends LevelStats{
 	int markedSquares;
 	
 	public ReleaseStats(int score, int points, int markedSquares){
-		super(0, score, points);
+		super(score, points);
 		this.markedSquares = markedSquares;
 	}
 	

@@ -8,7 +8,7 @@ import entities.MoveRegular;
 public class LightningStats extends LevelStats{
 
 	public LightningStats(int score, int points, Timer timer) {
-		super(0, score, points);
+		super(score, points);
 		this.timer = timer;
 	}
 

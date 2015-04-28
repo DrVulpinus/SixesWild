@@ -24,4 +24,10 @@ public class MoveInitiator implements MoveListener{
 		}
 	}
 
+	@Override
+	public void moveWasDone(MoveEvent me) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

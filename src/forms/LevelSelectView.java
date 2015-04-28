@@ -57,7 +57,7 @@ import java.awt.event.ComponentEvent;
 
 public class LevelSelectView extends SelectView {
 	
-	SaveLoadLevel sll;;	
+	SaveLoadLevel sll;
 	private ArrayList<LevelPanel> levelPanels;
 	public LevelSelectView() {
 		sll = SaveLoadLevel.getInstance();
@@ -95,6 +95,7 @@ public class LevelSelectView extends SelectView {
 	JButton getBtnBack() {
 		if (btnBack == null) {
 			btnBack = new JButton("Back");
+			
 		}
 		return btnBack;
 	}
