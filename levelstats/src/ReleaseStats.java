@@ -1,45 +1,36 @@
 package src;
 
 
-public class ReleaseStats extends LevelStats{
-	int markedSquares;
+public class ReleaseStats extends LevelStats {
+	int releaseBlocksLeft;
 	
-	public ReleaseStats(int score, int points, int markedSquares){
+	public ReleaseStats(int score, int releaseBlocksLeft)	{
+		super(score);
+		this.releaseBlocksLeft = releaseBlocksLeft;
+	}
+	
+	public ReleaseStats(int score, int points, int releaseBlocksLeft) {
 		super(score, points);
-		this.markedSquares = markedSquares;
+		this.releaseBlocksLeft = releaseBlocksLeft;
 	}
 	
 	@Override
 	public boolean winCondition() {
-		// TODO Auto-generated method stub
-		return false;
+		return (this.releaseBlocksLeft <= 0);
 	}
 
 	@Override
 	public String getType() {
-		// TODO Auto-generated method stub
 		return "Release";
 	}
 
 	@Override
-	public int getStarCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getScore() {
-		// TODO Auto-generated method stub
-		return score;
+	public void update(int points, int releases, int eliminations){
+		super.update(points, releases, eliminations);
+		releaseBlocksLeft -= releases;
 	}
 	
-	@Override
-	public void update(){
-		score = score + points;
-		markedSquares++;
-	}
-	
-	public int getNumMarkedSquares(){
-		return markedSquares;
+	public int getReleaseBlocksLeft(){
+		return releaseBlocksLeft;
 	}
 }

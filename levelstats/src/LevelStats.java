@@ -17,13 +17,19 @@ public class LevelStats {
 	int selectedType;
 
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
+	
+	public LevelStats(int score) {
+		this(score, 0);
+	}
+	
 	public LevelStats(int score, int points){
 		
 		this.score = score;
 		this.points = points;
 	}
 
-	public void update(){
+	public void update(int points, int releases, int eliminations) {
+		this.score += points;
 	}
 
 	public String getType() {
