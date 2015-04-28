@@ -13,8 +13,9 @@ public class MoveRemove extends Move {
 		if (!this.isValid())
 			return false;
 
-		this.getSquaresInvolved().get(0).setBlock(null);;
-		
+		Square sq = this.getSquaresInvolved().get(0);
+		sq.setBlock(null);
+		sq.setNorthernBlock();		
 		level.getStats().update();
 		
 		return true;

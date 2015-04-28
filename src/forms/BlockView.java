@@ -34,7 +34,7 @@ public class BlockView extends JLabel
 		icons[1][1] = new Icon2x2();
 		icons[1][2] = new Icon2x3();
 		icons[2][0] = new Icon3x1();
-		icons[2][1] = new Icon4x2();
+		icons[2][1] = new Icon3x2();
 		icons[2][2] = new Icon3x3();
 		icons[3][0] = new Icon4x1();
 		icons[3][1] = new Icon4x2();

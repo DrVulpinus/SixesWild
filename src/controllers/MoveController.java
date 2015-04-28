@@ -11,6 +11,7 @@ import entities.MoveRemove;
 import entities.MoveSwap;
 import entities.Square;
 import forms.GameGridView;
+import forms.GridView;
 import forms.SquareView;
 
 
@@ -20,15 +21,17 @@ public class MoveController implements MoveControlListener {
 	Level level;
 	LevelPlayState playState;
 	Boolean started;
+	GameGridView grid;
 	
 	public MoveController(Level level, LevelPlayState playState) {
 		selectedSquareViews = new ArrayList<SquareView>();
 		this.level = level;
 		this.playState = playState;
-		
 		this.started = false;
 	}
-	
+	public void setGrid(GameGridView grid){
+		this.grid = grid;
+	}
 	public void startMove(SquareView sV) {
 		
 		if (this.started)
@@ -75,6 +78,9 @@ public class MoveController implements MoveControlListener {
 		
 		selectedSquareViews.clear();
 		this.started = false;
+		if (grid != null){
+			grid.fillGrid();
+		}
 		
 		System.out.println("End Move");
 	}

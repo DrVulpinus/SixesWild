@@ -132,7 +132,7 @@ public class GameGridView extends JPanel {
 			fillGrid();
 	}
 
-	public void fillGrid() {		
+	public void fillGrid() {
 		if (rect == null)
 			return;
 		
@@ -145,6 +145,8 @@ public class GameGridView extends JPanel {
 			//System.out.println(squareView.getSquare().getLoc().toString());
 			squareView.setLocation((int)Math.floor((col*rect.getWidth()/columns)), (int)  Math.floor((row*rect.getHeight()/rows)));
 			squareView.setSize((int) Math.floor(rect.getWidth()/columns), (int) Math.floor(rect.getHeight()/rows));
+			squareView.update();
+			squareView.getBlockView().update();
 			//System.out.println(squareView.getLocation().toString() + squareView.getSize().toString());
 		}
 		this.setVisible(true);

@@ -36,6 +36,7 @@ public class LevelController implements ChangeLevelPlayState{
 		this.playState = new LevelPlayState();
 		this.moveController = new MoveController(level, playState);
 		this.levelPlayView = new LevelPlayView(level, moveController);
+		this.moveController.setGrid(this.levelPlayView.getGridView());
 		this.selectMoveController = new SelectMoveController(levelPlayView, playState);
 		levelPlayView.setLevel(level);
 		playState.addStateChangedListener(this);
@@ -45,7 +46,7 @@ public class LevelController implements ChangeLevelPlayState{
 		window.getContentPane().add(levelPlayView, BorderLayout.CENTER);		
 		window.getContentPane().validate();
 		window.getContentPane().repaint();
-		
+		level.getGrid().addNeighbors();
 		levelPlayView.getSpecialMoveView().getSwapSquareButton().addActionListener(new ActionListener() {
 			
 			@Override

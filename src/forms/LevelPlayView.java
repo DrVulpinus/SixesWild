@@ -35,7 +35,7 @@ public class LevelPlayView extends JPanel {
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
 		
-		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left]", "[150px:n,grow,fill][]"));
+		setLayout(new MigLayout("", "[150px:n:150px][150px:175px,grow,fill][150px:n:150px,left]", "[150px:n,grow,fill][]"));
 		
 		statsView = new StatsView();
 		add(statsView, "cell 0 0,grow");

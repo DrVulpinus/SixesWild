@@ -17,27 +17,13 @@ import entities.Square;
 
 
 public class SaveLoadLevelTest {
-	Level[] levels = {getSampleLevel(),
-			new Level(new LevelStats(0,0), new Grid(), "Level2"),
-			new Level(new LevelStats(0,0), new Grid(), "Level3"),
-			new Level(new LevelStats(0,0), new Grid(), "Level4")};
+	
 	
 	@Test
 	public void testSaveLoadLevel() throws Exception {
 		SaveLoadLevel sll = SaveLoadLevel.getInstance();
-		for (Level level : levels) {
-			sll.saveLevel(level,level.getName());
-		}
-		for (Level level : levels){
-			assertNotNull(sll.getLevel(level));
-		}
-		
-		assertEquals(levels.length,sll.getLevels().size());
-		for (Level level : levels) {
-			sll.saveLevel(level);
-		}
-		for (Level level : levels){
-			assertNotNull(sll.getLevel(level));
+		for (int i =0;  i < 10; i++){
+			sll.saveLevel(getSampleLevel2());
 		}
 	
 	}
@@ -65,6 +51,26 @@ public class SaveLoadLevelTest {
 		}
 		
 		Level lvl = new Level(stats, grid, "AlexSampleLevel");
+		
+		return lvl;
+			
+	}
+	private Level getSampleLevel2() {
+		Grid grid = new Grid();
+		LevelStats stats = new LevelStats(0, 0);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				int num = (int) Math.round(Math.random());
+				if (num > 0){
+					Square s = new Square(new Location(row, col));
+					s.setBlock(new Block((int)(5*Math.random())+1, (int)(2*Math.random())+1));
+					grid.add(s);
+				}
+				
+			}
+		}
+		
+		Level lvl = new Level(stats, grid, ("SampleLevel" + ((int)(50*Math.random()))));
 		
 		return lvl;
 			

@@ -48,10 +48,10 @@ public class Grid extends ArrayList<Square>
 		return null;
 	}
 	
-	private void addNeighbors() {
+	public void addNeighbors() {
 		for (int n = 0; n < this.size(); n++) {
 			Square sq = this.get(n);
-			
+			sq.getNeighbors().clear();
 			sq.addNeighbors(this.getSurroundingSquares(sq));
 		}		
 	}

@@ -6,7 +6,7 @@ public class Square
 {
 	Block block;
 	Location loc;
-	ArrayList<Square> neighbors;
+	ArrayList<Square> neighbors = new ArrayList<Square>();
 	boolean isRelease;
 	
 	boolean eliminated;
@@ -46,7 +46,15 @@ public class Square
 			this.addNeighbor(sq);
 	}
 	
-	
+	public Square getNorthernNeighbor(){
+		for (Square square : neighbors) {
+			if (square.getLoc().getCol() == this.getLoc().getCol() && square.getLoc().getRow()+1 == this.getLoc().getRow()){
+				return square;
+			}
+		}
+		return null;
+	}
+		
 	
 	
 	public Block getBlock(){
@@ -86,4 +94,19 @@ public class Square
 	public String toString(){
 		return "Square: " + loc;
 	}
-}
+	public void setNorthernBlock(){		
+			Square square = getNorthernNeighbor();
+			while (square != null && square.getBlock()== null){
+				square = square.getNorthernNeighbor();
+			}
+			if (square != null){
+			setBlock(square.getBlock());
+			getNorthernNeighbor().setNorthernBlock();
+			}
+			else{
+				setBlock(null);
+			}
+			
+		}		
+}	
+

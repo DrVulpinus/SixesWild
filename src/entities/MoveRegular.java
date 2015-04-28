@@ -17,8 +17,14 @@ public class MoveRegular extends Move {
 		
 		//removes blocks from all squares involved
 		for (Iterator<Square> i = getSquaresInvolved().iterator(); i.hasNext();) {
-			i.next().setBlock(null);
+			Square sq = i.next();
+			sq.setBlock(null);			
 		}
+		for (Iterator<Square> i = getSquaresInvolved().iterator(); i.hasNext();) {
+			Square sq = i.next();
+			sq.setNorthernBlock();		
+		}
+		
 
 		level.getStats().update();
 
