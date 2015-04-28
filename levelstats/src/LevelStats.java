@@ -17,8 +17,8 @@ public class LevelStats {
 	int selectedType;
 
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
-	public LevelStats(int selectedType, int score, int points){
-		this.selectedType = selectedType;
+	public LevelStats(int score, int points){
+		
 		this.score = score;
 		this.points = points;
 	}

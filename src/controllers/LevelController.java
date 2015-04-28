@@ -74,6 +74,14 @@ public class LevelController implements ChangeLevelPlayState{
 				
 			}
 		});
+		levelPlayView.getSpecialMoveView().getRegularMoveButton().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				playState.setSelectedMove(playState.MOVE_REGULAR);
+				
+			}
+		});
 	}
 	
 	
@@ -127,22 +135,25 @@ public class LevelController implements ChangeLevelPlayState{
 					levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
 					levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(UNSELECTED_MOVE_COLOR);
 					levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
-					//levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(Color.GRAY);
+					levelPlayView.getSpecialMoveView().getRegularMoveButton().setBackground(SELECTED_MOVE_COLOR);
 				break;
 			case LevelPlayState.MOVE_REMOVE:
 					levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(SELECTED_MOVE_COLOR);
 					levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(UNSELECTED_MOVE_COLOR);
 					levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getRegularMoveButton().setBackground(UNSELECTED_MOVE_COLOR);
 				break;
 			case LevelPlayState.MOVE_RESET:
-				levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
-				levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(SELECTED_MOVE_COLOR);
-				levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(SELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getRegularMoveButton().setBackground(UNSELECTED_MOVE_COLOR);
 				break;
 			case LevelPlayState.MOVE_SWAP:
-				levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
-				levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(UNSELECTED_MOVE_COLOR);
-				levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(SELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getRemoveSquareButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getResetBoardButton().setBackground(UNSELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(SELECTED_MOVE_COLOR);
+					levelPlayView.getSpecialMoveView().getRegularMoveButton().setBackground(UNSELECTED_MOVE_COLOR);
 				break;
 		}
 	}
