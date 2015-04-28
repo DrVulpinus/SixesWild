@@ -117,5 +117,9 @@ public class LevelSelectView extends SelectView {
 		}
 		return panel;
 	}
-	
+	@Override
+	public void setBackground(Color clr){
+		super.setBackground(clr);
+		getPnlLevelsContain().setBackground(clr);
+	}
 }

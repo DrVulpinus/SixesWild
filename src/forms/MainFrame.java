@@ -1,5 +1,6 @@
 package forms;
 
+import javax.management.timer.TimerMBean;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -12,6 +13,10 @@ import javax.swing.Action;
 import javax.swing.border.Border;
 
 import org.eclipse.wb.swing.FocusTraversalOnArray;
+
+
+
+
 
 
 
@@ -41,6 +46,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainFrame extends JFrame{
 	public LevelSelectView lvlSelectView = new LevelSelectView();
@@ -48,8 +55,13 @@ public class MainFrame extends JFrame{
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
 	LevelPlayView levelPlay;//  = new LevelPlayView();
+	Timer colorTimer = new Timer(true);
+	double hue = Math.random();
+	double hueSet = Math.random();
 	
 	LevelController levelController;
+	
+	
 	/**
 	 * Create the panel.
 	 */
@@ -64,7 +76,30 @@ public class MainFrame extends JFrame{
 		getContentPane().setMinimumSize(new Dimension(200, 200));
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		getContentPane().add(mainMenu, BorderLayout.CENTER);
-		
+		colorTimer.schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				if (hue == hueSet){
+					hueSet = Math.random();
+				}
+				else{
+					double direction =  Math.signum(hue - hueSet);
+					hue += .001 *direction;
+				}
+				
+				Color myColor = Color.getHSBColor((float) hue, 1.0f, 1.0f);
+				getContentPane().setBackground(myColor);
+				for (Component comp : getContentPane().getComponents()) {
+					
+					if (comp.getWidth() > 100 && comp.getWidth() > 100){						
+						comp.setBackground(myColor);					
+					}
+					
+				}
+				
+			}
+		}, 0, 50);
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
 		setSize(700, 700);

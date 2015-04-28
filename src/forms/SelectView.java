@@ -4,6 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JScrollPane;
@@ -37,5 +38,9 @@ public abstract class SelectView extends JPanel {
 			panel.setLayout(new MigLayout("", "[]", "[]"));
 		}
 		return panel;
+	}
+	@Override
+	public void setBackground(Color clr){
+		super.setBackground(clr);
 	}
 }

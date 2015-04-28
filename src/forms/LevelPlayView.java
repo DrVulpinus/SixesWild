@@ -49,7 +49,7 @@ public class LevelPlayView extends JPanel {
 		add(gridView, "cell 1 0,grow");
 		
 		specialMoveView = new SpecialMoveView();
-		add(specialMoveView, "cell 2 0,alignx right,aligny top");
+		add(specialMoveView, "cell 2 0,grow");
 		
 		//btnBack.setBounds(395, 20, 117, 29);
 		add(getbtnBack(), "cell 2 1,growx,aligny bottom");
