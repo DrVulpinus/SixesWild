@@ -46,7 +46,7 @@ public class LevelPlayView extends JPanel {
 			gridView = new GameGridView(level.getGrid(), moveControlListener);
 		
 		
-		add(gridView, "cell 1 0,grow");
+		add(gridView, "cell 1 0");
 		
 		specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 2 0,grow");
