@@ -38,7 +38,7 @@ public class BuildLevelView extends JPanel{
 	private JMenuItem mntmEditGameType;
 	private JMenuItem mntmEditStarPoints;
 	private StatsView testJPanel;
-	private GameGridView gameGridView;
+	private BuilderGridView builderGridView;
 	private JButton btnExitWithoutSaving;
 	private JComboBox toolSelector;
 	
@@ -50,7 +50,7 @@ public class BuildLevelView extends JPanel{
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 3 1");
 		add(getTestJPanel(), "cell 0 3,grow");
-		add(getGameGridView(), "cell 1 3,grow");
+		add(getBuilderGridView(), "cell 1 3,grow");
 		add(getToolSelector(), "cell 2 2,grow");
 		
 
@@ -69,16 +69,14 @@ public class BuildLevelView extends JPanel{
 		if (this.level == null)
 			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
 		
-		
-		
-		this.gameGridView = new GameGridView(this.level.getGrid());
+		this.builderGridView = new BuilderGridView(this.level.getGrid());
 		
 		
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[center][29.00,top][30.00px][71.00,grow,center][bottom]"));
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 3 1");
 		add(getTestJPanel(), "cell 0 3,grow");
-		add(getGameGridView(), "cell 1 3,grow");
+		add(getBuilderGridView(), "cell 1 3,grow");
 		add(getToolSelector(), "cell 2 2,grow");
 		
 
@@ -158,11 +156,11 @@ public class BuildLevelView extends JPanel{
 		}
 		return testJPanel;
 	}
-	private GameGridView getGameGridView() {
-		if (gameGridView == null) {
-				gameGridView = new GameGridView();
-		}
-		return gameGridView;
+	private BuilderGridView getBuilderGridView() {
+//		if (builderGridView == null) {
+//				builderGridView = new BuilderGridView();
+//		}
+		return builderGridView;
 	}
 
 	public JButton getBtnExitWithoutSaving() {
