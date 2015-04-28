@@ -8,7 +8,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import entities.Probability;
-import forms.ProbabilityView;
+import forms.ProbabilityBlockView;
+import forms.ProbabilityMultiplierView;
 import forms.TypeSelectView;
 
 public class ProbabilityController {
@@ -20,29 +21,39 @@ public class ProbabilityController {
 	JTextField four;
 	JTextField five;
 	JTextField six;
+	JTextField xone;
+	JTextField xtwo;
+	JTextField xthree;
 	JButton apply;
+	JButton xapply;
 	
 
-	public ProbabilityController(ProbabilityView probabilityView, final Probability probability) {
+	public ProbabilityController(ProbabilityBlockView probabilityBlockView, ProbabilityMultiplierView probabilityMultiplierView,  final Probability probability) {
 	
-			this.one = probabilityView.getTextField();
-			this.two = probabilityView.getTextField_1();
-			this.three = probabilityView.getTextField_2();
-			this.four = probabilityView.getTextField_3();
-			this.five = probabilityView.getTextField_4();
-			this.six = probabilityView.getTextField_5();
-			this.apply = probabilityView.getBtnApplyChanges();
+			this.one = probabilityBlockView.getTextField();
+			this.two = probabilityBlockView.getTextField_1();
+			this.three = probabilityBlockView.getTextField_2();
+			this.four = probabilityBlockView.getTextField_3();
+			this.five = probabilityBlockView.getTextField_4();
+			this.six = probabilityBlockView.getTextField_5();
+			this.apply = probabilityBlockView.getBtnApplyChanges();
+			
+			this.xone = probabilityMultiplierView.getTextField();
+			this.xtwo = probabilityMultiplierView.getTextField_1();
+			this.xthree = probabilityMultiplierView.getTextField_2();
+			this.xapply = probabilityMultiplierView.getBtnApplyChanges();
 			
 			
 			final int[] numbers;
-			numbers = new int[5];
+			numbers = new int[6];
+			final int[] multi;
+			multi = new int[3];
 			
 			
-			probabilityView.getBtnApplyChanges().addActionListener(new ActionListener(){
+			probabilityBlockView.getBtnApplyChanges().addActionListener(new ActionListener(){
 				@Override
 				public void actionPerformed(ActionEvent e){
-					
-			
+								
 			int sum =0;
 	        numbers[0] = Integer.parseInt(one.getText());
 	      	numbers[1] = Integer.parseInt(two.getText());
@@ -51,13 +62,12 @@ public class ProbabilityController {
 	      	numbers[4]  = Integer.parseInt(five.getText());
 	      	numbers[5]  = Integer.parseInt(six.getText());
 	      	
-	      	for ( int i=0; i<=6; i++){
+	      	for ( int i=0; i<6; i++){
 	      		if (numbers[i] == (int)numbers[i]){
 	      			sum+=numbers[i];
 	      		}
 	      		else{
-	      			System.out.println(numbers[i]+ "is not a number");
-	      			
+	      			System.out.println(numbers[i]+ "is not a number");	      			
 	      		}
 	      	}
 	      	if(sum != 100){
@@ -71,10 +81,40 @@ public class ProbabilityController {
 	      	probability.setProb3(numbers[2]);
 	      	probability.setProb4(numbers[3]);
 	      	probability.setProb5(numbers[4]);
-	      	probability.setProb6(numbers[5]);
-	      		   		
+	      	probability.setProb6(numbers[5]);      		   		
 	      	}
 				}
+			});
+			
+			probabilityMultiplierView.getBtnApplyChanges().addActionListener(new ActionListener(){
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					int sum = 0;
+					multi[0] = Integer.parseInt(xone.getText());
+					multi[1] = Integer.parseInt(xtwo.getText());
+					multi[2] = Integer.parseInt(xthree.getText());
+					
+					for(int i = 0; i < 3; i++){
+						if (multi[i] == (int)multi[i]){
+			      			sum+=multi[i];
+			      		}
+			      		else{
+			      			System.out.println(multi[i]+ "is not a number");	      			
+			      		}
+					}
+					
+					if(sum != 100){
+						System.out.println("Your numbers do not add up to 100.");
+					}
+					
+					else{
+						probability.setProbx1(multi[0]);
+						probability.setProbx2(multi[1]);
+						probability.setProbx3(multi[2]);
+					}				
+				}
+				
 			});
 		}
 		

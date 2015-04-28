@@ -8,7 +8,9 @@ public class Probability {
 	int prob4;
 	int prob5;
 	int prob6;
-	
+	int probx1;
+	int probx2;
+	int probx3;
 	
 	public int getProb1() {
 		return prob1;
@@ -47,6 +49,28 @@ public class Probability {
 		this.prob6 = prob6;
 	}
 	
-
+	public int getProbx1(){
+		return probx1;
+	}
+	
+	public void setProbx1(int probx1){
+		this.probx1 = probx1;
+	}
+	
+	public int getProbx2(){
+		return probx2;
+	}
+	
+	public void setProbx2(int probx2){
+		this.probx2 = probx2;
+	}
+	
+	public  int getProbx3(){
+		return probx3;
+	}
+	
+	public void setProbx3(int probx3){
+		this.probx3 = probx3;
+	}
 	
 }

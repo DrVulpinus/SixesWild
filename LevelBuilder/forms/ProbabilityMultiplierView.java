@@ -50,7 +50,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		}
 		return lblNewLabel;
 	}
-	private JTextField getTextField() {
+	public JTextField getTextField() {
 		if (textField == null) {
 			textField = new JTextField();
 			textField.setText("0");
@@ -79,7 +79,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		}
 		return lblNewLabel_1;
 	}
-	private JTextField getTextField_1() {
+	public JTextField getTextField_1() {
 		if (textField_1 == null) {
 			textField_1 = new JTextField();
 			textField_1.setText("0");
@@ -108,7 +108,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		}
 		return lblX;
 	}
-	private JTextField getTextField_2() {
+	public JTextField getTextField_2() {
 		if (textField_2 == null) {
 			textField_2 = new JTextField();
 			textField_2.setText("0");
@@ -122,7 +122,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		}
 		return label_2;
 	}
-	private JButton getBtnApplyChanges() {
+	public JButton getBtnApplyChanges() {
 		if (btnApplyChanges == null) {
 			btnApplyChanges = new JButton("Apply Changes");
 		}
