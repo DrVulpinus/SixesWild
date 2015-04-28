@@ -68,15 +68,13 @@ public class SquareView extends JPanel
 			@Override
 			public void componentResized(ComponentEvent arg0) {
 			if(blockView != null){
+				
 				blockView.setSize(getWidth() - 10, getHeight() -10);
 			}
 			}
 		});
 		this.square = square;
-		//setLayout(new MigLayout("", "[5px][382.00px,grow,fill][5px]", "[5px][35.00,grow,fill][5px]"));
 		setLayout(new BorderLayout());
-		//setSize(381, 239);
-		//add(getBlockView(), "cell 1 1,grow");
 
 		add(getBlockView(), BorderLayout.CENTER);
 		this.update();
@@ -89,38 +87,7 @@ public class SquareView extends JPanel
 		}
 		return blockView;
 	}
-	
-//	public void setBlockView(BlockView blockView) {
-//		remove(this.blockView);
-//		this.blockView = blockView;
-//		add(getBlockView(), "cell 1 1,grow");
-//	}
-	/*
-	@Override
-	public void setSize(int width, int height)
-	{
-		super.setSize(width, height);
-		
-		try {
-			//blockView.setSize(width - 10, height - 10);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		
-	}*/
-
 	public void update() {
-		
-//		if (square.getBlock() == null) {		//update view for the absence of a BlockView
-//			//remove(blockView);
-//			//setBlockView(null);
-//			blockView.setVisible(false);
-//		} else if (getBlockView() == null && square.getBlock() != null) {	//update view for the presence of a BlockView
-//			setBlockView(new BlockView(square.getBlock()));
-//		}
-//		else 
-//			blockView.setVisible(true);
 		
 		getBlockView().setBlock(square.getBlock());
 				
