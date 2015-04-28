@@ -76,20 +76,20 @@ public class BuildLevelView extends JPanel{
 			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
 		
 		this.builderGridView = new BuilderGridView(this.level.getGrid());
-		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[24.00,top][26.00,center][71.00,center][bottom][]"));
-		add(getMenuBar(), "cell 0 0 3 1,aligny top");
-		add(getMenuBar_1(), "cell 0 1 3 1");
-		add(getTestJPanel(), "cell 0 2,grow");
-		add(getBuilderGridView(), "cell 1 2,grow");
+		setLayout(new MigLayout("", "[250,center][][215.00,grow,center][120.00,grow,center]", "[24.00,top][14.00,center][71.00,center][bottom][]"));
+		add(getMenuBar(), "cell 0 0 4 1,aligny top");
+		add(getMenuBar_1(), "cell 0 1 4 1");
+		add(getTestJPanel(), "cell 0 2 2 1,grow");
+		add(getBuilderGridView(), "cell 2 2,grow");
 		
 
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
-		add(specialMoveView, "cell 2 2,grow");
+		add(specialMoveView, "cell 3 2,grow");
 		specialMoveView.add(getToolSelector(), "cell 0 4");
 		add(getBtnExitWithoutSaving(), "cell 2 4");
-		add(getPanel(), "cell 2 3,grow");
-		add(getPanel_1(), "cell 2 4,grow");
+		add(getPanel(), "cell 3 3,grow");
+		add(getPanel_1(), "cell 3 4,grow");
 		
 		
 //		
