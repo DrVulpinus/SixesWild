@@ -76,9 +76,10 @@ public class BuildLevelView extends JPanel{
 			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
 		
 		this.builderGridView = new BuilderGridView(this.level.getGrid());
-		setLayout(new MigLayout("", "[250,center][][215.00,grow,center][120.00,grow,center]", "[24.00,top][14.00,center][71.00,center][bottom][]"));
+		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left][]", "[12.00px:n,grow,fill][14.00][][][]"));
+		
 		add(getMenuBar(), "cell 0 0 4 1,aligny top");
-		add(getMenuBar_1(), "cell 0 1 4 1");
+		add(getMenuBar_1(), "cell 0 1 4 1,aligny top");
 		add(getTestJPanel(), "cell 0 2 2 1,grow");
 		add(getBuilderGridView(), "cell 2 2,grow");
 		
@@ -178,9 +179,9 @@ public class BuildLevelView extends JPanel{
 		return testJPanel;
 	}
 	private BuilderGridView getBuilderGridView() {
-//		if (builderGridView == null) {
-//				builderGridView = new BuilderGridView();
-//		}
+		if (builderGridView == null) {
+				builderGridView = new BuilderGridView();
+		}
 		return builderGridView;
 	}
 
