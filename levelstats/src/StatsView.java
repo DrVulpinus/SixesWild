@@ -144,7 +144,7 @@ public class StatsView extends JPanel {
 			textField_4.setHorizontalAlignment(SwingConstants.CENTER);
 			panel_3.add(textField_4);
 			textField_4.setEditable(false);
-			textField_4.setText("20");
+			textField_4.setText("30");
 			textField_4.setColumns(10);
 		}
 		return panel_3;

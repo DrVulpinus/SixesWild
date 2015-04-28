@@ -43,13 +43,17 @@ public class BuildLevelView extends JPanel{
 	private JComboBox toolSelector;
 	
 	private Level level;
+	private JPanel panel;
+	private JButton btnGoBack;
+	private JPanel panel_1;
+	private JButton btnClose;
 	
 	
 	public BuildLevelView() {
-		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][104.00,top][8.00][grow][bottom]"));
+		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][31.00,top][8.00][grow][grow][grow][bottom]"));
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 3 1");
-		add(getTestJPanel(), "cell 0 3,grow");
+		add(getTestJPanel(), "cell 0 3 1 4,grow");
 		add(getBuilderGridView(), "cell 1 3,grow");
 		add(getToolSelector(), "cell 2 2,grow");
 		
@@ -58,6 +62,8 @@ public class BuildLevelView extends JPanel{
 		SpecialMoveView specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 2 3,grow");
 		add(getBtnExitWithoutSaving(), "cell 2 4");
+		add(getPanel(), "cell 2 4,grow");
+		add(getPanel_1(), "cell 2 5,grow");
 		
 	}
 	
@@ -179,5 +185,31 @@ public class BuildLevelView extends JPanel{
 			
 		}
 		return toolSelector;
+	}
+	private JPanel getPanel() {
+		if (panel == null) {
+			panel = new JPanel();
+			panel.add(getBtnGoBack());
+		}
+		return panel;
+	}
+	private JButton getBtnGoBack() {
+		if (btnGoBack == null) {
+			btnGoBack = new JButton("Go Back");
+		}
+		return btnGoBack;
+	}
+	private JPanel getPanel_1() {
+		if (panel_1 == null) {
+			panel_1 = new JPanel();
+			panel_1.add(getBtnClose());
+		}
+		return panel_1;
+	}
+	private JButton getBtnClose() {
+		if (btnClose == null) {
+			btnClose = new JButton("Close");
+		}
+		return btnClose;
 	}
 }
