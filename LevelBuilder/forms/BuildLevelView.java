@@ -76,7 +76,7 @@ public class BuildLevelView extends JPanel{
 			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
 		
 		this.builderGridView = new BuilderGridView(this.level.getGrid());
-		setLayout(new MigLayout("", "[][143px,grow,fill][130px:n,left][]", "[12.00px:n,grow,fill][14.00][][][]"));
+		setLayout(new MigLayout("", "[][203.00px,grow,fill][130px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
 		
 		add(getMenuBar(), "cell 0 0 4 1,aligny top");
 		add(getMenuBar_1(), "cell 0 1 4 1,aligny top");
