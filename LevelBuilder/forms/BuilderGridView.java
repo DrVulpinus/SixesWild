@@ -99,6 +99,8 @@ public class BuilderGridView extends JPanel implements MouseListener {
 		setLayout(null); //Make sure it is absolute layout
 		for (Square square : squares) {
 			SquareView sV = new SquareView(square);
+			sV.addToolControlListener(toolListener);
+			sV.update();
 			squareViews.add(sV);
 			this.add(sV);
 			
@@ -212,11 +214,14 @@ public class BuilderGridView extends JPanel implements MouseListener {
 		int row = roundYOutput;
 		int column = roundXOutput;
 		
+		if (row < 0 || row > 9 || column < 0 || column > 9)		//if detected grid coordinates are outside of the grid
+			return;
+		
 		Location loc = new Location(row, column);
 		System.out.println("Grid Clicked at: " + loc);
 		toolListener.useTool(loc);
 		
-		setSquares(this.grid);
+		//setSquares(this.grid);
 		repaint();
 	}
 		

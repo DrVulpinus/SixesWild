@@ -44,6 +44,7 @@ public class BuildingController {
 		this.useTool = new UseToolController(level, buildState);
 		this.buildLevelView = new BuildLevelView(level, useTool);
 		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
+		this.useTool.setBuilderGridView(buildLevelView.getBuilderGridView());
 		
 		
 		
