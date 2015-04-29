@@ -20,6 +20,7 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JComboBox;
 
+import Interfaces.ToolControlListener;
 import builder_entities.LevelBuildState;
 import entities.Grid;
 import entities.Level;
@@ -29,13 +30,8 @@ public class BuildLevelView extends JPanel{
 	
 	
 	private JMenuBar menuBar;
-	private JMenuItem mntmAddBlock;
-	private JMenuItem mntmRemoveBlock;
 	private JMenuItem mntmAddMove;
-	private JMenuItem mntmRemoveMove;
 	private JMenuItem mntmEditWinConditions;
-	private JMenuBar menuBar_1;
-	private JMenuItem mntmEditGameType;
 	private JMenuItem mntmEditStarPoints;
 	private StatsView testJPanel;
 	private BuilderGridView builderGridView;
@@ -47,6 +43,8 @@ public class BuildLevelView extends JPanel{
 	private JButton btnGoBack;
 	private JPanel panel_1;
 	private JButton btnClose;
+	
+	private ToolControlListener useTool;
 	
 	
 	/*public BuildLevelView() {
@@ -68,28 +66,28 @@ public class BuildLevelView extends JPanel{
 	}
 	*/
 	
-	public BuildLevelView(Level level) {
+	public BuildLevelView(Level level, ToolControlListener useTool) {
 		
 		this.level = level;
 		
 		if (this.level == null)
 			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
 		
-		this.builderGridView = new BuilderGridView(this.level.getGrid());
-		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[24.00,top][26.00,center][71.00,center][bottom][]"));
-		add(getMenuBar(), "cell 0 0 3 1,aligny top");
-		add(getMenuBar_1(), "cell 0 1 3 1");
-		add(getTestJPanel(), "cell 0 2,grow");
-		add(getBuilderGridView(), "cell 1 2,grow");
+		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
+		setLayout(new MigLayout("", "[][203.00px,grow,fill][130px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
+		
+		add(getMenuBar(), "cell 0 0 4 1,aligny top");
+		add(getToolSelector(), "cell 3 1");
+		add(getTestJPanel(), "cell 0 2 2 1,grow");
+		add(getBuilderGridView(), "cell 2 2,grow");
 		
 
 		
 		SpecialMoveView specialMoveView = new SpecialMoveView();
-		add(specialMoveView, "cell 2 2,grow");
-		specialMoveView.add(getToolSelector(), "cell 0 4");
+		add(specialMoveView, "cell 3 2,grow");
 		add(getBtnExitWithoutSaving(), "cell 2 4");
-		add(getPanel(), "cell 2 3,grow");
-		add(getPanel_1(), "cell 2 4,grow");
+		add(getPanel(), "cell 3 3,grow");
+		add(getPanel_1(), "cell 3 4,grow");
 		
 		
 //		
@@ -112,58 +110,23 @@ public class BuildLevelView extends JPanel{
 		if (menuBar == null) {
 			menuBar = new JMenuBar();
 			menuBar.setBounds(29, 5, 611, 24);
-			menuBar.add(getMntmAddBlock());
-			menuBar.add(getMntmRemoveBlock());
 			menuBar.add(getMntmAddMove());
-			menuBar.add(getMntmRemoveMove());
+			menuBar.add(getMntmEditWinConditions());
+			menuBar.add(getMntmEditStarPoints());
 		}
 		return menuBar;
 	}
-	private JMenuItem getMntmAddBlock() {
-		if (mntmAddBlock == null) {
-			mntmAddBlock = new JMenuItem("Add Block");
-		}
-		return mntmAddBlock;
-	}
-	private JMenuItem getMntmRemoveBlock() {
-		if (mntmRemoveBlock == null) {
-			mntmRemoveBlock = new JMenuItem("Remove Block");
-		}
-		return mntmRemoveBlock;
-	}
 	private JMenuItem getMntmAddMove() {
 		if (mntmAddMove == null) {
-			mntmAddMove = new JMenuItem("Add Special Move");
+			mntmAddMove = new JMenuItem("Enable/Disable Special Moves");
 		}
 		return mntmAddMove;
-	}
-	private JMenuItem getMntmRemoveMove() {
-		if (mntmRemoveMove == null) {
-			mntmRemoveMove = new JMenuItem("Remove Special Move");
-		}
-		return mntmRemoveMove;
 	}
 	private JMenuItem getMntmEditWinConditions() {
 		if (mntmEditWinConditions == null) {
 			mntmEditWinConditions = new JMenuItem("Edit Win Conditions");
 		}
 		return mntmEditWinConditions;
-	}
-	private JMenuBar getMenuBar_1() {
-		if (menuBar_1 == null) {
-			menuBar_1 = new JMenuBar();
-			menuBar_1.setBounds(10, 40, 700, 24);
-			menuBar_1.add(getMntmEditWinConditions());
-			menuBar_1.add(getMntmEditGameType());
-			menuBar_1.add(getMntmEditStarPoints());
-		}
-		return menuBar_1;
-	}
-	private JMenuItem getMntmEditGameType() {
-		if (mntmEditGameType == null) {
-			mntmEditGameType = new JMenuItem("Edit Game Type");
-		}
-		return mntmEditGameType;
 	}
 	private JMenuItem getMntmEditStarPoints() {
 		if (mntmEditStarPoints == null) {
@@ -178,9 +141,9 @@ public class BuildLevelView extends JPanel{
 		return testJPanel;
 	}
 	private BuilderGridView getBuilderGridView() {
-//		if (builderGridView == null) {
-//				builderGridView = new BuilderGridView();
-//		}
+		if (builderGridView == null) {
+				builderGridView = new BuilderGridView();
+		}
 		return builderGridView;
 	}
 

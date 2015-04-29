@@ -17,19 +17,33 @@ public class MoveRemove extends Move {
 		sq.setBlock(null);
 		sq.setNorthernBlock();		
 		level.getStats().update();
-		
+		this.getSquaresInvolved().get(0).setBlock(null);		
 		return true;
 	}
 
-	public int getPoints(){
-		return 10;
-	}
+
 	@Override
 	public boolean isValid() {
 		if (this.getSquaresInvolved().size() != 1)
 			return false;
 		
 		return true;
+	}
+	
+	
+	@Override
+	public int getPoints(){
+		return 0;
+	}
+	
+	@Override
+	public int getEliminations() {
+		return 0;
+	}
+	
+	@Override
+	public int getReleases() {
+		return 0;
 	}
 
 }

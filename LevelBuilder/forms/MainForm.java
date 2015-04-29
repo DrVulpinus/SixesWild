@@ -21,8 +21,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.JButton;
+
+import src.LevelStats;
+import src.PuzzleStats;
+import entities.Block;
+import entities.Grid;
+import entities.Level;
+import entities.Location;
+import entities.Square;
 
 public class MainForm extends JFrame {
 	//BuildLevelView leveleditor = new BuildLevelView();
@@ -81,7 +91,7 @@ public class MainForm extends JFrame {
 		getBtnCreatePuzzleLevel().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				buildingController = new BuildingController(null, MainForm.this);
+				buildingController = new BuildingController(new Level(new PuzzleStats(0,0), new Grid()), MainForm.this);
 			}
 		});
 		
@@ -196,4 +206,26 @@ public class MainForm extends JFrame {
 		}
 		return btnCreateReleaseLevel;
 	}
+	
+	
+
+	private Level getSampleLevel() {
+		Grid grid = new Grid();
+		LevelStats stats = new LevelStats(0, 0);
+	
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				Square s = new Square(new Location(row, col));
+				s.setBlock(new Block(col % 6 + 1, 3));
+				grid.add(s);
+			}
+		}
+		
+		Level lvl = new Level(stats, grid, "AlexSampleLevel");
+		
+		return lvl;
+			
+	}
+
+
 }

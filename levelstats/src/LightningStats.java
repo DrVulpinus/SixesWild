@@ -7,12 +7,17 @@ import entities.MoveRegular;
 
 public class LightningStats extends LevelStats{
 
+	Timer timer;
+	
+	public LightningStats(int score, Timer timer) {
+		super(score);
+		this.timer = timer;
+	}
+	
 	public LightningStats(int score, int points, Timer timer) {
 		super(score, points);
 		this.timer = timer;
 	}
-
-	Timer timer;
 	
 	@Override
 	public boolean winCondition() {
@@ -26,21 +31,9 @@ public class LightningStats extends LevelStats{
 	public String getType() {
 		return "Lightning";
 	}
-
-	@Override
-	public int getStarCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getScore() {
-		// TODO Auto-generated method stub
-		return score;
-	}
 	
-	public void update(){
-		score = score + points;
+	public void update(int points, int releases, int eliminations){
+		super.update(points, releases, eliminations);
 	}
 
 }

@@ -22,9 +22,6 @@ public abstract class Move {
 		return level;
 	}
 	
-	public int getPoints(){
-		return 0;
-	}
 
 	public ArrayList<Square> getSquaresInvolved() {
 		return squaresInvolved;
@@ -52,4 +49,18 @@ public abstract class Move {
 		
 		return true;
 	}
+	
+	
+	public int getPoints(){
+		return 0;
+	}
+	
+	public int getEliminations() {
+		return 0;
+	}
+	
+	public int getReleases() {
+		return 0;
+	}
+
 }

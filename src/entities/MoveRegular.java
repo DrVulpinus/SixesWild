@@ -26,7 +26,7 @@ public class MoveRegular extends Move {
 		}
 		
 
-		level.getStats().update();
+		level.getStats().update(getPoints(), 0, 0);
 
 		System.out.println("Regular Move Performed");
 		
@@ -35,7 +35,27 @@ public class MoveRegular extends Move {
 
 	@Override
 	public int getPoints(){
-		return 100;
+		int points = 1;
+		
+		for (Iterator<Square> i = getSquaresInvolved().iterator(); i.hasNext();) {
+			
+			Block b = i.next().getBlock();
+			
+			if (b != null)
+				points *= i.next().getBlock().getMultiplier();
+		}
+		
+		return points;
+	}
+	
+	@Override
+	public int getEliminations() {
+		return 0;
+	}
+	
+	@Override
+	public int getReleases() {
+		return 0;
 	}
 	
 	@Override
