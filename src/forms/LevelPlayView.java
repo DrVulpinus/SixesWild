@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
+import src.LevelStats;
 import src.PuzzleStats;
 import src.StatsView;
 import Interfaces.MoveControlListener;
@@ -15,7 +16,7 @@ public class LevelPlayView extends JPanel {
 	GameGridView gridView;
 	SpecialMoveView specialMoveView;
 	MoveControlListener moveControlListener;
-	PuzzleStats puzzleStats;
+	LevelStats levelStats;
 	Level level;
 	
 	
@@ -25,6 +26,7 @@ public class LevelPlayView extends JPanel {
 		setLayout(new MigLayout("", "[150px:n:150px][150px:175px,grow,fill][150px:n:150px,left]", "[150px:n,grow,fill][]"));
 		
 		statsView = new StatsView();
+		levelStats = level.getStats();
 		add(statsView, "cell 0 0,grow");
 		
 		if (level == null)

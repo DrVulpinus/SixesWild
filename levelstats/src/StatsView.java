@@ -41,6 +41,7 @@ public class StatsView extends JPanel {
 	public StatsView(){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
+		puzzleStats = new PuzzleStats(0,30);
 		add(getpanel(), "cell 0 0,aligny top");
 		{
 			JPanel panel = new JPanel();
@@ -133,22 +134,22 @@ public class StatsView extends JPanel {
 		//panel_1.setBounds(28, 225, 73, 28);
 		{
 			textField_3 = new JTextField();
-//			String score = Integer.toString(puzzleStats.getScore());
-//			System.out.println(score);
-//			if(score != null){
-//				textField_3.setText(score);
-//			}
-//			else{
-//				System.out.println("ERRoR");}
+			String score = Integer.toString(puzzleStats.getScore());
+			System.out.println(score);
+			if(score != null){
+				textField_3.setText(score);
+			}
+			else{
+				System.out.println("ERRoR");}
 			textField_3.setHorizontalAlignment(SwingConstants.CENTER);
 			panel_1.add(textField_3);
 			textField_3.setLocation(10, 387);
 			textField_3.setEditable(false);
 			if(puzzleStats!= null){
 			
-			String points = String.valueOf((puzzleStats.getScore()));
-			System.out.println(points);
-			textField_3.setText(points);
+//			String points = String.valueOf((puzzleStats.getScore()));
+//			System.out.println(points);
+//			textField_3.setText(points);
 			textField_3.setColumns(10);
 			}
 		}
@@ -168,8 +169,8 @@ public class StatsView extends JPanel {
 			if (puzzleStats != null){
 			String numMovesLeft = String.valueOf((puzzleStats.getNumMovesLeft()));
 			
-			textField_3.setText(numMovesLeft);
-			//textField_4.setText("30");
+			textField_4.setText(numMovesLeft);
+//			textField_4.setText("30");
 			textField_4.setColumns(10);
 			}
 		}
