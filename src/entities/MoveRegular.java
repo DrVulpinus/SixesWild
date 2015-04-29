@@ -42,7 +42,8 @@ public class MoveRegular extends Move {
 			Block b = i.next().getBlock();
 			
 			if (b != null)
-				points *= i.next().getBlock().getMultiplier();
+				
+				points *= b.getMultiplier();
 		}
 		
 		return points;
