@@ -103,7 +103,7 @@ public class MainFrame extends JFrame{
 		}, 0, 50);
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
-		setSize(700, 700);
+		setSize(900, 700);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
 		//setResizable(false);

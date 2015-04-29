@@ -54,8 +54,9 @@ public class MainForm extends JFrame {
 			public void run() {
 				try {
 					MainForm frame = new MainForm();
-					frame.setUndecorated(true);
-					 frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+					frame.setUndecorated(false);
+					frame.setResizable(false);
+					frame.setSize(700,700);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
