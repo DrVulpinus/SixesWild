@@ -23,8 +23,9 @@ public class ProbabilityMultiplierView extends JPanel{
 	private JLabel lblTotal;
 	private JTextField textField_3;
 	private JLabel label_3;
+	private JButton btnClose;
 	public ProbabilityMultiplierView() {
-		setLayout(new MigLayout("", "[][55.00][209.00,grow][grow]", "[31.00][fill][][][]"));
+		setLayout(new MigLayout("", "[][55.00][209.00,grow][grow]", "[31.00][fill][][][][][][]"));
 		add(getPanel(), "cell 2 0,grow");
 		add(getPanel_1(), "cell 2 1,grow");
 		add(getPanel_2(), "cell 2 2,grow");
@@ -32,6 +33,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		add(getLblTotal(), "flowx,cell 3 4");
 		add(getTextField_3(), "cell 3 4");
 		add(getLabel_3(), "cell 3 4");
+		add(getBtnClose(), "cell 1 7");
 	}
 	
 
@@ -148,5 +150,11 @@ public class ProbabilityMultiplierView extends JPanel{
 			label_3 = new JLabel("%");
 		}
 		return label_3;
+	}
+	private JButton getBtnClose() {
+		if (btnClose == null) {
+			btnClose = new JButton("Close");
+		}
+		return btnClose;
 	}
 }

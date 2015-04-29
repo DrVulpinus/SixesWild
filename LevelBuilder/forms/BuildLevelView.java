@@ -40,6 +40,9 @@ public class BuildLevelView extends JPanel{
 	
 	private ToolControlListener useTool;
 	private JButton btnNewButton;
+	private JButton btnEditValue;
+	private JButton btnEditMultiplier;
+	private JButton btnEditStarPoints;
 	
 	
 	/*public BuildLevelView() {
@@ -71,6 +74,9 @@ public class BuildLevelView extends JPanel{
 		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
 		setLayout(new MigLayout("", "[][203.00px,grow,fill][130px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
 		add(getBtnNewButton(), "cell 1 0");
+		add(getBtnEditValue(), "cell 2 0");
+		add(getBtnEditMultiplier(), "cell 3 0");
+		add(getBtnEditStarPoints(), "cell 1 1");
 		add(getToolSelector(), "cell 3 1");
 		add(getTestJPanel(), "cell 0 2 2 1,grow");
 		add(getBuilderGridView(), "cell 2 2,grow");
@@ -158,8 +164,26 @@ public class BuildLevelView extends JPanel{
 	}
 	private JButton getBtnNewButton() {
 		if (btnNewButton == null) {
-			btnNewButton = new JButton("New button");
+			btnNewButton = new JButton("Enable/Disable SpecialMoves");
 		}
 		return btnNewButton;
+	}
+	private JButton getBtnEditValue() {
+		if (btnEditValue == null) {
+			btnEditValue = new JButton("Edit Value %");
+		}
+		return btnEditValue;
+	}
+	private JButton getBtnEditMultiplier() {
+		if (btnEditMultiplier == null) {
+			btnEditMultiplier = new JButton("Edit Multiplier %");
+		}
+		return btnEditMultiplier;
+	}
+	private JButton getBtnEditStarPoints() {
+		if (btnEditStarPoints == null) {
+			btnEditStarPoints = new JButton("Edit Star Points");
+		}
+		return btnEditStarPoints;
 	}
 }

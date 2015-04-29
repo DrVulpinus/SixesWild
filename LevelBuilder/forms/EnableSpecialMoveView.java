@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public class EnableSpecialMoveView extends JPanel{
 	private JPanel panel;
@@ -13,12 +14,14 @@ public class EnableSpecialMoveView extends JPanel{
 	private JPanel panel_2;
 	private JCheckBox chckbxResetSpecialMove;
 	private JLabel lblCheckToEnable;
+	private JButton btnClose;
 	public EnableSpecialMoveView() {
 		setLayout(new MigLayout("", "[][-45.00][][-32.00][204.00,grow][][grow]", "[][][31.00][34.00][grow]"));
 		add(getLblCheckToEnable(), "cell 4 0");
 		add(getPanel(), "cell 4 1,grow");
 		add(getPanel_1(), "cell 4 2,grow");
 		add(getPanel_2(), "cell 4 3,grow");
+		add(getBtnClose(), "cell 6 4");
 	}
 
 	private JPanel getPanel() {
@@ -65,5 +68,11 @@ public class EnableSpecialMoveView extends JPanel{
 			lblCheckToEnable = new JLabel("Check to enable special move:");
 		}
 		return lblCheckToEnable;
+	}
+	private JButton getBtnClose() {
+		if (btnClose == null) {
+			btnClose = new JButton("Close");
+		}
+		return btnClose;
 	}
 }
