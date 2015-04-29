@@ -7,6 +7,7 @@ import java.awt.SystemColor;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
+
 //import javax.swing.ImageIcon;
 //import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,8 +17,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 //import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.ImageIcon;
+
+import entities.MoveRegular;
 
 //import net.miginfocom.swing.MigLayout;
 
@@ -30,7 +35,9 @@ public class StatsView extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_5;
-
+	private MoveRegular moveRegular;
+	private PuzzleStats puzzleStats;
+	
 	public StatsView(){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -130,7 +137,8 @@ public class StatsView extends JPanel {
 			panel_1.add(textField_3);
 			textField_3.setLocation(10, 387);
 			textField_3.setEditable(false);
-			textField_3.setText("0");
+			String points = String.valueOf((moveRegular.getPoints()));
+			textField_3.setText(points);
 			textField_3.setColumns(10);
 		}
 
@@ -143,7 +151,10 @@ public class StatsView extends JPanel {
 			textField_4 = new JTextField();
 			textField_4.setHorizontalAlignment(SwingConstants.CENTER);
 			panel_3.add(textField_4);
+			
 			textField_4.setEditable(false);
+			String numMovesLeft = String.valueOf((puzzleStats.getNumMovesLeft()));
+			textField_3.setText(numMovesLeft);
 			textField_4.setText("30");
 			textField_4.setColumns(10);
 		}

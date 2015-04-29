@@ -15,7 +15,11 @@ public class PuzzleStats extends LevelStats {
 		}
 		return false;
 	}
-	
+	public int getNumMovesLeft(){
+		
+		
+		return numMovesLeft;
+	}
 	@Override
 	public String getType() {
 		return "Puzzle";
