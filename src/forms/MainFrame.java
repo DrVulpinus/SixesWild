@@ -67,6 +67,7 @@ public class MainFrame extends JFrame{
 	 */
 	
 	public MainFrame() {
+		setResizable(false);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent arg0) {
