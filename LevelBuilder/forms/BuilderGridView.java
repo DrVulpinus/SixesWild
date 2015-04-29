@@ -44,7 +44,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 		this.setSquares(grid);
 	
 		this.addMouseListener(this);
-		this.setBackground(new Color(0xFFFFFF));
+		this.setBackground(new Color(0xEEEEEE));
 	
 		
 		//isFilled = true;

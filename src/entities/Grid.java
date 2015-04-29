@@ -26,8 +26,13 @@ public class Grid extends ArrayList<Square>
 	{
 		//add additional code later
 		
-		if (this.contains(sq))
-			return false;
+//		if (this.contains(sq))
+//			return false;
+		
+		for (Square s : this) {
+			if (s.getLoc().equals(sq.loc))
+				return false;
+		}
 		
 		return super.add(sq);
 	}

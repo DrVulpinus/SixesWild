@@ -27,12 +27,6 @@ import entities.Level;
 
 
 public class BuildLevelView extends JPanel{
-	
-	
-	private JMenuBar menuBar;
-	private JMenuItem mntmAddMove;
-	private JMenuItem mntmEditWinConditions;
-	private JMenuItem mntmEditStarPoints;
 	private StatsView testJPanel;
 	private BuilderGridView builderGridView;
 	private JButton btnExitWithoutSaving;
@@ -45,6 +39,7 @@ public class BuildLevelView extends JPanel{
 	private JButton btnClose;
 	
 	private ToolControlListener useTool;
+	private JButton btnNewButton;
 	
 	
 	/*public BuildLevelView() {
@@ -75,8 +70,7 @@ public class BuildLevelView extends JPanel{
 		
 		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
 		setLayout(new MigLayout("", "[][203.00px,grow,fill][130px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
-		
-		add(getMenuBar(), "cell 0 0 4 1,aligny top");
+		add(getBtnNewButton(), "cell 1 0");
 		add(getToolSelector(), "cell 3 1");
 		add(getTestJPanel(), "cell 0 2 2 1,grow");
 		add(getBuilderGridView(), "cell 2 2,grow");
@@ -104,35 +98,6 @@ public class BuildLevelView extends JPanel{
 //		add(specialMoveView, "cell 2 3,grow");
 //		add(getBtnExitWithoutSaving(), "cell 2 4");
 		
-	}
-	
-	private JMenuBar getMenuBar() {
-		if (menuBar == null) {
-			menuBar = new JMenuBar();
-			menuBar.setBounds(29, 5, 611, 24);
-			menuBar.add(getMntmAddMove());
-			menuBar.add(getMntmEditWinConditions());
-			menuBar.add(getMntmEditStarPoints());
-		}
-		return menuBar;
-	}
-	private JMenuItem getMntmAddMove() {
-		if (mntmAddMove == null) {
-			mntmAddMove = new JMenuItem("Enable/Disable Special Moves");
-		}
-		return mntmAddMove;
-	}
-	private JMenuItem getMntmEditWinConditions() {
-		if (mntmEditWinConditions == null) {
-			mntmEditWinConditions = new JMenuItem("Edit Win Conditions");
-		}
-		return mntmEditWinConditions;
-	}
-	private JMenuItem getMntmEditStarPoints() {
-		if (mntmEditStarPoints == null) {
-			mntmEditStarPoints = new JMenuItem("Edit Star Points");
-		}
-		return mntmEditStarPoints;
 	}
 	private StatsView getTestJPanel() {
 		if (testJPanel == null) {
@@ -190,5 +155,11 @@ public class BuildLevelView extends JPanel{
 			btnClose = new JButton("Close");
 		}
 		return btnClose;
+	}
+	private JButton getBtnNewButton() {
+		if (btnNewButton == null) {
+			btnNewButton = new JButton("New button");
+		}
+		return btnNewButton;
 	}
 }
