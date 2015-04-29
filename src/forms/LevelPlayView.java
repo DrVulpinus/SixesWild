@@ -1,27 +1,11 @@
 package forms;
 
-import java.awt.EventQueue;
-
-
-
-import javax.swing.AbstractButton;
-import javax.swing.JFrame;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import net.miginfocom.swing.MigLayout;
 import src.PuzzleStats;
 import src.StatsView;
-
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-
-import javax.swing.BoxLayout;
-
-import java.awt.GridLayout;
-
-import net.miginfocom.swing.MigLayout;
-
-import javax.swing.JButton;
-
 import Interfaces.MoveControlListener;
 import entities.Level;
 public class LevelPlayView extends JPanel {

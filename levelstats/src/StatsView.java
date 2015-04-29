@@ -133,6 +133,13 @@ public class StatsView extends JPanel {
 		//panel_1.setBounds(28, 225, 73, 28);
 		{
 			textField_3 = new JTextField();
+//			String score = Integer.toString(puzzleStats.getScore());
+//			System.out.println(score);
+//			if(score != null){
+//				textField_3.setText(score);
+//			}
+//			else{
+//				System.out.println("ERRoR");}
 			textField_3.setHorizontalAlignment(SwingConstants.CENTER);
 			panel_1.add(textField_3);
 			textField_3.setLocation(10, 387);
@@ -161,7 +168,7 @@ public class StatsView extends JPanel {
 			if (puzzleStats != null){
 			String numMovesLeft = String.valueOf((puzzleStats.getNumMovesLeft()));
 			
-			//textField_3.setText(numMovesLeft);
+			textField_3.setText(numMovesLeft);
 			//textField_4.setText("30");
 			textField_4.setColumns(10);
 			}

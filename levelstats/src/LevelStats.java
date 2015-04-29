@@ -19,7 +19,7 @@ public class LevelStats {
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	
 	public LevelStats(int score) {
-		this(score, 0);
+		this.score = score;
 	}
 	
 	public LevelStats(int score, int points){
