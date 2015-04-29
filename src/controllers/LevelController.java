@@ -5,17 +5,25 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
+
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import src.EliminationStats;
 import src.LevelStats;
+import src.LightningStats;
 import src.PuzzleStats;
+import src.ReleaseStats;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
 import entities.LevelPlayState;
 import entities.Location;
 import entities.Square;
+import entities.Timer;
 import forms.LevelPlayView;
 import forms.MainFrame;
 
@@ -26,11 +34,13 @@ public class LevelController implements ChangeLevelPlayState{
 	MoveController moveController;
 	SelectMoveController selectMoveController;
 	LevelPlayState playState;
+	//Timer timer;
+	Timer timer = new Timer();
 	MainFrame window;
 	public static final Color SELECTED_MOVE_COLOR = Color.GREEN;
 	public static final Color UNSELECTED_MOVE_COLOR = Color.PINK;
 	public LevelController(Level level, MainFrame window) {
-
+		
 		this.level = level;
 		this.window = window;
 		this.playState = new LevelPlayState();
@@ -38,6 +48,7 @@ public class LevelController implements ChangeLevelPlayState{
 		this.levelPlayView = new LevelPlayView(level, moveController);
 		this.moveController.setGrid(this.levelPlayView.getGridView());
 		this.selectMoveController = new SelectMoveController(levelPlayView, playState);
+		
 		levelPlayView.setLevel(level);
 		playState.addStateChangedListener(this);
 		playState.setSelectedMove(playState.MOVE_REGULAR);		
@@ -100,6 +111,82 @@ public class LevelController implements ChangeLevelPlayState{
 		this.level = new Level(stats, grid);
 			
 	}
+	
+	private void setPuzzleLevel(){
+		
+		Grid grid = new Grid();
+		LevelStats stats = new PuzzleStats(0,0);
+	
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				Square s = new Square(new Location(row, col));
+				s.setBlock(new Block(1, 3));
+				grid.add(s);
+			}
+		}
+		
+		
+		this.level = new Level(stats, grid);
+			
+	}
+	
+	private void setLightningLevel(){
+		
+		Grid grid = new Grid();
+		LevelStats stats = new LightningStats(0,timer);
+	
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				Square s = new Square(new Location(row, col));
+				s.setBlock(new Block(1, 3));
+				grid.add(s);
+			}
+		}
+		
+		
+		this.level = new Level(stats, grid);
+			
+	}
+	
+private void setReleaseLevel(){
+		
+		Grid grid = new Grid();
+		LevelStats stats = new ReleaseStats(0, 0);
+	
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				Square s = new Square(new Location(row, col));
+				s.setBlock(new Block(1, 3));
+				grid.add(s);
+			}
+		}
+		
+		
+		this.level = new Level(stats, grid);
+			
+	}
+
+private void setEliminationLevel(){
+	
+	Grid grid = new Grid();
+	LevelStats stats = new EliminationStats(0, 0);
+
+	for (int row = 0; row < 9; row++) {
+		for (int col = 0; col < 9; col++) {
+			Square s = new Square(new Location(row, col));
+			s.setBlock(new Block(1, 3));
+			grid.add(s);
+		}
+	}
+	
+	
+	this.level = new Level(stats, grid);
+		
+}
+	
+	
+	
+	
 	
 	
 	

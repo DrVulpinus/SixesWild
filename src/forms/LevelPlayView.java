@@ -3,9 +3,12 @@ package forms;
 import java.awt.EventQueue;
 
 
+
 import javax.swing.AbstractButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import src.PuzzleStats;
 import src.StatsView;
 
 import java.awt.FlowLayout;
@@ -28,7 +31,7 @@ public class LevelPlayView extends JPanel {
 	GameGridView gridView;
 	SpecialMoveView specialMoveView;
 	MoveControlListener moveControlListener;
-	
+	PuzzleStats puzzleStats;
 	Level level;
 	
 	

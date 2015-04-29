@@ -1,17 +1,17 @@
 package src;
 
-import javax.swing.Timer;
 
 import entities.MoveRegular;
+import entities.Timer;
 
 
 public class LightningStats extends LevelStats{
 
 	Timer timer;
 	
-	public LightningStats(int score, Timer timer) {
+	public LightningStats(int score, entities.Timer timer2) {
 		super(score);
-		this.timer = timer;
+		this.timer = timer2;
 	}
 	
 	public LightningStats(int score, int points, Timer timer) {
@@ -21,7 +21,7 @@ public class LightningStats extends LevelStats{
 	
 	@Override
 	public boolean winCondition() {
-		if(!timer.isRunning()){
+		if(!timer.getRunning()){
 			return true;
 		}
 		return false;

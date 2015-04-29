@@ -137,9 +137,13 @@ public class StatsView extends JPanel {
 			panel_1.add(textField_3);
 			textField_3.setLocation(10, 387);
 			textField_3.setEditable(false);
-			String points = String.valueOf((moveRegular.getPoints()));
+			if(puzzleStats!= null){
+			
+			String points = String.valueOf((puzzleStats.getScore()));
+			System.out.println(points);
 			textField_3.setText(points);
 			textField_3.setColumns(10);
+			}
 		}
 
 		return panel_1;
@@ -153,10 +157,14 @@ public class StatsView extends JPanel {
 			panel_3.add(textField_4);
 			
 			textField_4.setEditable(false);
+			
+			if (puzzleStats != null){
 			String numMovesLeft = String.valueOf((puzzleStats.getNumMovesLeft()));
-			textField_3.setText(numMovesLeft);
-			textField_4.setText("30");
+			
+			//textField_3.setText(numMovesLeft);
+			//textField_4.setText("30");
 			textField_4.setColumns(10);
+			}
 		}
 		return panel_3;
 	}
