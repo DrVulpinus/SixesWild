@@ -72,8 +72,7 @@ public class MoveController implements MoveControlListener {
 			if (sV.getSquare().getBlock() != null)
 				sV.getSquare().getBlock().setSelected(false);
 			
-			sV.update();
-			sV.getBlockView().update();
+			
 		}
 		
 		selectedSquareViews.clear();

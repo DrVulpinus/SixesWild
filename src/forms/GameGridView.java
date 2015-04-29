@@ -58,18 +58,18 @@ public class GameGridView extends JPanel {
 		
 		//isFilled = true;
 		}
-		fillGrid();
+	
 	}
 	public GameGridView(ArrayList<Square> squares) {
 		this.setSquares(squares);
-		fillGrid();
+		
 	}
 	
 	
 	public GameGridView(Grid grid, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
 		this.setSquares(grid);
-		fillGrid();
+		
 	}
 	public void setSquares(ArrayList<Square> squares) {
 		setLayout(null); //Make sure it is absolute layout
@@ -91,7 +91,23 @@ public class GameGridView extends JPanel {
 		Graphics2D g2 = (Graphics2D) g;
 
 		g2.setColor(color);
+		for (SquareView squareView : squareViews) {
+			//if (squareView.getBlockView().getBlock().isSelected()){
+				squareView.update();
+			//}
+		}
+		
+		if (rect == null){
+			drawGridBase();
+			fillGrid();
+		}
 
+		
+		
+		
+	}
+
+	public void drawGridBase(){
 		double leftX = 100;
 		double topY = 100;
 		double dimension= Math.min(getWidth(), getHeight());
@@ -129,11 +145,9 @@ public class GameGridView extends JPanel {
 
 			lineX+=rect.getWidth()/columns;
 		}
-		
-		if (!isFilled)
-			fillGrid();
 	}
-
+	
+	
 	public void fillGrid() {
 		if (rect == null)
 			return;
@@ -148,7 +162,6 @@ public class GameGridView extends JPanel {
 			squareView.setLocation((int)Math.floor((col*rect.getWidth()/columns)), (int)  Math.floor((row*rect.getHeight()/rows)));
 			squareView.setSize((int) Math.floor(rect.getWidth()/columns), (int) Math.floor(rect.getHeight()/rows));
 			squareView.update();
-			squareView.getBlockView().update();
 			//System.out.println(squareView.getLocation().toString() + squareView.getSize().toString());
 		}
 		this.setVisible(true);

@@ -60,7 +60,8 @@ public class SquareView extends JPanel
 			@Override
 			public void mouseReleased(MouseEvent e) {//Trigger the event to end a move
 				for (MoveControlListener moveControlListener : listeners) {
-					moveControlListener.endMove();				
+					moveControlListener.endMove();
+					
 				}
 			}
 		});
