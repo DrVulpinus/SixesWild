@@ -24,9 +24,9 @@ public class StartBuilder {
 		   s.dispose();
 		  
 		   
-           MainForm MF = new MainForm();
+           MainForm mainFrame = new MainForm();
            //MF.setExtendedState(JFrame.MAXIMIZED_BOTH);
-           MF.setVisible(true);
+           mainFrame.setVisible(true);
            
            
            
