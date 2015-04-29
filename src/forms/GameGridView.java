@@ -62,12 +62,14 @@ public class GameGridView extends JPanel {
 	}
 	public GameGridView(ArrayList<Square> squares) {
 		this.setSquares(squares);
+		fillGrid();
 	}
 	
 	
 	public GameGridView(Grid grid, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
 		this.setSquares(grid);
+		fillGrid();
 	}
 	public void setSquares(ArrayList<Square> squares) {
 		setLayout(null); //Make sure it is absolute layout

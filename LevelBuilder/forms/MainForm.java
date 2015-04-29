@@ -46,24 +46,6 @@ public class MainForm extends JFrame {
 	private JPanel panel_3;
 	private JButton btnCreateReleaseLevel;
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainForm frame = new MainForm();
-					frame.setUndecorated(false);
-					frame.setResizable(false);
-					frame.setSize(700,700);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -75,7 +57,10 @@ public class MainForm extends JFrame {
 				dispose();
 			}
 		});
-		
+		setUndecorated(false);
+		setResizable(false);
+		setSize(700,700);
+		setVisible(true);
 		getContentPane().setMinimumSize(new Dimension(500, 500));
 		getContentPane().setLayout(new MigLayout("", "[][46.00][48.00][127.00,grow][62.00][][]", "[130.00][34.00][30.00][42.00][101.00,grow][131.00]"));
 		getContentPane().add(getPanel_2(), "cell 3 1,grow");
