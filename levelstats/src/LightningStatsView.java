@@ -22,7 +22,7 @@ public class LightningStatsView extends JPanel{
 		private JTextField textField_4;
 		private JTextField textField;
 		
-		LightningStatsView(LevelStats stats) {
+		public LightningStatsView(LevelStats stats) {
 			setLayout(new MigLayout("", "[grow,center]", "[42.00,center][39.00,center][70.00][10.00][49.00][27.00][21.00][50.00,bottom]"));
 			{
 				textField = new JTextField();

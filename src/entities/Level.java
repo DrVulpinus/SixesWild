@@ -31,7 +31,7 @@ public class Level
 		
 	}
 	public String getType(){
-		return type;
+		return stats.getType();
 	}
 	public String getName(){
 		return name;

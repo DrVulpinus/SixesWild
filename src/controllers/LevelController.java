@@ -31,6 +31,7 @@ public class LevelController implements ChangeLevelPlayState{
 
 	Level level;
 	LevelPlayView levelPlayView;
+	LevelStats levelStats;
 	MoveController moveController;
 	SelectMoveController selectMoveController;
 	LevelPlayState playState;

@@ -3,7 +3,7 @@ package src;
 
 public class EliminationStatsView extends StatsView {
 
-	EliminationStatsView(LevelStats stats) {
+	public EliminationStatsView(LevelStats stats) {
 		super();
 		// other
 		// TODO Auto-generated constructor stub
