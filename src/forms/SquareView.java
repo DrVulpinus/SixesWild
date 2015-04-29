@@ -11,6 +11,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 
 import Interfaces.MoveControlListener;
+import Interfaces.ToolControlListener;
 import entities.Square;
 
 import java.awt.event.ComponentAdapter;
@@ -26,7 +27,11 @@ public class SquareView extends JPanel
 	static final int NORMAL_COLOR = 0xFFFFFF;
 	static final int ELIMINATED_COLOR = 0xFF0000;
 	ArrayList<MoveControlListener> listeners = new ArrayList<MoveControlListener>();
+	ArrayList<ToolControlListener> toolListeners = new ArrayList<ToolControlListener>();
 	Square square;
+	BlockView blockView;
+	
+	
 	public Square getSquare() {
 		return square;
 	}
@@ -34,10 +39,13 @@ public class SquareView extends JPanel
 	public void setSquare(Square square) {
 		this.square = square;
 	}
-
-	BlockView blockView;
+	
 	public void addMoveControlListener(MoveControlListener mcl){
 		listeners.add(mcl);
+	}
+	
+	public void addToolControlListener(ToolControlListener tcl){
+		toolListeners.add(tcl);
 	}
 
 	public SquareView(Square square) {
@@ -49,8 +57,7 @@ public class SquareView extends JPanel
 					moveControlListener.selectBlock(SquareView.this);				
 				}
 			}
-		});
-		addMouseListener(new MouseAdapter() {
+			
 			@Override
 			public void mousePressed(MouseEvent arg0) {//Trigger the event to start a move
 				for (MoveControlListener moveControlListener : listeners) {
@@ -64,6 +71,16 @@ public class SquareView extends JPanel
 				}
 			}
 		});
+		
+		addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				for (ToolControlListener toolControlListener : toolListeners) {
+					toolControlListener.useTool(SquareView.this.getSquare().getLoc());
+				}
+			}
+		});
+		
 		addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent arg0) {

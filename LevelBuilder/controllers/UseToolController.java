@@ -1,8 +1,10 @@
 package controllers;
 
+import entities.Block;
 import entities.Level;
 import entities.Location;
 import entities.Square;
+import forms.BuilderGridView;
 import Interfaces.ToolControlListener;
 import builder_entities.LevelBuildState;
 
@@ -17,10 +19,12 @@ public class UseToolController implements ToolControlListener{
 
 	Level level;
 	LevelBuildState buildState;
+	BuilderGridView builderGridView;
 	
 	public UseToolController(Level level, LevelBuildState buildState) {
 		this.level = level;
 		this.buildState = buildState;
+		this.builderGridView = null;
 	}
 	
 	public void useTool(Location loc) {
@@ -39,6 +43,9 @@ public class UseToolController implements ToolControlListener{
 		
 		if (buildState.getSelectedTool().equals(LevelBuildState.REMOVE_SIX))
 			removeBlock(loc);
+		
+		if (this.builderGridView != null)
+			this.builderGridView.setSquares(level.getGrid());
 	}
 	
 	public void addSquare(Location loc, boolean release) {
@@ -49,10 +56,15 @@ public class UseToolController implements ToolControlListener{
 	
 	public void removeSquare(Location loc) {
 		level.getGrid().remove(loc);
+		System.out.println("Use remove Tool at " + loc);
 	}
 	
 	public void addSixBlock(Location loc) {
-		level.getGrid().add(new Square(loc));
+		
+		Square s = level.getGrid().getSquare(loc);
+		
+		if (s != null)
+			s.setBlock(new Block(6, 1));
 	}
 	
 	public void removeBlock(Location loc) {
@@ -62,6 +74,10 @@ public class UseToolController implements ToolControlListener{
 			return;
 		
 		s.setBlock(null);
+	}
+	
+	public void setBuilderGridView(BuilderGridView bgv) {
+		this.builderGridView = bgv;
 	}
 	
 }

@@ -140,7 +140,7 @@ public class BuildLevelView extends JPanel{
 		}
 		return testJPanel;
 	}
-	private BuilderGridView getBuilderGridView() {
+	public BuilderGridView getBuilderGridView() {
 		if (builderGridView == null) {
 				builderGridView = new BuilderGridView();
 		}
@@ -164,6 +164,7 @@ public class BuildLevelView extends JPanel{
 		}
 		return toolSelector;
 	}
+	
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
