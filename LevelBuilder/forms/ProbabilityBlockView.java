@@ -43,6 +43,7 @@ public class ProbabilityBlockView extends JPanel{
 	private JTextField textField_6;
 	private JLabel label_12;
 	private JButton btnApplyChanges;
+	private JButton btnClose;
 	
 	
 	public ProbabilityBlockView() {
@@ -53,8 +54,9 @@ public class ProbabilityBlockView extends JPanel{
 		add(getPanel_3(), "cell 2 3,grow");
 		add(getPanel_4(), "cell 2 4,grow");
 		add(getPanel_5(), "cell 2 5,grow");
-		add(getBtnApplyChanges(), "cell 2 6");
+		add(getBtnApplyChanges(), "flowx,cell 2 6");
 		add(getPanel_6(), "cell 4 6,grow");
+		add(getBtnClose(), "cell 2 6");
 	}
 
 	private JPanel getPanel() {
@@ -270,5 +272,11 @@ public class ProbabilityBlockView extends JPanel{
 			});
 		}
 		return btnApplyChanges;
+	}
+	private JButton getBtnClose() {
+		if (btnClose == null) {
+			btnClose = new JButton("Close");
+		}
+		return btnClose;
 	}
 }
