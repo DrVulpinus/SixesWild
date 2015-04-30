@@ -23,6 +23,8 @@ public class MoveController implements MoveControlListener {
 	Boolean started;
 	GameGridView grid;
 	
+	StatsController statsController;
+	
 	public MoveController(Level level, LevelPlayState playState) {
 		selectedSquareViews = new ArrayList<SquareView>();
 		this.level = level;
@@ -80,6 +82,8 @@ public class MoveController implements MoveControlListener {
 		if (grid != null){
 			grid.fillGrid();
 		}
+		
+		statsController.update();
 		
 		System.out.println("End Move");
 	}

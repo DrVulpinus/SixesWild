@@ -37,11 +37,13 @@ public class StatsView extends JPanel {
 	private JTextField textField_5;
 	private MoveRegular moveRegular;
 	private PuzzleStats puzzleStats;
+	String score;
 	
 	public StatsView(){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
 		puzzleStats = new PuzzleStats(0,30);
+		score = Integer.toString(puzzleStats.getScore());
 		add(getpanel(), "cell 0 0,aligny top");
 		{
 			JPanel panel = new JPanel();
@@ -129,14 +131,34 @@ public class StatsView extends JPanel {
 
 
 
-	private JPanel getpanel_1() {
+	public JPanel getpanel_1() {
 		JPanel panel_1 = new JPanel();
 		//panel_1.setBounds(28, 225, 73, 28);
 		{
 			textField_3 = new JTextField();
-			String score = Integer.toString(puzzleStats.getScore());
+			int points = puzzleStats.getPoints();
+//			System.out.print("ThESE ARE POINTS");
+//			System.out.println(points);
+			if (puzzleStats != null){
+				System.out.println("THIS SHOULD WORK");
+			}
+			else{
+				System.out.println("It's the points");
+			}
+			int initialscore = puzzleStats.getScore();
+			System.out.println("initialScore");
+			System.out.println(initialscore);
+			int newscore;
+			
 			System.out.println(score);
 			if(score != null){
+				if(puzzleStats.updating){
+					System.out.print("ThESE ARE POINTS");
+					System.out.println(points);
+					newscore = points + initialscore;
+					score = Integer.toString(newscore);
+					textField_3.setText(score);
+				}
 				textField_3.setText(score);
 			}
 			else{
@@ -155,6 +177,10 @@ public class StatsView extends JPanel {
 		}
 
 		return panel_1;
+	}
+	
+	public JTextField getTextField_3(){
+		return textField_3;
 	}
 	private JPanel getpanel_3(){
 		JPanel panel_3 = new JPanel();
@@ -188,16 +214,6 @@ public class StatsView extends JPanel {
 		JLabel lblPoints = new JLabel("Score:");
 		//lblPoints.setBounds(47, 210, 43, 13);
 		return lblPoints;
-	}
-
-
-	public static void main(String[] arg) {
-		//stats = new LevelStats();
-		//statsview = new LevelStatsView(stats);
-
-		StatsView w = new StatsView();
-		//w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		w.setVisible(true);
 	}
 
 

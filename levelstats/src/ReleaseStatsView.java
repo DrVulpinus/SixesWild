@@ -47,7 +47,7 @@ private JPanel getpanel() {
 
 
 
-private JPanel getpanel_1() {
+public JPanel getpanel_1() {
 	JPanel panel_1 = new JPanel();
 	//panel_1.setBounds(28, 225, 73, 28);
 	{

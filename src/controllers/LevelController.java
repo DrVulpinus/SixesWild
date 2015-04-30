@@ -50,9 +50,6 @@ public class LevelController implements ChangeLevelPlayState{
 		this.moveController.setGrid(this.levelPlayView.getGridView());
 		this.selectMoveController = new SelectMoveController(levelPlayView, playState);
 		
-		level.setStats(new PuzzleStats(0, 30)); // for now just use zero score, 30 moves
-		this.levelStats = level.getStats();
-		
 		levelPlayView.setLevel(level);
 		playState.addStateChangedListener(this);
 		playState.setSelectedMove(playState.MOVE_REGULAR);		

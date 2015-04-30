@@ -1,25 +1,12 @@
 package forms;
 
-import javax.swing.AbstractButton;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
-import java.awt.FlowLayout;
-
-import javax.swing.border.BevelBorder;
-
-import src.PuzzleStats;
-import src.StatsView;
-
-import java.awt.Color;
-
-import javax.swing.JButton;
-
 import net.miginfocom.swing.MigLayout;
-
-import javax.swing.JComboBox;
-
+import src.LevelStats;
+import src.StatsView;
 import Interfaces.ToolControlListener;
 import builder_entities.LevelBuildState;
 import entities.Grid;
@@ -69,7 +56,7 @@ public class BuildLevelView extends JPanel{
 		this.level = level;
 		
 		if (this.level == null)
-			this.level = new Level(new PuzzleStats(0, 0) , new Grid());
+			this.level = new Level(new LevelStats(0, 0) , new Grid());
 		
 		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
 		setLayout(new MigLayout("", "[][203.00px,grow,fill][130px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));

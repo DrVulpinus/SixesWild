@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class MoveRegular extends Move {
-
+	boolean updating = level.getStats().updating;
+	
 	public MoveRegular(Level level, ArrayList<Square> squares) {
 		super(level, squares);
 		System.out.println("Construct Move Regular");
@@ -24,9 +25,11 @@ public class MoveRegular extends Move {
 			Square sq = i.next();
 			sq.setNorthernBlock();		
 		}
-		
-
+		System.out.println(level.getStats().getScore());
 		level.getStats().update(getPoints(), 0, 0);
+		
+		updating = false;
+		System.out.println(level.getStats().getScore());
 
 		System.out.println("Regular Move Performed");
 		
@@ -35,7 +38,7 @@ public class MoveRegular extends Move {
 
 	@Override
 	public int getPoints(){
-		int points = 1;
+		int points = 100;
 		
 		for (Iterator<Square> i = getSquaresInvolved().iterator(); i.hasNext();) {
 			

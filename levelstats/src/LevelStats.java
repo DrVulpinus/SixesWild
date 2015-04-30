@@ -14,6 +14,8 @@ public class LevelStats {
 	public int starcount2 = 2000;
 	public int starcount3 = 3000;
 
+	public boolean updating = false;
+	
 	int selectedType;
 
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
@@ -29,6 +31,9 @@ public class LevelStats {
 	}
 
 	public void update(int points, int releases, int eliminations) {
+		updating = true;
+		this.points = points;
+		this.score = getScore();
 		this.score += points;
 	}
 
@@ -52,6 +57,9 @@ public class LevelStats {
 		return score;
 	}
 
+	public int getPoints(){
+		return this.points;
+	}
 	public boolean winCondition() {
 		if(getStarCount() >= 1){
 			return true;
