@@ -5,8 +5,11 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
+import controllers.ProbabilityController;
 import controllers.UseToolController;
 import builder_entities.LevelBuildState;
 import src.LevelStats;
@@ -16,11 +19,16 @@ import entities.Grid;
 import entities.Level;
 import entities.LevelPlayState;
 import entities.Location;
+import entities.Probability;
 import entities.Square;
+import forms.AdjustStarView;
 import forms.BuildLevelView;
+import forms.EnableSpecialMoveView;
 import forms.LevelPlayView;
 import forms.MainForm;
 import forms.MainFrame;
+import forms.ProbabilityBlockView;
+import forms.ProbabilityMultiplierView;
 
 
 
@@ -33,6 +41,13 @@ public class BuildingController {
 	ToolSelectionController toolSelect;
 	LevelBuildState buildState;
 	UseToolController useTool;
+	
+	JDialog settingsDialog;
+	ProbabilityBlockView probValueView;
+	ProbabilityMultiplierView probMultView;
+	EnableSpecialMoveView enableSpecialMoveView;
+	AdjustStarView adjustStarView;
+	ProbabilityController probabilityController;
 
 	
 	public BuildingController(Level level, MainForm window) {
@@ -44,7 +59,15 @@ public class BuildingController {
 		this.useTool = new UseToolController(level, buildState);
 		this.buildLevelView = new BuildLevelView(level, useTool);
 		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
-		this.useTool.setBuilderGridView(buildLevelView.getBuilderGridView());
+		this.useTool.setBuilderGridView(buildLevelView.getBuilderGridView());		
+		
+		this.settingsDialog = new JDialog(window, true);
+		this.probValueView = new ProbabilityBlockView();
+		this.probMultView = new ProbabilityMultiplierView();
+		this.enableSpecialMoveView = new EnableSpecialMoveView();
+		this.adjustStarView = new AdjustStarView();
+		
+		this.probabilityController = new ProbabilityController(this.probValueView, this.probMultView, null);
 		
 		
 		
@@ -55,13 +78,63 @@ public class BuildingController {
 			}
 			});
 		
+		this.addSettingsListeners();
+		
 		
 		window.getContentPane().removeAll();
 		window.getContentPane().add(buildLevelView, BorderLayout.CENTER);
 		
 		window.getContentPane().validate();
 		window.getContentPane().repaint();
-	}	
+	}
+	
+	
+	
+	public void addSettingsListeners() {
+		
+		buildLevelView.getBtnEditValue().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				displaySettings(probValueView, "Edit Value Probability");
+			}
+		});
+		
+		buildLevelView.getBtnEditMultiplier().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				displaySettings(probMultView, "Edit Muliplier Probability");
+			}
+		});
+		
+		buildLevelView.getBtnEditSpecialMoves().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				displaySettings(enableSpecialMoveView, "Enable/Disable Special Moves");
+			}
+		});
+		
+		buildLevelView.getBtnEditStarPoints().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				displaySettings(adjustStarView, "Adjust Star View");
+			}
+		});
+		
+		
+		
+	}
+	
+	private void displaySettings(JPanel view, String title) {
+		settingsDialog.getContentPane().removeAll();
+		settingsDialog.setTitle(title);
+		settingsDialog.setSize(600, 400);
+		settingsDialog.getContentPane().add(view);
+		settingsDialog.setVisible(true);
+		settingsDialog.repaint();
+	}
+	
 
 }
 

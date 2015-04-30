@@ -36,6 +36,24 @@ public class Probability {
 		return this.multProb[multiplier-1];
 	}
 	
+	public boolean setValueProbs(int[] p) {
+		this.valueProb[0] = p[0];
+		this.valueProb[1] = p[1];
+		this.valueProb[2] = p[2];
+		this.valueProb[3] = p[3];
+		this.valueProb[4] = p[4];
+		
+		return (p[0] + p[1] + p[2] + p[3] + p[4] == 100);
+	}
+	
+	public boolean setMultProbs(int[] p) {
+		this.multProb[0] = p[0];
+		this.multProb[1] = p[1];
+		this.multProb[2] = p[2];
+		
+		return (p[0] + p[1] + p[2] == 100);
+	}
+	
 	public boolean setValueProb(int p1, int p2, int p3, int p4, int p5) {
 		this.valueProb[0] = p1;
 		this.valueProb[1] = p2;
@@ -46,7 +64,7 @@ public class Probability {
 		return (p1 + p2 + p3 + p4 + p5 == 100);
 	}
 	
-	public boolean setValueProb(int p1, int p2, int p3) {
+	public boolean setMultProb(int p1, int p2, int p3) {
 		this.multProb[0] = p1;
 		this.multProb[1] = p2;
 		this.multProb[2] = p3;

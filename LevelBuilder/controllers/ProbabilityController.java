@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -28,7 +29,7 @@ public class ProbabilityController {
 	JButton xapply;
 	
 
-	public ProbabilityController(ProbabilityBlockView probabilityBlockView, ProbabilityMultiplierView probabilityMultiplierView,  final Probability probability) {
+	public ProbabilityController(final ProbabilityBlockView probabilityBlockView, final ProbabilityMultiplierView probabilityMultiplierView,  final Probability probability) {
 	
 			this.one = probabilityBlockView.getTextField();
 			this.two = probabilityBlockView.getTextField_1();
@@ -72,16 +73,13 @@ public class ProbabilityController {
 	      	}
 	      	if(sum != 100){
 	      		System.out.println("Your numbers do not add up to 100.");
+	      		JOptionPane.showMessageDialog(probabilityBlockView, "Your numbers do not add up to 100.");
 	      	}
 	      	
 	      	else{
 	      		// use probabilities
-	      	probability.setProb1(numbers[0]);
-	      	probability.setProb2(numbers[1]);
-	      	probability.setProb3(numbers[2]);
-	      	probability.setProb4(numbers[3]);
-	      	probability.setProb5(numbers[4]);
-	      	probability.setProb6(numbers[5]);      		   		
+	      		if (probability != null)
+	      			probability.setValueProbs(numbers);     		   		
 	      	}
 				}
 			});
@@ -106,12 +104,12 @@ public class ProbabilityController {
 					
 					if(sum != 100){
 						System.out.println("Your numbers do not add up to 100.");
+						JOptionPane.showMessageDialog(probabilityMultiplierView, "Your numbers do not add up to 100.");
 					}
 					
 					else{
-						probability.setProbx1(multi[0]);
-						probability.setProbx2(multi[1]);
-						probability.setProbx3(multi[2]);
+			      		if (probability != null)
+			      			probability.setMultProbs(multi);
 					}				
 				}
 				

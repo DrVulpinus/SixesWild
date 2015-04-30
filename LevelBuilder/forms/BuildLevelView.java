@@ -1,7 +1,12 @@
 package forms;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
@@ -14,7 +19,7 @@ import entities.Level;
 
 
 public class BuildLevelView extends JPanel{
-	private StatsView testJPanel;
+	private StatsView statsView;
 	private BuilderGridView builderGridView;
 	private JButton btnExitWithoutSaving;
 	private JComboBox toolSelector;
@@ -30,6 +35,8 @@ public class BuildLevelView extends JPanel{
 	private JButton btnEditValue;
 	private JButton btnEditMultiplier;
 	private JButton btnEditStarPoints;
+	
+	private JDialog settingsDialog;
 	
 	
 	/*public BuildLevelView() {
@@ -59,8 +66,8 @@ public class BuildLevelView extends JPanel{
 			this.level = new Level(new LevelStats(0, 0) , new Grid());
 		
 		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
-		setLayout(new MigLayout("", "[][203.00px,grow,fill][130px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
-		add(getBtnNewButton(), "cell 1 0");
+		setLayout(new MigLayout("", "[][203.00px,grow,fill][300px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
+		add(getBtnEditSpecialMoves(), "cell 1 0");
 		add(getBtnEditValue(), "cell 2 0");
 		add(getBtnEditMultiplier(), "cell 3 0");
 		add(getBtnEditStarPoints(), "cell 1 1");
@@ -92,11 +99,16 @@ public class BuildLevelView extends JPanel{
 //		add(getBtnExitWithoutSaving(), "cell 2 4");
 		
 	}
+	
+	
+
+	
+	
 	private StatsView getTestJPanel() {
-		if (testJPanel == null) {
-			testJPanel = new StatsView();
+		if (statsView == null) {
+			statsView = new StatsView();
 		}
-		return testJPanel;
+		return statsView;
 	}
 	public BuilderGridView getBuilderGridView() {
 		if (builderGridView == null) {
@@ -112,13 +124,7 @@ public class BuildLevelView extends JPanel{
 	}
 	public JComboBox getToolSelector() {
 		if (toolSelector == null) {
-			
-			
 			toolSelector = new JComboBox(LevelBuildState.TOOL_STRINGS);
-			
-			
-				
-			
 		}
 		return toolSelector;
 	}
@@ -149,25 +155,25 @@ public class BuildLevelView extends JPanel{
 		}
 		return btnClose;
 	}
-	private JButton getBtnNewButton() {
+	public JButton getBtnEditSpecialMoves() {
 		if (btnNewButton == null) {
 			btnNewButton = new JButton("Enable/Disable SpecialMoves");
 		}
 		return btnNewButton;
 	}
-	private JButton getBtnEditValue() {
+	public JButton getBtnEditValue() {
 		if (btnEditValue == null) {
 			btnEditValue = new JButton("Edit Value %");
 		}
 		return btnEditValue;
 	}
-	private JButton getBtnEditMultiplier() {
+	public JButton getBtnEditMultiplier() {
 		if (btnEditMultiplier == null) {
 			btnEditMultiplier = new JButton("Edit Multiplier %");
 		}
 		return btnEditMultiplier;
 	}
-	private JButton getBtnEditStarPoints() {
+	public JButton getBtnEditStarPoints() {
 		if (btnEditStarPoints == null) {
 			btnEditStarPoints = new JButton("Edit Star Points");
 		}

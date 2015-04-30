@@ -26,6 +26,7 @@ public class SquareView extends JPanel
 {
 	static final int NORMAL_COLOR = 0xFFFFFF;
 	static final int ELIMINATED_COLOR = 0xFF0000;
+	static final int RELEASE_COLOR = 0x000000;
 	ArrayList<MoveControlListener> listeners = new ArrayList<MoveControlListener>();
 	ArrayList<ToolControlListener> toolListeners = new ArrayList<ToolControlListener>();
 	Square square;
@@ -112,7 +113,10 @@ public class SquareView extends JPanel
 		if (square.getEliminated())
 			setBackground(new Color(ELIMINATED_COLOR));
 		else
-			setBackground(new Color(NORMAL_COLOR));
+			if (square.isRelease())
+				setBackground(new Color(RELEASE_COLOR));
+			else
+				setBackground(new Color(NORMAL_COLOR));
 	}
 	
 }

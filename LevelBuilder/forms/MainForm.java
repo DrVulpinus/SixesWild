@@ -26,13 +26,17 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JButton;
 
+import src.EliminationStats;
 import src.LevelStats;
+import src.LightningStats;
 import src.PuzzleStats;
+import src.ReleaseStats;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
 import entities.Location;
 import entities.Square;
+import entities.Timer;
 
 public class MainForm extends JFrame {
 	//BuildLevelView leveleditor = new BuildLevelView();
@@ -70,14 +74,36 @@ public class MainForm extends JFrame {
 		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
-		setSize(500, 500);
+		setSize(800, 500);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild Builder");
+		
 		
 		getBtnCreatePuzzleLevel().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
 				buildingController = new BuildingController(new Level(new PuzzleStats(0,0), new Grid()), MainForm.this);
+			}
+		});
+		
+		getBtnCreateLightningLevel().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				buildingController = new BuildingController(new Level(new LightningStats(0, new Timer()), new Grid()), MainForm.this);
+			}
+		});
+		
+		getBtnCreateEliminationLevel().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				buildingController = new BuildingController(new Level(new EliminationStats(0,0), new Grid()), MainForm.this);
+			}
+		});
+		
+		getBtnCreateReleaseLevel().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				buildingController = new BuildingController(new Level(new ReleaseStats(0,0), new Grid()), MainForm.this);
 			}
 		});
 		
