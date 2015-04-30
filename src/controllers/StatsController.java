@@ -1,6 +1,8 @@
 package controllers;
 
 import src.LevelStats;
+import src.PuzzleStats;
+import src.PuzzleStatsView;
 import src.StatsView;
 
 public class StatsController {
@@ -26,5 +28,12 @@ public class StatsController {
 		System.out.println("After");
 		
 		sv.getTextField_3().setText(score);
+	}
+	
+	public void generateStats(){
+		if (ls.getType().equals("Puzzle")){
+			ls = new PuzzleStats(0, 30);
+			sv = new PuzzleStatsView(ls);
+		}
 	}
 }
