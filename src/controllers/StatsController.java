@@ -15,10 +15,16 @@ public class StatsController {
 	
 	public void update(){
 		String score = null;
+		System.out.println("Before");
 		if(ls.updating){
+			System.out.println("During");
+				
 			score = Integer.toString(ls.getScore());
 			sv.getTextField_3().setText(score);
 		}
+		
+		System.out.println("After");
+		
 		sv.getTextField_3().setText(score);
 	}
 }

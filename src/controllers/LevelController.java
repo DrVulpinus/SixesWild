@@ -31,7 +31,7 @@ public class LevelController implements ChangeLevelPlayState{
 
 	Level level;
 	LevelPlayView levelPlayView;
-	LevelStats levelStats;
+	StatsController statsController;
 	MoveController moveController;
 	SelectMoveController selectMoveController;
 	LevelPlayState playState;
@@ -47,6 +47,7 @@ public class LevelController implements ChangeLevelPlayState{
 		this.playState = new LevelPlayState();
 		this.moveController = new MoveController(level, playState);
 		this.levelPlayView = new LevelPlayView(level, moveController);
+		this.moveController.setLevelPlayView(levelPlayView);
 		this.moveController.setGrid(this.levelPlayView.getGridView());
 		this.selectMoveController = new SelectMoveController(levelPlayView, playState);
 		
@@ -92,6 +93,7 @@ public class LevelController implements ChangeLevelPlayState{
 				
 			}
 		});
+		this.statsController = new StatsController(level.getStats(), levelPlayView.getStatsView());
 	}
 	
 	

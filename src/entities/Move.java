@@ -52,7 +52,7 @@ public abstract class Move {
 	
 	
 	public int getPoints(){
-		return 0;
+		return points;
 	}
 	
 	public int getEliminations() {
@@ -61,6 +61,11 @@ public abstract class Move {
 	
 	public int getReleases() {
 		return 0;
+	}
+
+	public void setPoints(int i) {
+		this.points = i;
+		
 	}
 
 }
