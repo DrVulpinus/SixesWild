@@ -19,6 +19,13 @@ public class Level
 	Icon icon;
 	String name;
 	String type;
+	LevelType lvlType;	
+	public LevelType getLvlType() {
+		return lvlType;
+	}
+	public void setLvlType(LevelType lvlType) {
+		this.lvlType = lvlType;
+	}
 	public Level(LevelStats stats, Grid grid) {
 		this.stats = stats;
 		this.grid = grid;
