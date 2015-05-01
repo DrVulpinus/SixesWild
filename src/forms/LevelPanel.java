@@ -8,10 +8,13 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 import entities.Level;
+import entities.LevelType;
 
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -38,11 +41,9 @@ private JLabel lblLevelname;
 			}
 		});
 		level = lvl;
-		int r = (int) (Math.random()*255.0d);
-		int g = (int) (Math.random()*255.0d);
-		int b = (int) (Math.random()*255.0d);
-		normalColor = new Color(r,g,b, 100);
-		hoveredColor = new Color(r, g, b, 255);
+		normalColor = Color.getHSBColor((float) Math.random(), 1.0f, 1.0f);
+		normalColor = new Color(normalColor.getRed(), normalColor.getGreen(), normalColor.getBlue(), 100);
+		hoveredColor = new Color(normalColor.getRed(), normalColor.getGreen(), normalColor.getBlue(), 255);
 		setBackground(normalColor);
 		
 		setLayout(null);
@@ -58,6 +59,11 @@ private JLabel lblLevelname;
 			add(getLblStar3());
 		}		
 		setLevelName(level.getName());
+		try {
+			setLevelType(getTypeString(level.getLvlType()));
+		} catch (Exception e) {
+			setLevelType("NO TYPE AVAILABLE");
+		}
 		
 	}
 
@@ -74,6 +80,22 @@ private JLabel lblLevelname;
 	}
 	public void setLevelType(String levelType){
 		getLblLeveltype().setText(levelType);
+	}
+	public String getTypeString(LevelType type){
+		switch (type) {
+		case ELIMINATION:
+			return "Elimination";
+		case PUZZLE:
+			return "Puzzle";
+		case RELEASE:
+			return "Release";
+		case LIGHTNING:
+			return "Lightning";
+		default:
+			return "TYPE ERROR";
+			
+		}
+		
 	}
 	JLabel getLblLevelName() {
 		if (lblLevelname == null) {

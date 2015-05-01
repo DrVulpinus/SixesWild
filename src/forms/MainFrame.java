@@ -89,7 +89,7 @@ public class MainFrame extends JFrame{
 					hue += .001 *direction;
 				}
 				
-				Color myColor = Color.getHSBColor((float) hue, 1.0f, 1.0f);
+				Color myColor = Color.getHSBColor((float) hue, 0.5f, 0.5f);
 				getContentPane().setBackground(myColor);
 				for (Component comp : getContentPane().getComponents()) {
 					
