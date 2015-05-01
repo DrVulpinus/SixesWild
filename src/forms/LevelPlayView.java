@@ -43,7 +43,7 @@ public class LevelPlayView extends JPanel {
 		
 		//btnBack.setBounds(395, 20, 117, 29);
 		add(getbtnBack(), "cell 2 1,growx,aligny bottom");
-		
+		this.setBackground(new Color(255, 255, 255, 50));
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
 	}

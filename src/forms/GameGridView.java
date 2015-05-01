@@ -20,6 +20,10 @@ import java.awt.event.MouseEvent;
 
 public class GameGridView extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3399803991655076903L;
 	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
 	MoveControlListener moveControlListener = null;
 
@@ -33,7 +37,7 @@ public class GameGridView extends JPanel {
 	double xIncrement = 0;
 	double yIncrement = 0;
 	
-	Rectangle2D rect = null;
+	
 	
 	
 	public GameGridView() {
@@ -87,84 +91,42 @@ public class GameGridView extends JPanel {
 
 	@Override
 	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
+		//super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
+		System.err.println("REPAINTING");
 
 		g2.setColor(color);
 		for (SquareView squareView : squareViews) {
 			//if (squareView.getBlockView().getBlock().isSelected()){
-				squareView.update();
+				//squareView.update();
 			//}
 		}
 		
-		if (rect == null){
-			drawGridBase();
-			fillGrid();
-		}
+		
+			//drawGridBase();
+			//fillGrid();
+		
 
 		
 		
 		
 	}
-
-	public void drawGridBase(){
-		double leftX = 100;
-		double topY = 100;
-		double dimension= Math.min(getWidth(), getHeight());
-
-		double width = dimension;
-		double height = dimension;
-		double linesX=0;
-		double lineY=0.0;
-		double linesY=0;
-		double lineX=0.0;
-
-
-		rect = new Rectangle2D.Double(0, 0, width, height);
-		//rect = new Rectangle2D.Double(0, 0, 100,100);
-		//g2.draw(rect);
-
-
-
-		//g2.draw(new Line2D.Double(rect.getX(), rect.getY(), rect.getX()+ rect.getWidth(), rect.getY() + rect.getHeight()));
-		while(linesX<rows){
-
-
-			//g2.draw(new Line2D.Double(rect.getX(), lineY, rect.getX()+ rect.getWidth(), lineY));
-			linesX++;
-			xIncrement= rect.getHeight()/rows;
-			lineY+=rect.getHeight()/rows;
-			//System.out.println(lineY);
-
-		}
-
-		while (linesY<columns){
-			//g2.draw(new Line2D.Double(lineX, rect.getY(), lineX, rect.getY()+ rect.getHeight()));  
-			linesY++;
-			yIncrement= rect.getWidth()/columns;
-
-			lineX+=rect.getWidth()/columns;
-		}
-	}
-	
-	
 	public void fillGrid() {
-		if (rect == null)
-			return;
 		
-		this.setVisible(false);
+		
+		//this.setVisible(false);
 		
 		//System.out.println(this.getSize().toString());
 		for (SquareView squareView : squareViews) {
 			int col = squareView.getSquare().getLoc().getCol();
 			int row = squareView.getSquare().getLoc().getRow();
 			//System.out.println(squareView.getSquare().getLoc().toString());
-			squareView.setLocation((int)Math.floor((col*rect.getWidth()/columns)), (int)  Math.floor((row*rect.getHeight()/rows)));
-			squareView.setSize((int) Math.floor(rect.getWidth()/columns), (int) Math.floor(rect.getHeight()/rows));
+			squareView.setLocation((int)Math.floor((col*getWidth()/columns)), (int)  Math.floor((row*getHeight()/rows)));
+			squareView.setSize((int) Math.floor(getWidth()/columns), (int) Math.floor(getHeight()/rows));
 			squareView.update();
 			//System.out.println(squareView.getLocation().toString() + squareView.getSize().toString());
 		}
-		this.setVisible(true);
+		//this.setVisible(true);
 	/*	
 		for (int y = 0; y < columns; y++){
 			for (int x = 0; x < rows; x++) {				
@@ -187,7 +149,7 @@ public class GameGridView extends JPanel {
 		int roundYOutput = (int)Math.round(currentYVal);
 		int YOutput = (columns - roundYOutput);
 		//int XOutput = (yNumLines - roundYOutput);
-		System.out.println(roundXOutput+","+YOutput);
+		System.err.println(roundXOutput+","+YOutput);
 	
 	}
 		

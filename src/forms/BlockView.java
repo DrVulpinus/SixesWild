@@ -57,7 +57,8 @@ public class BlockView extends JLabel
 	Block block;
 	String icon;
 	JLabel label;
-
+	ImageIcon smallIco;
+	ImageIcon largeIco;
 	public BlockView(Block block) {
 		super();
 		addComponentListener(new ComponentAdapter() {
@@ -81,7 +82,10 @@ public class BlockView extends JLabel
 		this.setIcon(null);
 		//this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
 		update();
+		
 		this.setVisible(true);
+		smallIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight());
+		largeIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5);
 		//update();
 		
 	}

@@ -7,6 +7,7 @@ public class Square
 	Block block;
 	Location loc;
 	ArrayList<Square> neighbors = new ArrayList<Square>();
+	ArrayList<SquareChangeListener> changeListeners = new ArrayList<SquareChangeListener>();
 	boolean isRelease;
 	
 	boolean eliminated;
@@ -15,7 +16,14 @@ public class Square
 	{
 		block = null;
 	}
-	
+	public void addListener(SquareChangeListener scl){
+		changeListeners.add(scl);
+	}
+	public void callChangeListeners(){
+		for (SquareChangeListener squareChangeListener : changeListeners) {
+			squareChangeListener.squareChanged();
+		}
+	}
 	public Square(Location loc) {
 		block = null;
 		this.loc = loc;
@@ -23,6 +31,7 @@ public class Square
 	
 	public void setEliminated(boolean eliminated) {
 		this.eliminated = eliminated;
+		callChangeListeners();
 	}
 	
 	public boolean getEliminated() {
@@ -63,7 +72,8 @@ public class Square
 
 	public void setBlock(Block block) {
 		this.block = block;
-		System.out.println("Block set to " + block);
+		callChangeListeners();
+		//System.out.println("Block set to " + block);
 	}
 
 	public Location getLoc() {
@@ -88,6 +98,8 @@ public class Square
 
 	public void setRelease(boolean isRelease) {
 		this.isRelease = isRelease;
+		callChangeListeners();
+		
 	}
 	
 	

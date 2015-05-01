@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import Interfaces.MoveControlListener;
 import Interfaces.ToolControlListener;
 import entities.Square;
+import entities.SquareChangeListener;
 
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -22,9 +23,9 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 
-public class SquareView extends JPanel
+public class SquareView extends JPanel implements SquareChangeListener
 {
-	static final int NORMAL_COLOR = 0xFFFFFF;
+	static final Color NORMAL_COLOR = new Color(255,255,255,0);
 	static final int ELIMINATED_COLOR = 0xFF0000;
 	static final int RELEASE_COLOR = 0x000000;
 	ArrayList<MoveControlListener> listeners = new ArrayList<MoveControlListener>();
@@ -94,10 +95,11 @@ public class SquareView extends JPanel
 		});
 		this.square = square;
 		setLayout(new BorderLayout());
-
 		add(getBlockView(), BorderLayout.CENTER);
+		setBackground(NORMAL_COLOR);
 		this.update();
 		this.setVisible(true);
+		
 	}
 	
 	public BlockView getBlockView() {
@@ -109,14 +111,21 @@ public class SquareView extends JPanel
 	public void update() {
 		
 		getBlockView().setBlock(square.getBlock());
-				
+			
+		
+	}
+
+	@Override
+	public void squareChanged() {
+		
 		if (square.getEliminated())
 			setBackground(new Color(ELIMINATED_COLOR));
 		else
 			if (square.isRelease())
 				setBackground(new Color(RELEASE_COLOR));
 			else
-				setBackground(new Color(NORMAL_COLOR));
+				setBackground(NORMAL_COLOR);
+		
 	}
 	
 }
