@@ -19,7 +19,11 @@ public class Level
 	Icon icon;
 	String name;
 	String type;
-	LevelType lvlType;	
+	LevelType lvlType;
+	Probability probability;
+	
+	
+	
 	public LevelType getLvlType() {
 		return lvlType;
 	}
@@ -32,11 +36,22 @@ public class Level
 		
 	}
 	public Level(LevelStats stats, Grid grid, String name) {
+		BlockMaker.setProbability(this.probability);
 		this.stats = stats;
 		this.grid = grid;
 		this.name = name;
+
+		this.probability = new Probability();
+		BlockMaker.setProbability(this.probability);
 		
 	}
+	
+	public Level(LevelStats stats, Grid grid, Probability p, String name) {
+		this(stats, grid, name);
+		this.probability = p;
+		BlockMaker.setProbability(this.probability);
+	}
+	
 	public String getType(){
 		return stats.getType();
 	}
@@ -84,5 +99,11 @@ public class Level
 		this.icon = icon;
 	}
 	
+	public Probability getProbability() {
+		return probability;
+	}
 	
+	public void setProbability(Probability probability) {
+		this.probability = probability;
+	}
 }

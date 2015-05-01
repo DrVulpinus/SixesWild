@@ -104,7 +104,8 @@ public class Square
 			getNorthernNeighbor().setNorthernBlock();
 			}
 			else{
-				setBlock(null);
+				setBlock(BlockMaker.makeBlock());
+				System.out.println("Make Block");
 			}
 			
 		}		
