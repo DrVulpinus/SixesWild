@@ -11,6 +11,12 @@ import javax.swing.JScrollPane;
 
 import net.miginfocom.swing.MigLayout;
 
+/**
+ * Superclass for LevelSelectView and AchievementSelectView.
+ * It contains a panel, the ability to scroll, and a list of items.
+ * @author Miya
+ *
+ */
 public abstract class SelectView extends JPanel {
 	private JScrollPane scrollPane;
 	ArrayList<JLabel> items = new ArrayList<JLabel>();
@@ -20,6 +26,10 @@ public abstract class SelectView extends JPanel {
 		add(getScrollPane());
 	}
 
+	/**
+	 * Gets a scrollPane.
+	 * @return scrollPane The JScrollPane added to the view.
+	 */
 	JScrollPane getScrollPane() {
 		if (scrollPane == null) {
 			scrollPane = new JScrollPane();
@@ -27,11 +37,19 @@ public abstract class SelectView extends JPanel {
 		}
 		return scrollPane;
 	}
+
+	/**
+	 * Adds all JLabels to the panel contained in the view.
+	 */
 	void loadItems(){
 		for (JLabel jLabel : items) {
 			getPanel().add(jLabel);
 		}
 	}
+	/**
+	 * Gets a Panel.
+	 * @return panel A Panel added to the view.
+	 */
 	JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
@@ -39,6 +57,11 @@ public abstract class SelectView extends JPanel {
 		}
 		return panel;
 	}
+
+	/**
+	 * Generic background color.
+	 * @param clr The color of choice to be set.
+	 */
 	@Override
 	public void setBackground(Color clr){
 		super.setBackground(clr);
