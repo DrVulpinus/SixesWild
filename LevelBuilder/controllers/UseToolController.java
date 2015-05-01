@@ -46,6 +46,8 @@ public class UseToolController implements ToolControlListener{
 		
 		if (this.builderGridView != null)
 			this.builderGridView.setSquares(level.getGrid());
+		
+		System.out.println("grid size: " + level.getGrid().size());
 	}
 	
 	public void addSquare(Location loc, boolean release) {

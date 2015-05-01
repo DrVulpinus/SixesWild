@@ -72,5 +72,17 @@ public class LevelStats {
 		this.selectedType =type;
 		System.out.println("LevelStats::Level Type Selected: " + type);
 	}
+	
+	public boolean setStarCounts(int sc1, int sc2, int sc3) {
+		
+		if (!(sc1 <= sc2 && sc2 <= sc3))
+			return false;
+		
+		this.starcount1 = sc1;
+		this.starcount2 = sc2;
+		this.starcount3 = sc3;
+		
+		return true;
+	}
 
 }

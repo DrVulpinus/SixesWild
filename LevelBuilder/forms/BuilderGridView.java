@@ -79,7 +79,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 				Square s = new Square();
 				s.setLoc(new Location(y, x));
 				s.setBlock(new Block(1, 2));
-				SquareView sV = new SquareView(s);
+				SquareView sV = new SquareView(s, true);
 				squareViews.add(sV);
 				this.add(sV);
 				rows = 9;
@@ -98,7 +98,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 		this.removeAll();
 		setLayout(null); //Make sure it is absolute layout
 		for (Square square : squares) {
-			SquareView sV = new SquareView(square);
+			SquareView sV = new SquareView(square, true);
 			sV.addToolControlListener(toolListener);
 			sV.update();
 			squareViews.add(sV);

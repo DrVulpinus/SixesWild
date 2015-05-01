@@ -26,6 +26,7 @@ import java.util.ArrayList;
 public class SquareView extends JPanel implements SquareChangeListener
 {
 	static final Color NORMAL_COLOR = new Color(255,255,255,0);
+	static final Color NORMAL_BUILD_COLOR = new Color(255,255,255);
 	static final int ELIMINATED_COLOR = 0xFF0000;
 	static final int RELEASE_COLOR = 0x000000;
 	ArrayList<MoveControlListener> listeners = new ArrayList<MoveControlListener>();
@@ -48,6 +49,15 @@ public class SquareView extends JPanel implements SquareChangeListener
 	
 	public void addToolControlListener(ToolControlListener tcl){
 		toolListeners.add(tcl);
+	}
+	
+	public SquareView(Square square, boolean isBuilding) {
+		this(square);
+		
+		if (!isBuilding)
+			return;
+		
+		this.setBackground(NORMAL_BUILD_COLOR);
 	}
 
 	public SquareView(Square square) {
