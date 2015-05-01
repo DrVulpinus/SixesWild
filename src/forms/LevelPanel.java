@@ -11,12 +11,16 @@ import entities.Level;
 
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class LevelPanel extends JPanel {
 public Dimension preferredSize = new Dimension(150, 150); 
 private JLabel lblLevelname;
 	private Level level;
 	private JLabel lblLeveltype;
+	private JLabel lblStar1;
+	private JLabel lblStar2;
+	private JLabel lblStar3;
 	public LevelPanel(Level lvl){
 		super();
 		level = lvl;
@@ -28,6 +32,9 @@ private JLabel lblLevelname;
 		setLayout(null);
 		add(getLblLevelName());
 		add(getLblLeveltype());
+		add(getLblStar1());
+		add(getLblStar2());
+		add(getLblStar3());
 		setLevelName(level.getName());
 		
 	}
@@ -58,9 +65,32 @@ private JLabel lblLevelname;
 	JLabel getLblLeveltype() {
 		if (lblLeveltype == null) {
 			lblLeveltype = new JLabel("LevelType");
-			lblLeveltype.setBounds(10, 125, 46, 14);
+			lblLeveltype.setBounds(10, 44, 46, 14);
 		}
 		return lblLeveltype;
 	}
-	
+	JLabel getLblStar1() {
+		if (lblStar1 == null) {
+			lblStar1 = new JLabel("");
+			lblStar1.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
+			lblStar1.setBounds(10, 109, 40, 40);
+		}
+		return lblStar1;
+	}
+	JLabel getLblStar2() {
+		if (lblStar2 == null) {
+			lblStar2 = new JLabel("");
+			lblStar2.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
+			lblStar2.setBounds(50, 109, 40, 40);
+		}
+		return lblStar2;
+	}
+	JLabel getLblStar3() {
+		if (lblStar3 == null) {
+			lblStar3 = new JLabel("");
+			lblStar3.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
+			lblStar3.setBounds(90, 109, 40, 40);
+		}
+		return lblStar3;
+	}
 }
