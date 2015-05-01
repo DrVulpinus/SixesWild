@@ -1,5 +1,7 @@
 package forms;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -21,9 +23,10 @@ public class LevelPlayView extends JPanel {
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
 		
-		setLayout(new MigLayout("", "[150px:n:150px][150px:175px,grow,fill][150px:n:150px,left]", "[150px:n,grow,fill][]"));
+		setLayout(new MigLayout("", "[150px:175px:175px][150px:175px,grow,fill][150px:n:150px,left]", "[150px:n,grow,fill][]"));
 		
 		statsView = new StatsView();
+		statsView.setBackground(new Color(255, 255, 255, 50));
 		add(statsView, "cell 0 0,grow");
 		
 		if (level == null)
@@ -31,10 +34,11 @@ public class LevelPlayView extends JPanel {
 		else
 			gridView = new GameGridView(level.getGrid(), moveControlListener);
 		
-		
+		gridView.setBackground(new Color(255, 255, 255, 50));
 		add(gridView, "cell 1 0");
 		
 		specialMoveView = new SpecialMoveView();
+		specialMoveView.setBackground(new Color(255, 255, 255, 50));
 		add(specialMoveView, "cell 2 0,grow");
 		
 		//btnBack.setBounds(395, 20, 117, 29);
