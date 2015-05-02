@@ -1,5 +1,7 @@
 package src;
 
+import entities.LevelType;
+
 public class LevelStats {
 	public static final int PUZZLE_MODE = 0;
 	public static final int LIGHTNING_MODE = 1;
@@ -16,7 +18,7 @@ public class LevelStats {
 
 	public boolean updating = false;
 	
-	int selectedType;
+	LevelType selectedType;
 
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	
@@ -67,7 +69,7 @@ public class LevelStats {
 		return false;
 	}
 
-	public void setType(int type){
+	public void setType(LevelType type){
 
 		this.selectedType =type;
 		System.out.println("LevelStats::Level Type Selected: " + type);
