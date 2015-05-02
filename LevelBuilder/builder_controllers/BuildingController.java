@@ -100,6 +100,7 @@ public class BuildingController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				displaySettings(probValueView, "Edit Value Probability");
+				probabilityController.initializeTextFields();
 			}
 		});
 		
@@ -108,6 +109,7 @@ public class BuildingController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				displaySettings(probMultView, "Edit Muliplier Probability");
+				probabilityController.initializeTextFields();
 			}
 		});
 		

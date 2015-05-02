@@ -16,6 +16,7 @@ import forms.TypeSelectView;
 public class ProbabilityController {
 
 	TypeSelectView typeSelectView = new TypeSelectView();
+	Probability probability;
 	JTextField one;
 	JTextField two;
 	JTextField three;
@@ -25,6 +26,8 @@ public class ProbabilityController {
 	JTextField xone;
 	JTextField xtwo;
 	JTextField xthree;
+	JTextField total;
+	JTextField xtotal;
 	JButton apply;
 	JButton xapply;
 	
@@ -37,16 +40,20 @@ public class ProbabilityController {
 			this.four = probabilityBlockView.getTextField_3();
 			this.five = probabilityBlockView.getTextField_4();
 			this.six = probabilityBlockView.getTextField_5();
+			this.total = probabilityBlockView.getTextField_6_1();
 			this.apply = probabilityBlockView.getBtnApplyChanges();
 			
 			this.xone = probabilityMultiplierView.getTextField();
 			this.xtwo = probabilityMultiplierView.getTextField_1();
 			this.xthree = probabilityMultiplierView.getTextField_2();
+			this.xtotal = probabilityMultiplierView.getTextField_3();
 			this.xapply = probabilityMultiplierView.getBtnApplyChanges();
+			
+			this.probability = probability;
 			
 			
 			final int[] numbers;
-			numbers = new int[6];
+			numbers = new int[5];
 			final int[] multi;
 			multi = new int[3];
 			
@@ -55,33 +62,33 @@ public class ProbabilityController {
 				@Override
 				public void actionPerformed(ActionEvent e){
 								
-					int sum =0;
-			        numbers[0] = Integer.parseInt(one.getText());
-			      	numbers[1] = Integer.parseInt(two.getText());
-			      	numbers[2]  = Integer.parseInt(three.getText());
-			      	numbers[3]  = Integer.parseInt(four.getText());
-			      	numbers[4]  = Integer.parseInt(five.getText());
-			      	numbers[5]  = Integer.parseInt(six.getText());
-	      	
-			      	for ( int i=0; i<6; i++){
-			      		if (numbers[i] == (int)numbers[i]){
-			      			sum+=numbers[i];
-			      		}
-			      		else{
-			      			System.out.println(numbers[i]+ "is not a number");	      			
-			      		}
-			      	}
+					int sum = 0;
+					
+					try {
+				        numbers[0] = Integer.parseInt(one.getText());
+				      	numbers[1] = Integer.parseInt(two.getText());
+				      	numbers[2] = Integer.parseInt(three.getText());
+				      	numbers[3] = Integer.parseInt(four.getText());
+				      	numbers[4] = Integer.parseInt(five.getText());
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(probabilityBlockView, "One or more of the inputs is not a number.");	
+						return;
+					}
+					
+					for (int n = 0; n < 5; n++)
+						sum += numbers[n];					
+			      	
+			      	total.setText(Integer.toString(sum));
+			      	
 			      	if(sum != 100){
 			      		System.out.println("Your numbers do not add up to 100.");
 			      		JOptionPane.showMessageDialog(probabilityBlockView, "Your numbers do not add up to 100.");
 			      	}
 			      	
 			      	else{
-			      		// use probabilities
-			      		//if (probability != null)
-			      			probability.setValueProbs(numbers);
-			      			//probabilityBlockView.
-			      		System.out.println("New Probability: " + probability);		   		
+			      		probability.setValueProbs(numbers);
+			      		System.out.println("New Probability: " + probability);
+			      		initializeTextFields();
 			      	}
 						}
 			});
@@ -91,18 +98,20 @@ public class ProbabilityController {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					int sum = 0;
-					multi[0] = Integer.parseInt(xone.getText());
-					multi[1] = Integer.parseInt(xtwo.getText());
-					multi[2] = Integer.parseInt(xthree.getText());
 					
-					for(int i = 0; i < 3; i++){
-						if (multi[i] == (int)multi[i]){
-			      			sum+=multi[i];
-			      		}
-			      		else{
-			      			System.out.println(multi[i]+ "is not a number");	      			
-			      		}
+					try {
+						multi[0] = Integer.parseInt(xone.getText());
+						multi[1] = Integer.parseInt(xtwo.getText());
+						multi[2] = Integer.parseInt(xthree.getText());
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(probabilityMultiplierView, "One or more of the inputs is not a number.");	
+						return;
 					}
+					
+					for (int n = 0; n < 3; n++)
+						sum += multi[n];
+					
+					xtotal.setText(Integer.toString(sum));
 					
 					if(sum != 100){
 						System.out.println("Your numbers do not add up to 100.");
@@ -110,15 +119,33 @@ public class ProbabilityController {
 					}
 					
 					else{
-			      		if (probability != null)
-			      			probability.setMultProbs(multi);
+			      		probability.setMultProbs(multi);
 			      		System.out.println("New Probability: " + probability);
+			      		initializeTextFields();
 					}				
 				}
 				
 			});
+			
+			initializeTextFields();
+		}
+	
+	
+		public void initializeTextFields() {
+			this.one.setText(Integer.toString(this.probability.getValueProb(1)));
+			this.two.setText(Integer.toString(this.probability.getValueProb(2)));
+			this.three.setText(Integer.toString(this.probability.getValueProb(3)));
+			this.four.setText(Integer.toString(this.probability.getValueProb(4)));
+			this.five.setText(Integer.toString(this.probability.getValueProb(5)));
+			
+			this.xone.setText(Integer.toString(this.probability.getMultProb(1)));
+			this.xtwo.setText(Integer.toString(this.probability.getMultProb(2)));
+			this.xthree.setText(Integer.toString(this.probability.getMultProb(3)));
+			
+			total.setText(Integer.toString(this.probability.getTotalValueProb()));
+			xtotal.setText(Integer.toString(this.probability.getTotalValueProb()));
 		}
 		
-	}
+}
 
 
