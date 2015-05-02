@@ -3,8 +3,6 @@ package src;
 import entities.LevelType;
 
 public class EliminationStats extends LevelStats{
-
-	LevelType levelType;
 	int markedSquares;
 	int totalSquares;
 	
@@ -22,11 +20,6 @@ public class EliminationStats extends LevelStats{
 	@Override
 	public boolean winCondition() {
 		return (this.markedSquares >= this.totalSquares);
-	}
-
-	@Override
-	public LevelType getType() {
-		return levelType.ELIMINATION;
 	}
 	
 	@Override

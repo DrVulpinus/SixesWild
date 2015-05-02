@@ -4,7 +4,7 @@ import entities.LevelType;
 
 
 public class ReleaseStats extends LevelStats {
-	LevelType levelType;
+
 	int releaseBlocksLeft;
 	
 	public ReleaseStats(int score, int releaseBlocksLeft)	{
@@ -20,11 +20,6 @@ public class ReleaseStats extends LevelStats {
 	@Override
 	public boolean winCondition() {
 		return (this.releaseBlocksLeft <= 0);
-	}
-
-	@Override
-	public LevelType getType() {
-		return levelType.RELEASE;
 	}
 
 	@Override

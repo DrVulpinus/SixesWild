@@ -49,13 +49,6 @@ public class Level
 		BlockMaker.setProbability(this.probability);
 	}
 	
-	public LevelType getType(){
-		return stats.getType();
-	}
-	
-	public void setType(LevelType levelType){
-		this.stats.selectedType = levelType;
-	}
 	public String getName(){
 		return name;
 	}

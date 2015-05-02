@@ -7,7 +7,6 @@ import entities.Timer;
 
 public class LightningStats extends LevelStats{
 
-	LevelType levelType;
 	Timer timer;
 	
 	public LightningStats(int score, entities.Timer timer2) {
@@ -26,11 +25,6 @@ public class LightningStats extends LevelStats{
 			return true;
 		}
 		return false;
-	}
-
-	@Override
-	public LevelType getType() {
-		return levelType.LIGHTNING;
 	}
 	
 	public void update(int points, int releases, int eliminations){

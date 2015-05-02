@@ -13,8 +13,6 @@ public class LevelStats {
 	public int starcount3 = 3000;
 
 	public boolean updating = false;
-	
-	public LevelType selectedType;
 
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	
@@ -35,9 +33,6 @@ public class LevelStats {
 		this.score += points;
 	}
 
-	public LevelType getType() {
-		return null;
-	}
 	public int getStarCount() {
 		if (points >= starcount1){
 			if(points >= starcount2){

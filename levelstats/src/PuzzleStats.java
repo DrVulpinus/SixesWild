@@ -4,7 +4,6 @@ import entities.LevelType;
 
 public class PuzzleStats extends LevelStats {
 
-	LevelType levelType;
 	int numMovesLeft;
 	
 	public PuzzleStats(int score, int numMovesLeft) {
@@ -25,11 +24,6 @@ public class PuzzleStats extends LevelStats {
 	
 	public void setNumMovesLeft(int numMovesLeft){
 		this.numMovesLeft = numMovesLeft;
-	}
-	
-	@Override
-	public LevelType getType() {
-		return levelType.PUZZLE;
 	}
 	
 	@Override
