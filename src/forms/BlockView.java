@@ -92,7 +92,7 @@ public class BlockView extends JLabel
 	public void onResize(){
 		//setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
 		update();
-		setVisible(true);
+		//setVisible(true);
 	}
 	/*JLabel getLabel() {
 		if (label == null)

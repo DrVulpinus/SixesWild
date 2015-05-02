@@ -40,6 +40,7 @@ public class SquareView extends JPanel implements SquareChangeListener
 
 	public void setSquare(Square square) {
 		this.square = square;
+		square.addListener(this);
 	}
 	
 	public void addMoveControlListener(MoveControlListener mcl){

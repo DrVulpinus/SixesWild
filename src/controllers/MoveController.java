@@ -92,7 +92,7 @@ public class MoveController implements MoveControlListener {
 		selectedSquareViews.clear();
 		this.started = false;
 		if (grid != null){
-			grid.fillGrid();
+			grid.updateGrid();
 		}
 
 		System.out.println("Hi");
