@@ -4,13 +4,18 @@ import java.io.File;
 
 import org.junit.Test;
 
+import src.EliminationStats;
 import src.LevelStats;
+import src.LightningStats;
+import src.PuzzleStats;
+import src.ReleaseStats;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
 import entities.LevelType;
 import entities.Location;
 import entities.Square;
+import entities.Timer;
 
 
 
@@ -45,28 +50,35 @@ public class SaveLoadLevelTest {
 		//fail("Not yet implemented");
 	}
 	
-	private Level getSampleLevel() {
-		Grid grid = new Grid();
-		LevelStats stats = new LevelStats(0, 0);
 	
-		for (int row = 0; row < 9; row++) {
-			for (int col = 0; col < 9; col++) {
-				Square s = new Square(new Location(row, col));
-				s.setBlock(new Block(col % 6 + 1, 3));
-				grid.add(s);
-			}
+	private Level getSampleLevel2() {
+		Grid grid = new Grid();
+		int typeNum = (int) (Math.round((Math.random() * 3.0f)));
+		LevelStats stats;
+		LevelType type;
+		switch (typeNum) {
+		case 0:
+			stats = new PuzzleStats(0, 10);
+			type = LevelType.PUZZLE;
+			break;
+		case 1:
+			stats = new LightningStats(0, new Timer());
+			type = LevelType.LIGHTNING;
+			break;
+		case 2:
+			stats = new EliminationStats(0, 10);
+			type = LevelType.ELIMINATION;
+			break;
+		case 3:
+			stats = new ReleaseStats(0, 5);
+			type = LevelType.RELEASE;
+			break;
+		default:
+			stats = new PuzzleStats(0, 0);
+			type = LevelType.PUZZLE;
+			break;
 		}
 		
-		Level lvl = new Level(stats, grid, "AlexSampleLevel");
-		
-		return lvl;
-			
-	}
-	private Level getSampleLevel2() {
-
-		Grid grid = new Grid();
-		LevelStats stats = new LevelStats(0, 0);
-		stats.setType(LevelType.LIGHTNING);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
 				int num = (int) Math.round(Math.random());
@@ -78,11 +90,8 @@ public class SaveLoadLevelTest {
 				
 			}
 		}
-		
-		Level lvl = new Level(stats, grid, ("SampleLevel" + ((int)(50*Math.random()))));
-		
-		return lvl;
-			
+		Level lvl = new Level(stats, grid, ("SL" + ((int)(50*Math.random()))));
+		return lvl;			
 	}
 
 }
