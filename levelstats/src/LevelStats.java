@@ -64,12 +64,6 @@ public class LevelStats {
 		}
 		return false;
 	}
-
-	public void setType(LevelType type){
-
-		this.selectedType =type;
-		System.out.println("LevelStats::Level Type Selected: " + type);
-	}
 	
 	public boolean setStarCounts(int sc1, int sc2, int sc3) {
 		
