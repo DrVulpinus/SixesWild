@@ -124,6 +124,8 @@ public class BuildingController {
 				displaySettings(adjustStarView, "Adjust Star View");
 			}
 		});		
+		
+
 	}
 	
 	private void otherListener(){
@@ -150,6 +152,14 @@ public class BuildingController {
 			}
 			
 		});	
+		
+		adjustStarView.getBtnClose().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				settingsDialog.setVisible(false);				
+			}
+			
+		});
 	}
 	
 
