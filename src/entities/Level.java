@@ -52,6 +52,10 @@ public class Level
 	public LevelType getType(){
 		return stats.getType();
 	}
+	
+	public void setType(LevelType levelType){
+		this.stats.selectedType = levelType;
+	}
 	public String getName(){
 		return name;
 	}

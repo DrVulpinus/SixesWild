@@ -4,7 +4,7 @@ import entities.LevelType;
 
 public class EliminationStats extends LevelStats{
 
-	LevelType ELIMINATION;
+	LevelType levelType;
 	int markedSquares;
 	int totalSquares;
 	
@@ -26,7 +26,7 @@ public class EliminationStats extends LevelStats{
 
 	@Override
 	public LevelType getType() {
-		return ELIMINATION;
+		return levelType.ELIMINATION;
 	}
 	
 	@Override

@@ -1,15 +1,12 @@
 package controllers;
 
-import static org.junit.Assert.*;
-
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import src.LevelStats;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
+import entities.LevelType;
 import entities.Location;
 import entities.Square;
 
@@ -18,6 +15,7 @@ import entities.Square;
 
 public class SaveLoadLevelTest {
 	
+	LevelType levelType;
 	
 	@Test
 	public void testSaveLoadLevel() throws Exception {
@@ -58,6 +56,7 @@ public class SaveLoadLevelTest {
 	private Level getSampleLevel2() {
 		Grid grid = new Grid();
 		LevelStats stats = new LevelStats(0, 0);
+		stats.setType(LevelType.LIGHTNING);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
 				int num = (int) Math.round(Math.random());

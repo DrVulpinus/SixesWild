@@ -4,7 +4,7 @@ import entities.LevelType;
 
 public class PuzzleStats extends LevelStats {
 
-	LevelType PUZZLE;
+	LevelType levelType;
 	int numMovesLeft;
 	
 	public PuzzleStats(int score, int numMovesLeft) {
@@ -29,7 +29,7 @@ public class PuzzleStats extends LevelStats {
 	
 	@Override
 	public LevelType getType() {
-		return PUZZLE;
+		return levelType.PUZZLE;
 	}
 	
 	@Override
