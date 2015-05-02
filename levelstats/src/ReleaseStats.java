@@ -1,7 +1,10 @@
 package src;
 
+import entities.LevelType;
+
 
 public class ReleaseStats extends LevelStats {
+	LevelType RELEASE;
 	int releaseBlocksLeft;
 	
 	public ReleaseStats(int score, int releaseBlocksLeft)	{
@@ -20,8 +23,8 @@ public class ReleaseStats extends LevelStats {
 	}
 
 	@Override
-	public String getType() {
-		return "Release";
+	public LevelType getType() {
+		return RELEASE;
 	}
 
 	@Override
@@ -32,5 +35,9 @@ public class ReleaseStats extends LevelStats {
 	
 	public int getReleaseBlocksLeft(){
 		return releaseBlocksLeft;
+	}
+	
+	public void setReleaseBlocksLeft(int releaseBlocksLeft){
+		this.releaseBlocksLeft = releaseBlocksLeft;
 	}
 }

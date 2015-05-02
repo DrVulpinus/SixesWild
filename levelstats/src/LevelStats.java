@@ -1,10 +1,8 @@
 package src;
 
+import entities.LevelType;
+
 public class LevelStats {
-	public static final int PUZZLE_MODE = 0;
-	public static final int LIGHTNING_MODE = 1;
-	public static final int RELEASE_MODE = 2;
-	public static final int ELIMINATION_MODE = 3;
 	// the points added to the score after a move
 	public int points = 0;
 	// the overall game score
@@ -16,7 +14,7 @@ public class LevelStats {
 
 	public boolean updating = false;
 	
-	int selectedType;
+	LevelType selectedType;
 
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	
@@ -37,7 +35,7 @@ public class LevelStats {
 		this.score += points;
 	}
 
-	public String getType() {
+	public LevelType getType() {
 		return null;
 	}
 	public int getStarCount() {
@@ -67,10 +65,22 @@ public class LevelStats {
 		return false;
 	}
 
-	public void setType(int type){
+	public void setType(LevelType type){
 
 		this.selectedType =type;
 		System.out.println("LevelStats::Level Type Selected: " + type);
+	}
+	
+	public boolean setStarCounts(int sc1, int sc2, int sc3) {
+		
+		if (!(sc1 <= sc2 && sc2 <= sc3))
+			return false;
+		
+		this.starcount1 = sc1;
+		this.starcount2 = sc2;
+		this.starcount3 = sc3;
+		
+		return true;
 	}
 
 }

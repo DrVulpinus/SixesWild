@@ -31,12 +31,9 @@ public class Level
 		this.lvlType = lvlType;
 	}
 	public Level(LevelStats stats, Grid grid) {
-		this.stats = stats;
-		this.grid = grid;
-		
+		this(stats, grid, "New Level");		
 	}
 	public Level(LevelStats stats, Grid grid, String name) {
-		BlockMaker.setProbability(this.probability);
 		this.stats = stats;
 		this.grid = grid;
 		this.name = name;
@@ -52,7 +49,7 @@ public class Level
 		BlockMaker.setProbability(this.probability);
 	}
 	
-	public String getType(){
+	public LevelType getType(){
 		return stats.getType();
 	}
 	public String getName(){

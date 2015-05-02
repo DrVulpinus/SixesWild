@@ -84,9 +84,12 @@ public class BlockView extends JLabel
 		update();
 		
 		this.setVisible(true);
-		smallIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight());
-		largeIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5);
-		//update();
+		
+		if (block != null) {
+			smallIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight());
+			largeIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5);
+		}	
+			//update();
 		
 	}
 	public void onResize(){

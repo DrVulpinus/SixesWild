@@ -1,7 +1,10 @@
 package src;
 
+import entities.LevelType;
+
 public class PuzzleStats extends LevelStats {
 
+	LevelType PUZZLE;
 	int numMovesLeft;
 	
 	public PuzzleStats(int score, int numMovesLeft) {
@@ -15,14 +18,18 @@ public class PuzzleStats extends LevelStats {
 		}
 		return false;
 	}
+	
 	public int getNumMovesLeft(){
-		
-		
 		return numMovesLeft;
 	}
+	
+	public void setNumMovesLeft(int numMovesLeft){
+		this.numMovesLeft = numMovesLeft;
+	}
+	
 	@Override
-	public String getType() {
-		return "Puzzle";
+	public LevelType getType() {
+		return PUZZLE;
 	}
 	
 	@Override

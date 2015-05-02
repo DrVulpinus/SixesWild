@@ -21,6 +21,8 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
+
+
 import src.LevelStats;
 
 import com.sun.org.apache.xml.internal.serialize.XML11Serializer;
@@ -37,6 +39,7 @@ import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Graphics;
 
 import net.miginfocom.swing.MigLayout;
 

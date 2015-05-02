@@ -44,7 +44,7 @@ public class StatsView extends JPanel {
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
 		puzzleStats = new PuzzleStats(0,30);
 		score = Integer.toString(puzzleStats.getScore());
-		add(getpanel(), "cell 0 0,aligny top");
+		//add(getpanel(), "cell 0 0,aligny top");
 		{
 			JPanel panel = new JPanel();
 			add(panel, "cell 0 1,grow");
@@ -115,19 +115,6 @@ public class StatsView extends JPanel {
 
 	}
 
-
-	private JPanel getpanel() {
-		JPanel panel = new JPanel();
-		panel.setBackground(SystemColor.inactiveCaptionBorder);
-		panel.setBorder(new LineBorder(Color.GREEN, 7, true));
-		//panel.setBounds(10, 26, 112, 34);
-		{
-			JLabel lblNewLabel = new JLabel("Puzzle Mode");
-			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
-			panel.add(lblNewLabel);
-		}
-		return panel;
-	}
 
 
 

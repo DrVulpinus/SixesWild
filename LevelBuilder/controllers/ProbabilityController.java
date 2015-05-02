@@ -55,33 +55,35 @@ public class ProbabilityController {
 				@Override
 				public void actionPerformed(ActionEvent e){
 								
-			int sum =0;
-	        numbers[0] = Integer.parseInt(one.getText());
-	      	numbers[1] = Integer.parseInt(two.getText());
-	      	numbers[2]  = Integer.parseInt(three.getText());
-	      	numbers[3]  = Integer.parseInt(four.getText());
-	      	numbers[4]  = Integer.parseInt(five.getText());
-	      	numbers[5]  = Integer.parseInt(six.getText());
+					int sum =0;
+			        numbers[0] = Integer.parseInt(one.getText());
+			      	numbers[1] = Integer.parseInt(two.getText());
+			      	numbers[2]  = Integer.parseInt(three.getText());
+			      	numbers[3]  = Integer.parseInt(four.getText());
+			      	numbers[4]  = Integer.parseInt(five.getText());
+			      	numbers[5]  = Integer.parseInt(six.getText());
 	      	
-	      	for ( int i=0; i<6; i++){
-	      		if (numbers[i] == (int)numbers[i]){
-	      			sum+=numbers[i];
-	      		}
-	      		else{
-	      			System.out.println(numbers[i]+ "is not a number");	      			
-	      		}
-	      	}
-	      	if(sum != 100){
-	      		System.out.println("Your numbers do not add up to 100.");
-	      		JOptionPane.showMessageDialog(probabilityBlockView, "Your numbers do not add up to 100.");
-	      	}
-	      	
-	      	else{
-	      		// use probabilities
-	      		if (probability != null)
-	      			probability.setValueProbs(numbers);     		   		
-	      	}
-				}
+			      	for ( int i=0; i<6; i++){
+			      		if (numbers[i] == (int)numbers[i]){
+			      			sum+=numbers[i];
+			      		}
+			      		else{
+			      			System.out.println(numbers[i]+ "is not a number");	      			
+			      		}
+			      	}
+			      	if(sum != 100){
+			      		System.out.println("Your numbers do not add up to 100.");
+			      		JOptionPane.showMessageDialog(probabilityBlockView, "Your numbers do not add up to 100.");
+			      	}
+			      	
+			      	else{
+			      		// use probabilities
+			      		//if (probability != null)
+			      			probability.setValueProbs(numbers);
+			      			//probabilityBlockView.
+			      		System.out.println("New Probability: " + probability);		   		
+			      	}
+						}
 			});
 			
 			probabilityMultiplierView.getBtnApplyChanges().addActionListener(new ActionListener(){
@@ -110,6 +112,7 @@ public class ProbabilityController {
 					else{
 			      		if (probability != null)
 			      			probability.setMultProbs(multi);
+			      		System.out.println("New Probability: " + probability);
 					}				
 				}
 				
