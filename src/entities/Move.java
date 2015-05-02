@@ -3,7 +3,13 @@ package entities;
 import java.util.ArrayList;
 
 import src.PuzzleStats;
-
+/**
+ * Represents a move within the SixeWild game. This class is the abstract base.
+ * class that provides the basic methods needed for moves in the SixesWild game.
+ * Each move contains a level and an ArrayList of squares. 
+ * 
+ *
+ */
 public abstract class Move {
 	
 	Level level;

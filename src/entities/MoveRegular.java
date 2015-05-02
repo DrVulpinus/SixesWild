@@ -5,6 +5,8 @@ import java.util.Iterator;
 
 import forms.SquareView;
 
+
+ 
 public class MoveRegular extends Move {
 	boolean updating = level.getStats().updating;
 	int points = 0;
