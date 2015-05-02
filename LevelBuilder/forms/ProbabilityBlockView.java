@@ -273,7 +273,7 @@ public class ProbabilityBlockView extends JPanel{
 		}
 		return btnApplyChanges;
 	}
-	private JButton getBtnClose() {
+	public JButton getBtnClose() {
 		if (btnClose == null) {
 			btnClose = new JButton("Close");
 		}

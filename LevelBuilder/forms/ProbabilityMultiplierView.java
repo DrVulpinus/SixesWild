@@ -151,7 +151,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		}
 		return label_3;
 	}
-	private JButton getBtnClose() {
+	public JButton getBtnClose() {
 		if (btnClose == null) {
 			btnClose = new JButton("Close");
 		}

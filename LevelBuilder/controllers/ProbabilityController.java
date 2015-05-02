@@ -80,6 +80,7 @@ public class ProbabilityController {
 			      		// use probabilities
 			      		//if (probability != null)
 			      			probability.setValueProbs(numbers);
+			      			//probabilityBlockView.
 			      		System.out.println("New Probability: " + probability);		   		
 			      	}
 						}

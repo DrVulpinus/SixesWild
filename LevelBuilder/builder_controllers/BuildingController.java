@@ -81,6 +81,7 @@ public class BuildingController {
 			});
 		
 		this.addSettingsListeners();
+		this.otherListener();
 		
 		
 		window.getContentPane().removeAll();
@@ -124,6 +125,34 @@ public class BuildingController {
 			}
 		});		
 	}
+	
+	private void otherListener(){
+		enableSpecialMoveView.getBtnClose().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				settingsDialog.setVisible(false);				
+			}	
+			
+		});
+		
+		probMultView.getBtnClose().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				settingsDialog.setVisible(false);				
+			}	
+			
+		});
+		
+		probValueView.getBtnClose().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				settingsDialog.setVisible(false);				
+			}
+			
+		});	
+	}
+	
+
 	
 	private void displaySettings(JPanel view, String title) {
 		settingsDialog.getContentPane().removeAll();
