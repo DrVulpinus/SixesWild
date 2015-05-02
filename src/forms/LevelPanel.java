@@ -18,9 +18,15 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * A panel that can be selected to enter a level.
+ * @author Miya
+ *
+ */
 public class LevelPanel extends JPanel {
-public Dimension preferredSize = new Dimension(150, 150); 
-private JLabel lblLevelname;
+	// set size of the panel
+	public Dimension preferredSize = new Dimension(150, 150); 
+	private JLabel lblLevelname;
 	private Level level;
 	private JLabel lblLeveltype;
 	private JLabel lblStar1;
@@ -28,6 +34,7 @@ private JLabel lblLevelname;
 	private JLabel lblStar3;
 	Color normalColor;
 	Color hoveredColor;
+	
 	public LevelPanel(Level lvl){
 		super();
 		addMouseListener(new MouseAdapter() {
@@ -40,12 +47,13 @@ private JLabel lblLevelname;
 				setBackground(normalColor);
 			}
 		});
+		
 		level = lvl;
 		normalColor = Color.getHSBColor((float) Math.random(), 1.0f, 1.0f);
 		normalColor = new Color(normalColor.getRed(), normalColor.getGreen(), normalColor.getBlue(), 100);
 		hoveredColor = new Color(normalColor.getRed(), normalColor.getGreen(), normalColor.getBlue(), 255);
 		setBackground(normalColor);
-		
+
 		setLayout(null);
 		add(getLblLevelName());
 		add(getLblLeveltype());
@@ -64,13 +72,13 @@ private JLabel lblLevelname;
 		} catch (Exception e) {
 			setLevelType("NO TYPE AVAILABLE");
 		}
-		
+
 	}
 
 	@Override
 	public Dimension getPreferredSize(){
 		return preferredSize;
-	
+
 	}
 	public Level getLevel(){
 		return level;
@@ -93,9 +101,9 @@ private JLabel lblLevelname;
 			return "Lightning";
 		default:
 			return "TYPE ERROR";
-			
+
 		}
-		
+
 	}
 	JLabel getLblLevelName() {
 		if (lblLevelname == null) {

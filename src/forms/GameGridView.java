@@ -21,16 +21,16 @@ import java.awt.event.MouseEvent;
 import java.awt.GridLayout;
 
 public class GameGridView extends JPanel {
-	
+
 	/**
-	 * 
+	 * The view of the grid.
 	 */
 	private static final long serialVersionUID = 3399803991655076903L;
 	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
 	MoveControlListener moveControlListener = null;
 
 	boolean isFilled = false;
-	
+
 	Color color = new Color(0,0,0); 
 	double currentXVal = 0;
 	double currentYVal = 0;
@@ -38,11 +38,12 @@ public class GameGridView extends JPanel {
 	int rows = 1;
 	double xIncrement = 0;
 	double yIncrement = 0;
-	
-	
-	
-	
+
+
+
+
 	public GameGridView() {
+		// initialize all squares and blocks within the grid.
 		super();
 		setLayout(new GridLayout(9, 9, 0, 0));
 		for (int y = 0; y < 9; y++){
@@ -56,24 +57,33 @@ public class GameGridView extends JPanel {
 				rows = 9;
 				columns = 9;
 			}
-		
-		//isFilled = true;
 		}
-	
 	}
+
+	/**
+	 * @param squares A list of all the squares within the grid.
+	 */
 	public GameGridView(ArrayList<Square> squares) {
 		this.setSquares(squares);
 		setLayout(new GridLayout(9, 9, 0, 0));
-		
+
 	}
-	
-	
+
+	/**
+	 * @param grid The grid represented by the view.
+	 * @param moveControlListener The listener that should update when a move happens to the gridView.
+	 */
 	public GameGridView(Grid grid, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
 		this.setSquares(grid);
 		setLayout(new GridLayout(9, 9, 0, 0));
-		
+
 	}
+
+	/**
+	 * Set every square contained within the view and give it an assigned SquareView.
+	 * @param squares A list of all the squares contained in the grid.
+	 */
 	public void setSquares(ArrayList<Square> squares) {
 		for (Square square : squares) {
 			SquareView sV = new SquareView(square);
@@ -83,9 +93,16 @@ public class GameGridView extends JPanel {
 			columns = Math.max(columns, square.getLoc().getCol());
 			rows = Math.max(rows, square.getLoc().getRow());
 		}
+
 		fillGrid();
 	}
-	
+
+	/**
+	 * Add the components containing all the squareViews, but give each squareView its location first.
+	 * @param column The integer of the column number the square is in.
+	 * @param row The integer of the row number the square is in.
+	 * @return squareView The individual SquareView with a newly given column and row number.
+	 */
 	public JComponent addComponentToBox(int column, int row){
 		for (SquareView squareView : squareViews){
 			if (squareView.getSquare().getLoc().getCol() == column && squareView.getSquare().getLoc().getRow() == row){
@@ -96,62 +113,44 @@ public class GameGridView extends JPanel {
 		holdPnl.setBackground(new Color(255, 255, 255, 0));
 		return holdPnl;		
 	}
+	
+	/**
+	 * Fill the grid with squareViews.
+	 */
 	public void fillGrid() {
-		
-		
-		//this.setVisible(false);
+
 		for (int col = 0; col < 9; col++){
 			for (int row = 0; row < 9; row++) {				
 				add(addComponentToBox(row, col));
 			}
-		
-		//isFilled = true;
 		}
-		//System.out.println(this.getSize().toString());
 		for (SquareView squareView : squareViews) {
-			//int col = squareView.getSquare().getLoc().getCol();
-			//int row = squareView.getSquare().getLoc().getRow();
-			//System.out.println(squareView.getSquare().getLoc().toString());
-			
-			
-			
-			//add(squareView, );
-		//	squareView.setLocation((int)Math.floor((col*getWidth()/columns)), (int)  Math.floor((row*getHeight()/rows)));
-			//squareView.setSize((int) Math.floor(getWidth()/columns), (int) Math.floor(getHeight()/rows));
 			squareView.update();
-			//System.out.println(squareView.getLocation().toString() + squareView.getSize().toString());
 		}
-		//this.setVisible(true);
-	/*	
-		for (int y = 0; y < columns; y++){
-			for (int x = 0; x < rows; x++) {				
-				sV.setLocation((int) (x*rect.getWidth()/columns), (int) (y*rect.getHeight()/rows));
-				sV.setSize((int) rect.getWidth()/columns, (int) rect.getHeight()/rows);
-				//System.out.println(squareViews.size());
-				//System.out.println(sV.getLocation().toString() + " " + sV.getSize().toString());
-				sV.update();
-				
-			}
-		*/
-		//isFilled = true;
 	}
-	
+
+	/**
+	 * Update the location of a square when the mouse is clicked.
+	 * @param e The MouseEvent representing a click of the mouse.
+	 */
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		currentXVal= e.getX()/xIncrement;
 		currentYVal= e.getY()/yIncrement;
 		int roundXOutput = (int)Math.round(currentXVal);
 		int roundYOutput = (int)Math.round(currentYVal);
 		int YOutput = (columns - roundYOutput);
-		//int XOutput = (yNumLines - roundYOutput);
 		System.err.println(roundXOutput+","+YOutput);
-	
+
 	}
+	
+	/**
+	 * Fill the grid with squareViews that have been changed.
+	 */
 	public void updateGrid() {
 		for (SquareView squareView : squareViews) {		
-				squareView.update();
-			}
-		
+			squareView.update();
+		}
+
 	}
 }
 

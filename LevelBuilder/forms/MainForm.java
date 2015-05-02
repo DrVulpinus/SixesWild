@@ -49,6 +49,7 @@ public class MainForm extends JFrame {
 	private JButton btnCreateLightningLevel;
 	private JPanel panel_3;
 	private JButton btnCreateReleaseLevel;
+	MainForm main = this;
 	
 
 	/**
@@ -82,6 +83,9 @@ public class MainForm extends JFrame {
 		getBtnCreatePuzzleLevel().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
+				if(buildingController != null){
+					buildingController = null;
+				}
 				buildingController = new BuildingController(new Level(new PuzzleStats(0,0), new Grid()), MainForm.this);
 			}
 		});
@@ -89,6 +93,9 @@ public class MainForm extends JFrame {
 		getBtnCreateLightningLevel().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
+				if(buildingController != null){
+					buildingController = null;
+				}
 				buildingController = new BuildingController(new Level(new LightningStats(0, new Timer()), new Grid()), MainForm.this);
 			}
 		});
@@ -96,6 +103,9 @@ public class MainForm extends JFrame {
 		getBtnCreateEliminationLevel().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
+				if(buildingController != null){
+					buildingController = null;
+				}
 				buildingController = new BuildingController(new Level(new EliminationStats(0,0), new Grid()), MainForm.this);
 			}
 		});
@@ -103,9 +113,15 @@ public class MainForm extends JFrame {
 		getBtnCreateReleaseLevel().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
+				if(buildingController != null){
+					buildingController = null;
+				}
 				buildingController = new BuildingController(new Level(new ReleaseStats(0,0), new Grid()), MainForm.this);
 			}
 		});
+		
+
+
 		
 //		leveleditor.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
 //			@Override
@@ -114,7 +130,7 @@ public class MainForm extends JFrame {
 //			}
 //		});
 		
-		buildingController.
+
 	}
 	/*
 	private JMenuBar getMenuBar_1() {
@@ -167,7 +183,7 @@ public class MainForm extends JFrame {
 		return mntmRemoveSpecialMove;
 	}
 	*/
-	private JPanel getPanel() {
+	public JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
 			panel.add(getBtnCreateLightningLevel());
@@ -180,7 +196,7 @@ public class MainForm extends JFrame {
 		}
 		return btnCreatePuzzleLevel;
 	}
-	private JPanel getPanel_1() {
+	public JPanel getPanel_1() {
 		if (panel_1 == null) {
 			panel_1 = new JPanel();
 			panel_1.add(getBtnCreateEliminationLevel());
@@ -193,7 +209,7 @@ public class MainForm extends JFrame {
 		}
 		return btnCreateEliminationLevel;
 	}
-	private JPanel getPanel_2() {
+	public JPanel getPanel_2() {
 		if (panel_2 == null) {
 			panel_2 = new JPanel();
 			panel_2.add(getBtnCreatePuzzleLevel());
@@ -206,7 +222,7 @@ public class MainForm extends JFrame {
 		}
 		return btnCreateLightningLevel;
 	}
-	private JPanel getPanel_3() {
+	public JPanel getPanel_3() {
 		if (panel_3 == null) {
 			panel_3 = new JPanel();
 			panel_3.add(getBtnCreateReleaseLevel());
