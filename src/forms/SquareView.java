@@ -23,12 +23,18 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 
+/**
+ * The view for a Square.
+ * @author Miya
+ *
+ */
 public class SquareView extends JPanel implements SquareChangeListener
 {
 	static final Color NORMAL_COLOR = new Color(255,255,255,0);
 	static final Color NORMAL_BUILD_COLOR = new Color(255,255,255);
 	static final int ELIMINATED_COLOR = 0xFF0000;
 	static final int RELEASE_COLOR = 0x000000;
+	
 	ArrayList<MoveControlListener> listeners = new ArrayList<MoveControlListener>();
 	ArrayList<ToolControlListener> toolListeners = new ArrayList<ToolControlListener>();
 	Square square;
@@ -44,6 +50,10 @@ public class SquareView extends JPanel implements SquareChangeListener
 		square.addListener(this);
 	}
 	
+	/**
+	 * Add a move control listener to the list of move listeners.
+	 * @param mcl
+	 */
 	public void addMoveControlListener(MoveControlListener mcl){
 		listeners.add(mcl);
 	}
