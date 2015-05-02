@@ -49,5 +49,9 @@ public class StarPointsController {
 		});
 	}
 	
+	public void initializeTextFeilds() {
+		//star1.setText(Integer.toString());
+	}
+	
 	
 }
