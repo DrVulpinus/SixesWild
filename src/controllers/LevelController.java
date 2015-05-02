@@ -53,7 +53,7 @@ public class LevelController implements ChangeLevelPlayState{
 		
 		levelPlayView.setLevel(level);
 		playState.addStateChangedListener(this);
-		playState.setSelectedMove(playState.MOVE_REGULAR);		
+		playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);		
 		addLevelPlayListeners();		
 		window.setContentPane(levelPlayView);		
 		window.validate();
@@ -64,7 +64,7 @@ public class LevelController implements ChangeLevelPlayState{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				playState.setSelectedMove(playState.MOVE_SWAP);
+				playState.setSelectedMove(LevelPlayState.MOVE_SWAP);
 				
 			}
 		});
@@ -72,7 +72,7 @@ public class LevelController implements ChangeLevelPlayState{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				playState.setSelectedMove(playState.MOVE_REMOVE);
+				playState.setSelectedMove(LevelPlayState.MOVE_REMOVE);
 				
 			}
 		});
@@ -81,7 +81,7 @@ public class LevelController implements ChangeLevelPlayState{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				playState.setSelectedMove(playState.MOVE_RESET);
+				playState.setSelectedMove(LevelPlayState.MOVE_RESET);
 				
 			}
 		});
@@ -89,7 +89,7 @@ public class LevelController implements ChangeLevelPlayState{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				playState.setSelectedMove(playState.MOVE_REGULAR);
+				playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);
 				
 			}
 		});
