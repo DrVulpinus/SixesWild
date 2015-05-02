@@ -18,15 +18,21 @@ import javax.swing.JLabel;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
+/**
+ * Shows one block. Contains all the different icons for different values in the blocks.
+ * @author Miya
+ *
+ */
 public class BlockView extends JLabel
 {
 	static final int NORMAL_COLOR = 0xFFFF00;
 	static final int SELECTED_COLOR = 0xFF0000;
-	
+
 	static final Icon[][] icons = new Icon[6][3];
-	
+
 	static {
-		
+
+		// store all the icons
 		icons[0][0] = new Icon1x1();
 		icons[0][1] = new Icon1x2();
 		icons[0][2] = new Icon1x3();
@@ -46,20 +52,18 @@ public class BlockView extends JLabel
 		icons[5][1] = new Icon6x2();
 		icons[5][2] = new Icon6x3();
 
-//		for (int value = 1; value <= 6; value++) {
-//			for (int mult = 1; mult <= 3; mult++) {
-//				icons[value - 1][mult - 1] = new String(value + " x" + mult);
-//			}
-//		}
 	}
-	
-	
+
+
 	Block block;
 	String icon;
 	JLabel label;
 	ImageIcon smallIco;
 	ImageIcon largeIco;
+
+
 	public BlockView(Block block) {
+		// case for resizing the block proportionate to the screen
 		super();
 		addComponentListener(new ComponentAdapter() {
 			@Override
@@ -67,62 +71,45 @@ public class BlockView extends JLabel
 				onResize();
 			}
 		});
-		/*addComponentListener(new ComponentAdapter() {
-			@Override
-			public void componentResized(ComponentEvent arg0) {
 
-				update();
-			}
-		});*/
+		// initialize the block
 		this.block = block;
-		//System.out.println(getSize().toString());
-		
-		//this.setSize(21,21);
-		//this.setText("Hi");
 		this.setIcon(null);
-		//this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
+
+		// update the block
 		update();
-		
+
+		// show the block after it has been set up
 		this.setVisible(true);
-		
+
+		// if a block exists, call its icon
 		if (block != null) {
 			smallIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight());
 			largeIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5);
-		}	
-			//update();
-		
+		}
+
 	}
+
+	/**
+	 * When the window is resized, resize the image of the block accordingly.
+	 */
 	public void onResize(){
-		//setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
 		update();
-		//setVisible(true);
 	}
-	/*JLabel getLabel() {
-		if (label == null)
-			label = new JLabel("");
-		return label;
-	}*/
-	
+
+	/**
+	 * Adds an action listener to the blockView.
+	 * @param al The action listener being added to the blockView.
+	 */
 	public void addActionListener(ActionListener al) {
 		this.addActionListener(al);
 	}
-	
-	public void update() {
-//		if (block == null) {
-//			this.setVisible(false);
-//			return;
-//		}
-//		else
-//			this.setVisible(true);
-		
 
-//		if (block == null)
-//			getLabel().setText("");
-//		else
-//			getLabel().setText(icons[block.getValue() - 1][block.getMultiplier() - 1]);
-		
-	//	System.out.println(getWidth() + " " + getHeight());
-		
+	/**
+	 * Resizes the image of the block when called.
+	 */
+	public void update() {
+
 		if (block == null)
 			this.setIcon(null);
 		else {
@@ -133,30 +120,26 @@ public class BlockView extends JLabel
 		}
 	}
 
-	
+	/**
+	 * @return label The Label containing the block icon.
+	 */
 	public JLabel getLabel() {
 		return label;
 	}
-	
-	
+
+	/**
+	 * @return block The block this blockView shows.
+	 */
 	public Block getBlock() {
 		return block;
 	}
 
+	/**
+	 * @param block Sets the block to be the current block and updates the image accordingly.
+	 */
 	public void setBlock(Block block) {
 		this.block = block;
 		update();
 	}
-	
-//	@Override
-//	public void repaint() {
-//		super.repaint();
-//		
-//		try {
-//			update();
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
-//	}
-		
+
 }
