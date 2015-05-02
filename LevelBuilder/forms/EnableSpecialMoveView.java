@@ -1,7 +1,12 @@
 package forms;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JPanel;
+
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -22,7 +27,9 @@ public class EnableSpecialMoveView extends JPanel{
 		add(getPanel_1(), "cell 4 2,grow");
 		add(getPanel_2(), "cell 4 3,grow");
 		add(getBtnClose(), "cell 6 4");
+		//addSettingListener();	
 	}
+	
 
 	private JPanel getPanel() {
 		if (panel == null) {
@@ -69,7 +76,7 @@ public class EnableSpecialMoveView extends JPanel{
 		}
 		return lblCheckToEnable;
 	}
-	private JButton getBtnClose() {
+	public JButton getBtnClose() {
 		if (btnClose == null) {
 			btnClose = new JButton("Close");
 		}

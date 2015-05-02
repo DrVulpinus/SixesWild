@@ -1,12 +1,13 @@
 package src;
 
 
-import entities.MoveRegular;
+import entities.LevelType;
 import entities.Timer;
 
 
 public class LightningStats extends LevelStats{
 
+	LevelType LIGHTNING;
 	Timer timer;
 	
 	public LightningStats(int score, entities.Timer timer2) {
@@ -28,8 +29,8 @@ public class LightningStats extends LevelStats{
 	}
 
 	@Override
-	public String getType() {
-		return "Lightning";
+	public LevelType getType() {
+		return LIGHTNING;
 	}
 	
 	public void update(int points, int releases, int eliminations){

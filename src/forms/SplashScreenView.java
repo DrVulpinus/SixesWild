@@ -20,63 +20,59 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.Font;
 
+
+/**
+ * Contains the JLabel that is the splash screen, which appears for several seconds
+ * @author Miya
+ *
+ */
 public class SplashScreenView extends JFrame {
 
+	// panel that contains the splash screen label
 	private JPanel contentPane;
-	private JLabel lblTeamPhoebe;
-	private JLabel lblTeamPhoebe1;
-	
 
-	/**
-	 * Launch the application.
-	 */
-/*	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				
-				try {
-					SplashScreenView frame = new SplashScreenView();
-					frame.setVisible(true);
-					//Thread.sleep(10000);
-					//frame.setVisible(false);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			
-			}
-		});
-	}
-*/
-	// Set splash screen on timer go to main men
-	
-	
-	
+	// label that contains the splash screen image
+	private JLabel lblTeamPhoebe;
+
 	/**
 	 * Create the frame.
 	 */
 	public SplashScreenView() {
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 456, 307);
+
+		// create the contentPane
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+
+		// place the image in the contentPane
 		contentPane.add(getLblTeamPhoebe(), BorderLayout.CENTER);
+
+		// splash screen should not be interactive
 		setSize(500, 350);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setUndecorated(true);
-		
+
 	}
+
+	/**
+	 * Gets the label containing the image, and generates it in the center of the screen.
+	 * @return lblTeamPhoebe The JLabel that contains the image of the splash screen.
+	 */
 	private JLabel getLblTeamPhoebe() {
 		if (lblTeamPhoebe == null) {
 			lblTeamPhoebe = new JLabel("");
+
+			// readjust to look nice
 			lblTeamPhoebe.addComponentListener(new ComponentAdapter() {
 				@Override
 				public void componentResized(ComponentEvent e) {
 					lblTeamPhoebe.setHorizontalAlignment(SwingConstants.CENTER);
-					
+
 					//ImageIcon icon = new ImageIcon ("phoebe_pigeon.gif");
 					ImageIcon icon = new ImageIcon ("phoebe_better.png");
 					Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -84,9 +80,9 @@ public class SplashScreenView extends JFrame {
 					lblTeamPhoebe.setIcon(icon);
 				}
 			});
-			
+
 		}
 		return lblTeamPhoebe;
 	}
-	
+
 }
