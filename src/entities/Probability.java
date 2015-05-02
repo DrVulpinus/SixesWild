@@ -162,4 +162,12 @@ public class Probability {
 //		this.probx3 = probx3;
 //	}
 	
+	@Override
+	public String toString() {
+		return ("(" + valueProb[0] + "," + valueProb[1] + "," + valueProb[2] + "," + valueProb[3] + "," + valueProb[4] + ")  " +
+				"(" + multProb[0] + "," + multProb[1] + "," + multProb[2] + ")");
+	}
+	
 }
+
+

@@ -31,7 +31,7 @@ public class ProbabilityBlockView extends JPanel{
 	private JLabel label_6;
 	private JTextField textField_3;
 	private JLabel label_7;
-	private JPanel panel_5;
+	//private JPanel panel_5;
 	private JLabel label_8;
 	private JTextField textField_4;
 	private JLabel label_9;
@@ -53,7 +53,7 @@ public class ProbabilityBlockView extends JPanel{
 		add(getPanel_2(), "cell 2 2,grow");
 		add(getPanel_3(), "cell 2 3,grow");
 		add(getPanel_4(), "cell 2 4,grow");
-		add(getPanel_5(), "cell 2 5,grow");
+		//add(getPanel_5(), "cell 2 5,grow");
 		add(getBtnApplyChanges(), "flowx,cell 2 6");
 		add(getPanel_6(), "cell 4 6,grow");
 		add(getBtnClose(), "cell 2 6");
@@ -184,15 +184,15 @@ public class ProbabilityBlockView extends JPanel{
 		}
 		return label_7;
 	}
-	private JPanel getPanel_5() {
-		if (panel_5 == null) {
-			panel_5 = new JPanel();
-			panel_5.add(getLabel_10());
-			panel_5.add(getTextField_5());
-			panel_5.add(getLabel_11());
-		}
-		return panel_5;
-	}
+//	private JPanel getPanel_5() {
+//		if (panel_5 == null) {
+//			panel_5 = new JPanel();
+//			panel_5.add(getLabel_10());
+//			panel_5.add(getTextField_5());
+//			panel_5.add(getLabel_11());
+//		}
+//		return panel_5;
+//	}
 	private JLabel getLabel_8() {
 		if (label_8 == null) {
 			label_8 = new JLabel("5:");

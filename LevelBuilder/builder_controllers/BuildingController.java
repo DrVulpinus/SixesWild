@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import controllers.ProbabilityController;
+import controllers.StarPointsController;
 import controllers.UseToolController;
 import builder_entities.LevelBuildState;
 import src.LevelStats;
@@ -48,6 +49,7 @@ public class BuildingController {
 	EnableSpecialMoveView enableSpecialMoveView;
 	AdjustStarView adjustStarView;
 	ProbabilityController probabilityController;
+	StarPointsController starPointsController;
 
 	
 	public BuildingController(Level level, MainForm window) {
@@ -67,8 +69,8 @@ public class BuildingController {
 		this.enableSpecialMoveView = new EnableSpecialMoveView();
 		this.adjustStarView = new AdjustStarView();
 		
-		this.probabilityController = new ProbabilityController(this.probValueView, this.probMultView, null);
-		
+		this.probabilityController = new ProbabilityController(this.probValueView, this.probMultView, level.getProbability());
+		this.starPointsController = new StarPointsController(this.adjustStarView, level.getStats());
 		
 		
 		buildLevelView.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
@@ -120,10 +122,7 @@ public class BuildingController {
 			public void actionPerformed(ActionEvent e) {
 				displaySettings(adjustStarView, "Adjust Star View");
 			}
-		});
-		
-		
-		
+		});		
 	}
 	
 	private void displaySettings(JPanel view, String title) {
