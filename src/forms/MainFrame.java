@@ -70,16 +70,14 @@ public class MainFrame extends JFrame{
 	 */
 	
 	public MainFrame() {
-		setResizable(false);
+		//setResizable(false);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent arg0) {
 				dispose();
 			}
 		});
-		getContentPane().setMinimumSize(new Dimension(200, 200));
-		getContentPane().setLayout(new BorderLayout(0, 0));
-		getContentPane().add(mainMenu, BorderLayout.CENTER);
+		setContentPane(mainMenu);
 		colorTimer.schedule(new TimerTask() {
 			
 			@Override
@@ -94,13 +92,6 @@ public class MainFrame extends JFrame{
 				
 				Color myColor = Color.getHSBColor((float) hue, 0.5f, 0.5f);
 				getContentPane().setBackground(myColor);
-				for (Component comp : getContentPane().getComponents()) {
-					
-					if (comp.getWidth() > 100 && comp.getWidth() > 100){						
-						comp.setBackground(myColor);					
-					}
-					
-				}
 				
 			}
 		}, 0, 50);
@@ -115,11 +106,9 @@ public class MainFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e){
-			getContentPane().removeAll();
-			getContentPane().add(mainMenu, BorderLayout.CENTER);
-			
-			getContentPane().validate();
-			getContentPane().repaint();
+			MainFrame.this.add(mainMenu);
+			MainFrame.this.validate();
+			MainFrame.this.repaint();
 			System.out.println("back to main menu");
 			}
 		});
@@ -128,13 +117,9 @@ public class MainFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-				getContentPane().removeAll();
-				getContentPane().add(lvlSelectView, BorderLayout.CENTER);
-
-				getContentPane().validate();
-				getContentPane().repaint();
+				MainFrame.this.setContentPane(lvlSelectView);
+				MainFrame.this.validate();
+				MainFrame.this.repaint();
 				System.out.println("to Achievement Select View");
 			}
 			
@@ -146,11 +131,9 @@ public class MainFrame extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				getContentPane().removeAll();
-				getContentPane().add(achvSelectView, BorderLayout.CENTER);
-
-				getContentPane().validate();
-				getContentPane().repaint();
+				MainFrame.this.setContentPane(achvSelectView);
+				MainFrame.this.validate();
+				MainFrame.this.repaint();
 				System.out.println("to Level Select View");
 				
 			}
@@ -161,11 +144,9 @@ public class MainFrame extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				getContentPane().removeAll();
-				getContentPane().add(mainMenu, BorderLayout.CENTER);
-				
-				getContentPane().validate();
-				getContentPane().repaint();
+				MainFrame.this.setContentPane(mainMenu);
+				MainFrame.this.validate();
+				MainFrame.this.repaint();
 				System.out.println("back to main menu");				
 			}
 			
@@ -178,11 +159,6 @@ public class MainFrame extends JFrame{
 
 				@Override
 				public void mouseClicked(MouseEvent arg0) {
-					/*getContentPane().removeAll();
-					getContentPane().add(levelPlay, BorderLayout.CENTER);
-					
-					getContentPane().validate();
-					getContentPane().repaint();*/
 					levelController = new LevelController(((LevelPanel)arg0.getSource()).getLevel(), MainFrame.this);
 				}
 

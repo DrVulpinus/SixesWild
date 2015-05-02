@@ -8,6 +8,12 @@ import src.PuzzleStats;
 import src.StatsView;
 import Interfaces.MoveControlListener;
 import entities.Level;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.factories.FormFactory;
+import com.jgoodies.forms.layout.RowSpec;
 
 /**
  * The view for an individual level. Contains the views for the stats, the
@@ -27,35 +33,42 @@ public class LevelPlayView extends JPanel {
 	
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
-		
-		// set up the layout
-		setLayout(new MigLayout("", "[150px:175px:175px][150px:175px,grow,fill][150px:n:150px,left]", "[150px:n,grow,fill][]"));
+		setLayout(new FormLayout(new ColumnSpec[] {
+				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("241px"),
+				ColumnSpec.decode("241px:grow"),
+				ColumnSpec.decode("241px"),},
+			new RowSpec[] {
+				RowSpec.decode("fill:184px:grow"),
+				RowSpec.decode("bottom:min"),}));
 		
 		// add the stats to the view
 		statsView = new StatsView();
 		statsView.setBackground(new Color(255, 255, 255, 50));
-		add(statsView, "cell 0 0,grow");
+		add(statsView, "2, 1, fill, fill");
 		
-		// add the grid to the level if it has not yet been made
-		if (level == null)
-			gridView = new GameGridView(level.getGrid());
-		else
-			gridView = new GameGridView(level.getGrid(), moveControlListener);
+		gridView = new GameGridView(level.getGrid(), moveControlListener);
+
 		
 		// initialize and add the other views
 		gridView.setBackground(new Color(255, 255, 255, 50));
-		add(gridView, "cell 1 0");
+		add(gridView, "3, 1, fill,fill");
 		
 		specialMoveView = new SpecialMoveView();
 		specialMoveView.setBackground(new Color(255, 255, 255, 50));
-		add(specialMoveView, "cell 2 0,grow");
+		add(specialMoveView, "4, 1, fill, fill");
+		this.setBackground(new Color(255, 255, 255, 50));
 		
 		//btnBack.setBounds(395, 20, 117, 29);
-		add(getbtnBack(), "cell 2 1,growx,aligny bottom");
-		this.setBackground(new Color(255, 255, 255, 50));
+		add(getbtnBack(), "4, 2, fill, fill");
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
 	}
+	@Override
+	protected void paintComponent(java.awt.Graphics g) {
+		System.out.println("Repainting");
+		super.paintComponent(g);
+	};
 
 	/**
 	 * @return btnBack The button that calls the main menu screen when pressed.

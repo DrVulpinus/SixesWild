@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import Interfaces.MoveControlListener;
@@ -17,6 +18,7 @@ import entities.Square;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseEvent;
+import java.awt.GridLayout;
 
 public class GameGridView extends JPanel {
 	
@@ -41,13 +43,8 @@ public class GameGridView extends JPanel {
 	
 	
 	public GameGridView() {
-		addComponentListener(new ComponentAdapter() {
-			@Override
-			public void componentResized(ComponentEvent e) {
-				fillGrid();
-			}
-		});
-		setLayout(null);//Make sure it is absolute layout
+		super();
+		setLayout(new GridLayout(9, 9, 0, 0));
 		for (int y = 0; y < 9; y++){
 			for (int x = 0; x < 9; x++) {				
 				Square s = new Square();
@@ -66,6 +63,7 @@ public class GameGridView extends JPanel {
 	}
 	public GameGridView(ArrayList<Square> squares) {
 		this.setSquares(squares);
+		setLayout(new GridLayout(9, 9, 0, 0));
 		
 	}
 	
@@ -73,10 +71,10 @@ public class GameGridView extends JPanel {
 	public GameGridView(Grid grid, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
 		this.setSquares(grid);
+		setLayout(new GridLayout(9, 9, 0, 0));
 		
 	}
 	public void setSquares(ArrayList<Square> squares) {
-		setLayout(null); //Make sure it is absolute layout
 		for (Square square : squares) {
 			SquareView sV = new SquareView(square);
 			sV.addMoveControlListener(moveControlListener);
@@ -85,44 +83,57 @@ public class GameGridView extends JPanel {
 			columns = Math.max(columns, square.getLoc().getCol());
 			rows = Math.max(rows, square.getLoc().getRow());
 		}
+		fillGrid();
 	}
 	
 	
 
 	@Override
 	public void paintComponent(Graphics g) {
-		//super.paintComponent(g);
-		Graphics2D g2 = (Graphics2D) g;
-		System.err.println("REPAINTING");
-
-		g2.setColor(color);
-		for (SquareView squareView : squareViews) {
-			//if (squareView.getBlockView().getBlock().isSelected()){
-				//squareView.update();
-			//}
-		}
-		
-		
-			//drawGridBase();
+		super.paintComponent(g);
+		/*for (SquareView squareView : squareViews) {
+			if (squareView.getBlockView().getBlock().isSelected()){
+				squareView.update();
+			}
+		}*/
 			//fillGrid();
-		
+			System.err.println("REPAINTING");
 
 		
 		
-		
+			
+	}
+	
+	public JComponent addComponentToBox(int column, int row){
+		for (SquareView squareView : squareViews){
+			if (squareView.getSquare().getLoc().getCol() == column && squareView.getSquare().getLoc().getRow() == row){
+				return squareView;
+			}
+		}
+		return new JPanel();		
 	}
 	public void fillGrid() {
 		
 		
 		//this.setVisible(false);
+		for (int y = 0; y < 9; y++){
+			for (int x = 0; x < 9; x++) {				
+				add(addComponentToBox(x, y));
+			}
 		
+		//isFilled = true;
+		}
 		//System.out.println(this.getSize().toString());
 		for (SquareView squareView : squareViews) {
-			int col = squareView.getSquare().getLoc().getCol();
-			int row = squareView.getSquare().getLoc().getRow();
+			//int col = squareView.getSquare().getLoc().getCol();
+			//int row = squareView.getSquare().getLoc().getRow();
 			//System.out.println(squareView.getSquare().getLoc().toString());
-			squareView.setLocation((int)Math.floor((col*getWidth()/columns)), (int)  Math.floor((row*getHeight()/rows)));
-			squareView.setSize((int) Math.floor(getWidth()/columns), (int) Math.floor(getHeight()/rows));
+			
+			
+			
+			//add(squareView, );
+		//	squareView.setLocation((int)Math.floor((col*getWidth()/columns)), (int)  Math.floor((row*getHeight()/rows)));
+			//squareView.setSize((int) Math.floor(getWidth()/columns), (int) Math.floor(getHeight()/rows));
 			squareView.update();
 			//System.out.println(squareView.getLocation().toString() + squareView.getSize().toString());
 		}
@@ -152,9 +163,13 @@ public class GameGridView extends JPanel {
 		System.err.println(roundXOutput+","+YOutput);
 	
 	}
-		
+	public void updateGrid() {
+		for (SquareView squareView : squareViews) {		
+				squareView.update();
+			}
 		
 	}
+}
 
 
 
