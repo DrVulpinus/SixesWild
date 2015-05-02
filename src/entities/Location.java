@@ -1,5 +1,9 @@
 package entities;
-
+/**
+ * 
+ *Sets up the location attributes that are used to locate squares on the grid. 
+ *
+ */
 public class Location
 {
 	private int row;
@@ -9,7 +13,6 @@ public class Location
 		this.row = row;
 		this.col = col;
 	}
-	
 	
 	
 	public int getRow() {
@@ -32,7 +35,11 @@ public class Location
 		return "Column: " + col + " Row: " + row;
 	}
 
-	//returns true if this Location and other Location are vertically or horizontally adjacent
+	/**
+	 * Returns true if this Location and other Location are vertically or horizontally adjacent
+	 * @param other
+	 * @return
+	 */
 	public boolean isAdjacentTo(Location other) {
 		System.out.println("s2: " + this + " s1: " + other);
 		
