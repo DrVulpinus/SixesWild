@@ -6,7 +6,8 @@ import src.PuzzleStats;
 /**
  * Represents a move within the SixeWild game. This class is the abstract base.
  * class that provides the basic methods needed for moves in the SixesWild game.
- * Each move contains a level and an ArrayList of squares. 
+ * Each move contains a level and an ArrayList of squares to check which type of level 
+ * the game is in order to validate moves and to check which squares are involved in the move.
  * 
  *
  */
@@ -27,12 +28,20 @@ public abstract class Move {
 	public Level getLevel() {
 		return level;
 	}
-	
+	/**
+	 * Gets the squares that are involved in a move.
+	 * @return
+	 */
 
 	public ArrayList<Square> getSquaresInvolved() {
 		return squaresInvolved;
 	}
 	
+	/**
+	 * Iterates through squares and sets adjacent to true if s2 is adjacent to at least one other Square.
+	 * If there is at least one Square that is not adjacent to any other square the method will return false.
+	 * @return
+	 */
 	public boolean areSquaresAdjacent() {
 		
 		for (Square s1 : squaresInvolved) {
