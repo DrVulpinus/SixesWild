@@ -9,10 +9,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
+import src.LevelStats;
+import src.PuzzleStats;
+
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
 import entities.Level;
+import entities.LevelType;
 import entities.XMLFilter;
 
 public class SaveLoadLevel {
@@ -24,6 +28,7 @@ public static SaveLoadLevel sll;
 private SaveLoadLevel(){
 	xstream = new XStream(new StaxDriver());
 	xstream.ignoreUnknownElements();
+	xstream.allowTypeHierarchy(LevelStats.class);
 	
 	
 }
@@ -59,6 +64,8 @@ public static SaveLoadLevel getInstance(){
 		fos.close();
 	}
 	public Level getLevel(File savedLevel){
+		xstream = new XStream(new StaxDriver());
+		xstream.ignoreUnknownElements();
 		return (Level) xstream.fromXML(savedLevel);
 	}
 	public Level getLevel(Level savedLevel){
