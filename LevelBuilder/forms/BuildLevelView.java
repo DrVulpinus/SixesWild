@@ -16,24 +16,38 @@ import Interfaces.ToolControlListener;
 import builder_entities.LevelBuildState;
 import entities.Grid;
 import entities.Level;
-
-
+/**
+ *  The general View for Editing one level 
+ *
+ */
 public class BuildLevelView extends JPanel{
+	/*  StatsView according to the Level type */
 	private StatsView statsView;
+	/*  The Grid View for builder */
 	private BuilderGridView builderGridView;
+	/*  JButton for Exit but not save the Level */
 	private JButton btnExitWithoutSaving;
+	/*  JComboBox for selecting what to do with the grid */
 	private JComboBox toolSelector;
 	
+	/*  Level to be created */
 	private Level level;
 	private JPanel panel;
+	/*  JButton for go back to the select level type */
 	private JButton btnGoBack;
 	private JPanel panel_1;
+	/*  JButton for close the window with saving?*/
 	private JButton btnClose;
 	
+	/* selecting tool for the toolSelector */
 	private ToolControlListener useTool;
+	/*  JButton for open the window for enabling and disabling special moves */
 	private JButton btnNewButton;
+	/*  JButton for open the window for editing the percentage of 1,2,3,4,5 blocks */
 	private JButton btnEditValue;
+	/*  JButton for open the window for editing the percentage of x1,x2,x3 blocks */
 	private JButton btnEditMultiplier;
+	/*  JButton for open the window for editing star level requirement */
 	private JButton btnEditStarPoints;
 	
 	private JDialog settingsDialog;
