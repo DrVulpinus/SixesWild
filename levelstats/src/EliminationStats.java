@@ -1,7 +1,10 @@
 package src;
 
+import entities.LevelType;
+
 public class EliminationStats extends LevelStats{
 
+	LevelType ELIMINATION;
 	int markedSquares;
 	int totalSquares;
 	
@@ -22,8 +25,8 @@ public class EliminationStats extends LevelStats{
 	}
 
 	@Override
-	public String getType() {
-		return "Elimination";
+	public LevelType getType() {
+		return ELIMINATION;
 	}
 	
 	@Override
