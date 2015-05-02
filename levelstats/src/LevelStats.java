@@ -3,10 +3,6 @@ package src;
 import entities.LevelType;
 
 public class LevelStats {
-	public static final int PUZZLE_MODE = 0;
-	public static final int LIGHTNING_MODE = 1;
-	public static final int RELEASE_MODE = 2;
-	public static final int ELIMINATION_MODE = 3;
 	// the points added to the score after a move
 	public int points = 0;
 	// the overall game score
@@ -39,7 +35,7 @@ public class LevelStats {
 		this.score += points;
 	}
 
-	public String getType() {
+	public LevelType getType() {
 		return null;
 	}
 	public int getStarCount() {

@@ -49,7 +49,7 @@ public class Level
 		BlockMaker.setProbability(this.probability);
 	}
 	
-	public String getType(){
+	public LevelType getType(){
 		return stats.getType();
 	}
 	public String getName(){
