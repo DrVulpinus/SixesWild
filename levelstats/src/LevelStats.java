@@ -14,7 +14,7 @@ public class LevelStats {
 
 	public boolean updating = false;
 	
-	LevelType selectedType;
+	public LevelType selectedType;
 
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	

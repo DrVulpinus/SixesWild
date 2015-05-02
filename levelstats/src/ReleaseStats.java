@@ -4,7 +4,7 @@ import entities.LevelType;
 
 
 public class ReleaseStats extends LevelStats {
-	LevelType RELEASE;
+	LevelType levelType;
 	int releaseBlocksLeft;
 	
 	public ReleaseStats(int score, int releaseBlocksLeft)	{
@@ -24,7 +24,7 @@ public class ReleaseStats extends LevelStats {
 
 	@Override
 	public LevelType getType() {
-		return RELEASE;
+		return levelType.RELEASE;
 	}
 
 	@Override
