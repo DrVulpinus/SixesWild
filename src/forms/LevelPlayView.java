@@ -1,19 +1,28 @@
 package forms;
 
 import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import net.miginfocom.swing.MigLayout;
+
+import src.EliminationStats;
+import src.EliminationStatsView;
+import src.LightningStats;
+import src.LightningStatsView;
 import src.PuzzleStats;
+import src.PuzzleStatsView;
+import src.ReleaseStats;
+import src.ReleaseStatsView;
 import src.StatsView;
 import Interfaces.MoveControlListener;
-import entities.Level;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
+
 import com.jgoodies.forms.factories.FormFactory;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
+
+import entities.Level;
+import entities.LevelType;
 
 /**
  * The view for an individual level. Contains the views for the stats, the
@@ -30,6 +39,15 @@ public class LevelPlayView extends JPanel {
 	SpecialMoveView specialMoveView;
 	MoveControlListener moveControlListener;
 	Level level;
+	PuzzleStatsView puzzleStatsView;
+	ReleaseStatsView releaseStatsView;
+	EliminationStatsView eliminationStatsView;
+	LightningStatsView lightningStatsView;
+	
+	PuzzleStats puzzleStats;
+	ReleaseStats releaseStats;
+	EliminationStats eliminationStats;
+	LightningStats lightningStats;
 	
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
@@ -41,11 +59,11 @@ public class LevelPlayView extends JPanel {
 			new RowSpec[] {
 				RowSpec.decode("fill:184px:grow"),
 				RowSpec.decode("bottom:min"),}));
-		
+		generateLevelStats();
 		// add the stats to the view
-		statsView = new StatsView();
-		statsView.setBackground(new Color(255, 255, 255, 50));
-		add(statsView, "2, 1, fill, fill");
+		//statsView = new StatsView();
+		//statsView.setBackground(new Color(255, 255, 255, 50));
+		//add(statsView, "2, 1, fill, fill");
 		
 		gridView = new GameGridView(level.getGrid(), moveControlListener);
 
@@ -114,6 +132,44 @@ public class LevelPlayView extends JPanel {
 	 */
 	public Level getLevel() {
 		return this.level;
+	}
+	
+
+	void generateLevelStats(){
+		
+		LevelType type = level.getLvlType();
+
+		switch(type){
+
+		case PUZZLE:
+			// generate puzzle stats
+			puzzleStatsView = new PuzzleStatsView(puzzleStats);
+			puzzleStatsView.setBackground(new Color(255, 255, 255, 50));
+			add(puzzleStatsView, "cell 0 0,grow");
+			break;
+
+		case RELEASE:
+			// generate release stats
+			releaseStatsView = new ReleaseStatsView();
+			releaseStatsView.setBackground(new Color(255, 255, 255, 50));
+			add(releaseStatsView, "cell 0 0,grow");
+			break;
+
+		case ELIMINATION:
+			// generate elimination stats
+			eliminationStatsView = new EliminationStatsView(eliminationStats);
+			eliminationStatsView.setBackground(new Color(255, 255, 255, 50));
+			add(eliminationStatsView, "cell 0 0,grow");
+			break;
+
+		case LIGHTNING:
+			//generate lightning stats
+			lightningStatsView = new LightningStatsView();
+			lightningStatsView.setBackground(new Color(255, 255, 255, 50));
+			add(lightningStatsView, "cell 0 0,grow");
+			break;
+
+		}
 	}
 }
 
