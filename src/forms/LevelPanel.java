@@ -128,7 +128,7 @@ public class LevelPanel extends JPanel {
 	JLabel getLblLeveltype() {
 		if (lblLeveltype == null) {
 			lblLeveltype = new JLabel("LevelType");
-			lblLeveltype.setBounds(10, 44, 46, 14);
+			lblLeveltype.setBounds(10, 44, 130, 14);
 		}
 		return lblLeveltype;
 	}
