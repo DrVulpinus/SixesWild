@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import forms.SquareView;
+/**
+ * 
+ * Subclass of move set for regular moves ( not swap,shuffle, or remove)
+ *
+ */
 
+ 
 public class MoveRegular extends Move {
 	boolean updating = level.getStats().updating;
 	int points = 0;
@@ -13,6 +19,10 @@ public class MoveRegular extends Move {
 		System.out.println("Construct Move Regular");
 	}
 
+	/**
+	 * Checks to see if the move is valid 
+	 */
+	
 	@Override
 	public boolean performMove() {
 		if (!isValid())
@@ -65,6 +75,12 @@ public class MoveRegular extends Move {
 		return 0;
 	}
 
+	/**
+	 * Checks to see if the move is valid through checking if the numbers 
+	 * assigned to the squares involved in the move add up to six,
+	 * and if the squares are adjacent.
+	 */
+	
 	@Override
 	public boolean isValid() {
 
