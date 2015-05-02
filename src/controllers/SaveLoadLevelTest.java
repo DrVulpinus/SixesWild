@@ -22,7 +22,7 @@ import entities.Timer;
 
 public class SaveLoadLevelTest {
 	
-	LevelType levelType;
+
 	
 	@Test
 	public void testSaveLoadLevel() throws Exception {
@@ -56,26 +56,27 @@ public class SaveLoadLevelTest {
 		int typeNum = (int) (Math.round((Math.random() * 3.0f)));
 		LevelStats stats;
 		LevelType type;
+		
 		switch (typeNum) {
 		case 0:
-			stats = new PuzzleStats(0, 10);
 			type = LevelType.PUZZLE;
+			stats = new PuzzleStats(0, 10);
 			break;
-		case 1:
-			stats = new LightningStats(0, new Timer());
+		/*case 1:
 			type = LevelType.LIGHTNING;
-			break;
+			stats = new LightningStats(0, 0, new Timer());
+			break;*/
 		case 2:
-			stats = new EliminationStats(0, 10);
 			type = LevelType.ELIMINATION;
+			stats = new EliminationStats(0, 0);
 			break;
 		case 3:
-			stats = new ReleaseStats(0, 5);
 			type = LevelType.RELEASE;
+			stats = new ReleaseStats(0, 0);
 			break;
 		default:
-			stats = new PuzzleStats(0, 0);
 			type = LevelType.PUZZLE;
+			stats = new PuzzleStats(0, 10);
 			break;
 		}
 		
@@ -91,6 +92,7 @@ public class SaveLoadLevelTest {
 			}
 		}
 		Level lvl = new Level(stats, grid, ("SL" + ((int)(50*Math.random()))));
+		lvl.setLvlType(type);
 		return lvl;			
 	}
 
