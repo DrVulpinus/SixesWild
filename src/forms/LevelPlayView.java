@@ -137,7 +137,7 @@ public class LevelPlayView extends JPanel {
 
 	void generateLevelStats(){
 		
-		LevelType type = level.getLvlType();
+		LevelType type = LevelType.ELIMINATION;
 
 		switch(type){
 
@@ -159,14 +159,14 @@ public class LevelPlayView extends JPanel {
 			// generate elimination stats
 			eliminationStatsView = new EliminationStatsView(eliminationStats);
 			eliminationStatsView.setBackground(new Color(255, 255, 255, 50));
-			add(eliminationStatsView, "cell 0 0,grow");
+			add(eliminationStatsView, "1, 1, fill, fill");
 			break;
 
 		case LIGHTNING:
 			//generate lightning stats
 			lightningStatsView = new LightningStatsView();
 			lightningStatsView.setBackground(new Color(255, 255, 255, 50));
-			add(lightningStatsView, "cell 0 0,grow");
+			add(lightningStatsView, "0, 0, fill, fill");
 			break;
 
 		}
