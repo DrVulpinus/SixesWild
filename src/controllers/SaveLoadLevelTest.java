@@ -1,5 +1,7 @@
 package controllers;
 
+import java.io.File;
+
 import org.junit.Test;
 
 import src.LevelStats;
@@ -19,6 +21,13 @@ public class SaveLoadLevelTest {
 	
 	@Test
 	public void testSaveLoadLevel() throws Exception {
+		File dir = new File(SaveLoadLevel.LEVEL_DIRECTORY);
+		if (dir.exists()){
+			for (File f : dir.listFiles()) {
+				f.delete();
+			}
+		}
+		System.out.println(dir.listFiles().toString());
 		SaveLoadLevel sll = SaveLoadLevel.getInstance();
 		for (int i =0;  i < 10; i++){
 			sll.saveLevel(getSampleLevel2());
@@ -54,6 +63,7 @@ public class SaveLoadLevelTest {
 			
 	}
 	private Level getSampleLevel2() {
+
 		Grid grid = new Grid();
 		LevelStats stats = new LevelStats(0, 0);
 		stats.setType(LevelType.LIGHTNING);
