@@ -136,7 +136,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		}
 		return lblTotal;
 	}
-	private JTextField getTextField_3() {
+	public JTextField getTextField_3() {
 		if (textField_3 == null) {
 			textField_3 = new JTextField();
 			textField_3.setText("0");
