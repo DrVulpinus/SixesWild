@@ -74,7 +74,7 @@ public class MainForm extends JFrame {
 		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
-		setSize(800, 500);
+		setSize(800, 550);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild Builder");
 		
@@ -114,6 +114,7 @@ public class MainForm extends JFrame {
 //			}
 //		});
 		
+		buildingController.
 	}
 	/*
 	private JMenuBar getMenuBar_1() {

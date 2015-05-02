@@ -136,7 +136,7 @@ public class BuildLevelView extends JPanel{
 		}
 		return panel;
 	}
-	private JButton getBtnGoBack() {
+	public JButton getBtnGoBack() {
 		if (btnGoBack == null) {
 			btnGoBack = new JButton("Go Back");
 		}

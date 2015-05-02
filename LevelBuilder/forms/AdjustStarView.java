@@ -18,12 +18,14 @@ public class AdjustStarView extends JPanel{
 	private JLabel label_2;
 	private JTextField textField_2;
 	private JButton btnApplyChanges;
+	private JButton btnClose;
 	public AdjustStarView() {
 		setLayout(new MigLayout("", "[][grow][30.00][264.00,grow][146.00][59.00][-127.00,grow]", "[42.00][32.00][center][][][]"));
 		add(getPanel(), "cell 3 1,grow");
 		add(getPanel_1(), "cell 3 2,grow");
 		add(getPanel_2(), "cell 3 3,grow");
-		add(getBtnApplyChanges(), "cell 3 4");
+		add(getBtnApplyChanges(), "flowx,cell 3 4");
+		add(getBtnClose(), "cell 3 4");
 	}
 
 	private JPanel getPanel() {
@@ -97,5 +99,12 @@ public class AdjustStarView extends JPanel{
 			btnApplyChanges = new JButton("Apply Changes");
 		}
 		return btnApplyChanges;
+	}
+	
+	public JButton getBtnClose() {
+		if (btnClose == null) {
+			btnClose = new JButton("Close");
+		}
+		return btnClose;
 	}
 }

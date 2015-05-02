@@ -34,13 +34,10 @@ public class LevelPlayView extends JPanel {
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
 		this.moveControlListener = moveControlListener;
 		setLayout(new FormLayout(new ColumnSpec[] {
-				FormFactory.UNRELATED_GAP_COLSPEC,
+				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
 				ColumnSpec.decode("241px"),
-				FormFactory.UNRELATED_GAP_COLSPEC,
 				ColumnSpec.decode("241px:grow"),
-				FormFactory.UNRELATED_GAP_COLSPEC,
-				ColumnSpec.decode("241px"),
-				FormFactory.UNRELATED_GAP_COLSPEC,},
+				ColumnSpec.decode("241px"),},
 			new RowSpec[] {
 				RowSpec.decode("fill:184px:grow"),
 				RowSpec.decode("bottom:min"),}));
@@ -55,18 +52,24 @@ public class LevelPlayView extends JPanel {
 		
 		// initialize and add the other views
 		gridView.setBackground(new Color(255, 255, 255, 50));
-		add(gridView, "4, 1, fill, fill");
+		add(gridView, "3, 1, fill,fill");
 		
 		specialMoveView = new SpecialMoveView();
 		specialMoveView.setBackground(new Color(255, 255, 255, 50));
-		add(specialMoveView, "6, 1, fill, fill");
+		add(specialMoveView, "4, 1, fill, fill");
 		this.setBackground(new Color(255, 255, 255, 50));
 		
 		//btnBack.setBounds(395, 20, 117, 29);
-		add(getbtnBack(), "6, 2, fill, fill");
+		add(getbtnBack(), "4, 2, fill, fill");
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
 	}
+	@Override
+	protected void paintComponent(java.awt.Graphics g) {
+		System.out.println("Repainting");
+		super.paintComponent(g);
+	};
+
 	/**
 	 * @return btnBack The button that calls the main menu screen when pressed.
 	 */
