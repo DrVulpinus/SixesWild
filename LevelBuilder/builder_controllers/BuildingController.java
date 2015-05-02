@@ -37,7 +37,7 @@ import forms.ProbabilityMultiplierView;
 public class BuildingController {
 
 	Level level;
-	BuildLevelView buildLevelView;
+	public BuildLevelView buildLevelView;
 	MainForm window;
 	ToolSelectionController toolSelect;
 	LevelBuildState buildState;
@@ -125,7 +125,19 @@ public class BuildingController {
 			}
 		});		
 		
-
+		buildLevelView.getBtnGoBack().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(window.getPanel_2(), "cell 3 1,grow");
+				window.getContentPane().add(window.getPanel(), "cell 3 2,grow");
+				window.getContentPane().add(window.getPanel_1(), "cell 3 3,grow");
+				window.getContentPane().add(window.getPanel_3(), "cell 3 4,grow");
+				window.setVisible(true);
+				window.repaint();
+			}
+			
+		});
 	}
 	
 	private void otherListener(){
@@ -160,6 +172,7 @@ public class BuildingController {
 			}
 			
 		});
+		
 	}
 	
 
@@ -173,6 +186,9 @@ public class BuildingController {
 		settingsDialog.repaint();
 	}
 	
+	public BuildLevelView getBuildLevelView(){
+		return buildLevelView;
+	}
 
 }
 
