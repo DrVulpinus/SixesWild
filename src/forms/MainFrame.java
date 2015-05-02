@@ -113,17 +113,40 @@ public class MainFrame extends JFrame{
 			}
 		});
 		
-		mainMenu.getBtnLevel().addActionListener(new ActionListener() {
+		mainMenu.getBtnLevel().addMouseListener(new MouseListener() {
 			
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				MainFrame.this.setContentPane(lvlSelectView);
 				MainFrame.this.validate();
 				MainFrame.this.repaint();
 				System.out.println("to Achievement Select View");
+				
 			}
-			
-			
 		});
 		
 		

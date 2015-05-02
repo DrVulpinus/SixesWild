@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 /**
  * The main menu screen. Contains a button called Level and a button

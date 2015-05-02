@@ -86,39 +86,23 @@ public class GameGridView extends JPanel {
 		fillGrid();
 	}
 	
-	
-
-	@Override
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		/*for (SquareView squareView : squareViews) {
-			if (squareView.getBlockView().getBlock().isSelected()){
-				squareView.update();
-			}
-		}*/
-			//fillGrid();
-			System.err.println("REPAINTING");
-
-		
-		
-			
-	}
-	
 	public JComponent addComponentToBox(int column, int row){
 		for (SquareView squareView : squareViews){
 			if (squareView.getSquare().getLoc().getCol() == column && squareView.getSquare().getLoc().getRow() == row){
 				return squareView;
 			}
 		}
-		return new JPanel();		
+		JPanel holdPnl = new JPanel();
+		holdPnl.setBackground(new Color(255, 255, 255, 0));
+		return holdPnl;		
 	}
 	public void fillGrid() {
 		
 		
 		//this.setVisible(false);
-		for (int y = 0; y < 9; y++){
-			for (int x = 0; x < 9; x++) {				
-				add(addComponentToBox(x, y));
+		for (int col = 0; col < 9; col++){
+			for (int row = 0; row < 9; row++) {				
+				add(addComponentToBox(row, col));
 			}
 		
 		//isFilled = true;
