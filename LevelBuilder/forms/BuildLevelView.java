@@ -1,21 +1,29 @@
 package forms;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
+import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
+import src.EliminationStats;
+import src.EliminationStatsView;
 import src.LevelStats;
+import src.LightningStats;
+import src.LightningStatsView;
+import src.PuzzleStats;
+import src.PuzzleStatsView;
+import src.ReleaseStats;
+import src.ReleaseStatsView;
 import src.StatsView;
 import Interfaces.ToolControlListener;
 import builder_entities.LevelBuildState;
 import entities.Grid;
 import entities.Level;
+import entities.LevelType;
 /**
  *  The general View for Editing one level 
  *
@@ -51,7 +59,15 @@ public class BuildLevelView extends JPanel{
 	private JButton btnEditStarPoints;
 	
 	private JDialog settingsDialog;
-	
+	PuzzleStatsView puzzleStatsView;
+	ReleaseStatsView releaseStatsView;
+	EliminationStatsView eliminationStatsView;
+	LightningStatsView lightningStatsView;
+	LevelPlayView levelPlayView;
+	PuzzleStats puzzleStats;
+	ReleaseStats releaseStats;
+	EliminationStats eliminationStats;
+	LightningStats lightningStats;
 	
 	/*public BuildLevelView() {
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][31.00,top][8.00][grow][grow][grow][bottom]"));
@@ -86,7 +102,14 @@ public class BuildLevelView extends JPanel{
 		add(getBtnEditMultiplier(), "cell 3 0");
 		add(getBtnEditStarPoints(), "cell 1 1");
 		add(getToolSelector(), "cell 3 1");
-		add(getTestJPanel(), "cell 0 2 2 1,grow");
+		//add(getTestJPanel(), "cell 0 2 2 1,grow");
+		
+//		 panel = new JPanel();
+//		 panel.setLayout(new BorderLayout());
+//			add(panel, "cell 2 1, grow");
+
+		
+		
 		add(getBuilderGridView(), "cell 2 2,grow");
 		
 
@@ -96,7 +119,7 @@ public class BuildLevelView extends JPanel{
 		add(getBtnExitWithoutSaving(), "cell 2 4");
 		add(getPanel(), "cell 3 3,grow");
 		add(getPanel_1(), "cell 3 4,grow");
-		
+		generateLevelStatsView();
 		
 //		
 //		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26,00, center][104.00,top][8.00][71.00,grow,center][bottom]"));
@@ -114,9 +137,7 @@ public class BuildLevelView extends JPanel{
 		
 	}
 	
-	
 
-	
 	
 	private StatsView getTestJPanel() {
 		if (statsView == null) {
@@ -193,4 +214,48 @@ public class BuildLevelView extends JPanel{
 		}
 		return btnEditStarPoints;
 	}
-}
+	public void setLevel(Level level) {
+		this.level = level;
+		
+	}
+	
+	/**
+	 * @return level The level the user is currently in.
+	 */
+	public Level getLevel() {
+		return this.level;
+	}
+	
+	
+	void generateLevelStatsView(){
+		
+		LevelType type = level.getLvlType();
+
+		switch(type){
+
+		case PUZZLE:
+			// generate puzzle stats
+			puzzleStatsView = new PuzzleStatsView(puzzleStats);
+			add(releaseStatsView, "cell 0 2 2 1,grow");
+			break;
+
+		case RELEASE:
+			// generate release stats
+			releaseStatsView = new ReleaseStatsView();
+			add(releaseStatsView, "cell 0 2 2 1,grow");
+			break;
+
+		case ELIMINATION:
+			// generate elimination stats
+			eliminationStatsView = new EliminationStatsView(eliminationStats);
+			add(eliminationStatsView, "cell 0 2 2 1,grow");
+			break;
+
+		case LIGHTNING:
+			//generate lightning stats
+			lightningStatsView = new LightningStatsView();
+			add(lightningStatsView, "cell 0 2 2 1,grow");
+			break;
+
+		}
+}}
