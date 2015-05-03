@@ -1,5 +1,9 @@
 package src;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.SystemColor;
+
 import javax.swing.ImageIcon;
 //import javax.swing.ImageIcon;
 //import javax.swing.JFrame;
@@ -7,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
 
 import net.miginfocom.swing.MigLayout;
 import entities.Level;
