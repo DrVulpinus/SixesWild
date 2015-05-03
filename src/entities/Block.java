@@ -7,9 +7,12 @@ public class Block
 	boolean selected;
 	
 	public Block(int number, int multiplier) {
-		if (number > 6 || number < 1)
+		if (number > 6 || number < 1){
 			throw new IllegalArgumentException("A block number must be between 1 and 6.");
-		
+		}
+		if (multiplier > 3 || multiplier < 1){
+			throw new IllegalArgumentException("A block multiplier must be between 1 and 3.");
+		}
 		this.value = number;
 		this.multiplier = multiplier;
 	}
