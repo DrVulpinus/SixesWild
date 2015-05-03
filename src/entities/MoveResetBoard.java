@@ -2,10 +2,13 @@ package entities;
 
 import java.util.ArrayList;
 
-public class MoveResetBoard extends Move {
+import controllers.MoveController;
 
-	public MoveResetBoard(Level level) {
+public class MoveResetBoard extends Move {
+	MoveController mc;
+	public MoveResetBoard(Level level, MoveController mc) {
 		super(level, null);
+		this.mc = mc;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -13,7 +16,7 @@ public class MoveResetBoard extends Move {
 	public boolean performMove() {
 		level.resetBoard();
 		level.getStats().update(getPoints(), 0, 0);
-		return false;
+		return true;
 	}
 	
 

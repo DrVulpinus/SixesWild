@@ -33,7 +33,6 @@ public class MoveRegular extends Move {
 
 			if (b != null){
 				setPoints(getPoints() + (100 * b.getMultiplier()));
-				System.err.println("This is the mult: " + b.getMultiplier());
 			}
 		}
 		//removes blocks from all squares involved

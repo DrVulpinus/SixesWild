@@ -57,10 +57,7 @@ SpecialMoveView moveView = new SpecialMoveView();
 			}
 			
 			if (e.getSource() == reset){
-				playState.setSelectedMove(LevelPlayState.MOVE_RESET);
-				
-				Move m = new MoveResetBoard(levelPlayView.getLevel());
-				m.performMove();
+				playState.setSelectedMove(LevelPlayState.MOVE_RESET);				
 			}	
 		}
 		

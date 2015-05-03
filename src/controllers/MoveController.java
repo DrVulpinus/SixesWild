@@ -9,6 +9,7 @@ import entities.LevelPlayState;
 import entities.Move;
 import entities.MoveRegular;
 import entities.MoveRemove;
+import entities.MoveResetBoard;
 import entities.MoveSwap;
 import entities.Square;
 import forms.GameGridView;
@@ -16,7 +17,7 @@ import forms.LevelPlayView;
 import forms.SquareView;
 
 
-public class MoveController implements MoveControlListener {
+public class MoveController implements MoveControlListener, ChangeLevelPlayState {
 
 	ArrayList<SquareView> selectedSquareViews;
 	Level level;
@@ -30,6 +31,7 @@ public class MoveController implements MoveControlListener {
 		selectedSquareViews = new ArrayList<SquareView>();
 		this.level = level;
 		this.playState = playState;
+		playState.addStateChangedListener(this);
 		this.started = false;
 	}
 	public void setGrid(GameGridView grid){
@@ -51,7 +53,9 @@ public class MoveController implements MoveControlListener {
 
 		System.out.println("Move started");
 		this.started = true;
-		this.selectBlock(sV);
+		if (!(sV == null)){
+			this.selectBlock(sV);
+		}
 	}
 
 	public void selectBlock(SquareView sV) {
@@ -77,9 +81,6 @@ public class MoveController implements MoveControlListener {
 			return;
 	
 		performMove();
-
-		
-
 		for (Iterator<SquareView> i = selectedSquareViews.iterator(); i.hasNext();) {
 			SquareView sV = i.next();
 
@@ -119,6 +120,9 @@ public class MoveController implements MoveControlListener {
 		case LevelPlayState.MOVE_SWAP:
 			m = new MoveSwap(level, squares);
 			break;
+		case LevelPlayState.MOVE_RESET:
+			m = new MoveResetBoard(level, this);
+			break;
 		}
 
 		if (m == null)
@@ -126,6 +130,13 @@ public class MoveController implements MoveControlListener {
 
 		if (m.performMove())
 			playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);		//reset to regular move after a move is made
+	}
+	@Override
+	public void playStateChanged(int newState) {
+		if (newState == LevelPlayState.MOVE_RESET){
+			startMove(null);
+			endMove();
+		}
 	}
 
 }

@@ -82,12 +82,6 @@ public class BlockView extends JLabel
 		// show the block after it has been set up
 		this.setVisible(true);
 
-		// if a block exists, call its icon
-		if (block != null) {
-			smallIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight());
-			largeIco = icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5);
-		}
-
 	}
 
 	/**
@@ -113,10 +107,13 @@ public class BlockView extends JLabel
 		if (block == null)
 			this.setIcon(null);
 		else {
-			if (block.isSelected())
-				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));
-			else
+			if (block.isSelected()){
+				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));		
+			}						
+			else{
 				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5));
+			}
+				
 		}
 	}
 
