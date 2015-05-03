@@ -43,6 +43,7 @@ public class LevelController implements ChangeLevelPlayState{
 	public LevelController(Level level, MainFrame window) {
 		
 		this.level = level;
+		this.level.resetBoard(); //Generates a random board layout
 		this.window = window;
 		this.playState = new LevelPlayState();
 		this.moveController = new MoveController(level, playState);
