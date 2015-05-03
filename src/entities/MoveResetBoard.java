@@ -14,7 +14,7 @@ public class MoveResetBoard extends Move {
 
 	@Override
 	public boolean performMove() {
-		level.resetBoard();
+		level.shuffleBoard();
 		level.getStats().update(getPoints(), 0, 0);
 		return true;
 	}

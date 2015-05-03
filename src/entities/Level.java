@@ -55,7 +55,7 @@ public class Level
 	public void setName(String newName){
 		name = newName;
 	}
-	public void resetBoard() {
+	public void shuffleBoard() {
 		for (Square square : grid) {
 			square.setBlock(BlockMaker.makeBlock(probability));
 		}
