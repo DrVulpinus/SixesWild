@@ -10,21 +10,28 @@ import java.util.Random;
  */
 public class BlockMaker {
 	
-	static Probability probability = new Probability();
+	Probability probability = new Probability();
+	static BlockMaker bm;
 	
-	public static void setProbability(Probability p) {
+	
+	
+	private BlockMaker(){
+		
+	}
+	public static BlockMaker getInstance(){
+		bm = new BlockMaker();
+		return bm;
+	}
+	
+	public void setProbability(Probability p) {
 		probability = p;
 	}
-	
-	public static Block makeBlock() {
-		if (probability != null)
-			return makeBlock(probability);
-		else
-			return null;		
+	public Block makeBlock(){
+		return makeBlock(probability);
 	}
-	
-	public static Block makeBlock(Probability p) {
-		Random r = new Random();
+	public Block makeBlock(Probability p) {
+		probability = p;
+		/*Random r = new Random();
 		
 		int num = r.nextInt(p.getTotalValueProb()) + 1;
 		
@@ -45,8 +52,8 @@ public class BlockMaker {
 				num -= p.getMultProb(n);
 				multiplier++;
 			}
-		}
+		}*/
 		
-		return new Block(value, multiplier);	
+		return new Block(p.getRandomValue(), p.getRandomMult());	
 	}
 }

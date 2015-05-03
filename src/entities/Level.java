@@ -39,14 +39,14 @@ public class Level
 		this.name = name;
 
 		this.probability = new Probability();
-		BlockMaker.setProbability(this.probability);
+		BlockMaker.getInstance().setProbability(probability);
 		
 	}
 	
 	public Level(LevelStats stats, Grid grid, Probability p, String name) {
 		this(stats, grid, name);
 		this.probability = p;
-		BlockMaker.setProbability(this.probability);
+		BlockMaker.getInstance().setProbability(probability);
 	}
 	
 	public String getName(){
@@ -57,7 +57,7 @@ public class Level
 	}
 	public void shuffleBoard() {
 		for (Square square : grid) {
-			square.setBlock(BlockMaker.makeBlock(probability));
+			square.setBlock(BlockMaker.getInstance().makeBlock(probability));
 		}
 	}
 	

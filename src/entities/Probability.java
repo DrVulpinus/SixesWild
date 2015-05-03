@@ -5,22 +5,52 @@ public class Probability {
 	int[] valueProb;
 	int[] multProb;
 	
+	
+	int[] valueSeed;
+	int[] multSeed;
 	public Probability() {
 		this.valueProb = new int[6];
 		this.multProb = new int[3];
 		
-		this.valueProb[0] = 100;
-		this.valueProb[1] = 100;
-		this.valueProb[2] = 100;
-		this.valueProb[3] = 100;
-		this.valueProb[4] = 100;
+		this.valueProb[0] = 20;
+		this.valueProb[1] = 20;
+		this.valueProb[2] = 20;
+		this.valueProb[3] = 20;
+		this.valueProb[4] = 20;
 		this.valueProb[5] = 0;
 		
 		this.multProb[0] = 40;
 		this.multProb[1] = 30;
 		this.multProb[2] = 30;
+		generateSeeds();
 	}
 	
+	void generateMultSeed(){
+		multSeed  = new int[1000];
+		int startIndex = 0;
+		for (int i = 0; i < multProb.length; i++) {
+			int j = multProb[i];
+			j *= 10;
+			for (int j2 = startIndex; j2 < j + startIndex; j2++) {
+				multSeed[j2] = i + 1;				
+			}
+			startIndex += j;
+			
+		}
+	}
+	void generateValueSeed(){
+		valueSeed  = new int[1000];
+		int startIndex = 0;
+		for (int i = 0; i < valueProb.length; i++) {
+			int j = valueProb[i];
+			j *= 10;
+			for (int j2 = startIndex; j2 < j + startIndex; j2++) {
+				valueSeed[j2] = i + 1;				
+			}
+			startIndex += j;
+			
+		}
+	}
 	public int getValueProb(int value) {
 		
 		if (value < 1 || value > 6)
@@ -75,24 +105,29 @@ public class Probability {
 		return (p1 + p2 + p3 == 100);
 	}
 	
-	public int getTotalValueProb() {
-		int sum = 0;
-		
-		for (int n = 0; n < 6; n++)
-			sum += valueProb[n];
-		
-		return sum;
+	public void generateSeeds(){
+		generateMultSeed();
+		generateValueSeed();
 	}
 	
-	public int getTotalMultProb() {
-		int sum = 0;
-		
-		for (int n = 0; n < 3; n++)
-			sum += multProb[n];
-		
-		return sum;
+	public int[] getMultSeed() {
+		if (multSeed == null){
+			generateMultSeed();
+		}
+		return multSeed;
 	}
-	
+	public int[] getValueSeed(){
+		if(valueSeed == null){
+			generateValueSeed();
+		}
+		return valueSeed;
+	}
+	public int getRandomValue(){
+		return getValueSeed()[(int) (Math.random()*999)];
+	}
+	public int getRandomMult(){
+		return getMultSeed()[(int) (Math.random()*999)];
+	}
 
 //	int prob1;
 //	int prob2;
