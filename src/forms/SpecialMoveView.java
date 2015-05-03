@@ -42,7 +42,7 @@ public class SpecialMoveView extends JPanel {
 		removeSquareButton = new JButton("Remove Square");
 		add(removeSquareButton, "cell 0 3");
 		
-		resetBoardButton = new JButton("Reset Board");
+		resetBoardButton = new JButton("Shuffle Board");
 		resetBoardButton.setMinimumSize(new Dimension(0, 0));
 		add(resetBoardButton, "cell 0 4");
 
