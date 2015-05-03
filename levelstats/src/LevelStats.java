@@ -1,6 +1,6 @@
 package src;
 
-import entities.LevelType;
+import entities.Timer;
 
 public class LevelStats {
 	// the points added to the score after a move
@@ -72,4 +72,12 @@ public class LevelStats {
 		return true;
 	}
 
+	public int getUniqueIntValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Timer getTimer(){
+		return null;
+	}
 }

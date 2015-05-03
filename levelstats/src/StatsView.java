@@ -1,28 +1,18 @@
 package src;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.SystemColor;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-
-
+import javax.swing.ImageIcon;
 //import javax.swing.ImageIcon;
 //import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-//import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 
 import net.miginfocom.swing.MigLayout;
-
-import javax.swing.ImageIcon;
-
+import entities.Level;
+import entities.LevelType;
 import entities.MoveRegular;
+//import javax.swing.border.EmptyBorder;
 
 //import net.miginfocom.swing.MigLayout;
 
@@ -36,14 +26,16 @@ public class StatsView extends JPanel {
 	private JTextField textField_1;
 	private JTextField textField_5;
 	private MoveRegular moveRegular;
-	private PuzzleStats puzzleStats;
+	private LevelStats levelStats;
+	Level level;
 	String score;
 	
-	public StatsView(){
+	public StatsView(Level level){
+		this.level = level;
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
-		puzzleStats = new PuzzleStats(0,30);
-		score = Integer.toString(puzzleStats.getScore());
+		levelStats = new LevelStats(0,30);
+		score = Integer.toString(levelStats.getScore());
 		//add(getpanel(), "cell 0 0,aligny top");
 		{
 			JPanel panel = new JPanel();
@@ -123,23 +115,23 @@ public class StatsView extends JPanel {
 		//panel_1.setBounds(28, 225, 73, 28);
 		{
 			textField_3 = new JTextField();
-			int points = puzzleStats.getPoints();
+			int points = levelStats.getPoints();
 //			System.out.print("ThESE ARE POINTS");
 //			System.out.println(points);
-			if (puzzleStats != null){
+			if (levelStats != null){
 				System.out.println("THIS SHOULD WORK");
 			}
 			else{
 				System.out.println("It's the points");
 			}
-			int initialscore = puzzleStats.getScore();
+			int initialscore = levelStats.getScore();
 			System.out.println("initialScore");
 			System.out.println(initialscore);
 			int newscore;
 			
 			System.out.println(score);
 			if(score != null){
-				if(puzzleStats.updating){
+				if(levelStats.updating){
 					System.out.print("ThESE ARE POINTS");
 					System.out.println(points);
 					newscore = points + initialscore;
@@ -154,7 +146,7 @@ public class StatsView extends JPanel {
 			panel_1.add(textField_3);
 			textField_3.setLocation(10, 387);
 			textField_3.setEditable(false);
-			if(puzzleStats!= null){
+			if(levelStats!= null){
 			
 //			String points = String.valueOf((puzzleStats.getScore()));
 //			System.out.println(points);
@@ -179,10 +171,23 @@ public class StatsView extends JPanel {
 			
 			textField_4.setEditable(false);
 			
-			if (puzzleStats != null){
-			String numMovesLeft = String.valueOf((puzzleStats.getNumMovesLeft()));
-			
-			textField_4.setText(numMovesLeft);
+			if (levelStats != null){
+				if (level.getLvlType().equals(LevelType.PUZZLE)){
+					String uniqueAmount = String.valueOf((levelStats.getUniqueIntValue()));
+					textField_4.setText(uniqueAmount);
+				}
+				else if (level.getLvlType().equals(LevelType.ELIMINATION)){
+					String uniqueAmount = String.valueOf((levelStats.getUniqueIntValue()));
+					textField_4.setText(uniqueAmount);
+				}
+				else if (level.getLvlType().equals(LevelType.RELEASE)){
+					String uniqueAmount = String.valueOf((levelStats.getUniqueIntValue()));
+					textField_4.setText(uniqueAmount);
+				}
+//				else if(levelStats instanceof LightningStats){
+//					String timer = Timer.getTimeString();
+//					textField_4.setText(timer);
+//				}
 //			textField_4.setText("30");
 			textField_4.setColumns(10);
 			}
