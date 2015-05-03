@@ -36,7 +36,7 @@ public class BlockMaker {
 		
 		num = r.nextInt(p.getTotalMultProb()) + 1;
 		
-		for (int n = 0; n < 3; n++) {
+		for (int n = 0; n < 2; n++) {
 			if (num > p.getMultProb(n)) {		//if the random num exceeds the range for the block multiplier n
 				num -= p.getMultProb(n);
 				multiplier++;
