@@ -120,7 +120,7 @@ public class BuildLevelView extends JPanel{
 	
 	private StatsView getTestJPanel() {
 		if (statsView == null) {
-			statsView = new StatsView();
+			statsView = new StatsView(level);
 		}
 		return statsView;
 	}

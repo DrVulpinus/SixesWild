@@ -151,6 +151,7 @@ public class EliminationStatsView extends JPanel {
 		}
 
 		return panel_1;
+
 	}
 	
 	public JTextField getTextField_3(){
