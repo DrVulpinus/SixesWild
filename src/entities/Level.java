@@ -56,7 +56,9 @@ public class Level
 		name = newName;
 	}
 	public void resetBoard() {
-		
+		for (Square square : grid) {
+			square.setBlock(BlockMaker.makeBlock(probability));
+		}
 	}
 	
 	public Grid getGrid() {
