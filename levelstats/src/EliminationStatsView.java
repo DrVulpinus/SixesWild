@@ -25,11 +25,12 @@ public class EliminationStatsView extends JPanel {
 	private MoveRegular moveRegular;
 	private EliminationStats eliminationStats;
 	String score;
-	
-	public EliminationStatsView(EliminationStats eliminationStats){
+
+	public EliminationStatsView(EliminationStats eliminationStats, MoveRegular moveRegular){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
-		eliminationStats = new EliminationStats(0,30);
+		this.eliminationStats = eliminationStats;
+		this.moveRegular = moveRegular;
 		score = Integer.toString(eliminationStats.getScore());
 		add(getpanel(), "cell 0 0,aligny top");
 		{
@@ -103,16 +104,22 @@ public class EliminationStatsView extends JPanel {
 	}
 
 
-
+	public void update(){
+		int points = eliminationStats.points;
+		if (eliminationStats.updating){
+			score += points;
+			textField_3.setText(score);
+		}
+	}
 
 	public JPanel getpanel_1() {
 		JPanel panel_1 = new JPanel();
 		//panel_1.setBounds(28, 225, 73, 28);
 		{
 			textField_3 = new JTextField();
-			int points = eliminationStats.getPoints();
-//			System.out.print("ThESE ARE POINTS");
-//			System.out.println(points);
+			int points = moveRegular.getPoints();
+			//			System.out.print("ThESE ARE POINTS");
+			//			System.out.println(points);
 			if (eliminationStats != null){
 				System.out.println("THIS SHOULD WORK");
 			}
@@ -123,14 +130,14 @@ public class EliminationStatsView extends JPanel {
 			System.out.println("initialScore");
 			System.out.println(initialscore);
 			int newscore;
-			
+
 			System.out.println(score);
 			if(score != null){
 				if(eliminationStats.updating){
 					System.out.print("ThESE ARE POINTS");
-					System.out.println(points);
-					newscore = points + initialscore;
-					score = Integer.toString(newscore);
+//					System.out.println(points);
+//					newscore = points + initialscore;
+//					score = Integer.toString(newscore);
 					textField_3.setText(score);
 				}
 				textField_3.setText(score);
@@ -142,18 +149,18 @@ public class EliminationStatsView extends JPanel {
 			textField_3.setLocation(10, 387);
 			textField_3.setEditable(false);
 			if(eliminationStats!= null){
-			
-//			String points = String.valueOf((eliminationStats.getScore()));
-//			System.out.println(points);
-//			textField_3.setText(points);
-			textField_3.setColumns(10);
+
+				//			String points = String.valueOf((eliminationStats.getScore()));
+				//			System.out.println(points);
+				//			textField_3.setText(points);
+				textField_3.setColumns(10);
 			}
 		}
 
 		return panel_1;
 
 	}
-	
+
 	public JTextField getTextField_3(){
 		return textField_3;
 	}
@@ -164,15 +171,15 @@ public class EliminationStatsView extends JPanel {
 			textField_4 = new JTextField();
 			textField_4.setHorizontalAlignment(SwingConstants.CENTER);
 			panel_3.add(textField_4);
-			
+
 			textField_4.setEditable(false);
-			
+
 			if (eliminationStats != null){
-			String numMovesLeft = String.valueOf((eliminationStats.getNumMarkedSquares()));
-			
-			textField_4.setText(numMovesLeft);
-//			textField_4.setText("30");
-			textField_4.setColumns(10);
+				String numMovesLeft = String.valueOf((eliminationStats.getNumMarkedSquares()));
+
+				textField_4.setText(numMovesLeft);
+				//			textField_4.setText("30");
+				textField_4.setColumns(10);
 			}
 		}
 		return panel_3;
@@ -190,7 +197,7 @@ public class EliminationStatsView extends JPanel {
 		//lblPoints.setBounds(47, 210, 43, 13);
 		return lblPoints;
 	}
-	
+
 	private JPanel getpanel() {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.inactiveCaptionBorder);
