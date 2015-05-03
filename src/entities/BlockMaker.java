@@ -3,7 +3,11 @@ import java.util.Random;
 
 
 
-
+/**
+ * Create a block based on a given probability for that block.
+ * @author Miya
+ *
+ */
 public class BlockMaker {
 	
 	static Probability probability = new Probability();
@@ -27,7 +31,7 @@ public class BlockMaker {
 		int value = 1;
 		int multiplier = 1;
 		
-		for (int n = 0; n < 5; n++) {
+		for (int n = 0; n < 6; n++) {
 			if (num > p.getValueProb(n)) {		//if the random num exceeds the range for the block value n
 				num -= p.getValueProb(n);
 				value++;
