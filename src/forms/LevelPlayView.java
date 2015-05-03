@@ -89,11 +89,6 @@ public class LevelPlayView extends JPanel {
 		//GameGridView gameGridView = new GameGridView();
 		//getContentPane().add(gameGridView);
 	}
-	@Override
-	protected void paintComponent(java.awt.Graphics g) {
-		System.out.println("Repainting");
-		super.paintComponent(g);
-	};
 
 	/**
 	 * @return btnBack The button that calls the main menu screen when pressed.
