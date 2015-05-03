@@ -207,6 +207,19 @@ public class StatsView extends JPanel {
 		//lblPoints.setBounds(47, 210, 43, 13);
 		return lblPoints;
 	}
+	
+	private JPanel getpanel() {
+		JPanel panel = new JPanel();
+		panel.setBackground(SystemColor.inactiveCaptionBorder);
+		panel.setBorder(new LineBorder(Color.GREEN, 7, true));
+		//panel.setBounds(10, 26, 112, 34);
+		{
+			JLabel lblNewLabel = new JLabel("Puzzle Mode");
+			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
+			panel.add(lblNewLabel);
+		}
+		return panel;
+	}
 
 
 }
