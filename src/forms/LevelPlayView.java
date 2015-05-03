@@ -1,5 +1,6 @@
 package forms;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JButton;
@@ -48,17 +49,23 @@ public class LevelPlayView extends JPanel {
 	ReleaseStats releaseStats;
 	EliminationStats eliminationStats;
 	LightningStats lightningStats;
+	private JPanel panel;
 	
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
+		this.level = level;
 		this.moveControlListener = moveControlListener;
 		setLayout(new FormLayout(new ColumnSpec[] {
 				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-				ColumnSpec.decode("241px"),
+				ColumnSpec.decode("241px:grow"),
 				ColumnSpec.decode("241px:grow"),
 				ColumnSpec.decode("241px"),},
 			new RowSpec[] {
 				RowSpec.decode("fill:184px:grow"),
 				RowSpec.decode("bottom:min"),}));
+		
+		panel = new JPanel();
+		panel.setLayout(new BorderLayout());
+		add(panel, "2, 1, fill, fill");
 		generateLevelStats();
 		// add the stats to the view
 		//statsView = new StatsView();
@@ -137,7 +144,7 @@ public class LevelPlayView extends JPanel {
 
 	void generateLevelStats(){
 		
-		LevelType type = LevelType.ELIMINATION;
+		LevelType type = level.getLvlType();
 
 		switch(type){
 
@@ -145,28 +152,28 @@ public class LevelPlayView extends JPanel {
 			// generate puzzle stats
 			puzzleStatsView = new PuzzleStatsView(puzzleStats);
 			puzzleStatsView.setBackground(new Color(255, 255, 255, 50));
-			add(puzzleStatsView, "cell 0 0,grow");
+			panel.add(puzzleStatsView, BorderLayout.CENTER);
 			break;
 
 		case RELEASE:
 			// generate release stats
 			releaseStatsView = new ReleaseStatsView();
 			releaseStatsView.setBackground(new Color(255, 255, 255, 50));
-			add(releaseStatsView, "cell 0 0,grow");
+			panel.add(releaseStatsView, BorderLayout.CENTER);
 			break;
 
 		case ELIMINATION:
 			// generate elimination stats
 			eliminationStatsView = new EliminationStatsView(eliminationStats);
 			eliminationStatsView.setBackground(new Color(255, 255, 255, 50));
-			add(eliminationStatsView, "1, 1, fill, fill");
+			panel.add(eliminationStatsView, BorderLayout.CENTER);
 			break;
 
 		case LIGHTNING:
 			//generate lightning stats
 			lightningStatsView = new LightningStatsView();
 			lightningStatsView.setBackground(new Color(255, 255, 255, 50));
-			add(lightningStatsView, "0, 0, fill, fill");
+			panel.add(lightningStatsView, BorderLayout.CENTER);
 			break;
 
 		}
