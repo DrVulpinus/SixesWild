@@ -9,7 +9,7 @@ public class LightningStats extends LevelStats{
 
 	Timer timer;
 	
-	public LightningStats(int score, entities.Timer timer2) {
+	public LightningStats(int score, Timer timer2) {
 		super(score);
 		this.timer = timer2;
 	}
