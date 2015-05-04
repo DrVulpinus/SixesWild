@@ -153,6 +153,8 @@ public abstract class StatsView extends JPanel {
 	public void initializeValueDisplays(int initialPoints, int initialLimit){
 		getTxtLimitingfactordisplay().setText(Integer.toString(initialLimit));
 		getTxtPointsdisplay().setText(Integer.toString(initialPoints));
+		setStarPoints(stats.getStarPoints()[1], stats.getStarPoints()[2], stats.getStarPoints()[3]);
+		getPbStarPoints().setMaximum(getStarThreePoints());
 	}
 	
 	/**
@@ -165,7 +167,13 @@ public abstract class StatsView extends JPanel {
 		getLblTypeLabel().setText(type);
 	}
 	
+	public void setProgressBarValue(){
+		setProgressBarValue(getPoints());
+	}
 	
+	public void setProgressBarValue(int value){
+		getPbStarPoints().setValue(value);
+	}
 	
 	/**
 	 * Sets the current point value
@@ -173,6 +181,7 @@ public abstract class StatsView extends JPanel {
 	 */
 	public void setPoints(int points){
 		this.points = points;
+		setProgressBarValue();
 		getTxtPointsdisplay().setText(Integer.toString(this.points));
 	}
 	/**
@@ -224,9 +233,11 @@ public abstract class StatsView extends JPanel {
 		Color pointsColor = Color.RED;
 		try {
 			int colorStep = getPoints()/getPointColorStepIncrement();
-			pointsColor = new Color(255-colorStep, 0, colorStep);
+			pointsColor = new Color(255-colorStep, colorStep, 0);
 		} catch (Exception e) {
-			
+			if (getPoints() > getStarThreePoints()){
+				pointsColor = Color.GREEN;
+			}
 		}
 		
 		return pointsColor;

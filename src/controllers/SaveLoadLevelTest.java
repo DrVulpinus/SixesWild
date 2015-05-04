@@ -91,6 +91,10 @@ public class SaveLoadLevelTest {
 
 			}
 		}
+		int sc1 = 750 + (int) (Math.random()*500.0f);
+		int sc2 = sc1 + 500 + (int) (Math.random()*500.0f);
+		int sc3 = sc2 + 500 + (int) (Math.random()*500.0f);
+		stats.setStarCounts(sc1, sc2, sc3);
 		Level lvl = new Level(stats, grid, ("SL" + ((int)(50*Math.random()))));
 		lvl.setLvlType(type);
 		return lvl;			
