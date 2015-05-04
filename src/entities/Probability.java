@@ -15,11 +15,11 @@ public class Probability {
 		this.multProb = new int[3];
 		this.releaseProb = new int[1];
 		
-		this.valueProb[0] = 100;
-		this.valueProb[1] = 0;
-		this.valueProb[2] = 0;
-		this.valueProb[3] = 0;
-		this.valueProb[4] = 0;
+		this.valueProb[0] = 20;
+		this.valueProb[1] = 20;
+		this.valueProb[2] = 20;
+		this.valueProb[3] = 20;
+		this.valueProb[4] = 20;
 		this.valueProb[5] = 0;
 		
 		this.multProb[0] = 40;
