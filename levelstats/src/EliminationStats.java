@@ -5,6 +5,7 @@ import entities.LevelType;
 public class EliminationStats extends LevelStats{
 	int markedSquares;
 	int totalSquares;
+	int markedSquaresLeft;
 	
 	public EliminationStats(){
 		super(0);
@@ -28,10 +29,10 @@ public class EliminationStats extends LevelStats{
 		return (this.markedSquares >= this.totalSquares);
 	}
 	
-	@Override
-	public void update(int points, int releases, int eliminations) {
-		super.update(points, releases, eliminations);
-		markedSquares += eliminations;
+	public void update(int points, int markedSquaresLeft, int releasesLeft) {
+		updating = true;
+		this.score = getScore();
+		this.markedSquaresLeft = markedSquaresLeft;
 	}
 	
 	public int getNumMarkedSquares(){
