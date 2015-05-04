@@ -30,7 +30,7 @@ public class ReleaseStatsView extends JPanel {
 	public ReleaseStatsView(){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
-		releaseStats = new ReleaseStats(0,30);
+		this.releaseStats = releaseStats;
 		score = Integer.toString(releaseStats.getScore());
 		add(getpanel(), "cell 0 0,aligny top");
 		{

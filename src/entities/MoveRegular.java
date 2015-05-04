@@ -13,7 +13,7 @@ import forms.SquareView;
  
 public class MoveRegular extends Move {
 	boolean updating = level.getStats().updating;
-	int points = 10;
+	int points = 0;
 	public MoveRegular(Level level, ArrayList<Square> squares) {
 		super(level, squares);
 		System.out.println("Construct Move Regular");
@@ -57,11 +57,11 @@ public class MoveRegular extends Move {
 
 	@Override
 	public int getPoints(){
-		int numSquares = 0;
-		for(Square s: this.squaresInvolved){
-			numSquares++;
-		}
-		points = points * numSquares;
+//		int numSquares = 0;
+//		for(Square s: this.squaresInvolved){
+//			numSquares++;
+//		}
+//		points = points * numSquares;
 		return points;
 	}
 	@Override	

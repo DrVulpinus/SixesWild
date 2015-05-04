@@ -30,11 +30,11 @@ public class LightningStatsView extends JPanel {
 	String score;
 	Timer timer;
  
-	public LightningStatsView(){
+	public LightningStatsView(LightningStats lightningStats){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
 		Timer timer = new Timer();
-		lightningStats = new LightningStats(0,timer);
+		this.lightningStats = lightningStats;
 		score = Integer.toString(lightningStats.getScore());
 		add(getpanel(), "cell 0 0,aligny top");
 		{

@@ -29,7 +29,7 @@ public class PuzzleStatsView extends JPanel {
 	public PuzzleStatsView(PuzzleStats puzzleStats){
 		setLayout(new MigLayout("", "[grow,center]", "[center][29.00,grow][27.00,grow][grow][11.00][17.00][29.00][23.00][25.00]"));
 		//Image image = icon.getImage().getScaledInstance(contentPane.getWidth(), contentPane.getHeight(), java.awt.Image.SCALE_SMOOTH);
-		puzzleStats = new PuzzleStats(0,30);
+		this.puzzleStats = puzzleStats;
 		score = Integer.toString(puzzleStats.getScore());
 		add(getpanel(), "cell 0 0,aligny top");
 		{
@@ -110,6 +110,7 @@ public class PuzzleStatsView extends JPanel {
 		//panel_1.setBounds(28, 225, 73, 28);
 		{
 			textField_3 = new JTextField();
+			
 			int points = puzzleStats.getPoints();
 			//			System.out.print("ThESE ARE POINTS");
 			//			System.out.println(points);

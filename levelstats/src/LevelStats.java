@@ -53,6 +53,7 @@ public class LevelStats {
 	public int getPoints(){
 		return this.points;
 	}
+	
 	public boolean winCondition() {
 		if(getStarCount() >= 1){
 			return true;
