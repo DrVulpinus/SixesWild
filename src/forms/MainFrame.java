@@ -112,10 +112,11 @@ public class MainFrame extends JFrame{
 		
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
-		setSize(900, 700);
+		setSize(1200, 650);
+		
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
-		//setResizable(false);
+		setResizable(false);
 
 		// add the actionlistener for the back button
 		achvSelectView.getBtnBack().addActionListener(new ActionListener(){

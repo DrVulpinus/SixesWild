@@ -54,32 +54,38 @@ public class LevelPlayView extends JPanel {
 		this.level = level;
 		this.moveControlListener = moveControlListener;
 		setLayout(new FormLayout(new ColumnSpec[] {
-				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
+				ColumnSpec.decode("15px"),
 				ColumnSpec.decode("241px:grow"),
+				ColumnSpec.decode("15px"),
 				ColumnSpec.decode("241px:grow"),
-				ColumnSpec.decode("241px"),},
-				new RowSpec[] {
+				ColumnSpec.decode("15px"),
+				ColumnSpec.decode("241px"),
+				ColumnSpec.decode("15px"),},
+			new RowSpec[] {
+				RowSpec.decode("15px"),
 				RowSpec.decode("fill:184px:grow"),
-				RowSpec.decode("bottom:min"),}));
+				RowSpec.decode("15px"),
+				FormFactory.DEFAULT_ROWSPEC,
+				RowSpec.decode("bottom:15px"),}));
 
 		panel = new JPanel();
 		panel.setLayout(new BorderLayout());
-		add(panel, "2, 1, fill, fill");
+		add(panel, "2, 2, fill, fill");
 		//generateLevelStats();
 		panel.add(this.sv, BorderLayout.CENTER);
 		// initialize the view of the grid and add it to this view
 		gridView = new GameGridView(level.getGrid(), moveControlListener);
 		gridView.setBackground(new Color(255, 255, 255, 50));
-		add(gridView, "3, 1, fill,fill");
+		add(gridView, "4, 2, fill, fill");
 
 		// initialize the view of the special moves and add it to this view
 		specialMoveView = new SpecialMoveView();
 		specialMoveView.setBackground(new Color(255, 255, 255, 50));
-		add(specialMoveView, "4, 1, fill, fill");
+		add(specialMoveView, "6, 2, fill, fill");
 		this.setBackground(new Color(255, 255, 255, 50));
 		
 		
-		add(getbtnBack(), "4, 2, fill, fill");
+		add(getbtnBack(), "6, 4, fill, fill");
 	}
 
 	/**
