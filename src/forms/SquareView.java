@@ -95,10 +95,10 @@ public class SquareView extends JPanel implements SquareChangeListener
 		this.square = square;
 		setLayout(new BorderLayout());
 		add(getBlockView(), BorderLayout.CENTER);
+		setBackground(NORMAL_COLOR);
 		if(square.isRelease()){
 			setBackground(Color.BLACK);
 		}
-		setBackground(NORMAL_COLOR);
 		this.update();
 		this.setVisible(true);
 		square.addListener(this);
@@ -148,12 +148,12 @@ public class SquareView extends JPanel implements SquareChangeListener
 			setBackground(ELIMINATED_COLOR);
 		}
 		else{
-			if (square.isRelease()){
-				setBackground(new Color(RELEASE_COLOR));
-			}
-			else{
+//			if (square.isRelease()){
+//				setBackground(new Color(RELEASE_COLOR));
+//			}
+//			else{
 				setBackground(NORMAL_COLOR);
-			}
+//			}
 		}
 		
 	}

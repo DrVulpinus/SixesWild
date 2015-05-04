@@ -60,11 +60,11 @@ public class Probability {
 	void generateReleaseSeed(){
 		releaseSeed  = new int[1000];
 		int startIndex = 0;
-		for (int i = 0; i < valueProb.length; i++) {
-			int j = valueProb[i];
+		for (int i = 0; i < releaseProb.length; i++) {
+			int j = releaseProb[i];
 			j *= 10;
 			for (int j2 = startIndex; j2 < j + startIndex; j2++) {
-				valueSeed[j2] = i + 1;				
+				releaseSeed[j2] = i + 1;				
 			}
 			startIndex += j;
 		}
@@ -163,7 +163,9 @@ public class Probability {
 	}
 
 	public int getRandomRelease(){
-		return getReleaseSeed()[(int) (Math.random()*999)];
+		float rand = (float) (Math.random()*999);
+		System.out.println(rand);
+		return (int)rand;
 	}
 	@Override
 	public String toString() {

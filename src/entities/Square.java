@@ -55,11 +55,13 @@ public class Square
 			return false;
 	}
 	public Square makeReleaseSquare(Location l) {
-		int num = p.getRandomRelease();
-		if(num >=0 && num < 500){
+		float num = p.getRandomRelease();
+		System.out.println(num);
+		if(num >=0 && num < 100){
 			isRelease = true;
 			// implement a release square
 			Square releaseSquare = new Square(l);
+			releaseSquare.setBlock(null);
 			return releaseSquare;
 		}
 		isRelease = false;
