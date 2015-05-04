@@ -64,7 +64,6 @@ public class StatsController {
 			@Override
 			public void run() {
 				sv.update();
-				System.out.println("Updated");
 				
 				
 			}
