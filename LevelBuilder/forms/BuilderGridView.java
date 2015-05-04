@@ -21,6 +21,9 @@ import entities.Grid;
 import entities.Location;
 import entities.Square;
 
+/**
+ * Building the grid in the level builder
+ */
 public class BuilderGridView extends JPanel implements MouseListener {
 
 	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
@@ -64,7 +67,9 @@ public class BuilderGridView extends JPanel implements MouseListener {
 //		//isFilled = true;
 //		}
 	
-	
+	/**
+	 * constructor of Builder Grid
+	 */
 	public BuilderGridView() {
 		addComponentListener(new ComponentAdapter() {
 			@Override
@@ -93,7 +98,10 @@ public class BuilderGridView extends JPanel implements MouseListener {
 	
 	
 
-	
+	/**
+	 * set the square for the grid
+	 * @param squares
+	 */
 	public void setSquares(ArrayList<Square> squares) {
 		this.removeAll();
 		setLayout(null); //Make sure it is absolute layout
@@ -122,7 +130,9 @@ public class BuilderGridView extends JPanel implements MouseListener {
 	
 	
 
-
+	/**
+	 * 
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
@@ -172,6 +182,9 @@ public class BuilderGridView extends JPanel implements MouseListener {
 	
 	}
 
+	/**
+	 * fill the grid with squaresView
+	 */
 	public void fillGrid() {	
 		if (rect == null)
 			return;
@@ -202,6 +215,9 @@ public class BuilderGridView extends JPanel implements MouseListener {
 		//isFilled = true;
 	}
 	
+	/**
+	 * mouseClick events for this grid
+	 */
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		currentXVal= e.getX()/xIncrement;
