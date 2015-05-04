@@ -1,9 +1,15 @@
 package entities;
 
 import java.util.ArrayList;
+/**
+ * This class contains a move that resets the board  
+ */
 
 import controllers.MoveController;
-
+/**
+ * Takes a level and resets all of the blocks and sets the parameters for points back to zero.
+ *
+ */
 public class MoveResetBoard extends Move {
 	MoveController mc;
 	public MoveResetBoard(Level level, MoveController mc) {

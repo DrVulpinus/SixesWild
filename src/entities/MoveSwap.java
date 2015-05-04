@@ -1,7 +1,10 @@
 package entities;
 
 import java.util.ArrayList;
-
+/**
+ * Takes in two adjacent squares and swaps them
+ *
+ */
 public class MoveSwap extends Move{
 
 	public MoveSwap(Level level, ArrayList<Square> squares) {
