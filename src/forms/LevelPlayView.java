@@ -45,10 +45,10 @@ public class LevelPlayView extends JPanel {
 	EliminationStatsView eliminationStatsView;
 	LightningStatsView lightningStatsView;
 
-	PuzzleStats puzzleStats;
-	ReleaseStats releaseStats;
-	EliminationStats eliminationStats;
-	LightningStats lightningStats;
+//	PuzzleStats puzzleStats;
+//	ReleaseStats releaseStats;
+//	EliminationStats eliminationStats;
+//	LightningStats lightningStats;
 	private JPanel panel;
 
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
@@ -155,28 +155,28 @@ public class LevelPlayView extends JPanel {
 
 		case PUZZLE:
 			// generate puzzle stats
-			puzzleStatsView = new PuzzleStatsView(puzzleStats);
+			puzzleStatsView = new PuzzleStatsView((PuzzleStats)level.getStats());
 			puzzleStatsView.setBackground(new Color(255, 255, 255, 50));
 			panel.add(puzzleStatsView, BorderLayout.CENTER);
 			break;
 
 		case RELEASE:
 			// generate release stats
-			releaseStatsView = new ReleaseStatsView();
+			releaseStatsView = new ReleaseStatsView((ReleaseStats)level.getStats());
 			releaseStatsView.setBackground(new Color(255, 255, 255, 50));
 			panel.add(releaseStatsView, BorderLayout.CENTER);
 			break;
 
 		case ELIMINATION:
 			// generate elimination stats
-			eliminationStatsView = new EliminationStatsView(eliminationStats);
+			eliminationStatsView = new EliminationStatsView((EliminationStats)level.getStats());
 			eliminationStatsView.setBackground(new Color(255, 255, 255, 50));
 			panel.add(eliminationStatsView, BorderLayout.CENTER);
 			break;
 
 		case LIGHTNING:
 			//generate lightning stats
-			lightningStatsView = new LightningStatsView(lightningStats);
+			lightningStatsView = new LightningStatsView((LightningStats)level.getStats());
 			lightningStatsView.setBackground(new Color(255, 255, 255, 50));
 			panel.add(lightningStatsView, BorderLayout.CENTER);
 			break;
