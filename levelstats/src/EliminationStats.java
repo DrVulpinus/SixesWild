@@ -5,6 +5,7 @@ import entities.LevelType;
 public class EliminationStats extends LevelStats{
 	int markedSquares;
 	int totalSquares;
+	boolean decrement = false;
 	int markedSquaresLeft;
 	
 	public EliminationStats(){
@@ -35,7 +36,13 @@ public class EliminationStats extends LevelStats{
 		this.markedSquaresLeft = markedSquaresLeft;
 	}
 	
-	public int getNumMarkedSquares(){
+	@Override
+	public int getUniqueIntValue(){
 		return markedSquares;
+	}
+	
+	@Override
+	public boolean getIndicator(){
+		return decrement;
 	}
 }

@@ -17,65 +17,72 @@ import src.ReleaseStatsView;
 import src.StatsView;
 
 public class StatsController {
-	LevelStats ls;
 	EliminationStatsView esv;
 	ReleaseStatsView rsv;
 	PuzzleStatsView psv;
 	LightningStatsView lsv;
 	StatsView sv;
-	Level level;
-	Timer tmr;
 	
+	Level level;
+	
+	LevelStats ls;
+	Timer tmr;
+
+	int num = 0;
+
 	StatsController(Level level){
 		this.level = level;
+		ls = this.level.getStats();
 		switch (this.level.getLvlType()){
 		case ELIMINATION:
-				esv = new EliminationStatsView((EliminationStats)this.level.getStats());
-				sv = (StatsView)esv;
+			esv = new EliminationStatsView((EliminationStats)ls);
+			sv = (StatsView)esv;
 			break;
 		case LIGHTNING:
-				lsv = new LightningStatsView((LightningStats)this.level.getStats());
-				sv = (StatsView)lsv;
+			lsv = new LightningStatsView((LightningStats)ls);
+			sv = (StatsView)lsv;
 			break;
 		case PUZZLE:
-				psv = new PuzzleStatsView((PuzzleStats)this.level.getStats());
-				sv = (StatsView)psv;
+			psv = new PuzzleStatsView((PuzzleStats)ls);
+			sv = (StatsView)psv;
 			break;
 		case RELEASE:
-				rsv = new ReleaseStatsView((ReleaseStats)this.level.getStats());
-				sv = (StatsView)rsv;
+			rsv = new ReleaseStatsView((ReleaseStats)ls);
+			sv = (StatsView)rsv;
 			break;
 		default:
 			break;
-		
+
 		}
-		sv.initializeValueDisplays();
+		sv.initializeValueDisplays(this.level.getStats().getScore(), this.level.getStats().getUniqueIntValue());
 		initializeTimer();
 	}
 
 	public StatsView getStatsView(){
 		return sv;
 	}
-	
+
 	public void initializeTimer(){
 		tmr = new Timer(true);
 		tmr.schedule(new TimerTask() {
-			
+
 			@Override
 			public void run() {
 				sv.update();
-				
-				
+				ls.updateUniqueInt(ls.getUniqueIntValue());
+				System.out.println(ls.getUniqueIntValue());
+				sv.updateLimitingFactor(ls.getUniqueIntValue());
+
 			}
 		}, 500, 250);
 	}
-	
-//	
-//	public void generateStats(){
-//		if (ls.getType().equals("Puzzle")){
-//			ls = new PuzzleStats(0, 30);
-//			sv = new PuzzleStatsView(ls);
-//		}
-//	}
+
+	//	
+	//	public void generateStats(){
+	//		if (ls.getType().equals("Puzzle")){
+	//			ls = new PuzzleStats(0, 30);
+	//			sv = new PuzzleStatsView(ls);
+	//		}
+	//	}
 
 }
