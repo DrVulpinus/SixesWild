@@ -70,6 +70,41 @@ public class Grid extends ArrayList<Square>
 			sq.addNeighbors(this.getSurroundingSquares(sq));
 		}		
 	}
+////////////////////////////////////////////////////////////	
+	int getNumEliminated(){
+		int numEliminated = 0;
+		
+		for(int i = 0; i<this.size(); i++){
+			Square e  = this.get(i);
+			if (e.getEliminated()){
+				numEliminated++;
+			}
+			else{
+				return numEliminated;
+			}
+		}
+		return numEliminated;
+	}
+	
+	
+/////////////////////////////////////////////////////////
+//	
+	int getNumRelease(){
+		int numRelease = 0;
+		
+		for(int j = 0; j<this.size(); j++){
+			Square r = this.get(j);
+			if (r.isRelease() && r.isFilled()){
+				numRelease++;
+			}
+			
+			else{
+				return numRelease;
+			}
+		}
+		return numRelease;
+	}
+/////////////////////////////////////////////////////	
 	
 	/**
 	 * Finds the four squares that surround a given square

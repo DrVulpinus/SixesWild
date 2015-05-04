@@ -10,16 +10,20 @@ public class Square
 	ArrayList<SquareChangeListener> changeListeners = new ArrayList<SquareChangeListener>();
 	boolean isRelease;
 	boolean eliminated;
+	boolean isFilled;
+	
 	Probability p = new Probability();
 	
 	public Square()
 	{
 		block = null;
+		isFilled = false;
 	}
 	
 	public Square(Location loc) {
 		block = null;
 		this.loc = loc;
+		isFilled = false;
 	}
 	
 	public void addListener(SquareChangeListener scl){
@@ -70,12 +74,20 @@ public class Square
 	
 	
 	public void checkIfSix(Square releaseSquare){
+		
 		Square aboveRelease = releaseSquare.getNorthernNeighbor();
 		if (aboveRelease.getBlock().getValue() == 6){
 			aboveRelease.setBlock(null);
 			aboveRelease.setNorthernBlock();
+			isFilled =true;
 		}
 	}
+	
+	public boolean isFilled(){
+		
+		return isFilled;
+	}
+	
 	
 	public void addNeighbors(ArrayList<Square> squares) {
 		for (Square sq : squares)
@@ -123,6 +135,7 @@ public class Square
 		return isRelease;
 	}
 
+	
 	public void setRelease(boolean isRelease) {
 		this.isRelease = isRelease;
 		callChangeListeners();
