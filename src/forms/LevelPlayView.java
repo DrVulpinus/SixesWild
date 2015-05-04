@@ -28,7 +28,8 @@ import entities.LevelType;
 /**
  * The view for an individual level. Contains the views for the stats, the
  * grid, and the special moves. Also contains the level itself to call the grid
- * and a move control listener to give to the grid.
+ * and a move control listener to give to the grid, so that it can update
+ * when moves are made.
  * @author Miya
  *
  */
@@ -45,10 +46,6 @@ public class LevelPlayView extends JPanel {
 	EliminationStatsView eliminationStatsView;
 	LightningStatsView lightningStatsView;
 
-//	PuzzleStats puzzleStats;
-//	ReleaseStats releaseStats;
-//	EliminationStats eliminationStats;
-//	LightningStats lightningStats;
 	private JPanel panel;
 
 	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
@@ -67,37 +64,19 @@ public class LevelPlayView extends JPanel {
 		panel.setLayout(new BorderLayout());
 		add(panel, "2, 1, fill, fill");
 		generateLevelStats();
-		// add the stats to the view
-		//statsView = new StatsView();
-		//statsView.setBackground(new Color(255, 255, 255, 50));
-		//add(statsView, "2, 1, fill, fill");
 
+		// initialize the view of the grid and add it to this view
 		gridView = new GameGridView(level.getGrid(), moveControlListener);
-
-
-		// initialize and add the other views
 		gridView.setBackground(new Color(255, 255, 255, 50));
 		add(gridView, "3, 1, fill,fill");
 
+		// initialize the view of the special moves and add it to this view
 		specialMoveView = new SpecialMoveView();
 		specialMoveView.setBackground(new Color(255, 255, 255, 50));
 		add(specialMoveView, "4, 1, fill, fill");
 		this.setBackground(new Color(255, 255, 255, 50));
 
-		//btnBack.setBounds(395, 20, 117, 29);
 		add(getbtnBack(), "4, 2, fill, fill");
-		//GameGridView gameGridView = new GameGridView();
-		//getContentPane().add(gameGridView);
-//		this.puzzleStatsView =puzzleStatsView;
-//		this.releaseStatsView = releaseStatsView;
-//		this.eliminationStatsView = eliminationStatsView;
-//		this. lightningStatsView =  lightningStatsView;
-//		this.puzzleStats =puzzleStats;
-//		this.releaseStats = releaseStats;
-//		this.eliminationStats = eliminationStats;
-//		this. lightningStats =  lightningStats;
-
-
 	}
 
 	/**
@@ -146,7 +125,9 @@ public class LevelPlayView extends JPanel {
 		return this.level;
 	}
 
-
+	/**
+	 * Creates and initializes the view of the stats based on what type this level is.
+	 */
 	void generateLevelStats(){
 
 		LevelType type = level.getLvlType();
