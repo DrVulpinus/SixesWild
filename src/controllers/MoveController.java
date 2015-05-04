@@ -65,12 +65,24 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			return;
 		}
 
-		if (!this.started || selectedSquareViews.contains(sV))
+		if (!this.started){
 			return;
-
-		selectedSquareViews.add(sV);
-		sV.getSquare().getBlock().setSelected(true);
-		sV.getBlockView().update();
+		}
+		if (selectedSquareViews.contains(sV)){
+			if (selectedSquareViews.get(selectedSquareViews.size() -2) == sV){
+				SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
+				selectedSquareViews.remove(lastSV);
+				lastSV.getSquare().getBlock().setSelected(false);
+				lastSV.getBlockView().update();
+			}
+		}
+		else{
+			selectedSquareViews.add(sV);
+			sV.getSquare().getBlock().setSelected(true);
+			sV.getBlockView().update();
+		}
+		
+		
 
 		System.out.println("Block Selected: " + sV.getSquare().getBlock() + " in " + sV.getSquare());
 	}
