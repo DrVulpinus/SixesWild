@@ -30,7 +30,6 @@ public class Probability {
 	 * Array of multiplier seeds
 	 */
 	int[] multSeed;
-	int[] releaseSeed;
 	
 	/**
 	 * Makes a new probability object
@@ -38,7 +37,6 @@ public class Probability {
 	public Probability() {
 		this.valueProb = new int[6];
 		this.multProb = new int[3];
-		this.releaseProb = new int[1];
 		
 		this.valueProb[0] = 20;
 		this.valueProb[1] = 20;
@@ -51,7 +49,6 @@ public class Probability {
 		this.multProb[1] = 30;
 		this.multProb[2] = 30;
 		
-		this.releaseProb[0] = 50;
 		generateSeeds();
 	}
 	
@@ -87,20 +84,6 @@ public class Probability {
 			startIndex += j;
 			
 		}
-	}
-	
-	void generateReleaseSeed(){
-		releaseSeed  = new int[1000];
-		int startIndex = 0;
-		for (int i = 0; i < releaseProb.length; i++) {
-			int j = releaseProb[i];
-			j *= 10;
-			for (int j2 = startIndex; j2 < j + startIndex; j2++) {
-				releaseSeed[j2] = i + 1;				
-			}
-			startIndex += j;
-		}
-			
 	}
 	
 	/**
@@ -195,19 +178,12 @@ public class Probability {
 		return (p1 + p2 + p3 == 100);
 	}
 	
-	public boolean setReleaseProb(int p1){
-		this.releaseProb[0] = p1;
-		
-		return (p1 == 50);
-	}
-	
 	/**
 	 * Generates the seeds for making random Blocks
 	 */
 	public void generateSeeds(){
 		generateMultSeed();
 		generateValueSeed();
-		generateReleaseSeed();
 	}
 	
 	/**
@@ -230,13 +206,6 @@ public class Probability {
 			generateValueSeed();
 		}
 		return valueSeed;
-	}
-	
-	public int[] getReleaseSeed(){
-		if(releaseSeed == null){
-			generateReleaseSeed();
-		}
-		return releaseSeed;
 	}
 	
 	/**
