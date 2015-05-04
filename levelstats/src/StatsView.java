@@ -105,6 +105,7 @@ public abstract class StatsView extends JPanel {
 		gbc_txtLimitingfactordisplay.gridx = 1;
 		gbc_txtLimitingfactordisplay.gridy = 7;
 		add(getTxtLimitingfactordisplay(), gbc_txtLimitingfactordisplay);		
+		this.setBackground(new Color(255,255,255,50));
 	}
 
 	/**
