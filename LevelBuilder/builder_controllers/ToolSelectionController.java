@@ -28,15 +28,8 @@ public class ToolSelectionController implements ActionListener  {
 		this.toolSelect.addActionListener(this);
 	}
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			
-			
-				buildState.setSelectedTool(((JComboBox)e.getSource()).getSelectedIndex());
-			
-			
-				
-
-		
+		public void actionPerformed(ActionEvent e) {			
+				buildState.setSelectedTool(((JComboBox)e.getSource()).getSelectedIndex());	
 		
 	}
 	
