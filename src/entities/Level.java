@@ -230,7 +230,7 @@ public class Level
 	/**
 	 * Constructs a sub type of LevelStats for a level based on the given level type
 	 */
-	private void setStats() {
+	public void setStats() {
 		
 		switch (lvlType) {
 		
