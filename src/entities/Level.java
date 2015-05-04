@@ -79,6 +79,7 @@ public class Level
 		this.lvlType = type;
 		this.grid = new Grid();
 		this.name = "New Level";
+		this.probability = new Probability();
 		setStats();
 	}
 	

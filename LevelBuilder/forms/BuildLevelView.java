@@ -147,12 +147,12 @@ public class BuildLevelView extends JPanel{
 	 * get the panel for StatsView
 	 * @return StatsView
 	 */
-	private StatsView getTestJPanel() {
-		if (statsView == null) {
-			statsView = new StatsView(level);
-		}
-		return statsView;
-	}
+//	private StatsView getTestJPanel() {
+//		if (statsView == null) {
+//			statsView = new StatsView(level);
+//		}
+//		return statsView;
+//	}
 	/**
 	 * get the Grid of Builder 
 	 * @return BuilderGridView
@@ -247,26 +247,26 @@ public class BuildLevelView extends JPanel{
 
 		case PUZZLE:
 			// generate puzzle stats
-			puzzleStatsView = new PuzzleStatsView((PuzzleStats)level.getStats());
-			add(releaseStatsView, "cell 0 2 2 1,grow");
+			statsView = new PuzzleStatsView((PuzzleStats)level.getStats());
+			add(statsView, "cell 0 2 2 1,grow");
 			break;
 
 		case RELEASE:
 			// generate release stats
-			releaseStatsView = new ReleaseStatsView((ReleaseStats)level.getStats());
-			add(releaseStatsView, "cell 0 2 2 1,grow");
+			statsView = new ReleaseStatsView((ReleaseStats)level.getStats());
+			add(statsView, "cell 0 2 2 1,grow");
 			break;
 
 		case ELIMINATION:
 			// generate elimination stats
-			eliminationStatsView = new EliminationStatsView((EliminationStats)level.getStats());
-			add(eliminationStatsView, "cell 0 2 2 1,grow");
+			statsView = new EliminationStatsView((EliminationStats)level.getStats());
+			add(statsView, "cell 0 2 2 1,grow");
 			break;
 
 		case LIGHTNING:
 			//generate lightning stats
-			lightningStatsView = new LightningStatsView((LightningStats)level.getStats());
-			add(lightningStatsView, "cell 0 2 2 1,grow");
+			statsView = new LightningStatsView((LightningStats)level.getStats());
+			add(statsView, "cell 0 2 2 1,grow");
 			break;
 
 		}

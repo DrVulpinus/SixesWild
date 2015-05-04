@@ -53,7 +53,7 @@ public class ProbabilityController {
 			
 			
 			final int[] numbers;
-			numbers = new int[5];
+			numbers = new int[6];
 			final int[] multi;
 			multi = new int[3];
 			
@@ -70,6 +70,7 @@ public class ProbabilityController {
 				      	numbers[2] = Integer.parseInt(three.getText());
 				      	numbers[3] = Integer.parseInt(four.getText());
 				      	numbers[4] = Integer.parseInt(five.getText());
+				      	numbers[5] = 0;
 					} catch (Exception e2) {
 						JOptionPane.showMessageDialog(probabilityBlockView, "One or more of the inputs is not a number.");	
 						return;
@@ -142,8 +143,8 @@ public class ProbabilityController {
 			this.xtwo.setText(Integer.toString(this.probability.getMultProb(2)));
 			this.xthree.setText(Integer.toString(this.probability.getMultProb(3)));
 			
-			total.setText(Integer.toString(this.probability.getTotalValueProb()));
-			xtotal.setText(Integer.toString(this.probability.getTotalValueProb()));
+			total.setText("100");
+			xtotal.setText("100");
 		}
 		
 }
