@@ -6,6 +6,7 @@ import Interfaces.MoveControlListener;
 import entities.Block;
 import entities.Level;
 import entities.LevelPlayState;
+import entities.LevelType;
 import entities.Move;
 import entities.MoveRegular;
 import entities.MoveRemove;
@@ -153,6 +154,12 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			return;
 
 		if (m.performMove())
+			if(level.getLvlType() == LevelType.ELIMINATION && playState.getSelectedMove() == LevelPlayState.MOVE_REGULAR){
+				for (SquareView sV : selectedSquareViews) {
+					sV.getSquare().setEliminated(true);
+					sV.update();
+				}
+			}
 			playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);		//reset to regular move after a move is made
 	}
 	@Override
