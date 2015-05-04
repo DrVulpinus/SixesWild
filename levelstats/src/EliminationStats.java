@@ -6,6 +6,12 @@ public class EliminationStats extends LevelStats{
 	int markedSquares;
 	int totalSquares;
 	
+	public EliminationStats(){
+		super(0);
+		this.markedSquares = 0;
+		this.totalSquares = 0;
+	}
+	
 	public EliminationStats(int score, int totalSquares){
 		super(score);
 		this.markedSquares = 0;

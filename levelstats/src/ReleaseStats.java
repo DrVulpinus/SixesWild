@@ -7,6 +7,13 @@ public class ReleaseStats extends LevelStats {
 
 	int releaseBlocksLeft;
 	
+	
+	public ReleaseStats() {
+		super(0);
+		this.releaseBlocksLeft = 0;
+	}
+	
+	
 	public ReleaseStats(int score, int releaseBlocksLeft)	{
 		super(score);
 		this.releaseBlocksLeft = releaseBlocksLeft;
