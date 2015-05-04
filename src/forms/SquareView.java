@@ -33,12 +33,14 @@ public class SquareView extends JPanel implements SquareChangeListener
 	static final Color NORMAL_COLOR = new Color(255,255,255,0);
 	static final Color NORMAL_BUILD_COLOR = new Color(255,255,255);
 	static final Color ELIMINATED_COLOR = new Color(0,0,0,50);
-	static final int RELEASE_COLOR = 0x000000;
+	static final Color RELEASE_COLOR = new Color(255,0,255);
 	
 	ArrayList<MoveControlListener> listeners = new ArrayList<MoveControlListener>();
 	ArrayList<ToolControlListener> toolListeners = new ArrayList<ToolControlListener>();
 	Square square;
 	BlockView blockView;
+	boolean isBuilding;
+	
 	
 	public SquareView(Square square, boolean isBuilding) {
 		this(square);
@@ -46,6 +48,7 @@ public class SquareView extends JPanel implements SquareChangeListener
 		if (!isBuilding)
 			return;
 		square.addListener(this);
+		this.isBuilding = isBuilding;
 		this.setBackground(NORMAL_BUILD_COLOR);
 	}
 
@@ -137,25 +140,30 @@ public class SquareView extends JPanel implements SquareChangeListener
 	public void update() {
 		
 		getBlockView().setBlock(square.getBlock());
-		
+		updateColors();
 		
 	}
-
-	@Override
-	public void squareChanged() {
-		
+	private void updateColors(){
 		if (square.getEliminated()){
 			setBackground(ELIMINATED_COLOR);
 		}
 		else{
-//			if (square.isRelease()){
-//				setBackground(new Color(RELEASE_COLOR));
-//			}
-//			else{
-				setBackground(NORMAL_COLOR);
-//			}
+			if (square.isRelease()){
+				setBackground(RELEASE_COLOR);
+			}
+			else{
+				if(isBuilding){
+					setBackground(NORMAL_BUILD_COLOR);
+				}else{
+					setBackground(NORMAL_COLOR);
+				}
+			
+			}
 		}
-		
+}
+	@Override
+	public void squareChanged() {
+		updateColors();	
 	}
 	
 }

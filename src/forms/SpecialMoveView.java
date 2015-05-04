@@ -56,7 +56,6 @@ public class SpecialMoveView extends JPanel {
 		resetBoardButton = new JButton("Shuffle Board");
 		resetBoardButton.setMinimumSize(new Dimension(0, 0));
 		add(resetBoardButton, "cell 0 4");
-		
 	}
 
 
