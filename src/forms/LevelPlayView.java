@@ -28,7 +28,7 @@ import entities.LevelType;
 /**
  * The view for an individual level. Contains the views for the stats, the
  * grid, and the special moves. Also contains the level itself to call the grid
- * and a move control listener to give to the grid, so that it can update
+ * and a move control listener to give to the grid, so that it can update itself
  * when moves are made.
  * @author Miya
  *

@@ -9,8 +9,8 @@ public class Square
 	ArrayList<Square> neighbors = new ArrayList<Square>();
 	ArrayList<SquareChangeListener> changeListeners = new ArrayList<SquareChangeListener>();
 	boolean isRelease;
-	
 	boolean eliminated;
+	Probability p;
 	
 	public Square()
 	{
@@ -38,6 +38,9 @@ public class Square
 		return eliminated;
 	}
 	
+	public void setProbability(Probability p) {
+		this.p = p;
+	}
 	//adds a neighbor to a block
 	//returns 1 if the neighbor was added
 	//returns 0 if the neighbor was not added because the maximum number of neighbors has been reached
@@ -48,6 +51,20 @@ public class Square
 		}
 		else
 			return false;
+	}
+	public Square makeReleaseSquare(Probability p) {
+		this.p = p;
+		if(p.getRandomRelease()){
+			isRelease = true;
+			// implement a release square
+			Square releaseSquare = new Square();
+			Square aboveRelease = releaseSquare.getNorthernNeighbor();
+			if (aboveRelease.getBlock().getValue() == 6){
+				aboveRelease.setBlock(null);
+			}
+		}
+		isRelease = false;
+		return new Square();
 	}
 	
 	public void addNeighbors(ArrayList<Square> squares) {

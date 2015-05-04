@@ -95,6 +95,9 @@ public class SquareView extends JPanel implements SquareChangeListener
 		this.square = square;
 		setLayout(new BorderLayout());
 		add(getBlockView(), BorderLayout.CENTER);
+		if(square.isRelease()){
+			setBackground(Color.BLACK);
+		}
 		setBackground(NORMAL_COLOR);
 		this.update();
 		this.setVisible(true);
