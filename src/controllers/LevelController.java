@@ -133,8 +133,8 @@ public class LevelController implements ChangeLevelPlayState{
 			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				window.getContentPane().removeAll();
-				window.getContentPane().add(window.getMainMenuView(), BorderLayout.CENTER);
+				
+				window.setContentPane(window.getMainMenuView());
 
 				window.getContentPane().validate();
 				window.getContentPane().repaint();
