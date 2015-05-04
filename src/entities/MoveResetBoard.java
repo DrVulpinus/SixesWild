@@ -11,13 +11,26 @@ import controllers.MoveController;
  *
  */
 public class MoveResetBoard extends Move {
+	
+	/**
+	 * The controller for the reset move
+	 */
 	MoveController mc;
+	
+	/**
+	 * Constructs a new MoveResetBoard
+	 * @param level the level that the move affects
+	 * @param mc the controller for he move
+	 */
 	public MoveResetBoard(Level level, MoveController mc) {
 		super(level, null);
 		this.mc = mc;
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Performs a move
+	 * @return true if the move was actually performed
+	 */
 	@Override
 	public boolean performMove() {
 		level.shuffleBoard();
@@ -25,23 +38,37 @@ public class MoveResetBoard extends Move {
 		return true;
 	}
 	
-
+	/**
+	 * Returns the level associated with the move
+	 * @return the level for the move
+	 */
 	@Override
 	public boolean isValid() {
 		return true;
 	}
 	
-	
+	/**
+	 * Returns the number of points that this move earns
+	 * @return the number of points for this move
+	 */
 	@Override
 	public int getPoints(){
 		return 0;
 	}
 	
+	/**
+	 * Returns the number of eliminations scored by a move
+	 * @return the number of eliminations scored by a move
+	 */
 	@Override
 	public int getEliminations() {
 		return 0;
 	}
 	
+	/**
+	 * Returns the number of releases scored by a move
+	 * @return the number of releases scored by a move
+	 */
 	@Override
 	public int getReleases() {
 		return 0;

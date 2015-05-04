@@ -7,7 +7,6 @@ public class EliminationLevel extends Level{
 	LevelType levelType = LevelType.ELIMINATION;
 	public EliminationLevel(LevelStats stats, Grid grid) {
 		super(stats, grid);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

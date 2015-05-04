@@ -8,7 +8,6 @@ public class LightningLevel extends Level {
 	
 	public LightningLevel(LevelStats stats, Grid grid) {
 		super(stats, grid);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
