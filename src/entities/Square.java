@@ -9,13 +9,19 @@ public class Square
 	ArrayList<Square> neighbors = new ArrayList<Square>();
 	ArrayList<SquareChangeListener> changeListeners = new ArrayList<SquareChangeListener>();
 	boolean isRelease;
-	
 	boolean eliminated;
+	Probability p = new Probability();
 	
 	public Square()
 	{
 		block = null;
 	}
+	
+	public Square(Location loc) {
+		block = null;
+		this.loc = loc;
+	}
+	
 	public void addListener(SquareChangeListener scl){
 		changeListeners.add(scl);
 	}
@@ -23,10 +29,6 @@ public class Square
 		for (SquareChangeListener squareChangeListener : changeListeners) {
 			squareChangeListener.squareChanged();
 		}
-	}
-	public Square(Location loc) {
-		block = null;
-		this.loc = loc;
 	}
 	
 	public void setEliminated(boolean eliminated) {
@@ -38,6 +40,9 @@ public class Square
 		return eliminated;
 	}
 	
+	public void setProbability(Probability p) {
+		this.p = p;
+	}
 	//adds a neighbor to a block
 	//returns 1 if the neighbor was added
 	//returns 0 if the neighbor was not added because the maximum number of neighbors has been reached
@@ -48,6 +53,24 @@ public class Square
 		}
 		else
 			return false;
+	}
+	public Square makeReleaseSquare(Location l) {
+		int num = p.getRandomRelease();
+		if(num >=0 && num < 500){
+			isRelease = true;
+			// implement a release square
+			Square releaseSquare = new Square(l);
+			return releaseSquare;
+		}
+		isRelease = false;
+		return new Square(l);
+	}
+	
+	public void checkIfSix(Square releaseSquare){
+		Square aboveRelease = releaseSquare.getNorthernNeighbor();
+		if (aboveRelease.getBlock().getValue() == 6){
+			aboveRelease.setBlock(null);
+		}
 	}
 	
 	public void addNeighbors(ArrayList<Square> squares) {

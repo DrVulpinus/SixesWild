@@ -6,6 +6,11 @@ public class PuzzleStats extends LevelStats {
 
 	int numMovesLeft;
 	
+	public PuzzleStats(int numMovesLeft) {
+		super(0);
+		this.numMovesLeft = numMovesLeft;
+	}
+	
 	public PuzzleStats(int score, int numMovesLeft) {
 		super(score);
 		this.numMovesLeft = numMovesLeft;

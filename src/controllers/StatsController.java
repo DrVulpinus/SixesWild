@@ -52,6 +52,7 @@ public class StatsController {
 		sv.initializeValueDisplays();
 		initializeTimer();
 	}
+
 	public StatsView getStatsView(){
 		return sv;
 	}
@@ -75,4 +76,5 @@ public class StatsController {
 //			sv = new PuzzleStatsView(ls);
 //		}
 //	}
+
 }

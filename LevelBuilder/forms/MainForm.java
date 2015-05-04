@@ -34,6 +34,7 @@ import src.ReleaseStats;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
+import entities.LevelType;
 import entities.Location;
 import entities.Square;
 import entities.Timer;
@@ -86,7 +87,8 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				buildingController = new BuildingController(new Level(new PuzzleStats(0,0), new Grid()), MainForm.this);
+				//buildingController = new BuildingController(new Level(new PuzzleStats(0,0), new Grid()), MainForm.this);
+				buildingController = new BuildingController(new Level(LevelType.PUZZLE), MainForm.this);
 			}
 		});
 		
@@ -96,7 +98,8 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				buildingController = new BuildingController(new Level(new LightningStats(0, new Timer()), new Grid()), MainForm.this);
+				//buildingController = new BuildingController(new Level(new LightningStats(0, new Timer()), new Grid()), MainForm.this);
+				buildingController = new BuildingController(new Level(LevelType.LIGHTNING), MainForm.this);
 			}
 		});
 		
@@ -106,7 +109,8 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				buildingController = new BuildingController(new Level(new EliminationStats(0,0), new Grid()), MainForm.this);
+				//buildingController = new BuildingController(new Level(new EliminationStats(0,0), new Grid()), MainForm.this);
+				buildingController = new BuildingController(new Level(LevelType.ELIMINATION), MainForm.this);
 			}
 		});
 		
@@ -116,7 +120,8 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				buildingController = new BuildingController(new Level(new ReleaseStats(0,0), new Grid()), MainForm.this);
+				//buildingController = new BuildingController(new Level(new ReleaseStats(0,0), new Grid()), MainForm.this);
+				buildingController = new BuildingController(new Level(LevelType.RELEASE), MainForm.this);
 			}
 		});
 		

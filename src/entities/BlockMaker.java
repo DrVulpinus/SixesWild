@@ -9,51 +9,57 @@ import java.util.Random;
  *
  */
 public class BlockMaker {
-	
+	/**
+	 * the current default probability for generating blocks
+	 */
 	Probability probability = new Probability();
+	
+	/**
+	 * The instance of BlockMaker
+	 */
 	static BlockMaker bm;
 	
 	
-	
+	/**
+	 * Construct a new BlockMaker
+	 */
 	private BlockMaker(){
 		
 	}
+	
+	/**
+	 * Returns an instance of a BlockMaker
+	 * @return
+	 */
 	public static BlockMaker getInstance(){
 		bm = new BlockMaker();
 		return bm;
 	}
 	
+	/**
+	 * Sets a default set of probabilities
+	 * @param p the new default probabilities
+	 */
 	public void setProbability(Probability p) {
 		probability = p;
 	}
+	
+	/**
+	 * Makes a random block with the set default probabilities
+	 * @return the random Block
+	 */
 	public Block makeBlock(){
 		return makeBlock(probability);
 	}
+	
+	/**
+	 * Makes a random block based on the given probability distribution
+	 * @param p the probability distribution of the block types
+	 * @return the random new Block
+	 */
 	public Block makeBlock(Probability p) {
 		probability = p;
-		/*Random r = new Random();
-		
-		int num = r.nextInt(p.getTotalValueProb()) + 1;
-		
-		int value = 1;
-		int multiplier = 1;
-		
-		for (int n = 0; n < 6; n++) {
-			if (num > p.getValueProb(n)) {		//if the random num exceeds the range for the block value n
-				num -= p.getValueProb(n);
-				value++;
-			}
-		}
-		
-		num = r.nextInt(p.getTotalMultProb()) + 1;
-		
-		for (int n = 0; n < 2; n++) {
-			if (num > p.getMultProb(n)) {		//if the random num exceeds the range for the block multiplier n
-				num -= p.getMultProb(n);
-				multiplier++;
-			}
-		}*/
-		
+
 		return new Block(p.getRandomValue(), p.getRandomMult());	
 	}
 }

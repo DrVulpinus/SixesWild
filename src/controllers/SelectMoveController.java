@@ -12,16 +12,51 @@ import entities.MoveResetBoard;
 import forms.LevelPlayView;
 import forms.SpecialMoveView;
 
+/**
+ * The SelectMoveController detects when the user requests to change the currently selected move while
+ * playing a level and updates the current move in LevelPlayState
+ * @author Alex Wald
+ *
+ */
+
+
 public class SelectMoveController implements ActionListener {
 	
-SpecialMoveView moveView = new SpecialMoveView();
+		/**
+		 * The view that shows the special moves
+		 */
+		SpecialMoveView moveView = new SpecialMoveView();
+		
+		/**
+		 * The button to select the swap move
+		 */
 		JButton swap;
+		
+		/**
+		 * The button to select the remove move
+		 */
 		JButton remove;
+		
+		/**
+		 * The button to use the reset move
+		 */
 		JButton reset;
 		
+		/**
+		 * Current state of play
+		 */
 		LevelPlayState playState;
+		
+		/**
+		 * the view that shows the level
+		 */
 		LevelPlayView levelPlayView;
 
+		/**
+		 * Makes a new SelectLevelController
+		 * @param levelPlayView the view for the level being played
+		 * @param playState the play state of the level, which stores the current move
+		 */
 		public SelectMoveController(LevelPlayView levelPlayView, LevelPlayState playState) {
 		
 				this.levelPlayView = levelPlayView;
@@ -31,20 +66,15 @@ SpecialMoveView moveView = new SpecialMoveView();
 				
 				this.playState = playState;
 		    
-//		        this.swap = new JButton("1");
-		        this.swap.addActionListener(this);
-//		        this.swap = swap;
-//		        
-//		        this.remove = new JButton("2");
-		        this.remove.addActionListener(this);
-//		        this.remove = remove;
-//		        
-//		        this.reset = new JButton("3");
+		        this.swap.addActionListener(this);	        
+		        this.remove.addActionListener(this);	        
 		        this.reset.addActionListener(this);
-//		        this.remove = remove;
 		    }
 
 		
+		/**
+		 * Detects that a move has been requested and updates the level play state.
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			((JButton)(e.getSource())).setBackground(Color.GREEN);

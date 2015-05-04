@@ -20,6 +20,7 @@ import java.awt.event.ComponentEvent;
 
 /**
  * Shows one block. Contains all the different icons for different values in the blocks.
+ * @author Alex Wald
  * @author Miya
  *
  */
