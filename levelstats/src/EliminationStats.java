@@ -9,30 +9,29 @@ import entities.LevelType;
  *
  */
 public class EliminationStats extends LevelStats{
-	int markedSquares;
 	int totalSquares;
 	int markedSquaresLeft;
 	
 	public EliminationStats(){
 		super(0);
-		this.markedSquares = 0;
+		this.markedSquaresLeft = 0;
 		this.totalSquares = 0;
 	}
 	
 	public EliminationStats(int score, int totalSquares){
 		super(score);
-		this.markedSquares = 0;
+		this.markedSquaresLeft = 0;
 		this.totalSquares = totalSquares;
 	}
 	
 	public EliminationStats(int score, int points, int markedSquares){
 		super(score, points);
-		this.markedSquares = markedSquares;
+		this.markedSquaresLeft = markedSquares;
 	}
 	
 	@Override
 	public boolean winCondition() {
-		return (this.markedSquares >= this.totalSquares);
+		return (this.markedSquaresLeft >= this.totalSquares);
 	}
 	
 	public void update(int points, int markedSquaresLeft, int releasesLeft) {
@@ -43,6 +42,6 @@ public class EliminationStats extends LevelStats{
 	
 	@Override
 	public int getUniqueIntValue(){
-		return markedSquares;
+		return markedSquaresLeft;
 	}
 }
