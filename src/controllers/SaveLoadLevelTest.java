@@ -21,9 +21,9 @@ import entities.Timer;
 
 
 public class SaveLoadLevelTest {
-	
 
-	
+
+
 	@Test
 	public void testSaveLoadLevel() throws Exception {
 		File dir = new File(SaveLoadLevel.LEVEL_DIRECTORY);
@@ -37,32 +37,32 @@ public class SaveLoadLevelTest {
 		for (int i =0;  i < 10; i++){
 			sll.saveLevel(getSampleLevel2());
 		}
-	
+
 	}
 
 	@Test
 	public void testSaveLevel() {
-	//	fail("Not yet implemented");
+		//	fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetLevel() {
 		//fail("Not yet implemented");
 	}
-	
-	
+
+
 	private Level getSampleLevel2() {
 		Grid grid = new Grid();
 		int typeNum = (int) (Math.round((Math.random() * 3.0f)));
 		LevelStats stats;
 		LevelType type;
-		
+
 		switch (typeNum) {
 		case 0:
 			type = LevelType.PUZZLE;
-			stats = new PuzzleStats(0, 10);
+			stats = new PuzzleStats(0, 30);
 			break;
-		/*case 1:
+			/*case 1:
 			type = LevelType.LIGHTNING;
 			stats = new LightningStats(0, 0, new Timer());
 			break;*/
@@ -76,19 +76,22 @@ public class SaveLoadLevelTest {
 			break;
 		default:
 			type = LevelType.PUZZLE;
-			stats = new PuzzleStats(0, 10);
+			stats = new PuzzleStats(0, 30);
 			break;
 		}
-		
+
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
 				int num = (int) Math.round(Math.random());
 				if (num > 0){
 					Square s = new Square(new Location(row, col));
-					s.setBlock(new Block((int)(5*Math.random())+1, (int)(2*Math.random())+1));
+					s.makeReleaseSquare(new Location(row, col));
+					if(!s.isRelease()){
+						s.setBlock(new Block((int)(5*Math.random())+1, (int)(2*Math.random())+1));
+					}
 					grid.add(s);
 				}
-				
+
 			}
 		}
 		Level lvl = new Level(stats, grid, ("SL" + ((int)(50*Math.random()))));

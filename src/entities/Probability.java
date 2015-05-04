@@ -15,12 +15,12 @@ public class Probability {
 		this.multProb = new int[3];
 		this.releaseProb = new int[1];
 		
-		this.valueProb[0] = 20;
-		this.valueProb[1] = 20;
+		this.valueProb[0] = 100;
+		this.valueProb[1] = 0;
 		this.valueProb[2] = 0;
-		this.valueProb[3] = 20;
-		this.valueProb[4] = 20;
-		this.valueProb[5] = 20;
+		this.valueProb[3] = 0;
+		this.valueProb[4] = 0;
+		this.valueProb[5] = 0;
 		
 		this.multProb[0] = 40;
 		this.multProb[1] = 30;
@@ -162,13 +162,8 @@ public class Probability {
 		return getMultSeed()[(int) (Math.random()*999)];
 	}
 
-	public boolean getRandomRelease(){
-		int num = getReleaseSeed()[(int) (Math.random()*999)];
-		if(num >=0 && num < 500){
-			return false;
-		}
-		else
-			return true;
+	public int getRandomRelease(){
+		return getReleaseSeed()[(int) (Math.random()*999)];
 	}
 	@Override
 	public String toString() {
