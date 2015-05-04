@@ -10,12 +10,18 @@ import java.util.ArrayList;
 
 public class Grid extends ArrayList<Square>
 {
+	int initialReleases = 0;
+	int initialEliminations = 0;
+	
+	
 	/**
 	 * Makes a new Grid
 	 */
 	public Grid()
 	{
 		super();
+		this.initialReleases = this.getNumToRelease();
+		this.initialEliminations = this.getNumToEliminate();
 	}
 	
 	
@@ -70,6 +76,38 @@ public class Grid extends ArrayList<Square>
 			sq.addNeighbors(this.getSurroundingSquares(sq));
 		}		
 	}
+	
+	
+	public void initialize() {
+		this.initialReleases = this.getNumToRelease();
+		this.initialEliminations = this.getNumToEliminate();
+		
+		System.out.println("abc: " + this.initialReleases + " " + this.initialEliminations);
+	}
+	
+	int getNumToEliminate() {
+		int numToEliminate = 0;
+		
+		for(int i = 0; i<this.size(); i++){
+			Square e  = this.get(i);
+			if (!e.isRelease()){
+				numToEliminate++;
+			}
+		}
+		return numToEliminate;
+	}
+	
+	int getNumToRelease() {
+		int numToEliminate = 0;
+		
+		for(int i = 0; i<this.size(); i++){
+			Square e  = this.get(i);
+			if (e.isRelease()){
+				numToEliminate++;
+			}
+		}
+		return numToEliminate;
+	}
 ////////////////////////////////////////////////////////////	
 	int getNumEliminated(){
 		int numEliminated = 0;
@@ -79,9 +117,6 @@ public class Grid extends ArrayList<Square>
 			if (e.getEliminated()){
 				numEliminated++;
 			}
-			else{
-				return numEliminated;
-			}
 		}
 		return numEliminated;
 	}
@@ -89,7 +124,7 @@ public class Grid extends ArrayList<Square>
 	
 /////////////////////////////////////////////////////////
 //	
-	int getNumRelease(){
+	int getNumReleased(){
 		int numRelease = 0;
 		
 		for(int j = 0; j<this.size(); j++){
@@ -97,14 +132,19 @@ public class Grid extends ArrayList<Square>
 			if (r.isRelease() && r.isFilled()){
 				numRelease++;
 			}
-			
-			else{
-				return numRelease;
-			}
 		}
 		return numRelease;
 	}
-/////////////////////////////////////////////////////	
+/////////////////////////////////////////////////////
+	
+	public int getNumRealeasesLeft() {
+		return (this.initialReleases - this.getNumReleased());
+	}
+	
+	public int getNumMarkedSquaresLeft() {
+		System.out.println("dsg" + (this.initialEliminations - this.getNumEliminated()));
+		return (this.initialEliminations - this.getNumEliminated());
+	}
 	
 	/**
 	 * Finds the four squares that surround a given square
