@@ -14,6 +14,7 @@ public class LevelStats {
 
 	public boolean updating = false;
 
+	public int unique = 0;
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	
 	public LevelStats(int score) {
@@ -83,6 +84,10 @@ public class LevelStats {
 	public int getUniqueIntValue() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	public void setUniqueIntValue(int unique){
+		this.unique = unique;
 	}
 
 	public Timer getTimer(){

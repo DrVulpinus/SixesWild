@@ -38,7 +38,7 @@ public abstract class StatsView extends JPanel {
 	private JTextField txtLimitingfactordisplay;
 	private int[] starPoints = new int[4];	
 	private int points;
-	private LevelStats stats;
+	protected LevelStats stats;
 	private static final Color CLR_NO_STARS = new Color(255,0,0,255);
 	public StatsView(LevelStats stats) {
 		this.stats = stats;
@@ -247,7 +247,7 @@ public abstract class StatsView extends JPanel {
 	/**
 	 * Sets the progress bar to the correct color based on the current points value
 	 */
-	private void setCorrectProgressColor(){
+	protected void setCorrectProgressColor(){
 		getPbStarPoints().setForeground(getCurrentPointsColor());
 	}
 	
