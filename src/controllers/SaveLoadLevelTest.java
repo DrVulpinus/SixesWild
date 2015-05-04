@@ -62,10 +62,10 @@ public class SaveLoadLevelTest {
 			type = LevelType.PUZZLE;
 			stats = new PuzzleStats(0, 30);
 			break;
-			/*case 1:
+			case 1:
 			type = LevelType.LIGHTNING;
 			stats = new LightningStats(0, 0, new Timer());
-			break;*/
+			break;
 		case 2:
 			type = LevelType.ELIMINATION;
 			stats = new EliminationStats(0, 0);

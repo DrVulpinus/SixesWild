@@ -73,6 +73,7 @@ public class Square
 		Square aboveRelease = releaseSquare.getNorthernNeighbor();
 		if (aboveRelease.getBlock().getValue() == 6){
 			aboveRelease.setBlock(null);
+			aboveRelease.setNorthernBlock();
 		}
 	}
 	
