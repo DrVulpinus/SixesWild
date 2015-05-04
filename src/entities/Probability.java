@@ -1,15 +1,40 @@
 package entities;
 
+/**
+ * The Probability class stores the probabilities of making each type of Block, which has a value and a multiplier.
+ * It also provides methods for choosing a block to randomly generate.
+ * @author Alex Wald
+ *
+ */
+
 public class Probability {
 	
+	/**
+	 * Array of value probabilities
+	 */
 	int[] valueProb;
+	
+	/**
+	 * Array of multiplier probabilities
+	 */
 	int[] multProb;
 	int[] releaseProb;
 	
+	
+	/**
+	 * Array of value seeds
+	 */
 	int[] valueSeed;
+	
+	/**
+	 * Array of multiplier seeds
+	 */
 	int[] multSeed;
 	int[] releaseSeed;
 	
+	/**
+	 * Makes a new probability object
+	 */
 	public Probability() {
 		this.valueProb = new int[6];
 		this.multProb = new int[3];
@@ -30,6 +55,9 @@ public class Probability {
 		generateSeeds();
 	}
 	
+	/**
+	 * Initializes an array that is used to determine a random Block multiplier
+	 */
 	void generateMultSeed(){
 		multSeed  = new int[1000];
 		int startIndex = 0;
@@ -43,6 +71,10 @@ public class Probability {
 			
 		}
 	}
+	
+	/**
+	 * Initializes an array that is used to determine a random Block value
+	 */
 	void generateValueSeed(){
 		valueSeed  = new int[1000];
 		int startIndex = 0;
@@ -70,6 +102,12 @@ public class Probability {
 		}
 			
 	}
+	
+	/**
+	 * Gets the probability of a block with the given value
+	 * @param value The value of a Block
+	 * @return the probability of the Block
+	 */
 	public int getValueProb(int value) {
 		
 		if (value < 1 || value > 6)
@@ -78,6 +116,11 @@ public class Probability {
 		return valueProb[value-1];
 	}
 	
+	/**
+	 * Returns the probability of a Block with the given multiplier
+	 * @param multiplier The multiplier of a Block
+	 * @return the probability of the Block
+	 */
 	public int getMultProb(int multiplier) {
 		
 		if (multiplier < 1 || multiplier > 3)
@@ -86,6 +129,11 @@ public class Probability {
 		return this.multProb[multiplier-1];
 	}
 	
+	/**
+	 * Sets the value probabilities of blocks
+	 * @param p An array of the Block probabilities
+	 * @return True only if the probabilities add to 100
+	 */
 	public boolean setValueProbs(int[] p) {
 		this.valueProb[0] = p[0];
 		this.valueProb[1] = p[1];
@@ -97,6 +145,12 @@ public class Probability {
 		return (p[0] + p[1] + p[2] + p[3] + p[4] + p[5] == 100);
 	}
 	
+	
+	/**
+	 * Sets the multiplier probabilities for Blocks
+	 * @param p An array of the multiplier probabilities
+	 * @return True only if the multiplier probabilities add to 100
+	 */
 	public boolean setMultProbs(int[] p) {
 		this.multProb[0] = p[0];
 		this.multProb[1] = p[1];
@@ -105,6 +159,16 @@ public class Probability {
 		return (p[0] + p[1] + p[2] == 100);
 	}
 	
+	/**
+	 * Sets the value probabilities for each Block
+	 * @param p1 Probability of a Block with a value of 1
+	 * @param p2 Probability of a Block with a value of 2
+	 * @param p3 Probability of a Block with a value of 3
+	 * @param p4 Probability of a Block with a value of 4
+	 * @param p5 Probability of a Block with a value of 5
+	 * @param p6 Probability of a Block with a value of 6
+	 * @return True only if the probabilities add to 100
+	 */
 	public boolean setValueProb(int p1, int p2, int p3, int p4, int p5, int p6) {
 		this.valueProb[0] = p1;
 		this.valueProb[1] = p2;
@@ -116,6 +180,13 @@ public class Probability {
 		return (p1 + p2 + p3 + p4 + p5 + p6 == 100);
 	}
 	
+	/**
+	 * Sets the multiplier probabilities for each Block
+	 * @param p1 Probability of a Block with a multiplier of 1
+	 * @param p2 Probability of a Block with a multiplier of 1
+	 * @param p3 Probability of a Block with a multiplier of 1
+	 * @return True only if the probabilities add to 100
+	 */
 	public boolean setMultProb(int p1, int p2, int p3) {
 		this.multProb[0] = p1;
 		this.multProb[1] = p2;
@@ -130,18 +201,30 @@ public class Probability {
 		return (p1 == 50);
 	}
 	
+	/**
+	 * Generates the seeds for making random Blocks
+	 */
 	public void generateSeeds(){
 		generateMultSeed();
 		generateValueSeed();
 		generateReleaseSeed();
 	}
 	
+	/**
+	 * Returns an array of multiplier seeds
+	 * @return array of multiplier seeds
+	 */
 	public int[] getMultSeed() {
 		if (multSeed == null){
 			generateMultSeed();
 		}
 		return multSeed;
 	}
+	
+	/**
+	 * Returns an array of value seeds
+	 * @return array of value seeds
+	 */
 	public int[] getValueSeed(){
 		if(valueSeed == null){
 			generateValueSeed();
@@ -155,9 +238,19 @@ public class Probability {
 		}
 		return releaseSeed;
 	}
+	
+	/**
+	 * Returns a random value for a Block according to the this probability distribution
+	 * @return Block value
+	 */
 	public int getRandomValue(){
 		return getValueSeed()[(int) (Math.random()*999)];
 	}
+	
+	/**
+	 * Returns a random multiplier for a Block according to the this probability distribution
+	 * @return Block value
+	 */
 	public int getRandomMult(){
 		return getMultSeed()[(int) (Math.random()*999)];
 	}
@@ -167,6 +260,11 @@ public class Probability {
 		System.out.println(rand);
 		return (int)rand;
 	}
+	
+	/**
+	 * Converts this probability object to a String
+	 * @return the String representation of this probability
+	 */
 	@Override
 	public String toString() {
 		return ("(" + valueProb[0] + "," + valueProb[1] + "," + valueProb[2] + "," + valueProb[3] + "," + valueProb[4] + valueProb[5] + "," +")  " +
