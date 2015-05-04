@@ -83,7 +83,11 @@ public class MainFrame extends JFrame{
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent arg0) {
+				
 				dispose();
+				System.runFinalization();
+				System.exit(0);
+				
 			}
 		});
 		
