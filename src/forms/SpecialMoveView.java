@@ -49,7 +49,7 @@ public class SpecialMoveView extends JPanel {
 		add(swapSquareButton, "cell 0 2,aligny center");
 		
 		// the button for remove
-		removeSquareButton = new JButton("Remove Square");
+		removeSquareButton = new JButton("Clear Block");
 		add(removeSquareButton, "cell 0 3");
 		
 		// the button to shuffle the board
