@@ -2,6 +2,14 @@ package src;
 
 import entities.Timer;
 
+/** The stats for a level. Every type of level contains a score, and accepts a number of points to add
+ * to that score. Every level also contains three stars to achieve and a unique value. If the level is Puzzle, Elimination,
+ * or Release, its unique value is an int that either decrements or increments when called; if the level is Lightning,
+ * the timer should update every set number of milliseconds.
+ * 
+ * @author Miya
+ *
+ */
 public class LevelStats {
 	// the points added to the score after a move
 	public int points = 0;
@@ -15,6 +23,7 @@ public class LevelStats {
 	public boolean updating = false;
 
 	public int unique = 0;
+	
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	
 	public LevelStats(int score) {
@@ -32,7 +41,11 @@ public class LevelStats {
 		this.score = getScore();
 		this.score += points;
 	}
-
+	
+	public void updateUniqueInt(int unique){
+			unique--;
+	}
+	
 	public int[] getStarPoints(){
 		int[] starPoints = new int[4];
 		starPoints[1] = starcount1;

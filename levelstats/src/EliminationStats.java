@@ -35,7 +35,8 @@ public class EliminationStats extends LevelStats{
 		this.markedSquaresLeft = markedSquaresLeft;
 	}
 	
-	public int getNumMarkedSquares(){
+	@Override
+	public int getUniqueIntValue(){
 		return markedSquares;
 	}
 }

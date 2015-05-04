@@ -6,6 +6,7 @@ import entities.LevelType;
 public class ReleaseStats extends LevelStats {
 
 	int releaseBlocksLeft;
+	boolean decrement = true;
 	
 	
 	public ReleaseStats() {

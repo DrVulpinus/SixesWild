@@ -4,6 +4,7 @@ import entities.LevelType;
 
 public class PuzzleStats extends LevelStats {
 
+	boolean decrement = true;
 	int numMovesLeft;
 	
 	public PuzzleStats(int numMovesLeft) {
@@ -37,6 +38,12 @@ public class PuzzleStats extends LevelStats {
 		updating = true;
 		this.score = getScore();
 		this.score += points;
+		numMovesLeft--;
+	}
+	
+	@Override
+	public void updateUniqueInt(int numMovesLeft){
+		numMovesLeft = this.numMovesLeft;
 		numMovesLeft--;
 	}
 }
