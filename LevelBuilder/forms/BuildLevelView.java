@@ -88,6 +88,11 @@ public class BuildLevelView extends JPanel{
 	}
 	*/
 	
+	/**
+	 * constructor for buildLeverView
+	 * @param level
+	 * @param useTool
+	 */
 	public BuildLevelView(Level level, ToolControlListener useTool) {
 		
 		this.level = level;
@@ -109,11 +114,11 @@ public class BuildLevelView extends JPanel{
 //			add(panel, "cell 2 1, grow");
 
 		
-		
+		//add the Builder Grid in the BuildLevelView
 		add(getBuilderGridView(), "cell 2 2,grow");
 		
 
-		
+		//add the Speical Move View into the BuildLevelView
 		SpecialMoveView specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 3 2,grow");
 		add(getBtnExitWithoutSaving(), "cell 2 4");
@@ -138,13 +143,20 @@ public class BuildLevelView extends JPanel{
 	}
 	
 
-	
+	/**
+	 * get the panel for StatsView
+	 * @return StatsView
+	 */
 	private StatsView getTestJPanel() {
 		if (statsView == null) {
 			statsView = new StatsView(level);
 		}
 		return statsView;
 	}
+	/**
+	 * get the Grid of Builder 
+	 * @return BuilderGridView
+	 */
 	public BuilderGridView getBuilderGridView() {
 		if (builderGridView == null) {
 				builderGridView = new BuilderGridView();
