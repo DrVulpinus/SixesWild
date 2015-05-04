@@ -36,7 +36,7 @@ public class MoveRegular extends Move {
 			Block b = s.getBlock();
 
 			if (b != null){
-				setPoints(getPoints() + (100 * b.getMultiplier()));
+				setPoints(getPoints() + (10 * b.getMultiplier()));
 			}
 		}
 		//removes blocks from all squares involved
