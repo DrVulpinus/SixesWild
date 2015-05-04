@@ -74,7 +74,7 @@ public class GameGridView extends JPanel{
 	public GameGridView(ArrayList<Square> squares) {
 		this.setSquares(squares);
 		setLayout(new GridLayout(9, 9, 0, 0));
-		addMouseListners();
+	
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class GameGridView extends JPanel{
 		this.moveControlListener = moveControlListener;
 		this.setSquares(grid);
 		setLayout(new GridLayout(9, 9, 0, 0));
-		addMouseListners();
+	
 	}
 
 	/**
