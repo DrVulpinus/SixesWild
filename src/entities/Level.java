@@ -5,7 +5,16 @@ import icons.Icon;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import src.EliminationStats;
+import src.EliminationStatsView;
 import src.LevelStats;
+import src.LightningStats;
+import src.LightningStatsView;
+import src.PuzzleStats;
+import src.PuzzleStatsView;
+import src.ReleaseStats;
+import src.ReleaseStatsView;
+import entities.LevelType;
 
 public class Level
 {
@@ -31,8 +40,16 @@ public class Level
 		this.lvlType = lvlType;
 	}
 	public Level(LevelStats stats, Grid grid) {
-		this(stats, grid, "New Level");		
+		this(stats, grid, "New Level");
 	}
+	
+	public Level(LevelType type) {
+		this.lvlType = type;
+		this.grid = new Grid();
+		this.name = "New Level";
+		setStats();
+	}
+	
 	public Level(LevelStats stats, Grid grid, String name) {
 		this.stats = stats;
 		this.grid = grid;
@@ -102,4 +119,35 @@ public class Level
 	public void setProbability(Probability probability) {
 		this.probability = probability;
 	}
+	
+	
+	
+	private void setStats() {
+		
+		switch (lvlType) {
+		
+			case PUZZLE:
+				// generate puzzle stats
+				this.stats = new PuzzleStats(20);
+				break;
+	
+			case RELEASE:
+				// generate release stats
+				this.stats = new ReleaseStats();
+				break;
+	
+			case ELIMINATION:
+				// generate elimination stats
+				this.stats = new EliminationStats();
+				break;
+	
+			case LIGHTNING:
+				//generate lightning stats
+				this.stats = new LightningStats(180);
+				break;
+		}
+		
+		
+	}
+	
 }

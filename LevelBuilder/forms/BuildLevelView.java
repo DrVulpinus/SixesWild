@@ -59,15 +59,15 @@ public class BuildLevelView extends JPanel{
 	private JButton btnEditStarPoints;
 	
 	private JDialog settingsDialog;
-	PuzzleStatsView puzzleStatsView;
-	ReleaseStatsView releaseStatsView;
-	EliminationStatsView eliminationStatsView;
-	LightningStatsView lightningStatsView;
-	LevelPlayView levelPlayView;
-	PuzzleStats puzzleStats;
-	ReleaseStats releaseStats;
-	EliminationStats eliminationStats;
-	LightningStats lightningStats;
+//	PuzzleStatsView puzzleStatsView;
+//	ReleaseStatsView releaseStatsView;
+//	EliminationStatsView eliminationStatsView;
+//	LightningStatsView lightningStatsView;
+//	LevelPlayView levelPlayView;
+//	PuzzleStats puzzleStats;
+//	ReleaseStats releaseStats;
+//	EliminationStats eliminationStats;
+//	LightningStats lightningStats;
 	
 	/*public BuildLevelView() {
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][31.00,top][8.00][grow][grow][grow][bottom]"));
@@ -231,29 +231,29 @@ public class BuildLevelView extends JPanel{
 		
 		LevelType type = level.getLvlType();
 
-		switch(type){
+		switch(type) {
 
 		case PUZZLE:
 			// generate puzzle stats
-			puzzleStatsView = new PuzzleStatsView(puzzleStats);
+			puzzleStatsView = new PuzzleStatsView((PuzzleStats)level.getStats());
 			add(releaseStatsView, "cell 0 2 2 1,grow");
 			break;
 
 		case RELEASE:
 			// generate release stats
-			releaseStatsView = new ReleaseStatsView();
+			releaseStatsView = new ReleaseStatsView((ReleaseStats)level.getStats());
 			add(releaseStatsView, "cell 0 2 2 1,grow");
 			break;
 
 		case ELIMINATION:
 			// generate elimination stats
-			eliminationStatsView = new EliminationStatsView(eliminationStats);
+			eliminationStatsView = new EliminationStatsView((EliminationStats)level.getStats());
 			add(eliminationStatsView, "cell 0 2 2 1,grow");
 			break;
 
 		case LIGHTNING:
 			//generate lightning stats
-			lightningStatsView = new LightningStatsView();
+			lightningStatsView = new LightningStatsView((LightningStats)level.getStats());
 			add(lightningStatsView, "cell 0 2 2 1,grow");
 			break;
 
