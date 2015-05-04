@@ -56,7 +56,7 @@ public class LevelController implements ChangeLevelPlayState{
 		playState.addStateChangedListener(this);
 		playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);		
 		addLevelPlayListeners();		
-		window.setContentPane(levelPlayView);		
+		window.setContentPane(levelPlayView);
 		window.validate();
 		window.repaint();
 		
