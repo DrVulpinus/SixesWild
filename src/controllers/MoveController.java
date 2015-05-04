@@ -6,6 +6,7 @@ import Interfaces.MoveControlListener;
 import entities.Block;
 import entities.Level;
 import entities.LevelPlayState;
+import entities.LevelType;
 import entities.Move;
 import entities.MoveRegular;
 import entities.MoveRemove;
@@ -16,7 +17,11 @@ import forms.GameGridView;
 import forms.LevelPlayView;
 import forms.SquareView;
 
-
+/**
+ * The move controller which contains all the methods that update the grid according to the move that is made.
+ * @author Miya
+ *
+ */
 public class MoveController implements MoveControlListener, ChangeLevelPlayState {
 
 	ArrayList<SquareView> selectedSquareViews;
@@ -27,13 +32,16 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	Move m = null;
 	LevelPlayView levelPlayView;
 	StatsController statsController;
+	
 	public MoveController(Level level, LevelPlayState playState) {
+		// initialize
 		selectedSquareViews = new ArrayList<SquareView>();
 		this.level = level;
 		this.playState = playState;
 		playState.addStateChangedListener(this);
 		this.started = false;
 	}
+	
 	public void setGrid(GameGridView grid){
 		this.grid = grid;
 	}
@@ -41,11 +49,15 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	public LevelPlayView getLevelPlayView(){
 		return this.levelPlayView;
 	}
+	
 	public void setLevelPlayView(LevelPlayView levelPlayView){
 		this.levelPlayView = levelPlayView;
 		statsController = new StatsController(level.getStats(), levelPlayView.getStatsView());
 	}
 
+	/**
+	 * The begininning of a move. Selects a block.
+	 */
 	public void startMove(SquareView sV) {
 
 		if (this.started)
@@ -58,6 +70,9 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 		}
 	}
 
+	/**
+	 * The selection of a block. 
+	 */
 	public void selectBlock(SquareView sV) {
 
 		if (sV.getSquare().getBlock() == null) {
@@ -65,10 +80,10 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			return;
 		}
 		
-
 		if (!this.started){
 			return;
 		}
+		
 		if (selectedSquareViews.contains(sV)){
 			if (selectedSquareViews.get(selectedSquareViews.size() -2) == sV){
 				SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
@@ -77,19 +92,28 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 				lastSV.getBlockView().update();
 			}
 		}
+		
 		else{
 			selectedSquareViews.add(sV);
 			sV.getSquare().getBlock().setSelected(true);
-			sV.getBlockView().update();
+			
 		}
-		/*if (areSquaresAdjacent()){
-			System.out.println("Squares are not ajacent");
-			SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
-			selectedSquareViews.remove(lastSV);
-			lastSV.getSquare().getBlock().setSelected(false);
-			lastSV.getBlockView().update();			
-		}*/
 		
+		if(selectedSquareViews.size() > 1){
+			Square prevSq = selectedSquareViews.get(selectedSquareViews.size()-2).getSquare();
+			Square lastSq = selectedSquareViews.get(selectedSquareViews.size()-1).getSquare();
+			
+			if (!prevSq.getNeighbors().contains(lastSq)){
+				SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
+				selectedSquareViews.remove(lastSV);
+				lastSV.getSquare().getBlock().setSelected(false);
+				
+			}
+		}
+		
+		for (SquareView squareView : selectedSquareViews) {
+			squareView.getBlockView().update();
+		}
 		
 
 		System.out.println("Block Selected: " + sV.getSquare().getBlock() + " in " + sV.getSquare());
@@ -148,6 +172,12 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			return;
 
 		if (m.performMove())
+			if(level.getLvlType() == LevelType.ELIMINATION && playState.getSelectedMove() == LevelPlayState.MOVE_REGULAR){
+				for (SquareView sV : selectedSquareViews) {
+					sV.getSquare().setEliminated(true);
+					sV.update();
+				}
+			}
 			playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);		//reset to regular move after a move is made
 	}
 	@Override

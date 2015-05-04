@@ -40,10 +40,17 @@ public class LevelPanel extends JPanel {
 
 		// the listener for when a mouse is over a panel
 		addMouseListener(new MouseAdapter() {
+			/**
+			 * Highlights the panel when a mouse hovers over it.
+			 */
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				setBackground(hoveredColor);
 			}
+
+			/**
+			 * Reverts the square to original color when a mouse moves away from it.
+			 */
 			@Override
 			public void mouseExited(MouseEvent e) {
 				setBackground(normalColor);
@@ -51,9 +58,14 @@ public class LevelPanel extends JPanel {
 		});
 
 		level = lvl;
+
+		// sets the original color of the panel to some random color
 		normalColor = Color.getHSBColor((float) Math.random(), 1.0f, 1.0f);
 		normalColor = new Color(normalColor.getRed(), normalColor.getGreen(), normalColor.getBlue(), 100);
+
+		// a separte color for when the mouse hovers over it
 		hoveredColor = new Color(normalColor.getRed(), normalColor.getGreen(), normalColor.getBlue(), 255);
+
 		setBackground(normalColor);
 
 		setLayout(null);
@@ -62,6 +74,11 @@ public class LevelPanel extends JPanel {
 		// the type of the level
 		add(getLblLeveltype());
 
+
+		/**
+		 * Adds the star count achieved for that level. If no star count has been achieved,
+		 * nothing is displayed beneath it.
+		 */
 		if (lvl.getStats().getStarCount() > 0){
 			add(getLblStar1());
 		}
@@ -124,7 +141,7 @@ public class LevelPanel extends JPanel {
 		}
 		return lblLevelname;
 	}
-	
+
 	JLabel getLblLeveltype() {
 		if (lblLeveltype == null) {
 			lblLeveltype = new JLabel("LevelType");
@@ -132,7 +149,7 @@ public class LevelPanel extends JPanel {
 		}
 		return lblLeveltype;
 	}
-	
+
 	JLabel getLblStar1() {
 		if (lblStar1 == null) {
 			lblStar1 = new JLabel("");
@@ -141,7 +158,7 @@ public class LevelPanel extends JPanel {
 		}
 		return lblStar1;
 	}
-	
+
 	JLabel getLblStar2() {
 		if (lblStar2 == null) {
 			lblStar2 = new JLabel("");
@@ -150,7 +167,7 @@ public class LevelPanel extends JPanel {
 		}
 		return lblStar2;
 	}
-	
+
 	JLabel getLblStar3() {
 		if (lblStar3 == null) {
 			lblStar3 = new JLabel("");

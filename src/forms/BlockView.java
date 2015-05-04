@@ -80,6 +80,10 @@ public class BlockView extends JLabel
 		update();
 
 		// show the block after it has been set up
+		this.setAlignmentX(CENTER_ALIGNMENT);
+		this.setAlignmentY(CENTER_ALIGNMENT);
+		this.setVerticalAlignment(CENTER);
+		this.setHorizontalAlignment(CENTER);
 		this.setVisible(true);
 
 	}
@@ -111,7 +115,7 @@ public class BlockView extends JLabel
 				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth(), getHeight()));		
 			}						
 			else{
-				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 5, getHeight() - 5));
+				this.setIcon(icons[block.getValue() - 1][block.getMultiplier() - 1].getScaledImage(getWidth() - 10, getHeight() - 10));
 			}
 				
 		}

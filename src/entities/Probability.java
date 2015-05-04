@@ -4,24 +4,29 @@ public class Probability {
 	
 	int[] valueProb;
 	int[] multProb;
-	
+	int[] releaseProb;
 	
 	int[] valueSeed;
 	int[] multSeed;
+	int[] releaseSeed;
+	
 	public Probability() {
 		this.valueProb = new int[6];
 		this.multProb = new int[3];
+		this.releaseProb = new int[1];
 		
 		this.valueProb[0] = 20;
 		this.valueProb[1] = 20;
-		this.valueProb[2] = 20;
+		this.valueProb[2] = 0;
 		this.valueProb[3] = 20;
 		this.valueProb[4] = 20;
-		this.valueProb[5] = 0;
+		this.valueProb[5] = 20;
 		
 		this.multProb[0] = 40;
 		this.multProb[1] = 30;
 		this.multProb[2] = 30;
+		
+		this.releaseProb[0] = 50;
 		generateSeeds();
 	}
 	
@@ -50,6 +55,20 @@ public class Probability {
 			startIndex += j;
 			
 		}
+	}
+	
+	void generateReleaseSeed(){
+		releaseSeed  = new int[1000];
+		int startIndex = 0;
+		for (int i = 0; i < valueProb.length; i++) {
+			int j = valueProb[i];
+			j *= 10;
+			for (int j2 = startIndex; j2 < j + startIndex; j2++) {
+				valueSeed[j2] = i + 1;				
+			}
+			startIndex += j;
+		}
+			
 	}
 	public int getValueProb(int value) {
 		
@@ -105,9 +124,16 @@ public class Probability {
 		return (p1 + p2 + p3 == 100);
 	}
 	
+	public boolean setReleaseProb(int p1){
+		this.releaseProb[0] = p1;
+		
+		return (p1 == 50);
+	}
+	
 	public void generateSeeds(){
 		generateMultSeed();
 		generateValueSeed();
+		generateReleaseSeed();
 	}
 	
 	public int[] getMultSeed() {
@@ -122,6 +148,13 @@ public class Probability {
 		}
 		return valueSeed;
 	}
+	
+	public int[] getReleaseSeed(){
+		if(releaseSeed == null){
+			generateReleaseSeed();
+		}
+		return releaseSeed;
+	}
 	public int getRandomValue(){
 		return getValueSeed()[(int) (Math.random()*999)];
 	}
@@ -129,81 +162,18 @@ public class Probability {
 		return getMultSeed()[(int) (Math.random()*999)];
 	}
 
-//	int prob1;
-//	int prob2;
-//	int prob3;
-//	int prob4;
-//	int prob5;
-//	int prob6;
-//	int probx1;
-//	int probx2;
-//	int probx3;
-//	
-//	public int getProb1() {
-//		return prob1;
-//	}
-//	public void setProb1(int prob1) {
-//		this.prob1 = prob1;
-//	}
-//	public int getProb2() {
-//		return prob2;
-//	}
-//	public void setProb2(int prob2) {
-//		this.prob2 = prob2;
-//	}
-//	public int getProb3() {
-//		return prob3;
-//	}
-//	public void setProb3(int prob3) {
-//		this.prob3 = prob3;
-//	}
-//	public int getProb4() {
-//		return prob4;
-//	}
-//	public void setProb4(int prob4) {
-//		this.prob4 = prob4;
-//	}
-//	public int getProb5() {
-//		return prob5;
-//	}
-//	public void setProb5(int prob5) {
-//		this.prob5 = prob5;
-//	}
-//	public int getProb6() {
-//		return prob6;
-//	}
-//	public void setProb6(int prob6) {
-//		this.prob6 = prob6;
-//	}
-//	
-//	public int getProbx1(){
-//		return probx1;
-//	}
-//	
-//	public void setProbx1(int probx1){
-//		this.probx1 = probx1;
-//	}
-//	
-//	public int getProbx2(){
-//		return probx2;
-//	}
-//	
-//	public void setProbx2(int probx2){
-//		this.probx2 = probx2;
-//	}
-//	
-//	public  int getProbx3(){
-//		return probx3;
-//	}
-//	
-//	public void setProbx3(int probx3){
-//		this.probx3 = probx3;
-//	}
-	
+	public boolean getRandomRelease(){
+		int num = getReleaseSeed()[(int) (Math.random()*999)];
+		if(num >=0 && num < 500){
+			return false;
+		}
+		else
+			return true;
+	}
 	@Override
 	public String toString() {
 		return ("(" + valueProb[0] + "," + valueProb[1] + "," + valueProb[2] + "," + valueProb[3] + "," + valueProb[4] + valueProb[5] + "," +")  " +
-				"(" + multProb[0] + "," + multProb[1] + "," + multProb[2] + ")");
+				"(" + multProb[0] + "," + multProb[1] + "," + multProb[2] + ")" + "(" + releaseProb[0] + ")");
 	}
 	
 }
