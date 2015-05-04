@@ -59,7 +59,6 @@ public class GameGridView extends JPanel{
 				columns = 9;
 			}
 		}
-		addMouseListners();
 	}
 
 	/**
