@@ -14,10 +14,11 @@ import forms.SquareView;
  *
  */
 
- 
+
 public class MoveRegular extends Move {
 	boolean updating = level.getStats().updating;
-	int points = 0;
+	int points = 10;
+	int multiplier = 1;
 	public MoveRegular(Level level, ArrayList<Square> squares) {
 		super(level, squares);
 		System.out.println("Construct Move Regular");
@@ -36,9 +37,13 @@ public class MoveRegular extends Move {
 			Block b = s.getBlock();
 
 			if (b != null){
-				setPoints(getPoints() + (10 * b.getMultiplier()));
+				multiplier *= b.getMultiplier();
 			}
+			
+			
 		}
+		int newpoints = points * multiplier*this.getSquaresInvolved().size();
+		level.getStats().update(newpoints, 0, 0);
 		//removes blocks from all squares involved
 		for (Iterator<Square> i = getSquaresInvolved().iterator(); i.hasNext();) {
 			Square sq = i.next();
@@ -48,8 +53,8 @@ public class MoveRegular extends Move {
 			Square sq = i.next();
 			sq.setNorthernBlock();		
 		}
-		System.out.println(level.getStats().getScore());
-		level.getStats().update(getPoints(), 0, 0);
+//		System.out.println(level.getStats().getScore());
+//		level.getStats().update(getPoints(), 0, 0);
 
 		updating = false;
 		System.out.println(level.getStats().getScore());
@@ -59,30 +64,28 @@ public class MoveRegular extends Move {
 		return true;
 	}
 
-	
+
 	/**
 	 * Returns the number of points that this move earns
 	 * @return the number of points for this move
 	 */
-	@Override
-	public int getPoints(){
+//	@Override
+//	public int getPoints(){
 //		int numSquares = 0;
-//		for(Square s: this.squaresInvolved){
-//			numSquares++;
-//		}
+//		numSquares = this.squaresInvolved.size();
 //		points = points * numSquares;
-		return points;
-	}
-	
+//		return points;
+//	}
+
 	/**
 	 * Sets the points to score by the move
 	 * @param i the number of points to score by the move
 	 */
-	@Override	
-	public void setPoints(int points){
-		this.points = points;
-	}
-	
+//	@Override	
+//	public void setPoints(int points){
+//		this.points = points;
+//	}
+
 	/**
 	 * Returns the number of eliminations scored by a move
 	 * @return the number of eliminations scored by a move
@@ -91,7 +94,7 @@ public class MoveRegular extends Move {
 	public int getEliminations() {
 		return 0;
 	}
-	
+
 	/**
 	 * Returns the number of releases scored by a move
 	 * @return the number of releases scored by a move

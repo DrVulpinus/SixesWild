@@ -68,6 +68,7 @@ public class Square
 		return new Square(l);
 	}
 	
+	
 	public void checkIfSix(Square releaseSquare){
 		Square aboveRelease = releaseSquare.getNorthernNeighbor();
 		if (aboveRelease.getBlock().getValue() == 6){

@@ -28,7 +28,6 @@ public class LevelStats {
 
 	public void update(int points, int releases, int eliminations) {
 		updating = true;
-		this.points = points;
 		this.score = getScore();
 		this.score += points;
 	}
