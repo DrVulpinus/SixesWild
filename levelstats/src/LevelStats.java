@@ -33,6 +33,14 @@ public class LevelStats {
 		this.score += points;
 	}
 
+	public int[] getStarPoints(){
+		int[] starPoints = new int[4];
+		starPoints[1] = starcount1;
+		starPoints[2] = starcount2;
+		starPoints[3] = starcount3;
+		return starPoints;
+	}
+	
 	public int getStarCount() {
 		if (points >= starcount1){
 			if(points >= starcount2){
