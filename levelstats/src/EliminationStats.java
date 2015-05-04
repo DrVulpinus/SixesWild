@@ -2,6 +2,12 @@ package src;
 
 import entities.LevelType;
 
+/**
+ * Contains the stats for elimination mode. Has a number of total squares and a number of markedSquares,
+ * which gets called in update.
+ * @author Miya
+ *
+ */
 public class EliminationStats extends LevelStats{
 	int markedSquares;
 	int totalSquares;
