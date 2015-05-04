@@ -21,11 +21,16 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.GridLayout;
 
+
+/**
+ * The GameGridView class displays the grid of squares and blocks that appear in the level during game play.
+ * @author Alex Wald
+ *
+ */
+
+
 public class GameGridView extends JPanel{
 
-	/**
-	 * The view of the grid.
-	 */
 	private static final long serialVersionUID = 3399803991655076903L;
 	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
 	MoveControlListener moveControlListener = null;
@@ -41,8 +46,9 @@ public class GameGridView extends JPanel{
 	double yIncrement = 0;
 
 
-
-
+	/**
+	 * Constructs a new empty grid view
+	 */
 	public GameGridView() {
 		// initialize all squares and blocks within the grid.
 		super();
@@ -63,6 +69,7 @@ public class GameGridView extends JPanel{
 	}
 
 	/**
+	 * Makes a new GameGridView that displays the specified list of squares
 	 * @param squares A list of all the squares within the grid.
 	 */
 	public GameGridView(ArrayList<Square> squares) {
@@ -72,6 +79,7 @@ public class GameGridView extends JPanel{
 	}
 
 	/**
+	 * Makes a new GameGridView that displays the grid with move functionality supported.
 	 * @param grid The grid represented by the view.
 	 * @param moveControlListener The listener that should update when a move happens to the gridView.
 	 */
@@ -139,24 +147,25 @@ public class GameGridView extends JPanel{
 		}
 
 	}
+	
+	/**
+	 * Adds mouse listeners to the grid
+	 */
 	public void addMouseListners(){
 			GameGridView.this.addMouseListener(new MouseListener() {
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 			
@@ -168,7 +177,6 @@ public class GameGridView extends JPanel{
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 		});

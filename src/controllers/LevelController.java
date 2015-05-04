@@ -32,6 +32,7 @@ import forms.MainFrame;
  * is performed i.e. the level state is changed.
  * Contains the level and everything in it, including the level's view
  * and all other controllers.
+ * @author Alex Wald
  * @author Miya
  *
  */
@@ -48,6 +49,11 @@ public class LevelController implements ChangeLevelPlayState{
 	public static final Color SELECTED_MOVE_COLOR = Color.GREEN;
 	public static final Color UNSELECTED_MOVE_COLOR = Color.PINK;
 	
+	/**
+	 * Makes a new LevelController
+	 * @param level The level that is being played
+	 * @param window the game Window
+	 */
 	public LevelController(Level level, MainFrame window) {
 
 		// INITIALIZE

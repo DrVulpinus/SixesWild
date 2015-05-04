@@ -35,6 +35,11 @@ public class LevelPanel extends JPanel {
 	Color normalColor;
 	Color hoveredColor;
 
+	
+	/**
+	 * Makes a new level panel
+	 * @param lvl The level that this panel selects
+	 */
 	public LevelPanel(Level lvl){
 		super();
 
@@ -103,18 +108,35 @@ public class LevelPanel extends JPanel {
 
 	}
 
+	/**
+	 * 
+	 * @return the level for this panel
+	 */
 	public Level getLevel(){
 		return level;
 	}
 
+	/**
+	 * Sets a level for display in the panel
+	 * @param levelName display name of the level
+	 */
 	public void setLevelName(String levelName){
 		getLblLevelName().setText(levelName);
 	}
 
+	/**
+	 * Sets the type of the level shown in the panel
+	 * @param levelType the type of the level
+	 */
 	public void setLevelType(String levelType){
 		getLblLeveltype().setText(levelType);
 	}
 
+	/**
+	 * Converts the level type to a string
+	 * @param type Type of a level
+	 * @return the string representation of the type
+	 */
 	public String getTypeString(LevelType type){
 		switch (type) {
 		case ELIMINATION:
@@ -132,6 +154,10 @@ public class LevelPanel extends JPanel {
 
 	}
 
+	/**
+	 * 
+	 * @return 
+	 */
 	JLabel getLblLevelName() {
 		if (lblLevelname == null) {
 			lblLevelname = new JLabel("LevelName");

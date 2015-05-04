@@ -29,11 +29,4 @@ public class StatsController {
 		
 		sv.getTextField_3().setText(score);
 	}
-//	
-//	public void generateStats(){
-//		if (ls.getType().equals("Puzzle")){
-//			ls = new PuzzleStats(0, 30);
-//			sv = new PuzzleStatsView(ls);
-//		}
-//	}
 }
