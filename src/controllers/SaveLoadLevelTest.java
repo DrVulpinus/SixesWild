@@ -85,10 +85,7 @@ public class SaveLoadLevelTest {
 				int num = (int) Math.round(Math.random());
 				if (num > 0){
 					Square s = new Square(new Location(row, col));
-					s.makeReleaseSquare(new Location(row, col));
-					if(!s.isRelease()){
-						s.setBlock(new Block((int)(5*Math.random())+1, (int)(2*Math.random())+1));
-					}
+					
 					grid.add(s);
 				}
 
