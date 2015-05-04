@@ -45,10 +45,12 @@ public class LevelPlayView extends JPanel {
 	ReleaseStatsView releaseStatsView;
 	EliminationStatsView eliminationStatsView;
 	LightningStatsView lightningStatsView;
+	StatsView sv;
 
 	private JPanel panel;
 
-	public LevelPlayView(Level level, MoveControlListener moveControlListener) {
+	public LevelPlayView(Level level, MoveControlListener moveControlListener, StatsView sv) {
+		this.sv = sv;
 		this.level = level;
 		this.moveControlListener = moveControlListener;
 		setLayout(new FormLayout(new ColumnSpec[] {
@@ -63,8 +65,8 @@ public class LevelPlayView extends JPanel {
 		panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		add(panel, "2, 1, fill, fill");
-		generateLevelStats();
-
+		//generateLevelStats();
+		panel.add(this.sv, BorderLayout.CENTER);
 		// initialize the view of the grid and add it to this view
 		gridView = new GameGridView(level.getGrid(), moveControlListener);
 		gridView.setBackground(new Color(255, 255, 255, 50));
@@ -75,7 +77,8 @@ public class LevelPlayView extends JPanel {
 		specialMoveView.setBackground(new Color(255, 255, 255, 50));
 		add(specialMoveView, "4, 1, fill, fill");
 		this.setBackground(new Color(255, 255, 255, 50));
-
+		
+		
 		add(getbtnBack(), "4, 2, fill, fill");
 	}
 

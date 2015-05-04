@@ -44,7 +44,7 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	}
 	public void setLevelPlayView(LevelPlayView levelPlayView){
 		this.levelPlayView = levelPlayView;
-		statsController = new StatsController(level.getStats(), levelPlayView.getStatsView());
+		//statsController = new StatsController(level.getStats(), levelPlayView.getStatsView());
 	}
 
 	public void startMove(SquareView sV) {
@@ -123,7 +123,7 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 		}
 
 		System.out.println("Hi");
-		statsController.update();
+		//statsController.update();
 		System.out.println("End Move");
 	}
 
