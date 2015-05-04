@@ -173,6 +173,7 @@ public abstract class StatsView extends JPanel {
 	 */
 	public void setPoints(int points){
 		this.points = points;
+		getTxtPointsdisplay().setText(Integer.toString(this.points));
 	}
 	/**
 	 * Get the current value for points

@@ -151,8 +151,13 @@ public class Level
 	 */
 	public void shuffleBoard() {
 		for (Square square : grid) {
+			if (square.getBlock()!= null){
 			if (square.getBlock().getValue() != 6)
 				square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+			}
+			else{
+				square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+			}
 		}
 	}
 	

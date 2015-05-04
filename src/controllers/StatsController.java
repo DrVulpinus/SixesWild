@@ -58,12 +58,14 @@ public class StatsController {
 	}
 	
 	public void initializeTimer(){
-		tmr = new Timer();
+		tmr = new Timer(true);
 		tmr.schedule(new TimerTask() {
 			
 			@Override
 			public void run() {
 				sv.update();
+				System.out.println("Updated");
+				
 				
 			}
 		}, 500, 250);
