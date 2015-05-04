@@ -80,16 +80,21 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 		else{
 			selectedSquareViews.add(sV);
 			sV.getSquare().getBlock().setSelected(true);
-			sV.getBlockView().update();
+			
 		}
-		/*if (areSquaresAdjacent()){
-			System.out.println("Squares are not ajacent");
-			SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
-			selectedSquareViews.remove(lastSV);
-			lastSV.getSquare().getBlock().setSelected(false);
-			lastSV.getBlockView().update();			
-		}*/
-		
+		if(selectedSquareViews.size() > 1){
+			Square prevSq = selectedSquareViews.get(selectedSquareViews.size()-2).getSquare();
+			Square lastSq = selectedSquareViews.get(selectedSquareViews.size()-1).getSquare();
+			if (!prevSq.getNeighbors().contains(lastSq)){
+				SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
+				selectedSquareViews.remove(lastSV);
+				lastSV.getSquare().getBlock().setSelected(false);
+				
+			}
+		}
+		for (SquareView squareView : selectedSquareViews) {
+			squareView.getBlockView().update();
+		}
 		
 
 		System.out.println("Block Selected: " + sV.getSquare().getBlock() + " in " + sV.getSquare());

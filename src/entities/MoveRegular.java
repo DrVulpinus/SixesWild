@@ -107,9 +107,6 @@ public class MoveRegular extends Move {
 		if (sum != 6)							//move invalid if the sum of block values is not 6
 			return false;
 
-		if (!super.areSquaresAdjacent())		//move invalid if any selected block is not adjacent to other selected blocks
-			return false;
-
 		return true;
 	}
 

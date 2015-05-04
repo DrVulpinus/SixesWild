@@ -29,9 +29,6 @@ public class MoveSwap extends Move{
 		if (this.getSquaresInvolved().size() != 2){
 			return false;
 		}
-		if (!this.areSquaresAdjacent()){
-			return false;
-		}
 		return true;
 	}
 	
