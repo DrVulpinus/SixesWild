@@ -29,10 +29,6 @@ public class PuzzleStats extends LevelStats {
 		return numMovesLeft;
 	}
 	
-	@Override
-	public boolean getIndicator(){
-		return decrement;
-	}
 	public void setNumMovesLeft(int numMovesLeft){
 		this.numMovesLeft = numMovesLeft;
 	}

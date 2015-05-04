@@ -24,8 +24,6 @@ public class LevelStats {
 
 	public int unique = 0;
 	
-	public boolean decrement;
-	
 	//TODO: once the overall moves are finished, adjust the point totals accordingly
 	
 	public LevelStats(int score) {
@@ -45,11 +43,7 @@ public class LevelStats {
 	}
 	
 	public void updateUniqueInt(int unique){
-		if(getIndicator()){
 			unique--;
-		}
-		else
-			unique++;
 	}
 	
 	public int[] getStarPoints(){
@@ -111,9 +105,5 @@ public class LevelStats {
 
 	public Timer getTimer(){
 		return null;
-	}
-	
-	public boolean getIndicator(){
-		return decrement;
 	}
 }

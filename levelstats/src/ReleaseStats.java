@@ -45,9 +45,4 @@ public class ReleaseStats extends LevelStats {
 	public void setReleaseBlocksLeft(int releaseBlocksLeft){
 		this.releaseBlocksLeft = releaseBlocksLeft;
 	}
-	
-	@Override
-	public boolean getIndicator(){
-		return decrement;
-	}
 }
