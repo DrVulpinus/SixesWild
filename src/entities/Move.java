@@ -43,26 +43,60 @@ public abstract class Move {
 	 * @return
 	 */
 	public boolean areSquaresAdjacent() {
-		
-		for (Square s1 : squaresInvolved) {
-			
-			boolean adjacent = false;
-			
-			//iterates through squares and sets adjacent to true if s2 is adjacent to at least one other Square
-			for (Square s2 : squaresInvolved) {
-				if (s2.getLoc().isAdjacentTo(s1.getLoc())) {
-					adjacent = true;		//adjacent block found
-					break;
-				}
-			}
-//			if (squaresInvolved.get(n).getLoc().isAdjacentTo(squaresInvolved.get(n+1).getLoc()))
-//				adjacent = true;
-			
-			if (adjacent == false)		//if there is at least one Square that is not adjacent to any other square
-				return false;
+		if (squaresInvolved.size() > 1){
+		    ArrayList<Square> temp1 = new ArrayList<Square>();
+	        ArrayList<Square> temp2 = new ArrayList<Square>();
+	       
+	        for (int n = 0; n < squaresInvolved.size(); n++)
+	            temp1.add(squaresInvolved.get(n));
+	       
+	        boolean foundAdjacent = false;
+	       
+	        do {
+	            foundAdjacent = false;
+	           
+	            //continue looping until a square in temp1 is found to be adjacent to a square in temp2
+	            for (int a = 0; !foundAdjacent && a < temp1.size(); a++) {
+	                for (int b = 0; !foundAdjacent && (temp2.isEmpty() || b < temp2.size()); b++) {
+	                    if (temp2.isEmpty() || temp1.get(a).getLoc().isAdjacentTo(temp2.get(b).getLoc())) {
+	                        temp2.add(temp1.remove(a));        //transfer adjacent square from temp2 to temp1
+	                        foundAdjacent = true;
+	                    }
+	                }
+	            }
+	        } while (foundAdjacent);
+	       
+	        System.out.println("abc: " + temp2.size() + " " + squaresInvolved.size());
+	       
+	        //if all squares are transferred from temp1 to temp2 then all squares form an adjacent group
+	        return (temp2.size() == squaresInvolved.size());
+	       
+	       
+	       
+	       
+//	        for (Square s1 : squaresInvolved) {
+//	           
+//	            boolean adjacent = false;
+//	           
+//	            //iterates through squares and sets adjacent to true if s2 is adjacent to at least one other Square
+//	            for (Square s2 : squaresInvolved) {
+//	                if (s2.getLoc().isAdjacentTo(s1.getLoc())) {
+//	                    adjacent = true;        //adjacent block found
+//	                    break;
+//	                }
+//	            }
+////	            if (squaresInvolved.get(n).getLoc().isAdjacentTo(squaresInvolved.get(n+1).getLoc()))
+////	                adjacent = true;
+//	           
+//	            if (adjacent == false)        //if there is at least one Square that is not adjacent to any other square
+//	                return false;
+//	        }
+//	       
+//	        return true;
 		}
-		
-		return true;
+		else{
+			return true;
+		}
 	}
 	
 	

@@ -18,9 +18,10 @@ import entities.Square;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.GridLayout;
 
-public class GameGridView extends JPanel {
+public class GameGridView extends JPanel{
 
 	/**
 	 * The view of the grid.
@@ -45,7 +46,7 @@ public class GameGridView extends JPanel {
 	public GameGridView() {
 		// initialize all squares and blocks within the grid.
 		super();
-		setLayout(new GridLayout(9, 9, 0, 0));
+		setLayout(new GridLayout(9, 9, 15, 15));
 		for (int y = 0; y < 9; y++){
 			for (int x = 0; x < 9; x++) {				
 				Square s = new Square();
@@ -58,6 +59,7 @@ public class GameGridView extends JPanel {
 				columns = 9;
 			}
 		}
+		addMouseListners();
 	}
 
 	/**
@@ -66,7 +68,7 @@ public class GameGridView extends JPanel {
 	public GameGridView(ArrayList<Square> squares) {
 		this.setSquares(squares);
 		setLayout(new GridLayout(9, 9, 0, 0));
-
+		addMouseListners();
 	}
 
 	/**
@@ -77,7 +79,7 @@ public class GameGridView extends JPanel {
 		this.moveControlListener = moveControlListener;
 		this.setSquares(grid);
 		setLayout(new GridLayout(9, 9, 0, 0));
-
+		addMouseListners();
 	}
 
 	/**
@@ -128,21 +130,6 @@ public class GameGridView extends JPanel {
 			squareView.update();
 		}
 	}
-
-	/**
-	 * Update the location of a square when the mouse is clicked.
-	 * @param e The MouseEvent representing a click of the mouse.
-	 */
-	public void mouseClicked(MouseEvent e) {
-		currentXVal= e.getX()/xIncrement;
-		currentYVal= e.getY()/yIncrement;
-		int roundXOutput = (int)Math.round(currentXVal);
-		int roundYOutput = (int)Math.round(currentYVal);
-		int YOutput = (columns - roundYOutput);
-		System.err.println(roundXOutput+","+YOutput);
-
-	}
-	
 	/**
 	 * Fill the grid with squareViews that have been changed.
 	 */
@@ -151,6 +138,40 @@ public class GameGridView extends JPanel {
 			squareView.update();
 		}
 
+	}
+	public void addMouseListners(){
+			GameGridView.this.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				System.out.println("ENTERED GRID");
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 }
 

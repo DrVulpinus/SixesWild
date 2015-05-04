@@ -77,7 +77,7 @@ public class SquareView extends JPanel implements SquareChangeListener
 			@Override
 			public void mouseEntered(MouseEvent arg0) {//Trigger the square selected code
 				for (MoveControlListener moveControlListener : listeners) {
-					moveControlListener.selectBlock(SquareView.this);				
+					moveControlListener.selectBlock(SquareView.this);		
 				}
 			}
 			
