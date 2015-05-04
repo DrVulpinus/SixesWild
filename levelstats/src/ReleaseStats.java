@@ -30,9 +30,11 @@ public class ReleaseStats extends LevelStats {
 	}
 
 	@Override
-	public void update(int points, int releases, int eliminations){
-		super.update(points, releases, eliminations);
-		releaseBlocksLeft -= releases;
+	public void update(int points, int markedSquaresLeft, int releasesLeft) {
+		updating = true;
+		this.score = getScore();
+		this.score += points;
+		this.releaseBlocksLeft = releasesLeft;
 	}
 	
 	public int getReleaseBlocksLeft(){
