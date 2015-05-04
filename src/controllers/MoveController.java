@@ -64,6 +64,7 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			endMove();
 			return;
 		}
+		
 
 		if (!this.started){
 			return;
@@ -81,6 +82,13 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			sV.getSquare().getBlock().setSelected(true);
 			sV.getBlockView().update();
 		}
+		/*if (areSquaresAdjacent()){
+			System.out.println("Squares are not ajacent");
+			SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
+			selectedSquareViews.remove(lastSV);
+			lastSV.getSquare().getBlock().setSelected(false);
+			lastSV.getBlockView().update();			
+		}*/
 		
 		
 
@@ -119,7 +127,6 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 		for (SquareView sV : selectedSquareViews) {
 			squares.add(sV.getSquare());
 		}
-
 		switch(playState.getSelectedMove()) {
 		case LevelPlayState.MOVE_REGULAR:
 			m = new MoveRegular(level, squares);

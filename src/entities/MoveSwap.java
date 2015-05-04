@@ -26,9 +26,12 @@ public class MoveSwap extends Move{
 	
 	@Override
 	public boolean isValid() {
-		if (this.getSquaresInvolved().size() != 2)
+		if (this.getSquaresInvolved().size() != 2){
 			return false;
-		
+		}
+		if (!this.areSquaresAdjacent()){
+			return false;
+		}
 		return true;
 	}
 	
