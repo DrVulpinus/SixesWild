@@ -18,7 +18,7 @@ public class PuzzleStats extends LevelStats {
 	}
 	
 	public boolean winCondition() {
-		if (numMovesLeft == 0){
+		if (getUniqueIntValue() == 0 && this.getStarCount() != 0){
 			return true;
 		}
 		return false;

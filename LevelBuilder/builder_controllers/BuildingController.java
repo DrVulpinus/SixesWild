@@ -31,16 +31,24 @@ import forms.MainFrame;
 import forms.ProbabilityBlockView;
 import forms.ProbabilityMultiplierView;
 
-
-
-
+/**
+ * Building controller for building one level of game and save it
+ * 
+ *
+ */
 public class BuildingController {
 
+	/* the level information on the level to be build*/
 	Level level;
+	/* THe View for building level*/
 	public BuildLevelView buildLevelView;
+	/*the MainForm that this controller originate from */
 	MainForm window;
+	/*tool select controller on what to do with the square*/
 	ToolSelectionController toolSelect;
+	/*the state of level building */
 	LevelBuildState buildState;
+	
 	UseToolController useTool;
 	
 	JDialog settingsDialog;

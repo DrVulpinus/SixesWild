@@ -16,6 +16,6 @@ public interface MoveControlListener  extends EventListener{
 	public void performMove();
 	public void startMove(SquareView sV);
 	public void selectBlock(SquareView sV);
-	public void endMove() ;
+	public void endMove();
 
 }
