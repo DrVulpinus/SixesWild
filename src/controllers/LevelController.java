@@ -32,8 +32,6 @@ import forms.MainFrame;
  * is performed i.e. the level state is changed.
  * Contains the level and everything in it, including the level's view
  * and all other controllers.
- * @author Alex Wald
- * @author Miya
  *
  */
 public class LevelController implements ChangeLevelPlayState{

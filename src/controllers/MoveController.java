@@ -19,8 +19,6 @@ import forms.SquareView;
 
 /**
  * The move controller which contains all the methods that update the grid according to the move that is made.
- * @author Alex Wald
- * @author Miya
  *
  */
 public class MoveController implements MoveControlListener, ChangeLevelPlayState {
@@ -78,10 +76,11 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	 * @param sV the SquareView that was clicked to start a move
 	 */
 	public void startMove(SquareView sV) {
-
+		// if the move is already started, do nothing
 		if (this.started)
 			return;
 
+		// otherwise, if the squareView exists, select the block in that square view
 		System.out.println("Move started");
 		this.started = true;
 		if (!(sV == null)){
@@ -95,15 +94,20 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	 */
 	public void selectBlock(SquareView sV) {
 
+		// if a square does not contain a block, end the move
 		if (sV.getSquare().getBlock() == null) {
 			endMove();
 			return;
 		}
 		
+		// if the move wasn't started, return invalid move
 		if (!this.started){
 			return;
 		}
 		
+		// if the squareview is among the squareviews that was selected,
+		// and the list of the squareviews is negative 2, assume that the last squareview
+		// has been unselected and remove it from the list
 		if (selectedSquareViews.contains(sV)){
 			if (selectedSquareViews.get(selectedSquareViews.size() -2) == sV){
 				SquareView lastSV = selectedSquareViews.get(selectedSquareViews.size()-1);
@@ -113,12 +117,14 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			}
 		}
 		
+		// otherwise, add the squareview to the list of other selected squareviews
 		else{
 			selectedSquareViews.add(sV);
 			sV.getSquare().getBlock().setSelected(true);
 			
 		}
 		
+		// keep track of the selected square views and make sure there is no overlap
 		if(selectedSquareViews.size() > 1){
 			Square prevSq = selectedSquareViews.get(selectedSquareViews.size()-2).getSquare();
 			Square lastSq = selectedSquareViews.get(selectedSquareViews.size()-1).getSquare();
@@ -179,6 +185,7 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 		for (SquareView sV : selectedSquareViews) {
 			squares.add(sV.getSquare());
 		}
+		
 		switch(playState.getSelectedMove()) {
 		case LevelPlayState.MOVE_REGULAR:
 			m = new MoveRegular(level, squares);
