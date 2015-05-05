@@ -50,4 +50,8 @@ public class ReleaseStats extends LevelStats {
 	public void setReleaseBlocksLeft(int releaseBlocksLeft){
 		this.releaseBlocksLeft = releaseBlocksLeft;
 	}
+	
+	public int getUniqueIntValue() {
+		return this.releaseBlocksLeft;
+	}
 }

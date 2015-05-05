@@ -34,7 +34,7 @@ public class MoveResetBoard extends Move {
 	@Override
 	public boolean performMove() {
 		level.shuffleBoard();
-		level.getStats().update(getPoints(), 0, 0);
+		level.getStats().update(getPoints(), level.getGrid().getNumMarkedSquaresLeft(), level.getGrid().getNumReleasesLeft());
 		return true;
 	}
 	

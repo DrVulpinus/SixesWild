@@ -212,15 +212,15 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			return;
 
 		// otherwise, check for special case elimination, then reset the current move to regular move
-		if (m.performMove())
-			if(level.getLvlType() == LevelType.ELIMINATION && playState.getSelectedMove() == LevelPlayState.MOVE_REGULAR){
+		if (m.performMove()) {
+			//if(level.getLvlType() == LevelType.ELIMINATION && playState.getSelectedMove() == LevelPlayState.MOVE_REGULAR){
 				for (SquareView sV : selectedSquareViews) {
 					sV.update();
-				}
+			//	}
 			}
-			playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);		//reset to regular move after a move is made
-	
 			
+			playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);		//reset to regular move after a move is made
+		}
 	}
 	
 	/**

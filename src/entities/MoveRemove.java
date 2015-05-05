@@ -32,7 +32,7 @@ public class MoveRemove extends Move {
 		Square sq = this.getSquaresInvolved().get(0);
 		sq.setBlock(null);
 		sq.setNorthernBlock();		
-		level.getStats().update(getPoints(), 0, 0);		
+		level.getStats().update(getPoints(), level.getGrid().getNumMarkedSquaresLeft(), level.getGrid().getNumReleasesLeft());		
 		return true;
 	}
 
