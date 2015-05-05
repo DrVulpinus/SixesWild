@@ -1,6 +1,6 @@
 package src;
 
-import entities.Timer;
+
 
 /** The stats for a level. Every type of level contains a score, and accepts a number of points to add
  * to that score. Every level also contains three stars to achieve and a unique value. If the level is Puzzle, Elimination,
@@ -110,9 +110,5 @@ public class LevelStats {
 	
 	public void setUniqueIntValue(int unique){
 		this.unique = unique;
-	}
-
-	public Timer getTimer(){
-		return null;
 	}
 }
