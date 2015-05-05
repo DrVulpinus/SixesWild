@@ -33,7 +33,6 @@ public class TestSquare {
 		square.addNeighbor(square4);
 		square.addNeighbor(square5);
 		square.addNeighbor(square6);
-		square.makeReleaseSquare(location2);
 		square.setBlock(block);
 		
 		assertEquals(location,square2.getLoc());
