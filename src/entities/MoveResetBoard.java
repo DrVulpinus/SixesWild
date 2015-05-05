@@ -5,6 +5,7 @@ import java.util.ArrayList;
  * This class contains a move that resets the board  
  */
 
+
 import controllers.MoveController;
 /**
  * Takes a level and resets all of the blocks and sets the parameters for points back to zero.
@@ -44,6 +45,14 @@ public class MoveResetBoard extends Move {
 	 */
 	@Override
 	public boolean isValid() {
+		for (Square s : super.getSquaresInvolved()) { 
+			if(s == null || s.getBlock() == null){
+				break;
+			}
+			if (s.getBlock().getValue() == 6)	//move invalid if there is a 6 block selected
+				return false;
+		}
+
 		return true;
 	}
 	

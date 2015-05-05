@@ -45,6 +45,14 @@ public class MoveSwap extends Move{
 		if (this.getSquaresInvolved().size() != 2){
 			return false;
 		}
+		for (Square s : super.getSquaresInvolved()) { 
+			if(s == null || s.getBlock() == null){
+				break;
+			}
+			if (s.getBlock().getValue() == 6)	//move invalid if there is a 6 block selected
+				return false;
+		}
+
 		return true;
 	}
 	
