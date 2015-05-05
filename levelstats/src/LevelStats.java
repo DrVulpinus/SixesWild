@@ -36,6 +36,9 @@ public class LevelStats {
 		this.points = points;
 	}
 
+	public void initialize(int markedSquaresLeft, int releasesLeft) {
+	}
+	
 	/**
 	 * Updates the score with the number of points from a move.
 	 * @param points The number of points from when a move is made.

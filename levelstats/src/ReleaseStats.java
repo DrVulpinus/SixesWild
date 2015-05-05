@@ -31,6 +31,11 @@ public class ReleaseStats extends LevelStats {
 	}
 
 	@Override
+	public void initialize(int markedSquares, int releasesLeft) {
+		this.releaseBlocksLeft = releasesLeft;
+	}
+	
+	@Override
 	public void update(int points, int markedSquaresLeft, int releasesLeft) {
 		updating = true;
 		this.score = getScore();

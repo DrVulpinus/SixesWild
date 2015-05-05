@@ -34,6 +34,11 @@ public class EliminationStats extends LevelStats{
 		return (this.markedSquaresLeft >= this.totalSquares);
 	}
 	
+	@Override
+	public void initialize(int markedSquaresLeft, int releasesLeft) {
+		this.markedSquaresLeft = markedSquaresLeft;
+	}
+	
 	/**
 	 * Updates the score.
 	 */
