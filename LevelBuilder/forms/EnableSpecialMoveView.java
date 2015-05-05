@@ -11,6 +11,10 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
+/**
+ * The view that appears when the user requests to edit the special moves.
+ *
+ */
 public class EnableSpecialMoveView extends JPanel{
 	private JPanel panel;
 	private JCheckBox chckbxRemoveSpecialMove;
@@ -29,7 +33,7 @@ public class EnableSpecialMoveView extends JPanel{
 		add(getBtnClose(), "cell 6 4");
 		//addSettingListener();	
 	}
-	
+
 
 	private JPanel getPanel() {
 		if (panel == null) {

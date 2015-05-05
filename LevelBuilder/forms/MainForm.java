@@ -63,7 +63,7 @@ public class MainForm extends JFrame {
 	/* Button for choosing to build Release */
 	private JButton btnCreateReleaseLevel;
 	MainForm main = this;
-	
+
 
 	/**
 	 * Create the frame.
@@ -85,13 +85,13 @@ public class MainForm extends JFrame {
 		getContentPane().add(getPanel(), "cell 3 2,grow");
 		getContentPane().add(getPanel_1(), "cell 3 3,grow");
 		getContentPane().add(getPanel_3(), "cell 3 4,grow");
-		
+
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
 		setSize(800, 550);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild Builder");
-		
+
 		/*
 		 * add action listener to Puzzle Button
 		 */
@@ -105,7 +105,7 @@ public class MainForm extends JFrame {
 				buildingController = new BuildingController(new Level(LevelType.PUZZLE), MainForm.this);
 			}
 		});
-		
+
 		/*
 		 * add action listener to lightning button
 		 */
@@ -119,7 +119,7 @@ public class MainForm extends JFrame {
 				buildingController = new BuildingController(new Level(LevelType.LIGHTNING), MainForm.this);
 			}
 		});
-		
+
 		/*
 		 * add action listener to elimination button
 		 */
@@ -133,7 +133,7 @@ public class MainForm extends JFrame {
 				buildingController = new BuildingController(new Level(LevelType.ELIMINATION), MainForm.this);
 			}
 		});
-		
+
 		/*
 		 * add action listener to release button
 		 */
@@ -147,17 +147,17 @@ public class MainForm extends JFrame {
 				buildingController = new BuildingController(new Level(LevelType.RELEASE), MainForm.this);
 			}
 		});
-		
 
 
-		
-//		leveleditor.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
-//			@Override
-//			public void actionPerformed(ActionEvent e){
-//				dispose();
-//			}
-//		});
-		
+
+
+		//		leveleditor.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
+		//			@Override
+		//			public void actionPerformed(ActionEvent e){
+		//				dispose();
+		//			}
+		//		});
+
 
 	}
 	/*
@@ -210,7 +210,7 @@ public class MainForm extends JFrame {
 		}
 		return mntmRemoveSpecialMove;
 	}
-	*/
+	 */
 	/**
 	 * get the Panel contain the Lightning Button
 	 * @return JPanel
@@ -295,13 +295,13 @@ public class MainForm extends JFrame {
 		}
 		return btnCreateReleaseLevel;
 	}
-	
-	
+
+
 
 	private Level getSampleLevel() {
 		Grid grid = new Grid();
 		LevelStats stats = new LevelStats(0, 0);
-	
+
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
 				Square s = new Square(new Location(row, col));
@@ -309,11 +309,11 @@ public class MainForm extends JFrame {
 				grid.add(s);
 			}
 		}
-		
+
 		Level lvl = new Level(stats, grid, "AlexSampleLevel");
-		
+
 		return lvl;
-			
+
 	}
 
 

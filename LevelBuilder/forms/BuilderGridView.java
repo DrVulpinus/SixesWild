@@ -29,7 +29,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 	ArrayList<SquareView> squareViews = new ArrayList<SquareView>();
 	ToolControlListener toolListener;
 	boolean isFilled = false;
-	
+
 	Color color = new Color(0,0,0); 
 	double currentXVal = 0;
 	double currentYVal = 0;
@@ -37,36 +37,36 @@ public class BuilderGridView extends JPanel implements MouseListener {
 	int rows = 9;
 	double xIncrement = 0;
 	double yIncrement = 0;
-	
+
 	Rectangle2D rect = null;
 	Grid grid;
-	
+
 	public BuilderGridView(Grid grid, ToolControlListener toolListener){
 		this.grid = grid;
-	    this.toolListener = toolListener;
+		this.toolListener = toolListener;
 		this.setSquares(grid);
-	
+
 		this.addMouseListener(this);
 		this.setBackground(new Color(0xEEEEEE));
-	
-		
+
+
 		//isFilled = true;
-		}
-		
-//		setLayout(null);//Make sure it is absolute layout
-//		for (int y = 0; y < 9; y++){
-//			for (int x = 0; x < 9; x++) {				
-//				Square s = new Square();
-//				s.setLoc(new Location(y, x));
-//				s.setBlock(new Block(1, 2));
-//				SquareView sV = new SquareView(s);
-//				squareViews.add(sV);
-//				this.add(sV);
-//
-//			}
-//		//isFilled = true;
-//		}
-	
+	}
+
+	//		setLayout(null);//Make sure it is absolute layout
+	//		for (int y = 0; y < 9; y++){
+	//			for (int x = 0; x < 9; x++) {				
+	//				Square s = new Square();
+	//				s.setLoc(new Location(y, x));
+	//				s.setBlock(new Block(1, 2));
+	//				SquareView sV = new SquareView(s);
+	//				squareViews.add(sV);
+	//				this.add(sV);
+	//
+	//			}
+	//		//isFilled = true;
+	//		}
+
 	/**
 	 * constructor of Builder Grid
 	 */
@@ -77,7 +77,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 				fillGrid();
 			}
 		});
-		
+
 		setLayout(null);//Make sure it is absolute layout
 		for (int y = 0; y < 9; y++){
 			for (int x = 0; x < 9; x++) {				
@@ -90,13 +90,13 @@ public class BuilderGridView extends JPanel implements MouseListener {
 				rows = 9;
 				columns = 9;
 			}
-		
-		//isFilled = true;
+
+			//isFilled = true;
 		}
 		fillGrid();
 	}
-	
-	
+
+
 
 	/**
 	 * set the square for the grid
@@ -111,24 +111,24 @@ public class BuilderGridView extends JPanel implements MouseListener {
 			sV.update();
 			squareViews.add(sV);
 			this.add(sV);
-			
+
 		}
-		
-//		for (int y = 0; y < 9; y++){
-//			for (int x = 0; x < 9; x++) {				
-//				Square s = new Square();
-//				s.setLoc(new Location(y, x));
-//				//s.setBlock(new Block(1, 2));
-//				SquareView sV = new SquareView(s);
-//				squareViews.add(sV);
-//				this.add(sV);
-//				//rows = 9;
-//				//columns = 9;
-//			}
-//		}
+
+		//		for (int y = 0; y < 9; y++){
+		//			for (int x = 0; x < 9; x++) {				
+		//				Square s = new Square();
+		//				s.setLoc(new Location(y, x));
+		//				//s.setBlock(new Block(1, 2));
+		//				SquareView sV = new SquareView(s);
+		//				squareViews.add(sV);
+		//				this.add(sV);
+		//				//rows = 9;
+		//				//columns = 9;
+		//			}
+		//		}
 	}
-	
-	
+
+
 
 	/**
 	 * 
@@ -159,7 +159,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 
 		//g2.draw(new Line2D.Double(rect.getX(), rect.getY(), rect.getX()+ rect.getWidth(), rect.getY() + rect.getHeight()));
 
-		
+
 		if (!isFilled)
 			fillGrid();
 
@@ -179,7 +179,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 
 			lineX+= rect.getWidth()/columns;
 		}
-	
+
 	}
 
 	/**
@@ -188,9 +188,9 @@ public class BuilderGridView extends JPanel implements MouseListener {
 	public void fillGrid() {	
 		if (rect == null)
 			return;
-		
+
 		this.setVisible(false);
-		
+
 		//System.out.println(this.getSize().toString());
 		for (SquareView squareView : squareViews) {
 			int col = squareView.getSquare().getLoc().getCol();
@@ -201,7 +201,7 @@ public class BuilderGridView extends JPanel implements MouseListener {
 			//System.out.println(squareView.getLocation().toString() + squareView.getSize().toString());
 		}
 		this.setVisible(true);
-	/*	
+		/*	
 		for (int y = 0; y < columns; y++){
 			for (int x = 0; x < rows; x++) {				
 				sV.setLocation((int) (x*rect.getWidth()/columns), (int) (y*rect.getHeight()/rows));
@@ -209,12 +209,12 @@ public class BuilderGridView extends JPanel implements MouseListener {
 				//System.out.println(squareViews.size());
 				//System.out.println(sV.getLocation().toString() + " " + sV.getSize().toString());
 				sV.update();
-				
+
 			}
-		*/
+		 */
 		//isFilled = true;
 	}
-	
+
 	/**
 	 * mouseClick events for this grid
 	 */
@@ -229,33 +229,33 @@ public class BuilderGridView extends JPanel implements MouseListener {
 		System.out.println(roundXOutput+","+YOutput);
 		int row = roundYOutput;
 		int column = roundXOutput;
-		
+
 		if (row < 0 || row > 9 || column < 0 || column > 9)		//if detected grid coordinates are outside of the grid
 			return;
-		
+
 		Location loc = new Location(row, column);
 		System.out.println("Grid Clicked at: " + loc);
 		toolListener.useTool(loc);
-		
+
 		//setSquares(this.grid);
 		repaint();
 	}
-		
-	
+
+
 	public void mousePressed(MouseEvent e) {
-		
+
 	}
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	} }
 
 

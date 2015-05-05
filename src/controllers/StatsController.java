@@ -3,7 +3,6 @@ package controllers;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import entities.EliminationLevel;
 import entities.Level;
 import src.EliminationStats;
 import src.EliminationStatsView;

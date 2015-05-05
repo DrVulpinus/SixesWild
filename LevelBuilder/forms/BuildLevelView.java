@@ -37,7 +37,7 @@ public class BuildLevelView extends JPanel{
 	private JButton btnExitWithoutSaving;
 	/*  JComboBox for selecting what to do with the grid */
 	private JComboBox toolSelector;
-	
+
 	/*  Level to be created */
 	private Level level;
 	private JPanel panel;
@@ -46,7 +46,7 @@ public class BuildLevelView extends JPanel{
 	private JPanel panel_1;
 	/*  JButton for close the window with saving?*/
 	private JButton btnClose;
-	
+
 	/* selecting tool for the toolSelector */
 	private ToolControlListener useTool;
 	/*  JButton for open the window for enabling and disabling special moves */
@@ -57,18 +57,18 @@ public class BuildLevelView extends JPanel{
 	private JButton btnEditMultiplier;
 	/*  JButton for open the window for editing star level requirement */
 	private JButton btnEditStarPoints;
-	
+
 	private JDialog settingsDialog;
-//	PuzzleStatsView puzzleStatsView;
-//	ReleaseStatsView releaseStatsView;
-//	EliminationStatsView eliminationStatsView;
-//	LightningStatsView lightningStatsView;
-//	LevelPlayView levelPlayView;
-//	PuzzleStats puzzleStats;
-//	ReleaseStats releaseStats;
-//	EliminationStats eliminationStats;
-//	LightningStats lightningStats;
-	
+	//	PuzzleStatsView puzzleStatsView;
+	//	ReleaseStatsView releaseStatsView;
+	//	EliminationStatsView eliminationStatsView;
+	//	LightningStatsView lightningStatsView;
+	//	LevelPlayView levelPlayView;
+	//	PuzzleStats puzzleStats;
+	//	ReleaseStats releaseStats;
+	//	EliminationStats eliminationStats;
+	//	LightningStats lightningStats;
+
 	/*public BuildLevelView() {
 		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26.00,center][31.00,top][8.00][grow][grow][grow][bottom]"));
 		add(getMenuBar(), "cell 0 0 3 1,aligny top");
@@ -76,30 +76,30 @@ public class BuildLevelView extends JPanel{
 		add(getTestJPanel(), "cell 0 3 1 4,grow");
 		add(getBuilderGridView(), "cell 1 3,grow");
 		add(getToolSelector(), "cell 2 2,grow");
-		
 
-		
+
+
 		SpecialMoveView specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 2 3,grow");
 		add(getBtnExitWithoutSaving(), "cell 2 4");
 		add(getPanel(), "cell 2 4,grow");
 		add(getPanel_1(), "cell 2 5,grow");
-		
+
 	}
-	*/
-	
+	 */
+
 	/**
 	 * constructor for buildLeverView
 	 * @param level
 	 * @param useTool
 	 */
 	public BuildLevelView(Level level, ToolControlListener useTool) {
-		
+
 		this.level = level;
-		
+
 		if (this.level == null)
 			this.level = new Level(new LevelStats(0, 0) , new Grid());
-		
+
 		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
 		setLayout(new MigLayout("", "[][203.00px,grow,fill][300px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
 		add(getBtnEditSpecialMoves(), "cell 1 0");
@@ -108,15 +108,15 @@ public class BuildLevelView extends JPanel{
 		add(getBtnEditStarPoints(), "cell 1 1");
 		add(getToolSelector(), "cell 3 1");
 		//add(getTestJPanel(), "cell 0 2 2 1,grow");
-		
-//		 panel = new JPanel();
-//		 panel.setLayout(new BorderLayout());
-//			add(panel, "cell 2 1, grow");
 
-		
+		//		 panel = new JPanel();
+		//		 panel.setLayout(new BorderLayout());
+		//			add(panel, "cell 2 1, grow");
+
+
 		//add the Builder Grid in the BuildLevelView
 		add(getBuilderGridView(), "cell 2 2,grow");
-		
+
 
 		//add the Speical Move View into the BuildLevelView
 		SpecialMoveView specialMoveView = new SpecialMoveView();
@@ -125,41 +125,41 @@ public class BuildLevelView extends JPanel{
 		add(getPanel(), "cell 3 3,grow");
 		add(getPanel_1(), "cell 3 4,grow");
 		generateLevelStatsView();
-		
-//		
-//		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26,00, center][104.00,top][8.00][71.00,grow,center][bottom]"));
-//		add(getMenuBar(), "cell 0 0 3 1,aligny top");
-//		add(getMenuBar_1(), "cell 0 1 3 1");
-//		add(getTestJPanel(), "cell 0 3,grow");
-//		add(getBuilderGridView(), "cell 1 3,grow");
-//		add(getToolSelector(), "cell 2 2,grow");
-//		
-//
-//		
-//		SpecialMoveView specialMoveView = new SpecialMoveView();
-//		add(specialMoveView, "cell 2 3,grow");
-//		add(getBtnExitWithoutSaving(), "cell 2 4");
-		
+
+		//		
+		//		setLayout(new MigLayout("", "[250,center][215.00,grow,center][120.00,grow,center]", "[26,00, center][104.00,top][8.00][71.00,grow,center][bottom]"));
+		//		add(getMenuBar(), "cell 0 0 3 1,aligny top");
+		//		add(getMenuBar_1(), "cell 0 1 3 1");
+		//		add(getTestJPanel(), "cell 0 3,grow");
+		//		add(getBuilderGridView(), "cell 1 3,grow");
+		//		add(getToolSelector(), "cell 2 2,grow");
+		//		
+		//
+		//		
+		//		SpecialMoveView specialMoveView = new SpecialMoveView();
+		//		add(specialMoveView, "cell 2 3,grow");
+		//		add(getBtnExitWithoutSaving(), "cell 2 4");
+
 	}
-	
+
 
 	/**
 	 * get the panel for StatsView
 	 * @return StatsView
 	 */
-//	private StatsView getTestJPanel() {
-//		if (statsView == null) {
-//			statsView = new StatsView(level);
-//		}
-//		return statsView;
-//	}
+	//	private StatsView getTestJPanel() {
+	//		if (statsView == null) {
+	//			statsView = new StatsView(level);
+	//		}
+	//		return statsView;
+	//	}
 	/**
 	 * get the Grid of Builder 
 	 * @return BuilderGridView
 	 */
 	public BuilderGridView getBuilderGridView() {
 		if (builderGridView == null) {
-				builderGridView = new BuilderGridView();
+			builderGridView = new BuilderGridView();
 		}
 		return builderGridView;
 	}
@@ -175,7 +175,7 @@ public class BuildLevelView extends JPanel{
 		}
 		return toolSelector;
 	}
-	
+
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
@@ -228,19 +228,19 @@ public class BuildLevelView extends JPanel{
 	}
 	public void setLevel(Level level) {
 		this.level = level;
-		
+
 	}
-	
+
 	/**
 	 * @return level The level the user is currently in.
 	 */
 	public Level getLevel() {
 		return this.level;
 	}
-	
-	
+
+
 	void generateLevelStatsView(){
-		
+
 		LevelType type = level.getLvlType();
 
 		switch(type) {
@@ -270,4 +270,4 @@ public class BuildLevelView extends JPanel{
 			break;
 
 		}
-}}
+	}}
