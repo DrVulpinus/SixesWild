@@ -60,6 +60,7 @@ public class LevelController implements ChangeLevelPlayState{
 		this.level = level;
 		this.level.shuffleBoard(); //Generates a random board layout
 		this.level.getGrid().initialize();
+		this.level.getStats().update(0, this.level.getGrid().getNumMarkedSquaresLeft(), this.level.getGrid().getNumRealeasesLeft());
 		this.window = window;
 		this.playState = new LevelPlayState();
 		this.moveController = new MoveController(level, playState);
