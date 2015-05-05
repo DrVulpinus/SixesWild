@@ -91,7 +91,8 @@ public class LevelPanel extends JPanel {
 		}
 		if (lvl.getStats().getStarCount() > 2){
 			add(getLblStar3());
-		}		
+		}	
+			
 		setLevelName(level.getName());
 		try {
 			setLevelType(getTypeString(level.getLvlType()));
