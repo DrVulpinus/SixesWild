@@ -24,7 +24,6 @@ import java.awt.GridLayout;
 
 /**
  * The GameGridView class displays the grid of squares and blocks that appear in the level during game play.
- * @author Alex Wald
  *
  */
 

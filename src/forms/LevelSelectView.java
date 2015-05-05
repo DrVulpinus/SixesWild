@@ -57,7 +57,6 @@ import java.awt.event.ComponentEvent;
 /**
  * The level selection screen. Contains a list of panels, each of which is a level.
  * Also contains a state of saved levels.
- * @author Miya
  *
  */
 public class LevelSelectView extends SelectView {

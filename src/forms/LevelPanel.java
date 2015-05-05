@@ -20,7 +20,6 @@ import java.awt.event.MouseEvent;
 
 /**
  * A panel that can be selected to enter a level.
- * @author Miya
  *
  */
 public class LevelPanel extends JPanel {
@@ -35,7 +34,7 @@ public class LevelPanel extends JPanel {
 	Color normalColor;
 	Color hoveredColor;
 
-	
+
 	/**
 	 * Makes a new level panel
 	 * @param lvl The level that this panel selects
@@ -154,10 +153,6 @@ public class LevelPanel extends JPanel {
 
 	}
 
-	/**
-	 * 
-	 * @return 
-	 */
 	JLabel getLblLevelName() {
 		if (lblLevelname == null) {
 			lblLevelname = new JLabel("LevelName");
