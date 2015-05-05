@@ -41,7 +41,6 @@ import entities.Timer;
 
 /**
  * The Main JFrame for the builder program
- * @author agyness
  */
 public class MainForm extends JFrame {
 	//BuildLevelView leveleditor = new BuildLevelView();

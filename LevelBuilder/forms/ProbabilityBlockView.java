@@ -12,6 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
+/**
+ * The view that contains the GUI for the user to input probabilities from
+ * @author Miya
+ *
+ */
 public class ProbabilityBlockView extends JPanel{
 	
 	private JPanel panel;
