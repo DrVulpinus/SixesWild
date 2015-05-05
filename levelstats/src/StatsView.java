@@ -1,30 +1,19 @@
 package src;
 
-import javax.swing.JPanel;
-
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import com.jgoodies.forms.factories.FormFactory;
-
-import javax.swing.JLabel;
-
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridBagLayout;
-
-import javax.swing.BoxLayout;
-
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-import javax.swing.JSpinner;
-import javax.swing.JFormattedTextField;
-import javax.swing.SpinnerNumberModel;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
-import javax.swing.JProgressBar;
+
+import entities.Timer;
 
 public abstract class StatsView extends JPanel {
 	private JLabel lblTypelabel;
@@ -125,7 +114,21 @@ public abstract class StatsView extends JPanel {
 		setStarsToShow();
 	}
 	
+	/**
+	 * Update the text field containing the limiting condition from the stats
+	 * @param unique The integer that needs to be updated, which is unique to the type
+	 */
+	public void updateLimitingFactor(int unique){
+		getTxtLimitingfactordisplay().setText(Integer.toString(unique));
+	}
 	
+	/**
+	 * Update the text field containing the limiting condition from the stats
+	 * @param t The timer whose display needs to be updated
+	 */
+	public void updateLimitingFactor(Timer t){
+		getTxtLimitingfactordisplay().setText(t.toString());
+	}
 	
 	/**
 	 * Sets the points required for each star to be achieved

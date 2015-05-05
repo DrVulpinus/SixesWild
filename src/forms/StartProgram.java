@@ -5,7 +5,6 @@ package forms;
  * Runs the application, calls the splash screen to start,
  * then removes the splash screen and calls the MainFrame 
  * to put up the main menu.
- * @author Miya
  *
  */
 public class StartProgram {

@@ -30,7 +30,6 @@ import entities.LevelType;
  * grid, and the special moves. Also contains the level itself to call the grid
  * and a move control listener to give to the grid, so that it can update itself
  * when moves are made.
- * @author Miya
  *
  */
 public class LevelPlayView extends JPanel {

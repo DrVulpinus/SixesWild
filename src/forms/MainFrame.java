@@ -58,7 +58,6 @@ import java.util.TimerTask;
  * achievements screen, and the view for every playable level.
  * 
  * Also contains the controller which manages the level itself.
- * @author Miya
  *
  */
 public class MainFrame extends JFrame{
@@ -83,14 +82,14 @@ public class MainFrame extends JFrame{
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent arg0) {
-				
+
 				dispose();
 				System.runFinalization();
 				System.exit(0);
-				
+
 			}
 		});
-		
+
 		setContentPane(mainMenu);
 		colorTimer.schedule(new TimerTask() {
 
@@ -109,11 +108,11 @@ public class MainFrame extends JFrame{
 
 			}
 		}, 0, 50);
-		
+
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
 		setSize(1200, 650);
-		
+
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild");
 		setResizable(false);

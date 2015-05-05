@@ -6,6 +6,7 @@ import entities.LevelType;
 public class ReleaseStats extends LevelStats {
 
 	int releaseBlocksLeft;
+	boolean decrement = true;
 	
 	
 	public ReleaseStats() {
@@ -29,6 +30,11 @@ public class ReleaseStats extends LevelStats {
 		return (this.releaseBlocksLeft <= 0);
 	}
 
+	@Override
+	public void initialize(int markedSquares, int releasesLeft) {
+		this.releaseBlocksLeft = releasesLeft;
+	}
+	
 	@Override
 	public void update(int points, int markedSquaresLeft, int releasesLeft) {
 		updating = true;

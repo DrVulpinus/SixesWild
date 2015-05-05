@@ -43,7 +43,7 @@ public class MoveRegular extends Move {
 			
 		}
 		int newpoints = points * multiplier*this.getSquaresInvolved().size();
-		level.getStats().update(newpoints, 0, 0);
+		level.getStats().update(newpoints, level.getGrid().getNumMarkedSquaresLeft(), level.getGrid().getNumRealeasesLeft());
 		//removes blocks from all squares involved
 		for (Iterator<Square> i = getSquaresInvolved().iterator(); i.hasNext();) {
 			Square sq = i.next();

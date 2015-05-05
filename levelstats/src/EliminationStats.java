@@ -2,40 +2,54 @@ package src;
 
 import entities.LevelType;
 
+/**
+ * Contains the stats for elimination mode. Has a number of total squares and a number of markedSquares,
+ * which is the number of marked squares remaining.
+ * @author Miya
+ *
+ */
 public class EliminationStats extends LevelStats{
-	int markedSquares;
 	int totalSquares;
 	int markedSquaresLeft;
 	
 	public EliminationStats(){
 		super(0);
-		this.markedSquares = 0;
+		this.markedSquaresLeft = 0;
 		this.totalSquares = 0;
 	}
 	
 	public EliminationStats(int score, int totalSquares){
 		super(score);
-		this.markedSquares = 0;
+		this.markedSquaresLeft = 0;
 		this.totalSquares = totalSquares;
 	}
 	
 	public EliminationStats(int score, int points, int markedSquares){
 		super(score, points);
-		this.markedSquares = markedSquares;
+		this.markedSquaresLeft = markedSquares;
 	}
 	
 	@Override
 	public boolean winCondition() {
-		return (this.markedSquares >= this.totalSquares);
+		return (this.markedSquaresLeft >= this.totalSquares);
 	}
 	
+	@Override
+	public void initialize(int markedSquaresLeft, int releasesLeft) {
+		this.markedSquaresLeft = markedSquaresLeft;
+	}
+	
+	/**
+	 * Updates the score.
+	 */
 	public void update(int points, int markedSquaresLeft, int releasesLeft) {
 		updating = true;
 		this.score = getScore();
 		this.markedSquaresLeft = markedSquaresLeft;
 	}
 	
-	public int getNumMarkedSquares(){
-		return markedSquares;
+	@Override
+	public int getUniqueIntValue(){
+		return markedSquaresLeft;
 	}
 }

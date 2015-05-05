@@ -9,7 +9,6 @@ import java.awt.Color;
 /**
  * The main menu screen. Contains a button called Level and a button
  * called Achievements.
- * @author Miya
  *
  */
 public class MainMenuView extends JPanel {
@@ -25,7 +24,7 @@ public class MainMenuView extends JPanel {
 		add(getBtnAchievments(), "cell 2 1,grow");
 
 	}
-	
+
 	/**
 	 * @return btnLevel The button that calls the level selection screen when pressed.
 	 */
@@ -35,7 +34,7 @@ public class MainMenuView extends JPanel {
 		}
 		return btnLevel;
 	}
-	
+
 	/**
 	 * @return btnAchievements The button that calls the achievement screen when pressed.
 	 */

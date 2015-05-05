@@ -7,7 +7,6 @@ import javax.swing.JScrollPane;
 
 /**
  * The achievements screen. Shows the number of stars obtained per level.
- * @author Miya
  *
  */
 public class AchievementSelectView extends SelectView{
@@ -45,7 +44,7 @@ public class AchievementSelectView extends SelectView{
 		}
 		return lblLvlIcon;
 	}
-	
+
 	/**
 	 * @return lblLvlNumber The label containing the text describing the level number.
 	 */
@@ -55,7 +54,7 @@ public class AchievementSelectView extends SelectView{
 		}
 		return lblLvlNumber;
 	}
-	
+
 	/**
 	 * @return lblStar The label containing the image for the first star.
 	 */
@@ -75,7 +74,7 @@ public class AchievementSelectView extends SelectView{
 		}
 		return lblStar_1;
 	}
-	
+
 	/**
 	 * @return lblStar_2 The label containing the image for the third star.
 	 */
