@@ -17,12 +17,16 @@ import javax.swing.JButton;
  */
 public class EnableSpecialMoveView extends JPanel{
 	private JPanel panel;
+	/* checkbox for enabling remove special move */
 	private JCheckBox chckbxRemoveSpecialMove;
 	private JPanel panel_1;
+	/* checkbox for enabling swap special move */
 	private JCheckBox chckbxSwapSpecialMove;
 	private JPanel panel_2;
+	/* checkbox for enabling reset special move */
 	private JCheckBox chckbxResetSpecialMove;
 	private JLabel lblCheckToEnable;
+	/* button for close the window */
 	private JButton btnClose;
 	public EnableSpecialMoveView() {
 		setLayout(new MigLayout("", "[][-45.00][][-32.00][204.00,grow][][grow]", "[][][31.00][34.00][grow]"));

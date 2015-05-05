@@ -12,20 +12,25 @@ import javax.swing.JButton;
 public class ProbabilityMultiplierView extends JPanel{
 	private JPanel panel;
 	private JLabel lblNewLabel;
+	/* TextField for editing the probability of block x1 */
 	private JTextField textField;
 	private JLabel label;
 	private JPanel panel_1;
 	private JLabel lblNewLabel_1;
+	/* TextField for editing the probability of block x2*/
 	private JTextField textField_1;
 	private JLabel label_1;
 	private JPanel panel_2;
 	private JLabel lblX;
+	/* TextField for editing the probability of block x3*/
 	private JTextField textField_2;
 	private JLabel label_2;
+	/* Button for apply the changes */
 	private JButton btnApplyChanges;
 	private JLabel lblTotal;
 	private JTextField textField_3;
 	private JLabel label_3;
+	/* Button for closing the window */
 	private JButton btnClose;
 	public ProbabilityMultiplierView() {
 		setLayout(new MigLayout("", "[][55.00][209.00,grow][grow]", "[31.00][fill][][][][][][]"));

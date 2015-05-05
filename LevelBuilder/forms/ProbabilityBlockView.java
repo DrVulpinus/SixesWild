@@ -20,34 +20,41 @@ import javax.swing.JButton;
 public class ProbabilityBlockView extends JPanel{
 
 	private JPanel panel;
+	/* TextField for editing the probability of block 1 */
 	private JTextField textField;
 	private JLabel label;
 	private JLabel label_1;
 	private JPanel panel_1;
 	private JLabel label_2;
+	/* TextField for editing the probability of block 2 */
 	private JTextField textField_1;
 	private JLabel label_3;
 	private JPanel panel_2;
 	private JPanel panel_3;
 	private JLabel label_4;
+	/* TextField for editing the probability of block 3 */
 	private JTextField textField_2;
 	private JLabel label_5;
 	private JPanel panel_4;
 	private JLabel label_6;
+	/* TextField for editing the probability of block 4 */
 	private JTextField textField_3;
 	private JLabel label_7;
-	//private JPanel panel_5;
 	private JLabel label_8;
+	/* TextField for editing the probability of block 5 */
 	private JTextField textField_4;
 	private JLabel label_9;
 	private JLabel label_10;
+	/* TextField for editing the probability of block 6 */
 	private JTextField textField_5;
 	private JLabel label_11;
 	private JPanel panel_6;
 	private JLabel lblTotal;
 	private JTextField textField_6;
 	private JLabel label_12;
+	/* JButton for applying changes */
 	private JButton btnApplyChanges;
+	/* JButton for closing the window */
 	private JButton btnClose;
 
 
