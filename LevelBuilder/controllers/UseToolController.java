@@ -9,11 +9,10 @@ import Interfaces.ToolControlListener;
 import builder_entities.LevelBuildState;
 
 /**
- * 
- * @author Alex Wald
+ * The controller that implements the tools in the builder. Allows adding squares, removing squares,
+ * adding sixes, removing sixes, and adding and removing release blocks.
  *
  */
-
 
 public class UseToolController implements ToolControlListener{
 
@@ -27,11 +26,16 @@ public class UseToolController implements ToolControlListener{
 		this.builderGridView = null;
 	}
 	
+	/**
+	 * Uses a tool at a given location.
+	 */
 	public void useTool(Location loc) {
 		
+		// if a square is not a release square, it is a regular square
 		if (buildState.getSelectedTool().equals(LevelBuildState.ADD_SQUARE))
 			addSquare(loc, false);
 		
+		// however, if otherwise, it should function as a release square
 		if (buildState.getSelectedTool().equals(LevelBuildState.ADD_RELEASE_SQUARE))
 			addSquare(loc, true);
 		
@@ -50,17 +54,31 @@ public class UseToolController implements ToolControlListener{
 		System.out.println("grid size: " + level.getGrid().size());
 	}
 	
+	/**
+	 * Adds a square to the grid. Requires a location in the grid at which to place the square, and
+	 * determines whether it is a release block upon placement.
+	 * @param loc The location where the square is being added in the grid.
+	 * @param release The variable that determines whether the square is a release block, and sets the square accordingly.
+	 */
 	public void addSquare(Location loc, boolean release) {
 		Square s = new Square(loc);
 		s.setRelease(release);
 		level.getGrid().add(s);
 	}
 	
+	/**
+	 * Removes a square from the grid. Requires a location from which to remove it. If a square is already empty, nothing happens.
+	 * @param loc The location in the grid where a square should be removed.
+	 */
 	public void removeSquare(Location loc) {
 		level.getGrid().remove(loc);
 		System.out.println("Use remove Tool at " + loc);
 	}
 	
+	/**
+	 * Adds a six to the grid. Requires a location in the grid at which to place the block and a square to which to add it.
+	 * @param loc The location in the grid where the six block is being added.
+	 */
 	public void addSixBlock(Location loc) {
 		
 		Square s = level.getGrid().getSquare(loc);
@@ -69,6 +87,11 @@ public class UseToolController implements ToolControlListener{
 			s.setBlock(new Block(6, 1));
 	}
 	
+	/**
+	 * Removes a block from the grid. Requires a location from which to remove it and a square from which to remove it from.
+	 * If the square does not already exist, nothing happens.
+	 * @param loc The location in the grid from which the block should be removed.
+	 */
 	public void removeBlock(Location loc) {
 		Square s = level.getGrid().getSquare(loc);
 		

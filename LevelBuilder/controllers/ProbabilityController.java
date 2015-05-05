@@ -13,6 +13,12 @@ import forms.ProbabilityBlockView;
 import forms.ProbabilityMultiplierView;
 import forms.TypeSelectView;
 
+/**
+ * The controller that readjusts the GUI that allows the user to set the probability.
+ * Readjusts the probability for individual block values and informs the user when
+ * those probabilities do not add up to 100 percent.
+ *
+ */
 public class ProbabilityController {
 
 	TypeSelectView typeSelectView = new TypeSelectView();
@@ -57,7 +63,7 @@ public class ProbabilityController {
 			final int[] multi;
 			multi = new int[3];
 			
-			
+			// listens for input in the value probability text fields, and returns error messages if the case does not match
 			probabilityBlockView.getBtnApplyChanges().addActionListener(new ActionListener(){
 				@Override
 				public void actionPerformed(ActionEvent e){
@@ -94,6 +100,7 @@ public class ProbabilityController {
 						}
 			});
 			
+			// listens for input in the multiplier probability text fields, and returns error messages if the case does not match
 			probabilityMultiplierView.getBtnApplyChanges().addActionListener(new ActionListener(){
 
 				@Override

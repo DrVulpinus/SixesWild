@@ -10,6 +10,10 @@ import javax.swing.JTextField;
 import forms.AdjustStarView;
 import src.LevelStats;
 
+/**
+ * The controller that handles the updates to the star points and adjusts the view accordingly.
+ *
+ */
 public class StarPointsController {
 	
 	AdjustStarView adjustStarView;
@@ -34,10 +38,12 @@ public class StarPointsController {
 	
 	
 	private void addListeners() {
+		// updates the view when the apply changes button is pressed
 		this.apply.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				// returns valid if the star counts increment in ascending order
 				int sc1, sc2, sc3;
 				sc1 = Integer.parseInt(star1.getText());
 				sc2 = Integer.parseInt(star2.getText());

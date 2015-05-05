@@ -34,7 +34,6 @@ import forms.ProbabilityMultiplierView;
 /**
  * Building controller for building one level of game and save it
  * 
- *
  */
 public class BuildingController {
 
@@ -48,9 +47,9 @@ public class BuildingController {
 	ToolSelectionController toolSelect;
 	/*the state of level building */
 	LevelBuildState buildState;
-	
+
 	UseToolController useTool;
-	
+
 	JDialog settingsDialog;
 	ProbabilityBlockView probValueView;
 	ProbabilityMultiplierView probMultView;
@@ -59,50 +58,49 @@ public class BuildingController {
 	ProbabilityController probabilityController;
 	StarPointsController starPointsController;
 
-	
+
 	public BuildingController(Level level, MainForm window) {
-		
+
 		this.level = level;
-		
 		this.window = window;
 		this.buildState = new LevelBuildState();
 		this.useTool = new UseToolController(level, buildState);
 		this.buildLevelView = new BuildLevelView(level, useTool);
 		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
 		this.useTool.setBuilderGridView(buildLevelView.getBuilderGridView());		
-		
+
 		this.settingsDialog = new JDialog(window, true);
 		this.probValueView = new ProbabilityBlockView();
 		this.probMultView = new ProbabilityMultiplierView();
 		this.enableSpecialMoveView = new EnableSpecialMoveView();
 		this.adjustStarView = new AdjustStarView();
-		
+
 		this.probabilityController = new ProbabilityController(this.probValueView, this.probMultView, level.getProbability());
 		this.starPointsController = new StarPointsController(this.adjustStarView, level.getStats());
-		
-		
+
+		// the listener for the button to exit
 		buildLevelView.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
 				BuildingController.this.window.dispose();
 			}
-			});
-		
+		});
+
 		this.addSettingsListeners();
 		this.otherListener();
-		
-		
+
+
 		window.getContentPane().removeAll();
 		window.getContentPane().add(buildLevelView, BorderLayout.CENTER);
-		
+
 		window.getContentPane().validate();
 		window.getContentPane().repaint();
 	}
-	
-	
-	
+
+
+
 	public void addSettingsListeners() {
-		
+
 		buildLevelView.getBtnEditValue().addActionListener(new ActionListener() {
 
 			@Override
@@ -111,7 +109,7 @@ public class BuildingController {
 				probabilityController.initializeTextFields();
 			}
 		});
-		
+
 		buildLevelView.getBtnEditMultiplier().addActionListener(new ActionListener() {
 
 			@Override
@@ -120,21 +118,21 @@ public class BuildingController {
 				probabilityController.initializeTextFields();
 			}
 		});
-		
+
 		buildLevelView.getBtnEditSpecialMoves().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				displaySettings(enableSpecialMoveView, "Enable/Disable Special Moves");
 			}
 		});
-		
+
 		buildLevelView.getBtnEditStarPoints().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				displaySettings(adjustStarView, "Adjust Star View");
 			}
 		});		
-		
+
 		buildLevelView.getBtnGoBack().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -146,47 +144,45 @@ public class BuildingController {
 				window.setVisible(true);
 				window.repaint();
 			}
-			
+
 		});
 	}
-	
+
 	private void otherListener(){
 		enableSpecialMoveView.getBtnClose().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				settingsDialog.setVisible(false);				
 			}	
-			
+
 		});
-		
+
 		probMultView.getBtnClose().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				settingsDialog.setVisible(false);				
 			}	
-			
+
 		});
-		
+
 		probValueView.getBtnClose().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				settingsDialog.setVisible(false);				
 			}
-			
+
 		});	
-		
+
 		adjustStarView.getBtnClose().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				settingsDialog.setVisible(false);				
 			}
-			
-		});
-		
-	}
-	
 
-	
+		});
+
+	}
+
 	private void displaySettings(JPanel view, String title) {
 		settingsDialog.getContentPane().removeAll();
 		settingsDialog.setTitle(title);
@@ -195,7 +191,7 @@ public class BuildingController {
 		settingsDialog.setVisible(true);
 		settingsDialog.repaint();
 	}
-	
+
 	public BuildLevelView getBuildLevelView(){
 		return buildLevelView;
 	}
