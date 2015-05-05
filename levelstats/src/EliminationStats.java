@@ -45,6 +45,7 @@ public class EliminationStats extends LevelStats{
 	public void update(int points, int markedSquaresLeft, int releasesLeft) {
 		updating = true;
 		this.score = getScore();
+		this.score += points;
 		this.markedSquaresLeft = markedSquaresLeft;
 	}
 	
