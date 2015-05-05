@@ -149,12 +149,12 @@ public class SquareView extends JPanel implements SquareChangeListener
 	}
 
 	private void updateColors(){
-		if (square.getEliminated()){
-			setBackground(ELIMINATED_COLOR);
+		if (square.isRelease()){
+			setBackground(RELEASE_COLOR);
 		}
 		else{
-			if (square.isRelease()){
-				setBackground(RELEASE_COLOR);
+			if (square.getEliminated()){
+				setBackground(ELIMINATED_COLOR);
 			}
 			else{
 				if(isBuilding){
