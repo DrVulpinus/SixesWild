@@ -28,7 +28,7 @@ public class StatsController {
 	LevelStats ls;
 	Timer tmr;
 
-	int num = 0;
+	entities.Timer lightTimer;
 
 	StatsController(Level level){
 		this.level = level;
@@ -55,6 +55,7 @@ public class StatsController {
 
 		}
 		sv.initializeValueDisplays(this.level.getStats().getScore(), this.level.getStats().getUniqueIntValue());
+//		sv.initializeTimerDisplay(this.level.getStats().getScore(), lightTime);
 		initializeTimer();
 	}
 
@@ -76,6 +77,23 @@ public class StatsController {
 			}
 		}, 500, 250);
 	}
+//	
+//	public void initializeLightTimer(){
+//		lightTimer = new Timer(true);
+//		public void run(){
+//			timer.startCountDownTimer(1000);
+//			while(timer.getTimeMillis() >= 0){
+//				try {
+//					Thread.sleep(500);
+//				}
+//				catch (InterruptedException e){
+//					e.printStackTrace();
+//				}
+//			}
+//			timer.stopTimer();
+//		}
+//		
+//	}
 
 	//	
 	//	public void generateStats(){

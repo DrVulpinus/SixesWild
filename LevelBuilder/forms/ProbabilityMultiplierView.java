@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+/**
+ * The View to change the probability of creting x1,x2,x3 tiles
+ */
 public class ProbabilityMultiplierView extends JPanel{
 	private JPanel panel;
 	private JLabel lblNewLabel;
