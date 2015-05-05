@@ -36,6 +36,12 @@ public class LevelStats {
 		this.points = points;
 	}
 
+	/**
+	 * Updates the score with the number of points from a move.
+	 * @param points The number of points from when a move is made.
+	 * @param markedSquares The number of marked squares currently in the grid.
+	 * @param releasesLeft The number of squares left to mark.
+	 */
 	public void update(int points, int markedSquares, int releasesLeft) {
 		updating = true;
 		this.score = getScore();
@@ -76,7 +82,7 @@ public class LevelStats {
 	}
 	
 	public boolean winCondition() {
-		if(getStarCount() >= 1){
+		if(getStarCount() != 0){
 			return true;
 		}
 		return false;

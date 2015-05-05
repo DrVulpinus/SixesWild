@@ -48,7 +48,7 @@ public class LevelController implements ChangeLevelPlayState{
 	MainFrame window;
 	public static final Color SELECTED_MOVE_COLOR = Color.GREEN;
 	public static final Color UNSELECTED_MOVE_COLOR = Color.PINK;
-	
+
 	/**
 	 * Makes a new LevelController
 	 * @param level The level that is being played
@@ -74,10 +74,10 @@ public class LevelController implements ChangeLevelPlayState{
 		levelPlayView.setLevel(level);
 		playState.addStateChangedListener(this);
 		playState.setSelectedMove(LevelPlayState.MOVE_REGULAR);
-		
+
 		// add the listeners
 		addLevelPlayListeners();
-		
+
 		// confirm finalized repaint
 		window.setContentPane(levelPlayView);
 		window.validate();
@@ -85,7 +85,7 @@ public class LevelController implements ChangeLevelPlayState{
 
 		// fill in the grid by adding all the neighbors to every square
 		level.getGrid().addNeighbors();
-		
+
 		levelPlayView.getSpecialMoveView().getSwapSquareButton().addActionListener(new ActionListener() {
 
 			@Override
@@ -119,14 +119,14 @@ public class LevelController implements ChangeLevelPlayState{
 
 			}
 		});
-		
+
 	}
 
 	/**
 	 * Adds all the Level Play listeners
 	 */
 	private void addLevelPlayListeners() {
-		
+
 		// create a new action listener for the back button
 		levelPlayView.getbtnBack().addActionListener(new ActionListener(){
 
@@ -135,7 +135,7 @@ public class LevelController implements ChangeLevelPlayState{
 			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+
 				window.setContentPane(window.getMainMenuView());
 
 				window.getContentPane().validate();
@@ -144,6 +144,22 @@ public class LevelController implements ChangeLevelPlayState{
 			}
 
 		});
+
+		// if the limiting factor hits zero, something happens
+		if(level.getStats().getUniqueIntValue() == 0){
+			// if win conditions (>= 1 star) are met, go back to main menu
+			if (level.getStats().winCondition()){
+				
+				window.dispose();
+
+				window.setContentPane(window.getMainMenuView());
+
+				window.getContentPane().validate();
+				window.getContentPane().repaint();
+				System.out.println("back to main menu");	
+			}
+		}
+
 	}
 
 	/**

@@ -4,7 +4,7 @@ import entities.LevelType;
 
 /**
  * Contains the stats for elimination mode. Has a number of total squares and a number of markedSquares,
- * which gets called in update.
+ * which is the number of marked squares remaining.
  * @author Miya
  *
  */
@@ -34,6 +34,9 @@ public class EliminationStats extends LevelStats{
 		return (this.markedSquaresLeft >= this.totalSquares);
 	}
 	
+	/**
+	 * Updates the score.
+	 */
 	public void update(int points, int markedSquaresLeft, int releasesLeft) {
 		updating = true;
 		this.score = getScore();
