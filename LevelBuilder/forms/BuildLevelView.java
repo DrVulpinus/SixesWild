@@ -192,13 +192,13 @@ public class BuildLevelView extends JPanel{
 	private JPanel getPanel_1() {
 		if (panel_1 == null) {
 			panel_1 = new JPanel();
-			panel_1.add(getBtnClose());
+			panel_1.add(getBtnSave());
 		}
 		return panel_1;
 	}
-	private JButton getBtnClose() {
+	private JButton getBtnSave() {
 		if (btnClose == null) {
-			btnClose = new JButton("Close");
+			btnClose = new JButton("Save Level");
 		}
 		return btnClose;
 	}

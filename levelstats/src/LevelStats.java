@@ -1,5 +1,9 @@
 package src;
 
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+
 import entities.Timer;
 
 /** The stats for a level. Every type of level contains a score, and accepts a number of points to add
@@ -64,9 +68,9 @@ public class LevelStats {
 	}
 	
 	public int getStarCount() {
-		if (points >= starcount1){
-			if(points >= starcount2){
-				if(points >= starcount3){
+		if (score >= starcount1){
+			if(score >= starcount2){
+				if(score >= starcount3){
 					return 3;
 				}
 				return 2;

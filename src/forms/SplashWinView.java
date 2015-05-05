@@ -13,23 +13,24 @@ import javax.swing.SwingConstants;
 
 public class SplashWinView extends JFrame{
 	private JPanel contentPane;
+	JLabel lblYouWin;
 	
 	public SplashWinView() {	
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 200, 100);
+		setBounds(100, 100, 500, 350);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JLabel lblYouWin = new JLabel("You Win!");
+		lblYouWin = new JLabel("You Win!");
 		lblYouWin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYouWin.setFont(new Font("Lucida",Font.PLAIN,24));
+		lblYouWin.setFont(new Font("Lucida",Font.PLAIN,30));
 		contentPane.add(lblYouWin, BorderLayout.CENTER);
 		
-		setSize(200, 100);
+		setSize(500, 350);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setUndecorated(true);

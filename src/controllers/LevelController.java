@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 
 
+
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -26,6 +28,7 @@ import entities.Square;
 import entities.Timer;
 import forms.LevelPlayView;
 import forms.MainFrame;
+import forms.SplashWinView;
 
 /**
  * The top level controller for the entire level. Updates every time an action
@@ -190,6 +193,31 @@ public class LevelController implements ChangeLevelPlayState{
 			levelPlayView.getSpecialMoveView().getSwapSquareButton().setBackground(SELECTED_MOVE_COLOR);
 			levelPlayView.getSpecialMoveView().getRegularMoveButton().setBackground(UNSELECTED_MOVE_COLOR);
 			break;
+		}
+		
+		if(level.getStats().getUniqueIntValue() <= 0){
+			//go back to the 
+			window.setContentPane(window.getMainMenuView());
+			window.getContentPane().validate();
+			window.getContentPane().repaint();
+			System.out.println("back to main menu");
+			
+			if(level.getStats().winCondition()){
+				System.out.println("Win the game");
+				 SplashWinView s = new SplashWinView();
+				// show splash screen
+					s.setVisible(true);
+					try {
+						// stay up for 3000 units of time
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					// remove and replace with MainFrame
+					s.dispose();				
+			}
+			
 		}
 	}
 

@@ -1,5 +1,9 @@
 package src;
 
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+
 import entities.LevelType;
 
 public class PuzzleStats extends LevelStats {
@@ -18,7 +22,7 @@ public class PuzzleStats extends LevelStats {
 	}
 	
 	public boolean winCondition() {
-		if (getUniqueIntValue() == 0 && this.getStarCount() != 0){
+		if (getUniqueIntValue() <= 0 && this.getStarCount() != 0){
 			return true;
 		}
 		return false;
