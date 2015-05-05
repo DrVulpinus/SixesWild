@@ -137,13 +137,33 @@ public class Grid extends ArrayList<Square>
 	}
 /////////////////////////////////////////////////////
 	
-	public int getNumRealeasesLeft() {
-		return (this.initialReleases - this.getNumReleased());
+	public int getNumReleasesLeft() {
+		int numRelease = 0;
+		
+		for(int j = 0; j<this.size(); j++){
+			Square r = this.get(j);
+			if (r.isRelease() && !r.isFilled()){
+				numRelease++;
+			}
+		}
+		return numRelease;
+		
+		
+		//return (this.initialReleases - this.getNumReleased());
 	}
 	
 	public int getNumMarkedSquaresLeft() {
-		System.out.println("dsg" + (this.initialEliminations - this.getNumEliminated()));
-		return (this.initialEliminations - this.getNumEliminated());
+		int numMarkedSquaresLeft = 0;
+		
+		for(int j = 0; j<this.size(); j++){
+			Square r = this.get(j);
+			if (!r.isRelease() && !r.getEliminated()){
+				numMarkedSquaresLeft++;
+			}
+		}
+		return numMarkedSquaresLeft;
+		
+		//return (this.initialEliminations - this.getNumEliminated());
 	}
 	
 	/**
