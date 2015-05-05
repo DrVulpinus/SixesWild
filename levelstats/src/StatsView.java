@@ -127,7 +127,7 @@ public abstract class StatsView extends JPanel {
 	 * @param t The timer whose display needs to be updated
 	 */
 	public void updateLimitingFactor(Timer t){
-		getTxtLimitingfactordisplay().setText(t.toString());
+		getTxtLimitingfactordisplay().setText(t.getTimeString());
 	}
 	
 	/**
@@ -156,6 +156,13 @@ public abstract class StatsView extends JPanel {
 	 */
 	public void initializeValueDisplays(int initialPoints, int initialLimit){
 		getTxtLimitingfactordisplay().setText(Integer.toString(initialLimit));
+		getTxtPointsdisplay().setText(Integer.toString(initialPoints));
+		setStarPoints(stats.getStarPoints()[1], stats.getStarPoints()[2], stats.getStarPoints()[3]);
+		getPbStarPoints().setMaximum(getStarThreePoints());
+	}
+	
+	public void initializeTimerDisplay(int initialPoints, Timer t){
+		getTxtLimitingfactordisplay().setText(t.getTimeString());
 		getTxtPointsdisplay().setText(Integer.toString(initialPoints));
 		setStarPoints(stats.getStarPoints()[1], stats.getStarPoints()[2], stats.getStarPoints()[3]);
 		getPbStarPoints().setMaximum(getStarThreePoints());

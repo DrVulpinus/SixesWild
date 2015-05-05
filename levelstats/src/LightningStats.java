@@ -7,6 +7,7 @@ import entities.Timer;
 
 public class LightningStats extends LevelStats{
 
+	entities.Timer timer;
 	int initialTime;
 	int timeLeft;
 	
