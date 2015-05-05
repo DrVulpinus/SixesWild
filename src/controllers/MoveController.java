@@ -30,7 +30,6 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	GameGridView grid;
 	Move m = null;
 	LevelPlayView levelPlayView;
-	StatsController statsController;
 	
 	/**
 	 * Construct a new MoveController
@@ -151,27 +150,30 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	 */
 	public void endMove() {
 
+		// if the move wasn't started, return invalid
 		if (!this.started)
 			return;
 	
+		// otherwise, perform the move on all selected squares, then unselect them
 		performMove();
 		for (Iterator<SquareView> i = selectedSquareViews.iterator(); i.hasNext();) {
 			SquareView sV = i.next();
 
 			if (sV.getSquare().getBlock() != null)
 				sV.getSquare().getBlock().setSelected(false);
-
-
 		}
 
+		// once the move is performed, clear the list of currently selected views
 		selectedSquareViews.clear();
+		
+		// reset start for the next move
 		this.started = false;
+		
+		// update the grid
 		if (grid != null){
 			grid.updateGrid();
 		}
 
-		System.out.println("Hi");
-		//statsController.update();
 		System.out.println("End Move");
 	}
 
@@ -182,10 +184,12 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	public void performMove() {
 		ArrayList<Square> squares = new ArrayList<Square>();
 
+		// add the selected squares to the list
 		for (SquareView sV : selectedSquareViews) {
 			squares.add(sV.getSquare());
 		}
 		
+		// update the play state depending on the currently selected move
 		switch(playState.getSelectedMove()) {
 		case LevelPlayState.MOVE_REGULAR:
 			m = new MoveRegular(level, squares);
@@ -203,9 +207,11 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			break;
 		}
 
+		// if a move doesn't exist, do nothing
 		if (m == null)
 			return;
 
+		// otherwise, check for special case elimination, then reset the current move to regular move
 		if (m.performMove())
 			if(level.getLvlType() == LevelType.ELIMINATION && playState.getSelectedMove() == LevelPlayState.MOVE_REGULAR){
 				for (SquareView sV : selectedSquareViews) {
