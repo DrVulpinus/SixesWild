@@ -46,7 +46,8 @@ public class MoveRegular extends Move {
 		
 		if(level.getLvlType() == LevelType.ELIMINATION){
 			for (Square s : this.getSquaresInvolved()) {
-				s.setEliminated(true);
+				if (!s.isRelease())
+					s.setEliminated(true);
 			}
 		}
 		
