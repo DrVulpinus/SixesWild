@@ -62,6 +62,7 @@ public class Level
 	 */
 	Probability probability;
 
+	boolean win;
 	/**
 	 * Makes a new level with the given stats and grid
 	 * @param stats the stats for the new level
@@ -228,6 +229,10 @@ public class Level
 		this.probability = probability;
 	}
 
+	public boolean hasWon(){
+		win = false;
+		return win;
+	}
 
 	/**
 	 * Constructs a sub type of LevelStats for a level based on the given level type
