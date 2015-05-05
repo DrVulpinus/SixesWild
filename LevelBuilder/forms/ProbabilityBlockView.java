@@ -13,12 +13,12 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
 /**
- * The view that contains the GUI for the user to input probabilities from
- * @author Miya
+ * The view that contains the GUI that takes in user input for the textfields
+ * containing the block value probabilities.
  *
  */
 public class ProbabilityBlockView extends JPanel{
-	
+
 	private JPanel panel;
 	private JTextField textField;
 	private JLabel label;
@@ -49,8 +49,8 @@ public class ProbabilityBlockView extends JPanel{
 	private JLabel label_12;
 	private JButton btnApplyChanges;
 	private JButton btnClose;
-	
-	
+
+
 	public ProbabilityBlockView() {
 		setLayout(new MigLayout("", "[][grow][304.00,grow][33.00,grow][grow]", "[][29.00][23.00][][][bottom][grow,bottom]"));
 		add(getPanel(), "cell 2 0,grow");
@@ -189,15 +189,15 @@ public class ProbabilityBlockView extends JPanel{
 		}
 		return label_7;
 	}
-//	private JPanel getPanel_5() {
-//		if (panel_5 == null) {
-//			panel_5 = new JPanel();
-//			panel_5.add(getLabel_10());
-//			panel_5.add(getTextField_5());
-//			panel_5.add(getLabel_11());
-//		}
-//		return panel_5;
-//	}
+	//	private JPanel getPanel_5() {
+	//		if (panel_5 == null) {
+	//			panel_5 = new JPanel();
+	//			panel_5.add(getLabel_10());
+	//			panel_5.add(getTextField_5());
+	//			panel_5.add(getLabel_11());
+	//		}
+	//		return panel_5;
+	//	}
 	private JLabel getLabel_8() {
 		if (label_8 == null) {
 			label_8 = new JLabel("5:");

@@ -38,7 +38,7 @@ public class ProbabilityMultiplierView extends JPanel{
 		add(getLabel_3(), "cell 3 4");
 		add(getBtnClose(), "cell 1 7");
 	}
-	
+
 
 	private JPanel getPanel() {
 		if (panel == null) {
