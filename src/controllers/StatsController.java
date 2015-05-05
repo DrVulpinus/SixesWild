@@ -31,7 +31,7 @@ public class StatsController {
 
 	entities.Timer lightTimer;
 
-	StatsController(Level level){
+	public StatsController(Level level){
 		this.level = level;
 		ls = this.level.getStats();
 		switch (this.level.getLvlType()){
