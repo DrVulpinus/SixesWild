@@ -4,6 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import entities.Level;
+import entities.LevelType;
 import src.EliminationStats;
 import src.EliminationStatsView;
 import src.LevelStats;
@@ -21,6 +22,7 @@ public class StatsController {
 	PuzzleStatsView psv;
 	LightningStatsView lsv;
 	StatsView sv;
+	entities.Timer lightningTimer = new entities.Timer();
 	
 	Level level;
 	
@@ -55,6 +57,7 @@ public class StatsController {
 		}
 		sv.initializeValueDisplays(this.level.getStats().getScore(), this.level.getStats().getUniqueIntValue());
 //		sv.initializeTimerDisplay(this.level.getStats().getScore(), lightTime);
+		
 		initializeTimer();
 	}
 
@@ -64,14 +67,23 @@ public class StatsController {
 
 	public void initializeTimer(){
 		tmr = new Timer(true);
+		if (level.getLvlType() == LevelType.LIGHTNING){
+			lightningTimer.startCountDownTimer(180);
+		}
 		tmr.schedule(new TimerTask() {
 
 			@Override
 			public void run() {
-				sv.update();
-				ls.updateUniqueInt(ls.getUniqueIntValue());
-				System.out.println(ls.getUniqueIntValue());
+				
+				if (level.getLvlType() == LevelType.LIGHTNING){
+					ls.setUniqueIntValue((int) lightningTimer.getTimeSeconds());
+				}else{
+					ls.updateUniqueInt(ls.getUniqueIntValue());
+				}
+				
+				//System.out.println(ls.getUniqueIntValue());
 				sv.updateLimitingFactor(ls.getUniqueIntValue());
+				sv.update();
 
 			}
 		}, 500, 250);

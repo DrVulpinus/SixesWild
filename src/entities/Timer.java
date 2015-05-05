@@ -35,6 +35,9 @@ package entities;
 	public long getTimeMillis(){
 		return Math.abs(System.currentTimeMillis() - startTime);
 	}
+	public long getTimeSeconds(){
+		return (Math.abs(System.currentTimeMillis() - startTime))/1000;
+	}
 	public String getTimeString(){
 		String outTime = "";
 		long thisTime = getTimeMillis()/1000;
