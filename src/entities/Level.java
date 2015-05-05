@@ -31,37 +31,37 @@ public class Level
 	 * the grid of squares
 	 */
 	Grid grid;
-	
+
 	/**
 	 * the Stats of the level
 	 */
 	LevelStats stats;
-	
+
 	/**
 	 * and icon for the level
 	 */
 	Icon icon;
-	
+
 	/**
 	 * the name of the level
 	 */
 	String name;
-	
+
 	/**
 	 * the type of the level as a String
 	 */
 	String type;
-	
+
 	/**
 	 * the type of the level
 	 */
 	LevelType lvlType;
-	
+
 	/**
 	 * the probability distribution for making blocks
 	 */
 	Probability probability;
-	
+
 	/**
 	 * Makes a new level with the given stats and grid
 	 * @param stats the stats for the new level
@@ -70,7 +70,7 @@ public class Level
 	public Level(LevelStats stats, Grid grid) {
 		this(stats, grid, "New Level");
 	}
-	
+
 	/**
 	 * Constructs a new level of the specified type (puzzle, elimination, release, lightning)
 	 * @param type the type of the new level
@@ -82,7 +82,7 @@ public class Level
 		this.probability = new Probability();
 		setStats();
 	}
-	
+
 	/**
 	 * Makes a new level with the given LevelStats, grid, and name
 	 * @param stats the LevelStats of the new level
@@ -96,9 +96,9 @@ public class Level
 
 		this.probability = new Probability();
 		BlockMaker.getInstance().setProbability(probability);
-		
+
 	}
-	
+
 	/**
 	 * Makes a new level with the given LevelStats, grid, and name, and probability
 	 * @param stats the LevelStats of the new level
@@ -111,10 +111,10 @@ public class Level
 		this.probability = p;
 		BlockMaker.getInstance().setProbability(probability);
 	}
-	
-	
-	
-	
+
+
+
+
 	/**
 	 * Returns the type of the level (puzzle, elimination, release, lightning)
 	 * @return the type of the level
@@ -122,7 +122,7 @@ public class Level
 	public LevelType getLvlType() {
 		return lvlType;
 	}
-	
+
 	/**
 	 * Sets the type of a level (puzzle, elimination, release, lightning)
 	 * @param lvlType type of the level
@@ -130,7 +130,7 @@ public class Level
 	public void setLvlType(LevelType lvlType) {
 		this.lvlType = lvlType;
 	}
-	
+
 	/**
 	 * Returns the names of the level
 	 * @return the name of the level
@@ -138,7 +138,7 @@ public class Level
 	public String getName(){
 		return name;
 	}
-	
+
 	/**
 	 * Sets the name of the level
 	 * @param newName the new name of the level
@@ -146,22 +146,24 @@ public class Level
 	public void setName(String newName){
 		name = newName;
 	}
-	
+
 	/**
 	 * Shuffles all of the blocks in the boards based on the probabilities of each block
 	 */
 	public void shuffleBoard() {
 		for (Square square : grid) {
 			if (square.getBlock()!= null){
-			if (square.getBlock().getValue() != 6)
-				square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+				if (square.getBlock().getValue() != 6){
+					square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+				}
 			}
 			else{
+				probability.setResetProbabilities();
 				square.setBlock(BlockMaker.getInstance().makeBlock(probability));
 			}
 		}
 	}
-	
+
 	/**
 	 * Returns the grid of Squares of the level
 	 * @return the Grid of the level
@@ -209,7 +211,7 @@ public class Level
 	public void setIcon(Icon icon) {
 		this.icon = icon;
 	}
-	
+
 	/**
 	 * Returns the probability for making blocks
 	 * @return the block probability
@@ -217,7 +219,7 @@ public class Level
 	public Probability getProbability() {
 		return probability;
 	}
-	
+
 	/**
 	 * Sets the probability for Blocks
 	 * @param probability the new block probability
@@ -225,37 +227,37 @@ public class Level
 	public void setProbability(Probability probability) {
 		this.probability = probability;
 	}
-	
-	
+
+
 	/**
 	 * Constructs a sub type of LevelStats for a level based on the given level type
 	 */
 	public void setStats() {
-		
+
 		switch (lvlType) {
-		
-			case PUZZLE:
-				// generate puzzle stats
-				this.stats = new PuzzleStats(20);
-				break;
-	
-			case RELEASE:
-				// generate release stats
-				this.stats = new ReleaseStats();
-				break;
-	
-			case ELIMINATION:
-				// generate elimination stats
-				this.stats = new EliminationStats();
-				break;
-	
-			case LIGHTNING:
-				//generate lightning stats
-				this.stats = new LightningStats(180);
-				break;
+
+		case PUZZLE:
+			// generate puzzle stats
+			this.stats = new PuzzleStats(20);
+			break;
+
+		case RELEASE:
+			// generate release stats
+			this.stats = new ReleaseStats();
+			break;
+
+		case ELIMINATION:
+			// generate elimination stats
+			this.stats = new EliminationStats();
+			break;
+
+		case LIGHTNING:
+			//generate lightning stats
+			this.stats = new LightningStats(180);
+			break;
 		}
-		
-		
+
+
 	}
-	
+
 }

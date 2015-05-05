@@ -66,22 +66,7 @@ public class Square
 		else
 			return false;
 	}
-	
-	public Square makeReleaseSquare(Location l) {
-		float num = p.getRandomRelease();
-		System.out.println(num);
-		if(num >=0 && num < 100){
-			isRelease = true;
-			// implement a release square
-			Square releaseSquare = new Square(l);
-			releaseSquare.setBlock(null);
-			return releaseSquare;
-		}
-		isRelease = false;
-		return new Square(l);
-	}
-	
-	
+
 	public void checkIfSix(Square releaseSquare){
 		
 		Square aboveRelease = releaseSquare.getNorthernNeighbor();

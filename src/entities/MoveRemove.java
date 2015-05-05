@@ -44,10 +44,17 @@ public class MoveRemove extends Move {
 	public boolean isValid() {
 		if (this.getSquaresInvolved().size() != 1)
 			return false;
-		
+		for (Square s : super.getSquaresInvolved()) { 
+			if(s == null || s.getBlock() == null){
+				break;
+			}
+			if (s.getBlock().getValue() == 6)	//move invalid if there is a 6 block selected
+				return false;
+		}
 		return true;
+
 	}
-	
+
 	/**
 	 * Returns the number of points that this move earns
 	 * @return the number of points for this move
@@ -56,8 +63,8 @@ public class MoveRemove extends Move {
 	public int getPoints(){
 		return 0;
 	}
-	
-	
+
+
 	/**
 	 * Returns the number of eliminations scored by a move
 	 * @return the number of eliminations scored by a move
@@ -66,7 +73,7 @@ public class MoveRemove extends Move {
 	public int getEliminations() {
 		return 0;
 	}
-	
+
 	/**
 	 * Returns the number of releases scored by a move
 	 * @return the number of releases scored by a move

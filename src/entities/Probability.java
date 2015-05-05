@@ -42,8 +42,8 @@ public class Probability {
 		this.valueProb[1] = 20;
 		this.valueProb[2] = 20;
 		this.valueProb[3] = 20;
-		this.valueProb[4] = 20;
-		this.valueProb[5] = 0;
+		this.valueProb[4] = 0;
+		this.valueProb[5] = 20;
 		
 		this.multProb[0] = 40;
 		this.multProb[1] = 30;
@@ -128,6 +128,15 @@ public class Probability {
 		return (p[0] + p[1] + p[2] + p[3] + p[4] + p[5] == 100);
 	}
 	
+	public void setResetProbabilities(){
+		this.valueProb[0] = 20;
+		this.valueProb[1] = 20;
+		this.valueProb[2] = 20;
+		this.valueProb[3] = 20;
+		this.valueProb[4] = 20;
+		this.valueProb[5] = 0;
+		
+	}
 	
 	/**
 	 * Sets the multiplier probabilities for Blocks
