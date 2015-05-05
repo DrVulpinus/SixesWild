@@ -195,8 +195,10 @@ public class LevelController implements ChangeLevelPlayState{
 			break;
 		}
 		
+		//check if the game wins
 		if(level.getStats().getUniqueIntValue() <= 0){
-			//go back to the 
+			//also it should be delete this level(or just reset the level stats) and create a new one
+			//go back to the main menu
 			window.setContentPane(window.getMainMenuView());
 			window.getContentPane().validate();
 			window.getContentPane().repaint();

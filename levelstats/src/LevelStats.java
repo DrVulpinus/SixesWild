@@ -1,14 +1,11 @@
 package src;
 
-<<<<<<< HEAD
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 
 import entities.Timer;
-=======
 
->>>>>>> origin/master
 
 /** The stats for a level. Every type of level contains a score, and accepts a number of points to add
  * to that score. Every level also contains three stars to achieve and a unique value. If the level is Puzzle, Elimination,
