@@ -2,6 +2,12 @@ package entities;
 
 import java.util.ArrayList;
 
+/**
+ * A square represents the non visible boundary which holds a block.
+ * A square knows whether it is a release square, an eliminated square, and whether it is filled.
+ * It also contains a probability which affects the frequency of release blocks.
+ *
+ */
 public class Square
 {
 	Block block;
@@ -29,6 +35,7 @@ public class Square
 	public void addListener(SquareChangeListener scl){
 		changeListeners.add(scl);
 	}
+	
 	public void callChangeListeners(){
 		for (SquareChangeListener squareChangeListener : changeListeners) {
 			squareChangeListener.squareChanged();
@@ -47,6 +54,7 @@ public class Square
 	public void setProbability(Probability p) {
 		this.p = p;
 	}
+	
 	//adds a neighbor to a block
 	//returns 1 if the neighbor was added
 	//returns 0 if the neighbor was not added because the maximum number of neighbors has been reached
@@ -58,6 +66,7 @@ public class Square
 		else
 			return false;
 	}
+	
 	public Square makeReleaseSquare(Location l) {
 		float num = p.getRandomRelease();
 		System.out.println(num);
@@ -146,6 +155,11 @@ public class Square
 	public String toString(){
 		return "Square: " + loc;
 	}
+	
+	/**
+	 * Makes a block in the square that is the adjacent northern square to the current square
+	 * if that square does not contain a block.
+	 */
 	public void setNorthernBlock(){		
 			Square square = getNorthernNeighbor();
 			while (square != null && square.getBlock()== null){

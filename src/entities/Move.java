@@ -9,8 +9,6 @@ import src.PuzzleStats;
  * Each move contains a level and an ArrayList of squares to check which type of level 
  * the game is in order to validate moves and to check which squares are involved in the move.
  * 
- * @author Alex Wald
- * 
  *
  */
 public abstract class Move {
