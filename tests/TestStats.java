@@ -40,7 +40,7 @@ public class TestStats {
 		ps.setScore(0);
 		assertFalse(ps.winCondition());
 		
-		LightningStats lis = new LightningStats(0, new Timer());
+		LightningStats lis = new LightningStats(178);
 		lis.setScore(100);
 		lis.setStarCounts(1,2,30);
 		assertTrue(lis.winCondition());

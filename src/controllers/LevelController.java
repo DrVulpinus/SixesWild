@@ -30,7 +30,6 @@ import entities.Square;
 import entities.Timer;
 import forms.LevelPlayView;
 import forms.MainFrame;
-import forms.SplashWinView;
 
 /**
  * The top level controller for the entire level. Updates every time an action

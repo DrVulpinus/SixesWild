@@ -94,5 +94,7 @@ The textfields also adjust various things:
 
 Score - is editable, but changes to it are not saved.
 
-Moves Remaining/Marked Squares Remaining/Time Remaining/Release Blocks Remaining: Adjusts the requirements for a player to beat a level.
+Moves Remaining/Marked Squares Remaining/Time Remaining/Release Blocks Remaining: Adjusts the requirements for a player to beat a level. In Elimination or Release, the number of marked squares/release blocks left cannot be readjusted because it is based on the number of squares in a level.
+
+FileName - Allows the user to name their customized level, which is displayed when it shows up in the level selection screen. If no name is provided, the default is "New Level". If the file name is the same as a previous level, a message appears in the console that indicates the file has already been written to.
 

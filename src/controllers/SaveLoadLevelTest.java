@@ -64,7 +64,7 @@ public class SaveLoadLevelTest {
 			break;
 			case 1:
 			type = LevelType.LIGHTNING;
-			stats = new LightningStats(0, 0, new Timer());
+			stats = new LightningStats(178);
 			break;
 		case 2:
 			type = LevelType.ELIMINATION;
