@@ -22,6 +22,8 @@ import entities.StockLevels;
 /**
  * The level selection screen. Contains a list of panels, each of which is a level.
  * Also contains a state of saved levels.
+ * 
+ * @author Alex Wald
  *
  */
 public class BuilderLoadView extends SelectView {
