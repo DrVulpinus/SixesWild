@@ -222,14 +222,21 @@ public class LevelController implements ChangeLevelPlayState{
 					// remove and replace with MainFrame
 					s.dispose();
 					
+					//show the star in the level select panel
 					if(level.getStats().getStarCount() >= 1){
-						level.lp.getLblStar1();
+						level.lp.addStar1();
+						//level.lp.getLblStar1().setVisible(true);
 						if( level.getStats().getStarCount() >= 2){
-							level.lp.getLblStar2();
+							level.lp.addStar2();
+							//level.lp.getLblStar2().setVisible(true);
 							if( level.getStats().getStarCount() >= 3){
-								level.lp.getLblStar3();
+								level.lp.addStar3();
+								//level.lp.getLblStar3().setVisible(true);
 							}
 						}
+						level.lp.revalidate();
+						level.lp.repaint();
+						window.validate();
 					}
 			}
 			

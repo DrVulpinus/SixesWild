@@ -84,15 +84,14 @@ public class LevelPanel extends JPanel {
 		 * Adds the star count achieved for that level. If no star count has been achieved,
 		 * nothing is displayed beneath it.
 		 */
-		if (lvl.getStats().getStarCount() > 0){
-			add(getLblStar1());
-		}
-		if (lvl.getStats().getStarCount() > 1){
+
+			add(getLblStar1());			
 			add(getLblStar2());
-		}
-		if (lvl.getStats().getStarCount() > 2){
 			add(getLblStar3());
-		}	
+			lblStar1.setVisible(false);
+			lblStar2.setVisible(false);
+			lblStar3.setVisible(false);
+	
 			
 		setLevelName(level.getName());
 		try {
@@ -176,27 +175,39 @@ public class LevelPanel extends JPanel {
 	public JLabel getLblStar1() {
 		if (lblStar1 == null) {
 			lblStar1 = new JLabel("");
-			lblStar1.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
-			lblStar1.setBounds(10, 100, 40, 40);
+			lblStar1.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star_icon.png")));
+			lblStar1.setBounds(10, 60, 40, 40);
 		}
 		return lblStar1;
+	}
+	
+	public void addStar1(){
+		lblStar1.setVisible(true);
 	}
 
 	public JLabel getLblStar2() {
 		if (lblStar2 == null) {
 			lblStar2 = new JLabel("");
-			lblStar2.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
-			lblStar2.setBounds(55, 100, 40, 40);
+			lblStar2.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star_icon.png")));
+			lblStar2.setBounds(55, 60, 40, 40);
 		}
 		return lblStar2;
 	}
-
+	
+	public void addStar2(){
+		lblStar2.setVisible(true);
+	}
+	
 	public JLabel getLblStar3() {
 		if (lblStar3 == null) {
 			lblStar3 = new JLabel("");
-			lblStar3.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
-			lblStar3.setBounds(100, 100, 40, 40);
+			lblStar3.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star_icon.png")));
+			lblStar3.setBounds(100, 60, 40, 40);
 		}
 		return lblStar3;
+	}
+	
+	public void addStar3(){
+		lblStar3.setVisible(true);
 	}
 }
