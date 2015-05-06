@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import controllers.ProbabilityController;
+import controllers.SaveLoadLevel;
 import controllers.StarPointsController;
 import controllers.UseToolController;
 import builder_entities.LevelBuildState;
@@ -89,6 +90,19 @@ public class BuildingController {
 			@Override
 			public void actionPerformed(ActionEvent e){
 				BuildingController.this.window.dispose();
+			}
+		});
+		buildLevelView.getBtnSave().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					SaveLoadLevel.getInstance().saveLevel(BuildingController.this.level);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 
@@ -172,7 +186,7 @@ public class BuildingController {
 				displaySettings(enableSpecialMoveView, "Enable/Disable Special Moves");
 			}
 		});
-
+		
 		buildLevelView.getBtnEditStarPoints().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

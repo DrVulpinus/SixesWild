@@ -205,7 +205,7 @@ public class BuildLevelView extends JPanel{
 		}
 		return panel_1;
 	}
-	private JButton getBtnSave() {
+	public JButton getBtnSave() {
 		if (btnClose == null) {
 			btnClose = new JButton("Save Level");
 		}
