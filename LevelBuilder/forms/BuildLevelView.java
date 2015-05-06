@@ -59,6 +59,8 @@ public class BuildLevelView extends JPanel{
 	private JButton btnEditStarPoints;
 
 	private JDialog settingsDialog;
+	private JButton btnUpdateStats;
+	private JButton btnPreviewLevel;
 	//	PuzzleStatsView puzzleStatsView;
 	//	ReleaseStatsView releaseStatsView;
 	//	EliminationStatsView eliminationStatsView;
@@ -122,6 +124,8 @@ public class BuildLevelView extends JPanel{
 		SpecialMoveView specialMoveView = new SpecialMoveView();
 		add(specialMoveView, "cell 3 2,grow");
 		add(getBtnExitWithoutSaving(), "cell 2 4");
+		add(getBtnUpdateStats(), "cell 1 3");
+		add(getBtnPreviewLevel(), "cell 2 3");
 		add(getPanel(), "cell 3 3,grow");
 		add(getPanel_1(), "cell 3 4,grow");
 		generateLevelStatsView();
@@ -270,4 +274,23 @@ public class BuildLevelView extends JPanel{
 			break;
 
 		}
-	}}
+	}
+	
+	public JButton getBtnUpdateStats() {
+		if (btnUpdateStats == null) {
+			btnUpdateStats = new JButton("Update Stats");
+		}
+		return btnUpdateStats;
+	}
+	
+	public JButton getBtnPreviewLevel() {
+		if (btnPreviewLevel == null) {
+			btnPreviewLevel = new JButton("Preview Level");
+		}
+		return btnPreviewLevel;
+	}
+	
+	public JPanel getStatsView() {
+		return this.statsView;
+	}
+}
