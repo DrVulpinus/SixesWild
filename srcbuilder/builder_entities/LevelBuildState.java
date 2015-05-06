@@ -2,7 +2,7 @@ package builder_entities;
 
 /**
  * The state of the current buildable level. Contains the selected tool and the string which represents it.
- *
+ * @author Alex Wald
  */
 
 
