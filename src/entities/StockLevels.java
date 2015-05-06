@@ -38,10 +38,10 @@ public class StockLevels extends ArrayList<Level>{
 		}
 		return stockLevel;
 	}
-	
 
 
-	
+
+
 
 
 	public StockLevels() {
@@ -69,347 +69,347 @@ public class StockLevels extends ArrayList<Level>{
 		this.square1 = new Square();
 		this.p = new Probability();
 	}
-	
-	
+
+
 	public Level generatePuzzle1(){
-puzzle1.setName("Puzzle1");
-this.p.setValueProb(75,25 , 0, 0, 0, 0);
-	this.puzzle1.setProbability(p);
-	for (int row = 0; row < 9; row++) {
-		for (int col = 0; col < 9; col++) {
-			
+		puzzle1.setName("Puzzle1");
+		this.p.setValueProb(75,25 , 0, 0, 0, 0);
+		this.puzzle1.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+
 				Square s = new Square(new Location(row, col));
 				puzzle1.grid.add(s);
 			}
 
 		}
-	
-	
-	return puzzle1;
+
+
+		return puzzle1;
 	}
-	
-	
-	
+
+
+
 	public Level generatePuzzle2(){
 		puzzle2.setName("Puzzle2");
 		this.p.setValueProb(17,17,17,17,17,15);
-			this.puzzle2.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						puzzle2.grid.add(s);
-					}
+		this.puzzle2.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return puzzle2;
+				Square s = new Square(new Location(row, col));
+				puzzle2.grid.add(s);
 			}
-	
+
+		}
+		return puzzle2;
+	}
+
 	public Level generatePuzzle3(){
 		puzzle3.setName("Puzzle3");
 		this.p.setValueProb(15,20, 20,7,30,8);
-				this.puzzle3.setProbability(p);
-				
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						puzzle3.grid.add(s);
-					}
+		this.puzzle3.setProbability(p);
 
-				}
-			return puzzle3;
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+
+				Square s = new Square(new Location(row, col));
+				puzzle3.grid.add(s);
 			}
-	
+
+		}
+		return puzzle3;
+	}
+
 	public Level generatePuzzle4(){
 		puzzle4.setName("Puzzle4");
 		this.p.setValueProb(10,20 , 10, 30, 10, 20);
-				this.puzzle4.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						puzzle4.grid.add(s);
-					}
+		this.puzzle4.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return puzzle4;
+				Square s = new Square(new Location(row, col));
+				puzzle4.grid.add(s);
 			}
-	
+
+		}
+		return puzzle4;
+	}
+
 	public Level generateRelease1(){
 		release1.setName("Release1");
 		this.p.setValueProb(20,10 , 10, 10, 20, 30);
-				this.release1.setProbability(p);
-		
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						release1.grid.add(s);
-					}
+		this.release1.setProbability(p);
 
-				}
-			Location location8 = new Location(0,8);
-			release1.grid.getSquare(location8).setRelease(true);
-			
-			Location location7 = new Location(3,7);
-			release1.grid.getSquare(location7).setRelease(true);
-			
-			Location location6 = new Location(2,1);
-			release1.grid.getSquare(location6).setRelease(true);
-			
-			Location location0 = new Location(3,5);
-			release1.grid.getSquare(location0).setRelease(true);
-			
-			Location location1 = new Location(8,4);
-			release1.grid.getSquare(location1).setRelease(true);
-			
-			Location location2 = new Location(3,3);
-			release1.grid.getSquare(location2).setRelease(true);
-			
-			
-			Location location3 = new Location(1,5);
-			release1.grid.getSquare(location3).setRelease(true);
-			
-			Location location4 = new Location(4,6);
-			release1.grid.getSquare(location4).setRelease(true);
-			
-			Location location5 = new Location(0,0);
-			release1.grid.getSquare(location5).setRelease(true);
-			return release1;
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+
+				Square s = new Square(new Location(row, col));
+				release1.grid.add(s);
 			}
+
+		}
+		Location location8 = new Location(0,8);
+		release1.grid.getSquare(location8).setRelease(true);
+
+		Location location7 = new Location(3,7);
+		release1.grid.getSquare(location7).setRelease(true);
+
+		Location location6 = new Location(2,1);
+		release1.grid.getSquare(location6).setRelease(true);
+
+		Location location0 = new Location(3,5);
+		release1.grid.getSquare(location0).setRelease(true);
+
+		Location location1 = new Location(8,4);
+		release1.grid.getSquare(location1).setRelease(true);
+
+		Location location2 = new Location(3,3);
+		release1.grid.getSquare(location2).setRelease(true);
+
+
+		Location location3 = new Location(1,5);
+		release1.grid.getSquare(location3).setRelease(true);
+
+		Location location4 = new Location(4,6);
+		release1.grid.getSquare(location4).setRelease(true);
+
+		Location location5 = new Location(0,0);
+		release1.grid.getSquare(location5).setRelease(true);
+		return release1;
+	}
 
 	public Level generateRelease2(){
 		release2.setName("Release2");
 		this.p.setValueProb(10,10 , 30, 10, 0, 40);
-				this.release2.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						release2.grid.add(s);
-					}
+		this.release2.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			
-			Location location8 = new Location(8,8);
-			release2.grid.getSquare(location8).setRelease(true);
-			
-			Location location7 = new Location(7,7);
-			release2.grid.getSquare(location7).setRelease(true);
-			
-			Location location6 = new Location(6,6);
-			release2.grid.getSquare(location6).setRelease(true);
-			
-			Location location0 = new Location(5,5);
-			release2.grid.getSquare(location0).setRelease(true);
-			
-			Location location1 = new Location(4,4);
-			release2.grid.getSquare(location1).setRelease(true);
-			
-			Location location2 = new Location(3,3);
-			release2.grid.getSquare(location2).setRelease(true);
-			
-			
-			Location location3 = new Location(2,2);
-			release2.grid.getSquare(location3).setRelease(true);
-			
-			Location location4 = new Location(1,1);
-			release2.grid.getSquare(location4).setRelease(true);
-			
-			Location location5 = new Location(0,0);
-			release2.grid.getSquare(location5).setRelease(true);
-			return release2;
+				Square s = new Square(new Location(row, col));
+				release2.grid.add(s);
 			}
-	
+
+		}
+
+		Location location8 = new Location(8,8);
+		release2.grid.getSquare(location8).setRelease(true);
+
+		Location location7 = new Location(7,7);
+		release2.grid.getSquare(location7).setRelease(true);
+
+		Location location6 = new Location(6,6);
+		release2.grid.getSquare(location6).setRelease(true);
+
+		Location location0 = new Location(5,5);
+		release2.grid.getSquare(location0).setRelease(true);
+
+		Location location1 = new Location(4,4);
+		release2.grid.getSquare(location1).setRelease(true);
+
+		Location location2 = new Location(3,3);
+		release2.grid.getSquare(location2).setRelease(true);
+
+
+		Location location3 = new Location(2,2);
+		release2.grid.getSquare(location3).setRelease(true);
+
+		Location location4 = new Location(1,1);
+		release2.grid.getSquare(location4).setRelease(true);
+
+		Location location5 = new Location(0,0);
+		release2.grid.getSquare(location5).setRelease(true);
+		return release2;
+	}
+
 	public Level generateRelease3(){
 		release3.setName("Release3");
 		this.p.setValueProb(20,10 , 10, 10, 20, 30);
-				this.release3.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						release3.grid.add(s);
-					}
+		this.release3.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			Location location0 = new Location(8,8);
-			release3.grid.getSquare(location0).setRelease(true);
-			
-			Location location1 = new Location(0,3);
-			release3.grid.getSquare(location1).setRelease(true);
-			
-			Location location2 = new Location(5,6);
-			release3.grid.getSquare(location2).setRelease(true);
-			
-			
-			Location location3 = new Location(3,5);
-			release3.grid.getSquare(location3).setRelease(true);
-			
-			Location location4 = new Location(2,7);
-			release3.grid.getSquare(location4).setRelease(true);
-			
-			Location location5 = new Location(6,8);
-			release3.grid.getSquare(location5).setRelease(true);
-			return release3;
+				Square s = new Square(new Location(row, col));
+				release3.grid.add(s);
 			}
-	
+
+		}
+		Location location0 = new Location(8,8);
+		release3.grid.getSquare(location0).setRelease(true);
+
+		Location location1 = new Location(0,3);
+		release3.grid.getSquare(location1).setRelease(true);
+
+		Location location2 = new Location(5,6);
+		release3.grid.getSquare(location2).setRelease(true);
+
+
+		Location location3 = new Location(3,5);
+		release3.grid.getSquare(location3).setRelease(true);
+
+		Location location4 = new Location(2,7);
+		release3.grid.getSquare(location4).setRelease(true);
+
+		Location location5 = new Location(6,8);
+		release3.grid.getSquare(location5).setRelease(true);
+		return release3;
+	}
+
 	public Level generateRelease4(){
 		release4.setName("Release4");
 		this.p.setValueProb(10,20 , 10, 30, 10, 20);
-				this.release4.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						release4.grid.add(s);
-					}
+		this.release4.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			
-			Location location0 = new Location(0,0);
-			release4.grid.getSquare(location0).setRelease(true);
-			
-			Location location1 = new Location(5,8);
-			release4.grid.getSquare(location1).setRelease(true);
-			
-			Location location2 = new Location(2,3);
-			release4.grid.getSquare(location2).setRelease(true);
-			
-			
-			Location location3 = new Location(4,4);
-			release4.grid.getSquare(location3).setRelease(true);
-			
-			Location location4 = new Location(3,7);
-			release4.grid.getSquare(location4).setRelease(true);
-			
-			Location location5 = new Location(2,4);
-			release4.grid.getSquare(location5).setRelease(true);
-			return release4;
+				Square s = new Square(new Location(row, col));
+				release4.grid.add(s);
 			}
-	
+
+		}
+
+		Location location0 = new Location(0,0);
+		release4.grid.getSquare(location0).setRelease(true);
+
+		Location location1 = new Location(5,8);
+		release4.grid.getSquare(location1).setRelease(true);
+
+		Location location2 = new Location(2,3);
+		release4.grid.getSquare(location2).setRelease(true);
+
+
+		Location location3 = new Location(4,4);
+		release4.grid.getSquare(location3).setRelease(true);
+
+		Location location4 = new Location(3,7);
+		release4.grid.getSquare(location4).setRelease(true);
+
+		Location location5 = new Location(2,4);
+		release4.grid.getSquare(location5).setRelease(true);
+		return release4;
+	}
+
 	public Level generateElimination1(){
 		elimination1.setName("Elimination1");
 		this.p.setValueProb(10,30 ,30 , 0,20 , 10);
 		this.elimination1.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						elimination1.grid.add(s);
-					}
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return elimination1;
+				Square s = new Square(new Location(row, col));
+				elimination1.grid.add(s);
 			}
-	
+
+		}
+		return elimination1;
+	}
+
 	public Level generateElimination2(){
 		elimination2.setName("Elimination2");
 		this.p.setValueProb(10,10 , 40, 10, 10, 20);
-				this.elimination2.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						elimination2.grid.add(s);
-					}
+		this.elimination2.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return elimination2;
+				Square s = new Square(new Location(row, col));
+				elimination2.grid.add(s);
 			}
+
+		}
+		return elimination2;
+	}
 
 	public Level generateElimination3(){
 		elimination3.setName("Elimination3");
 		this.p.setValueProb(15,27 , 3, 30, 5, 20);
-				this.elimination3.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						elimination3.grid.add(s);
-					}
+		this.elimination3.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return elimination3;
+				Square s = new Square(new Location(row, col));
+				elimination3.grid.add(s);
 			}
-	
+
+		}
+		return elimination3;
+	}
+
 	public Level generateElimination4(){
 		elimination4.setName("Elimination4");
 		this.p.setValueProb(40,10 , 10, 10, 10, 20);
-				this.elimination4.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						elimination4.grid.add(s);
-					}
+		this.elimination4.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return elimination4;
+				Square s = new Square(new Location(row, col));
+				elimination4.grid.add(s);
 			}
+
+		}
+		return elimination4;
+	}
 	public Level generateLightning1(){
 		lightning1.setName("Lightning1");
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						lightning1.grid.add(s);
-					}
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return lightning1;
+				Square s = new Square(new Location(row, col));
+				lightning1.grid.add(s);
 			}
-	
+
+		}
+		return lightning1;
+	}
+
 	public Level generateLightning2(){
 		lightning2.setName("Lightning2");
 		this.p.setValueProb(10,20 , 10, 30, 10, 20);
-				this.lightning1.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						lightning2.grid.add(s);
-					}
+		this.lightning1.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			return lightning2;
+				Square s = new Square(new Location(row, col));
+				lightning2.grid.add(s);
 			}
-	
+
+		}
+		return lightning2;
+	}
+
 	public Level generateLightning3(){
 		lightning3.setName("Lightning3");
 		this.p.setValueProb(40,10 , 10, 10, 10, 20);
-				this.lightning3.setProbability(p);
-		
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						lightning3.grid.add(s);
-					}
+		this.lightning3.setProbability(p);
 
-				}
-			return lightning3;
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+
+				Square s = new Square(new Location(row, col));
+				lightning3.grid.add(s);
 			}
-	
-	
+
+		}
+		return lightning3;
+	}
+
+
 	public Level generateLightning4(){
 		lightning4.setName("Lightning4");
 		this.p.setValueProb(17,17,17,17,17,15);
-				this.lightning4.setProbability(p);
-			for (int row = 0; row < 9; row++) {
-				for (int col = 0; col < 9; col++) {
-					
-						Square s = new Square(new Location(row, col));
-						lightning4.grid.add(s);
-					}
+		this.lightning4.setProbability(p);
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
 
-				}
-			
-			return lightning4;
+				Square s = new Square(new Location(row, col));
+				lightning4.grid.add(s);
 			}
-	
-	
+
+		}
+
+		return lightning4;
+	}
+
+
 	public ArrayList<Level>	generateLevels(){
 
 		generatePuzzle1();
@@ -420,7 +420,7 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 		levels.add(elimination1);
 		generateLightning1();
 		levels.add(lightning1);
-		
+
 		generateLightning2();
 		levels.add(lightning2);
 		generateElimination2();
@@ -429,7 +429,7 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 		levels.add(release2);
 		generatePuzzle2();
 		levels.add(puzzle2);
-		
+
 		generateRelease3();
 		levels.add(release3);
 		generateLightning3();
@@ -438,7 +438,7 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 		levels.add(elimination3);
 		generatePuzzle3();
 		levels.add(puzzle3);
-	
+
 		generatePuzzle4();
 		levels.add(puzzle4);
 		generateRelease4();

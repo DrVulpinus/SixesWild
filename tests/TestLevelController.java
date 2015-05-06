@@ -50,7 +50,7 @@ public class TestLevelController {
 		
 		lps.setSelectedMove(3);
 		System.out.println("Set" + lps.getSelectedMove());
-		levelController.playStateChanged(lps.getSelectedMove());
+//		levelController.playStateChanged(lps.getSelectedMove());
 		assert lpv.getSpecialMoveView().getResetBoardButton().getBackground().equals(levelController.SELECTED_MOVE_COLOR);
 		
 	}
