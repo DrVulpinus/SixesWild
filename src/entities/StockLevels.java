@@ -7,7 +7,7 @@ import src.PuzzleStats;
 
 
 public class StockLevels extends ArrayList<Level>{
-	ArrayList<Level> levels; 
+	private ArrayList<Level> levels; 
 	Level puzzle1;
 	Level puzzle2;
 	Level puzzle3;
@@ -45,7 +45,7 @@ public class StockLevels extends ArrayList<Level>{
 
 
 	public StockLevels() {
-		this.levels = new ArrayList<Level>();
+		this.setLevels(new ArrayList<Level>());
 		this.puzzle1 = new Level(LevelType.PUZZLE);
 		this.puzzle2 = new Level(LevelType.PUZZLE);
 		this.puzzle3 = new Level(LevelType.PUZZLE);
@@ -413,42 +413,62 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 	public ArrayList<Level>	generateLevels(){
 
 		generatePuzzle1();
-		levels.add(puzzle1);
-		generateRelease1();
-		levels.add(release1);
-		generateElimination1();
-		levels.add(elimination1);
+		getLevels().add(puzzle1);
 		generateLightning1();
-		levels.add(lightning1);
+		getLevels().add(lightning1);
+		generateElimination1();
+		getLevels().add(elimination1);
+		generateRelease1();
+		getLevels().add(release1);
 		
-		generateLightning2();
-		levels.add(lightning2);
-		generateElimination2();
-		levels.add(elimination2);
-		generateRelease2();
-		levels.add(release2);
 		generatePuzzle2();
-		levels.add(puzzle2);
+		getLevels().add(puzzle2);
+		generateLightning2();
+		getLevels().add(lightning2);
+		generateElimination2();
+		getLevels().add(elimination2);
+		generateRelease2();
+		getLevels().add(release2);
 		
-		generateRelease3();
-		levels.add(release3);
-		generateLightning3();
-		levels.add(lightning3);
-		generateElimination3();
-		levels.add(elimination3);
+		
 		generatePuzzle3();
-		levels.add(puzzle3);
+		getLevels().add(puzzle3);
+		generateLightning3();
+		getLevels().add(lightning3);
+		generateElimination3();
+		getLevels().add(elimination3);
+		generateRelease3();
+		getLevels().add(release3);
+		
 	
 		generatePuzzle4();
-		levels.add(puzzle4);
-		generateRelease4();
-		levels.add(release4);
-		generateElimination4();
-		levels.add(elimination4);
+		getLevels().add(puzzle4);
 		generateLightning4();
-		levels.add(lightning4);
+		getLevels().add(lightning4);
+		generateElimination4();
+		getLevels().add(elimination4);
+		generateRelease4();
+		getLevels().add(release4);
 
+		return getLevels();
+	}
+
+
+
+
+
+
+	public ArrayList<Level> getLevels() {
 		return levels;
+	}
+
+
+
+
+
+
+	public void setLevels(ArrayList<Level> levels) {
+		this.levels = levels;
 	}
 }
 

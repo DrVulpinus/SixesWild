@@ -236,17 +236,17 @@ public class LevelController implements ChangeLevelPlayState{
 								//level.lp.getLblStar3().setVisible(true);
 							}
 						}
-						//set next panel enable if this is not the last panel
-						if(window.lvlSelectView.getLevelPanels().indexOf(level.lp) < window.lvlSelectView.getLevelPanels().size()){
-						window.lvlSelectView.getLevelPanels().get(window.lvlSelectView.getLevelPanels().indexOf(level.lp) + 1).setEnabled(true);
-						for(Component c : window.lvlSelectView.getLevelPanels().get(window.lvlSelectView.getLevelPanels().indexOf(level.lp) + 1).getComponents()){
-							c.setEnabled(true);
-							}
-						}
-						level.lp.revalidate();
-						level.lp.repaint();
-						window.validate();
 					}
+					//set next panel enable if this is not the last panel
+					if(window.lvlSelectView.getLevelPanels().indexOf(level.lp) < 12){
+					window.lvlSelectView.getLevelPanels().get(window.lvlSelectView.getLevelPanels().indexOf(level.lp) + 4).setEnabled(true);
+					for(Component c : window.lvlSelectView.getLevelPanels().get(window.lvlSelectView.getLevelPanels().indexOf(level.lp) + 1).getComponents()){
+						c.setEnabled(true);
+						}
+					}
+					level.lp.revalidate();
+					level.lp.repaint();
+					window.getContentPane().validate();
 			}
 			
 		}

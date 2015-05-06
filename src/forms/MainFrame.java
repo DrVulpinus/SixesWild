@@ -229,8 +229,8 @@ public class MainFrame extends JFrame{
 
 			});
 			
-			
-			if(i != 0){
+			//enable the first 4 levels and free levels to play
+			if(i > 3 && i < lvlSelectView.stockLevel.getLevels().size()){
 			lvlSelectView.getLevelPanels().get(i).setEnabled(false);
 			lvlSelectView.getLevelPanels().get(i).isEnabled();
 			for(Component c : lvlSelectView.getLevelPanels().get(i).getComponents()){
