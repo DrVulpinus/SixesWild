@@ -33,12 +33,12 @@ package entities;
 		startTime = 0;
 	}
 	public long getTimeMillis(){
-		//return (Math.abs(System.currentTimeMillis() - startTime));
-		return Math.subtractExact(startTime,System.currentTimeMillis());
+		return (Math.abs(System.currentTimeMillis() - startTime));
+		//return Math.subtractExact(startTime,System.currentTimeMillis());
 	}
 	public long getTimeSeconds(){
-		//return (Math.abs(System.currentTimeMillis() - startTime))/1000;
-		return Math.subtractExact(startTime,System.currentTimeMillis())/1000;		
+		return (Math.abs(System.currentTimeMillis() - startTime))/1000;
+		//return Math.subtractExact(startTime,System.currentTimeMillis())/1000;		
 	}
 	public String getTimeString(){
 		String outTime = "";
