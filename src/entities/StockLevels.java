@@ -30,7 +30,6 @@ public class StockLevels extends ArrayList<Level>{
 	Square square4;
 	Square square5;
 	Square square6;
-	Probability p;
 	public static StockLevels stockLevel;
 	public static StockLevels getInstance(){
 		if (stockLevel == null){
@@ -67,13 +66,14 @@ public class StockLevels extends ArrayList<Level>{
 		this.lightning4 = new Level(LevelType.LIGHTNING);
 
 		this.square1 = new Square();
-		this.p = new Probability();
+		
 	}
 
 
 	public Level generatePuzzle1(){
 		puzzle1.setName("Puzzle1");
-		this.p.setValueProb(75,25 , 0, 0, 0, 0);
+		Probability p = new Probability();
+		p.setValueProb(75,25 , 0, 0, 0, 0);
 		this.puzzle1.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -92,7 +92,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generatePuzzle2(){
 		puzzle2.setName("Puzzle2");
-		this.p.setValueProb(17,17,17,17,17,15);
+		Probability p = new Probability();
+		p.setValueProb(17,17,17,17,17,15);
 		this.puzzle2.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -107,7 +108,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generatePuzzle3(){
 		puzzle3.setName("Puzzle3");
-		this.p.setValueProb(15,20, 20,7,30,8);
+		Probability p = new Probability();
+		p.setValueProb(15,20, 20,7,30,8);
 		this.puzzle3.setProbability(p);
 
 		for (int row = 0; row < 9; row++) {
@@ -123,7 +125,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generatePuzzle4(){
 		puzzle4.setName("Puzzle4");
-		this.p.setValueProb(10,20 , 10, 30, 10, 20);
+		Probability p = new Probability();
+		p.setValueProb(10,20 , 10, 30, 10, 20);
 		this.puzzle4.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -138,7 +141,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateRelease1(){
 		release1.setName("Release1");
-		this.p.setValueProb(20,10 , 10, 10, 20, 30);
+		Probability p = new Probability();
+		p.setValueProb(20,10 , 10, 10, 20, 30);
 		this.release1.setProbability(p);
 
 		for (int row = 0; row < 9; row++) {
@@ -181,7 +185,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateRelease2(){
 		release2.setName("Release2");
-		this.p.setValueProb(10,10 , 30, 10, 0, 40);
+		Probability p = new Probability();
+		p.setValueProb(10,10 , 30, 10, 0, 40);
 		this.release2.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -224,7 +229,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateRelease3(){
 		release3.setName("Release3");
-		this.p.setValueProb(20,10 , 10, 10, 20, 30);
+		Probability p = new Probability();
+		p.setValueProb(20,10 , 10, 10, 20, 30);
 		this.release3.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -257,7 +263,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateRelease4(){
 		release4.setName("Release4");
-		this.p.setValueProb(10,20 , 10, 30, 10, 20);
+		Probability p = new Probability();
+		p.setValueProb(10,20 , 10, 30, 10, 20);
 		this.release4.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -291,7 +298,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateElimination1(){
 		elimination1.setName("Elimination1");
-		this.p.setValueProb(10,30 ,30 , 0,20 , 10);
+		Probability p = new Probability();
+		p.setValueProb(10,30 ,30 , 0,20 , 10);
 		this.elimination1.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -306,7 +314,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateElimination2(){
 		elimination2.setName("Elimination2");
-		this.p.setValueProb(10,10 , 40, 10, 10, 20);
+		Probability p = new Probability();
+		p.setValueProb(10,10 , 40, 10, 10, 20);
 		this.elimination2.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -321,7 +330,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateElimination3(){
 		elimination3.setName("Elimination3");
-		this.p.setValueProb(15,27 , 3, 30, 5, 20);
+		Probability p = new Probability();
+		p.setValueProb(15,27 , 3, 30, 5, 20);
 		this.elimination3.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -336,7 +346,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateElimination4(){
 		elimination4.setName("Elimination4");
-		this.p.setValueProb(40,10 , 10, 10, 10, 20);
+		Probability p = new Probability();
+		p.setValueProb(40,10 , 10, 10, 10, 20);
 		this.elimination4.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -350,6 +361,8 @@ public class StockLevels extends ArrayList<Level>{
 	}
 	public Level generateLightning1(){
 		lightning1.setName("Lightning1");
+		Probability p = new Probability();
+		p.setValueProb(40,10 , 10, 10, 10, 20);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
 
@@ -363,7 +376,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateLightning2(){
 		lightning2.setName("Lightning2");
-		this.p.setValueProb(10,20 , 10, 30, 10, 20);
+		Probability p = new Probability();
+		p.setValueProb(10,20 , 10, 30, 10, 20);
 		this.lightning1.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -378,7 +392,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateLightning3(){
 		lightning3.setName("Lightning3");
-		this.p.setValueProb(40,10 , 10, 10, 10, 20);
+		Probability p = new Probability();
+		p.setValueProb(40,10 , 10, 10, 10, 20);
 		this.lightning3.setProbability(p);
 
 		for (int row = 0; row < 9; row++) {
@@ -395,7 +410,8 @@ public class StockLevels extends ArrayList<Level>{
 
 	public Level generateLightning4(){
 		lightning4.setName("Lightning4");
-		this.p.setValueProb(17,17,17,17,17,15);
+		Probability p = new Probability();
+		p.setValueProb(17,17,17,17,17,15);
 		this.lightning4.setProbability(p);
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
