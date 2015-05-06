@@ -1,5 +1,8 @@
 package forms;
 
+import interfaces.MoveControlListener;
+import interfaces.ToolControlListener;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -14,8 +17,7 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import Interfaces.MoveControlListener;
-import Interfaces.ToolControlListener;
+import boundaries.SquareView;
 import entities.Block;
 import entities.Grid;
 import entities.Location;

@@ -331,7 +331,7 @@ public abstract class StatsView extends JPanel {
 			lblStar_1 = new JLabel("");
 			lblStar_1.setEnabled(false);
 			lblStar_1.setHorizontalAlignment(SwingConstants.CENTER);
-			lblStar_1.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+			lblStar_1.setIcon(new ImageIcon(StatsView.class.getResource("/images/star icon.png")));
 		}
 		return lblStar_1;
 	}
@@ -340,7 +340,7 @@ public abstract class StatsView extends JPanel {
 			lblStar_2 = new JLabel("");
 			lblStar_2.setEnabled(false);
 			lblStar_2.setHorizontalAlignment(SwingConstants.CENTER);
-			lblStar_2.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+			lblStar_2.setIcon(new ImageIcon(StatsView.class.getResource("/images/star icon.png")));
 		}
 		return lblStar_2;
 	}
@@ -349,7 +349,7 @@ public abstract class StatsView extends JPanel {
 			lblStar_3 = new JLabel("");
 			lblStar_3.setEnabled(false);
 			lblStar_3.setHorizontalAlignment(SwingConstants.CENTER);
-			lblStar_3.setIcon(new ImageIcon(StatsView.class.getResource("/Images/star icon.png")));
+			lblStar_3.setIcon(new ImageIcon(StatsView.class.getResource("/images/star icon.png")));
 		}
 		return lblStar_3;
 	}

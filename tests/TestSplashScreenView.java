@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import forms.SplashScreenView;
+import boundaries.SplashScreenView;
 
 
 public class TestSplashScreenView {

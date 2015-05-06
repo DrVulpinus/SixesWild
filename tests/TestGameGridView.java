@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import forms.GameGridView;
+import boundaries.GameGridView;
 
 
 public class TestGameGridView {

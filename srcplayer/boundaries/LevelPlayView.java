@@ -1,5 +1,7 @@
 package boundaries;
 
+import interfaces.MoveControlListener;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -15,7 +17,6 @@ import src.PuzzleStatsView;
 import src.ReleaseStats;
 import src.ReleaseStatsView;
 import src.StatsView;
-import Interfaces.MoveControlListener;
 
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;

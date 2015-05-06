@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import forms.LevelSelectView;
+import boundaries.LevelSelectView;
 
 
 public class TestLevelSelectView {

@@ -7,14 +7,14 @@ import javax.swing.JButton;
 
 import org.junit.Test;
 
+import boundaries.LevelPlayView;
+import boundaries.MainFrame;
 import src.PuzzleStatsView;
 import controllers.LevelController;
 import controllers.MoveController;
 import entities.Level;
 import entities.LevelPlayState;
 import entities.LevelType;
-import forms.LevelPlayView;
-import forms.MainFrame;
 
 
 public class TestLevelPlayView {

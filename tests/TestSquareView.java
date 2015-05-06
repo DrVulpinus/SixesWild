@@ -1,7 +1,7 @@
 import org.junit.Test;
 
+import boundaries.SquareView;
 import entities.Square;
-import forms.SquareView;
 
 
 public class TestSquareView {

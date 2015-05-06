@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import forms.MainFrame;
+import boundaries.MainFrame;
 
 
 public class TestMainFrame {

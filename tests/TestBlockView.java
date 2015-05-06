@@ -1,7 +1,7 @@
 import org.junit.Test;
 
+import boundaries.BlockView;
 import entities.Block;
-import forms.BlockView;
 
 
 public class TestBlockView {

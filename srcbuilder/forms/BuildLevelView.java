@@ -1,5 +1,7 @@
 package forms;
 
+import interfaces.ToolControlListener;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -19,12 +21,14 @@ import src.PuzzleStatsView;
 import src.ReleaseStats;
 import src.ReleaseStatsView;
 import src.StatsView;
-import Interfaces.ToolControlListener;
+import boundaries.SpecialMoveView;
 import builder_entities.LevelBuildState;
 import entities.Grid;
 import entities.Level;
 import entities.LevelType;
+
 import javax.swing.JTextField;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 /**

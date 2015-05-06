@@ -7,6 +7,8 @@ import java.util.TimerTask;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import boundaries.SplashScreenView;
+
 /**
  * Start the builder program
  * @author agyness

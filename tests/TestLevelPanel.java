@@ -2,9 +2,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import boundaries.LevelPanel;
 import entities.Level;
 import entities.LevelType;
-import forms.LevelPanel;
 
 
 public class TestLevelPanel {

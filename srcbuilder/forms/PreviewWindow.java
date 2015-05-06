@@ -5,6 +5,7 @@ import java.io.File;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 
+import boundaries.GameGridView;
 import controllers.SaveLoadLevel;
 import entities.Grid;
 import entities.Level;

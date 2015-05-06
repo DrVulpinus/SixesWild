@@ -1,5 +1,7 @@
 package boundaries;
 
+import interfaces.MoveControlListener;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -9,7 +11,6 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import Interfaces.MoveControlListener;
 import entities.Block;
 import entities.Grid;
 import entities.Location;

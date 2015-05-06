@@ -1,11 +1,12 @@
 package controllers;
+import interfaces.MoveControlListener;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import boundaries.GameGridView;
 import boundaries.LevelPlayView;
 import boundaries.SquareView;
-import Interfaces.MoveControlListener;
 import entities.Block;
 import entities.Level;
 import entities.LevelPlayState;

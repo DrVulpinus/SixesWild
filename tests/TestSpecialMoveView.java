@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import forms.SpecialMoveView;
+import boundaries.SpecialMoveView;
 
 
 public class TestSpecialMoveView {

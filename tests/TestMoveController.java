@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import boundaries.LevelPlayView;
+import boundaries.SquareView;
 import src.LevelStats;
 import src.PuzzleStatsView;
 import controllers.MoveController;
@@ -10,8 +12,6 @@ import entities.LevelPlayState;
 import entities.LevelType;
 import entities.MoveRegular;
 import entities.Square;
-import forms.LevelPlayView;
-import forms.SquareView;
 
 
 public class TestMoveController {
