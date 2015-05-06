@@ -7,7 +7,7 @@ package entities;
  * @author Miya Gaskell
  * @author Richard Eberheim
  * @author Alex Wald
- *
+ * @author Qiaoyu Liao
  */
 public class LightningStats extends LevelStats{
 

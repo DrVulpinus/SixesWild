@@ -5,7 +5,7 @@ package entities;
  * The stats for a release level. Contains a number of release blocks left that decrements when called.
  * @author Miya Gaskell
  * @author Alex Wald
- * @author Agyness Liao
+ * @author Qiaoyu Liao
  *
  */
 public class ReleaseStats extends LevelStats {

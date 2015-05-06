@@ -2,6 +2,11 @@ package icons;
 
 import javax.swing.ImageIcon;
 
+/**
+ * Icons images for block
+ * @author Qiaoyu Liao
+ *
+ */
 public class Icon3x3 extends Icon{
 	
 	public Icon3x3(){

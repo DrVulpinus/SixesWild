@@ -4,6 +4,11 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+/**
+ * Icons images for block
+ * @author Qiaoyu Liao
+ * @author Alex Wald
+ */
 public abstract class Icon {
 	ImageIcon image;
 	String text;

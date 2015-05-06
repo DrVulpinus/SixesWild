@@ -6,7 +6,7 @@ import javax.swing.JTextField;
 /**
  * The timer implemented for a lightning level. Starts counting down from a given number of seconds.
  * @author Richard Eberheim
- * @author Agyness Liao
+ * @author Qiaoyu Liao
  * @author Alex Wald
  *
  */

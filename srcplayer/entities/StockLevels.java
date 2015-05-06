@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * StockLevels provides methods for making the built in set of 16 levels
  * and adds the levels to a list.
  * @author Sarah Chamberlain
+ * @author Qiaoyu Liao
  */
 
 public class StockLevels extends ArrayList<Level>{
