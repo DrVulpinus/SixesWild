@@ -21,19 +21,10 @@ public class TestMoveController {
 		
 		Level level = new Level(LevelType.PUZZLE);
 		LevelPlayState playState = new LevelPlayState();
-		LevelStats ls = new LevelStats(0);
 		MoveController moveController = new MoveController(level, playState);
-		PuzzleStatsView psv = new PuzzleStatsView(ls);
-		LevelPlayView lpv = new LevelPlayView(level, moveController, psv);
-		ArrayList<Square> squares = new ArrayList();
+		ArrayList<Square> squares = new ArrayList<Square>();
 		Square square = new Square();
 		SquareView sV = new SquareView(square);
-		boolean isBuilding = true;
-		SquareView svV = new SquareView(square, isBuilding);
-//		Square square =new Square();
-//		SquareView squareView = new SquareView(null);
-//		moveController.selectBlock(squareView);
-		
 		MoveRegular mr = new MoveRegular(level, squares);
 		assert mr.getSquaresInvolved().equals(squares);
 		
