@@ -1,6 +1,7 @@
 package forms;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.util.Random;
 
@@ -49,7 +50,9 @@ public class LevelPanel extends JPanel {
 			 */
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
+				if(((LevelPanel) arg0.getSource()).isEnabled()){
 				setBackground(hoveredColor);
+				}
 			}
 
 			/**
@@ -57,7 +60,9 @@ public class LevelPanel extends JPanel {
 			 */
 			@Override
 			public void mouseExited(MouseEvent e) {
-				setBackground(normalColor);
+				if(((LevelPanel) e.getSource()).isEnabled()){
+					setBackground(normalColor);
+					}				
 			}
 		});
 
@@ -99,6 +104,9 @@ public class LevelPanel extends JPanel {
 		} catch (Exception e) {
 			setLevelType("NO TYPE AVAILABLE");
 		}
+		
+		
+		
 
 	}
 

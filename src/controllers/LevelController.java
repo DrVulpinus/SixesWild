@@ -2,8 +2,10 @@ package controllers;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 
 
@@ -232,6 +234,13 @@ public class LevelController implements ChangeLevelPlayState{
 							if( level.getStats().getStarCount() >= 3){
 								level.lp.addStar3();
 								//level.lp.getLblStar3().setVisible(true);
+							}
+						}
+						//set next panel enable if this is not the last panel
+						if(window.lvlSelectView.getLevelPanels().indexOf(level.lp) < window.lvlSelectView.getLevelPanels().size()){
+						window.lvlSelectView.getLevelPanels().get(window.lvlSelectView.getLevelPanels().indexOf(level.lp) + 1).setEnabled(true);
+						for(Component c : window.lvlSelectView.getLevelPanels().get(window.lvlSelectView.getLevelPanels().indexOf(level.lp) + 1).getComponents()){
+							c.setEnabled(true);
 							}
 						}
 						level.lp.revalidate();

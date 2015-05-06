@@ -117,20 +117,7 @@ public class MainFrame extends JFrame{
 		setTitle("Sixes Wild");
 		setResizable(false);
 
-//		// add the actionlistener for the back button
-//		achvSelectView.getBtnBack().addActionListener(new ActionListener(){
-//
-//			/**
-//			 * Return to the main menu screen when the button is pressed.
-//			 */
-//			@Override
-//			public void actionPerformed(ActionEvent e){
-//				MainFrame.this.add(mainMenu);
-//				MainFrame.this.validate();
-//				MainFrame.this.repaint();
-//				System.out.println("back to main menu");
-//			}
-//		});
+
 
 		// add the actionlistener for the level button
 		mainMenu.getBtnLevel().addMouseListener(new MouseListener() {
@@ -173,22 +160,7 @@ public class MainFrame extends JFrame{
 		});
 
 
-//		// add an action listener for the Achievements button
-//		mainMenu.getBtnAchievments().addActionListener(new ActionListener() {
-//
-//			/**
-//			 * PUll up a new GUI containing the achievements screen when the Achievements button is pressed.
-//			 */
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				MainFrame.this.setContentPane(achvSelectView);
-//				MainFrame.this.validate();
-//				MainFrame.this.repaint();
-//				System.out.println("to Achievement Select View");
-//
-//			}
-//
-//		});
+
 
 		// add an action listener for the Back button (in level selection view)
 		lvlSelectView.getBtnBack().addActionListener(new ActionListener(){
@@ -208,19 +180,27 @@ public class MainFrame extends JFrame{
 
 		//add mouselistener to the level panels
 		for (int i = 0; i <  lvlSelectView.getLevelPanels().size(); i++) {
+			
+			
 
+			
 			// for every level panel in the level selection screen, add a listener
 			lvlSelectView.getLevelPanels().get(i).addMouseListener(new MouseListener(){
 
 				/**
 				 * When the mouse is clicked, refer to the level controller and pass it this mainFrame.
 				 */
+			
 				@Override
 				public void mouseClicked(MouseEvent arg0) {
+					//if a levelcontroller already exist
 					if(levelController != null){
 						levelController = null;
 					}
+					//if this panel is disabled
+					if(((LevelPanel) arg0.getSource()).isEnabled()){
 					levelController = new LevelController(((LevelPanel)arg0.getSource()).getLevel(), MainFrame.this);
+			}
 				}
 
 				@Override
@@ -248,6 +228,15 @@ public class MainFrame extends JFrame{
 				}
 
 			});
+			
+			
+			if(i != 0){
+			lvlSelectView.getLevelPanels().get(i).setEnabled(false);
+			lvlSelectView.getLevelPanels().get(i).isEnabled();
+			for(Component c : lvlSelectView.getLevelPanels().get(i).getComponents()){
+				c.setEnabled(false);
+			}
+		}
 		}
 
 	}
