@@ -54,4 +54,9 @@ public class ReleaseStats extends LevelStats {
 	public int getUniqueIntValue() {
 		return this.releaseBlocksLeft;
 	}
+	
+	@Override
+	public void setUniqueIntValue(int releaseBlocksLeft){
+		this.releaseBlocksLeft = releaseBlocksLeft;
+	}
 }
