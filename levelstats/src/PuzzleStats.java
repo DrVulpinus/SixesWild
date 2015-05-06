@@ -33,6 +33,11 @@ public class PuzzleStats extends LevelStats {
 		return numMovesLeft;
 	}
 	
+	@Override
+	public void setUniqueIntValue(int numMovesLeft) {
+		this.numMovesLeft = numMovesLeft;
+	}
+	
 	public void setNumMovesLeft(int numMovesLeft){
 		this.numMovesLeft = numMovesLeft;
 	}

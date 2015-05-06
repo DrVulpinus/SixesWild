@@ -384,7 +384,7 @@ public abstract class StatsView extends JPanel {
 		}
 		return lblLimitingfactor;
 	}
-	JTextField getTxtLimitingfactordisplay() {
+	public JTextField getTxtLimitingfactordisplay() {
 		if (txtLimitingfactordisplay == null) {
 			txtLimitingfactordisplay = new JTextField();
 			txtLimitingfactordisplay.setHorizontalAlignment(SwingConstants.CENTER);

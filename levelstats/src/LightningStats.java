@@ -53,6 +53,7 @@ public class LightningStats extends LevelStats{
 	public int getUniqueIntValue(){
 		return getTimeLeft();
 	}
+	
 	@Override
 	public void setUniqueIntValue(int time){
 		setTimeLeft(time);

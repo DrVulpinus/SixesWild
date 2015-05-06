@@ -290,7 +290,7 @@ public class BuildLevelView extends JPanel{
 		return btnPreviewLevel;
 	}
 	
-	public JPanel getStatsView() {
+	public StatsView getStatsView() {
 		return this.statsView;
 	}
 }

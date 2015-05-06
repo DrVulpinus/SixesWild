@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import controllers.ProbabilityController;
@@ -104,7 +105,23 @@ public class BuildingController {
 		buildLevelView.getBtnUpdateStats().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//int num = buildLevelView.getStatsView();
+				int num;
+				
+				try {
+					num = Integer.parseInt(buildLevelView.getStatsView().getTxtLimitingfactordisplay().getText());
+				} catch (Exception e1) {
+					JOptionPane.showMessageDialog(window, "The specified Stats value must be an integer.");
+					return;
+				}
+				
+				if (num < 0) {
+					JOptionPane.showMessageDialog(window, "The specified stats value must be larger than 0.");
+					return;
+				}
+				
+				level.getStats().setUniqueIntValue(num);
+				
+				System.out.println("Stats changed: " + level.getStats().getUniqueIntValue());
 			}	
 		});
 		
