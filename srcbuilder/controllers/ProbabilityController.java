@@ -17,6 +17,8 @@ import forms.TypeSelectView;
  * The controller that readjusts the GUI that allows the user to set the probability.
  * Readjusts the probability for individual block values and informs the user when
  * those probabilities do not add up to 100 percent.
+ * @author Alex Wald
+ * @author Agyness Liao
  *
  */
 public class ProbabilityController {

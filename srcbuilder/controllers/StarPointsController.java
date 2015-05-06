@@ -13,6 +13,9 @@ import forms.AdjustStarView;
 /**
  * The controller that handles the updates to the star points and adjusts the view accordingly.
  *
+ *@author Alex Wald
+ *@author Richard Eberheim
+ *@author Agyness Liao
  */
 public class StarPointsController {
 	

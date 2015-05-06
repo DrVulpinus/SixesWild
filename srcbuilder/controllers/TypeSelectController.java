@@ -17,6 +17,8 @@ import forms.TypeSelectView;
  * The controller that updates the GUI that contains the selectable types.
  * When a type is selected, the level entity is then passed that type.
  *
+ *@author Richard Eberheim
+ *@author Alex Wald
  */
 public class TypeSelectController implements ActionListener {
 	TypeSelectView typeSelectView = new TypeSelectView();

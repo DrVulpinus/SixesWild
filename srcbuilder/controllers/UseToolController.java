@@ -12,6 +12,7 @@ import builder_entities.LevelBuildState;
  * The controller that implements the tools in the builder. Allows adding squares, removing squares,
  * adding sixes, removing sixes, and adding and removing release blocks.
  *
+ *@author Alex Wald
  */
 
 public class UseToolController implements ToolControlListener{
