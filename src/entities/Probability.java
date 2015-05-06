@@ -128,13 +128,13 @@ public class Probability {
 		return (p[0] + p[1] + p[2] + p[3] + p[4] + p[5] == 100);
 	}
 	
-	public void setResetProbabilities(){
-		this.valueProb[0] = 20;
-		this.valueProb[1] = 20;
-		this.valueProb[2] = 20;
-		this.valueProb[3] = 20;
-		this.valueProb[4] = 20;
-		this.valueProb[5] = 0;
+	public void setResetProbabilities(int[] p){
+		p[0] = 20;
+		p[1] = 20;
+		p[2] = 20;
+		p[3] = 20;
+		p[4] = 20;
+		p[5] = 0;
 		
 	}
 	

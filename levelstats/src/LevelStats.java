@@ -118,4 +118,8 @@ public class LevelStats {
 	public void setUniqueIntValue(int unique){
 		this.unique = unique;
 	}
+	
+	public void setScore(int score){
+		this.score = score;
+	}
 }
