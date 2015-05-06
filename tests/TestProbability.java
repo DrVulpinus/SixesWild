@@ -54,6 +54,18 @@ public class TestProbability {
 		assertEquals(200, valNum[4]);
 		assertEquals(0, valNum[5]);
 		assertEquals(200, valNum[6]);
+		
+		int[] val = new int[6];
+		val[0] = 20;
+		val[1] = 20;
+		val[2] = 10;
+		val[3] = 10;
+		val[4] = 20;
+		val[5] = 20;
+		assertTrue(testProb.setValueProbs(val));
+		
+		testProb.setResetProbabilities(val);
+		assertEquals(0, val[5]);
 	}
 
 }

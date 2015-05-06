@@ -159,7 +159,6 @@ public class Level
 				}
 			}
 			else{
-				probability.setResetProbabilities();
 				square.setBlock(BlockMaker.getInstance().makeBlock(probability));
 			}
 		}
