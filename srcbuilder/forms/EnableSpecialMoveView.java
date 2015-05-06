@@ -13,6 +13,7 @@ import javax.swing.JButton;
 
 /**
  * The view that appears when the user requests to edit the special moves.
+ * @author Miya Gaskell
  *
  */
 public class EnableSpecialMoveView extends JPanel{

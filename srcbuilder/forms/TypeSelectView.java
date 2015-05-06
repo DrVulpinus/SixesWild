@@ -7,6 +7,7 @@ import javax.swing.SwingConstants;
 
 /**
  * The View to select what type of Level you would like to build
+ * @author Miya Gaskell
  */
 public class TypeSelectView extends JPanel{
 	/* Panel for containing JRadioButton for Puzzle */

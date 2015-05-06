@@ -8,6 +8,7 @@ import javax.swing.JButton;
 
 /**
  * The View to change the probability of creting x1,x2,x3 tiles
+ * @author Miya Gaskell
  */
 public class ProbabilityMultiplierView extends JPanel{
 	private JPanel panel;

@@ -10,6 +10,11 @@ import controllers.SaveLoadLevel;
 import entities.Grid;
 import entities.Level;
 
+/**
+ * The window that appears to present the user with a preview of how their current level would appear in the game.
+ * @author Alex Wald
+ *
+ */
 public class PreviewWindow extends JDialog {
 	
 	Level level;

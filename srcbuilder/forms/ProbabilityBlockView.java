@@ -15,6 +15,7 @@ import javax.swing.JButton;
 /**
  * The view that contains the GUI that takes in user input for the textfields
  * containing the block value probabilities.
+ * @author Miya Gaskell
  *
  */
 public class ProbabilityBlockView extends JPanel{

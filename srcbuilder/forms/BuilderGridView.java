@@ -25,6 +25,9 @@ import entities.Square;
 
 /**
  * Building the grid in the level builder
+ * @author Sarah Chamberlain
+ * @author Alex Wald
+ * @author Richard Eberheim
  */
 public class BuilderGridView extends JPanel implements MouseListener {
 

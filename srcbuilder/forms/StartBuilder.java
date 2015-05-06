@@ -41,23 +41,6 @@ public class StartBuilder {
 		//MF.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		mainFrame.setVisible(true);
 
-
-
-
-		/*TimerTask task = new TimerTask() {          	   
-                 @Override
-                  public void run() {  
-                	 s.setVisible(false);
-                     s.dispose();
-                     MainMenuView mMV = new MainMenuView();
-                     mMV.setVisible(true);
-                     timer.cancel();
-
-                 }
-           };
-           timer.schedule(task,splashscreenTime);*/
-
-
 	}
 }
 

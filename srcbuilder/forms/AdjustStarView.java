@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
  *  The view to adjust the points that needed to reach 
  *  one star, two stars and three stars accomplishment
  *
+ *@author Richard Eberheim
  */
 public class AdjustStarView extends JPanel{
 	private JPanel panel;
