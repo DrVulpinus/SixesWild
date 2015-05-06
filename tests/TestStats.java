@@ -6,8 +6,10 @@ import org.junit.Test;
 
 import src.EliminationStats;
 import src.LevelStats;
+import src.LightningStats;
 import src.PuzzleStats;
 import src.ReleaseStats;
+import entities.Timer;
 
 
 public class TestStats {
@@ -37,6 +39,11 @@ public class TestStats {
 		assertTrue(ps.winCondition());
 		ps.setScore(0);
 		assertFalse(ps.winCondition());
+		
+		LightningStats lis = new LightningStats(0, new Timer());
+		lis.setScore(100);
+		lis.setStarCounts(1,2,30);
+		assertTrue(lis.winCondition());
 		
 		EliminationStats es = new EliminationStats(0, 0, 10);
 		es.update(10, 10, 0);
