@@ -161,6 +161,10 @@ public class StockLevels extends ArrayList<Level>{
 			this.puzzle1.grid.add(square);
 			y7++;
 		}
+		
+		
+			puzzle1.grid.addNeighbors();
+		
 		return puzzle1;
 	}
 
@@ -257,6 +261,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.puzzle2.grid.add(square);
 			y7++;
 		}
+		puzzle2.grid.addNeighbors();
 		return puzzle2;
 	}
 
@@ -353,6 +358,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.puzzle3.grid.add(square);
 			y7++;
 		}
+		puzzle3.grid.addNeighbors();
 		return puzzle3;
 	}
 
@@ -450,6 +456,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.puzzle4.grid.add(square);
 			y7++;
 		}
+		puzzle4.grid.addNeighbors();
 		return puzzle4;
 	}
 
@@ -546,6 +553,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.elimination1.grid.add(square);
 			y7++;
 		}
+		elimination1.grid.addNeighbors();
 		return elimination1;
 	}
 
@@ -643,6 +651,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.elimination2.grid.add(square);
 			y7++;
 		}
+		elimination2.grid.addNeighbors();
 		return elimination2;
 	}
 
@@ -739,6 +748,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.elimination3.grid.add(square);
 			y7++;
 		}
+		elimination3.grid.addNeighbors();
 		return elimination3;
 	}
 
@@ -835,6 +845,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.elimination4.grid.add(square);
 			y7++;
 		}
+		elimination4.grid.addNeighbors();
 		return elimination4;
 	}
 
@@ -931,6 +942,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.release1.grid.add(square);
 			y7++;
 		}
+		release1.grid.addNeighbors();
 		return release1;
 	}
 
@@ -1027,6 +1039,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.release2.grid.add(square);
 			y7++;
 		}
+		release2.grid.addNeighbors();
 		return release2;
 	}
 
@@ -1123,6 +1136,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.release3.grid.add(square);
 			y7++;
 		}
+		release3.grid.addNeighbors();
 		return release3;
 	}
 
@@ -1219,6 +1233,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.release4.grid.add(square);
 			y7++;
 		}
+		release4.grid.addNeighbors();
 		return release4;
 	}
 
@@ -1315,6 +1330,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.lightning1.grid.add(square);
 			y7++;
 		}
+		lightning1.grid.addNeighbors();
 		return lightning1;
 	}
 
@@ -1411,6 +1427,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.lightning2.grid.add(square);
 			y7++;
 		}
+		lightning2.grid.addNeighbors();
 		return lightning2;
 	}
 
@@ -1507,6 +1524,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.lightning3.grid.add(square);
 			y7++;
 		}
+		lightning3.grid.addNeighbors();
 		return lightning3;
 	}
 
@@ -1603,6 +1621,7 @@ public class StockLevels extends ArrayList<Level>{
 			this.lightning4.grid.add(square);
 			y7++;
 		}
+		lightning4.grid.addNeighbors();
 		return lightning4;
 	}
 
