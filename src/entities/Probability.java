@@ -118,13 +118,17 @@ public class Probability {
 	 * @return True only if the probabilities add to 100
 	 */
 	public boolean setValueProbs(int[] p) {
+		int total = p[0] + p[1] + p[2] + p[3] + p[4] + p[5];
+		if (total != 100){
+			throw new IllegalArgumentException("The sum of the probabilities does not add up to 100");
+		}
 		this.valueProb[0] = p[0];
 		this.valueProb[1] = p[1];
 		this.valueProb[2] = p[2];
 		this.valueProb[3] = p[3];
 		this.valueProb[4] = p[4];
 		this.valueProb[5] = p[5];
-		
+		generateValueSeed();		
 		return (p[0] + p[1] + p[2] + p[3] + p[4] + p[5] == 100);
 	}
 	
@@ -147,7 +151,7 @@ public class Probability {
 		this.multProb[0] = p[0];
 		this.multProb[1] = p[1];
 		this.multProb[2] = p[2];
-		
+		generateMultSeed();
 		return (p[0] + p[1] + p[2] == 100);
 	}
 	
@@ -168,7 +172,7 @@ public class Probability {
 		this.valueProb[3] = p4;
 		this.valueProb[4] = p5;
 		this.valueProb[5] = p6;
-		
+		generateValueSeed();
 		return (p1 + p2 + p3 + p4 + p5 + p6 == 100);
 	}
 	
@@ -183,7 +187,7 @@ public class Probability {
 		this.multProb[0] = p1;
 		this.multProb[1] = p2;
 		this.multProb[2] = p3;
-		
+		generateMultSeed();
 		return (p1 + p2 + p3 == 100);
 	}
 	
