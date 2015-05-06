@@ -229,7 +229,7 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	 */
 	@Override
 	public void playStateChanged(int newState) {
-		if (newState == LevelPlayState.MOVE_RESET){
+		if (newState == LevelPlayState.MOVE_RESET) {
 			startMove(null);
 			endMove();
 		}
