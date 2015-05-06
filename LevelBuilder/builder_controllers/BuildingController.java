@@ -67,7 +67,7 @@ public class BuildingController {
 		this.useTool = new UseToolController(level, buildState);
 		this.buildLevelView = new BuildLevelView(level, useTool);
 		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
-		this.useTool.setBuilderGridView(buildLevelView.getBuilderGridView());		
+		this.useTool.setBuilderGridView(buildLevelView.getBuilderGridView());	
 
 		this.settingsDialog = new JDialog(window, true);
 		this.probValueView = new ProbabilityBlockView();
@@ -101,6 +101,13 @@ public class BuildingController {
 
 	public void addSettingsListeners() {
 
+		buildLevelView.getBtnUpdateStats().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//int num = buildLevelView.getStatsView();
+			}	
+		});
+		
 		buildLevelView.getBtnEditValue().addActionListener(new ActionListener() {
 
 			@Override
@@ -180,6 +187,8 @@ public class BuildingController {
 			}
 
 		});
+		
+		
 
 	}
 
