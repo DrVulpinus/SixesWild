@@ -83,7 +83,7 @@ public class StatsController {
 	public void initializeTimer(){
 		tmr = new Timer(true);
 		if (level.getLvlType() == LevelType.LIGHTNING){
-			lightningTimer.startCountDownTimer(180);
+			lightningTimer.startCountDownTimer(level.getStats().getUniqueIntValue());
 		}
 		tmr.schedule(new TimerTask() {
 

@@ -7,7 +7,6 @@ import entities.Timer;
 
 public class LightningStats extends LevelStats{
 
-	entities.Timer timer;
 	int initialTime;
 	int timeLeft;
 	
@@ -15,14 +14,6 @@ public class LightningStats extends LevelStats{
 		super(0);
 		this.initialTime = initialTime;
 		this.initialTime = initialTime;
-	}
-	
-	public LightningStats(int score, Timer timer2) {
-		super(score);
-	}
-	
-	public LightningStats(int score, int points, Timer timer) {
-		super(score, points);
 	}
 	
 	@Override
