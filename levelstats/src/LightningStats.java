@@ -35,6 +35,7 @@ public class LightningStats extends LevelStats{
 
 	public void setInitialTime(int initialTime) {
 		this.initialTime = initialTime;
+		this.setTimeLeft(initialTime);
 	}
 
 	public void setTimeLeft(int timeLeft) {
