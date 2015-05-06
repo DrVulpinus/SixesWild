@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -16,6 +18,7 @@ import controllers.ProbabilityController;
 import controllers.SaveLoadLevel;
 import controllers.StarPointsController;
 import controllers.UseToolController;
+import boundaries.LevelPanel;
 import boundaries.LevelPlayView;
 import boundaries.MainFrame;
 import builder_entities.LevelBuildState;
@@ -30,6 +33,7 @@ import entities.PuzzleStats;
 import entities.Square;
 import forms.AdjustStarView;
 import forms.BuildLevelView;
+import forms.BuilderLoadView;
 import forms.EnableSpecialMoveView;
 import forms.MainForm;
 import forms.PreviewWindow;
@@ -66,7 +70,7 @@ public class BuildingController {
 	StarPointsController starPointsController;
 
 
-	public BuildingController(Level level, MainForm window) {
+	public BuildingController(Level level, final MainForm window) {
 
 		this.level = level;
 		this.window = window;
@@ -75,6 +79,8 @@ public class BuildingController {
 		this.buildLevelView = new BuildLevelView(level, useTool);
 		this.toolSelect = new ToolSelectionController(buildLevelView, buildState);
 		this.useTool.setBuilderGridView(buildLevelView.getBuilderGridView());	
+
+		
 
 		this.settingsDialog = new JDialog(window, true);
 		this.probValueView = new ProbabilityBlockView();
@@ -85,6 +91,9 @@ public class BuildingController {
 		this.probabilityController = new ProbabilityController(this.probValueView, this.probMultView, level.getProbability());
 		this.starPointsController = new StarPointsController(this.adjustStarView, level.getStats());
 
+		buildLevelView.getTxtFileName().setText(level.getName());
+		
+		
 		// the listener for the button to exit
 		buildLevelView.getBtnExitWithoutSaving().addActionListener(new ActionListener(){
 			@Override
@@ -99,12 +108,15 @@ public class BuildingController {
 				try {
 					SaveLoadLevel.getInstance().saveLevel(BuildingController.this.level);
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				
 			}
 		});
+		
+		
+		
+		
 
 		this.addSettingsListeners();
 		this.otherListener();

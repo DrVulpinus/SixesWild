@@ -3,6 +3,7 @@ package forms;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -52,6 +53,7 @@ public class BuilderLoadView extends SelectView {
 //		}
 		for (Level lvl : sll.getLevels()) {
 			LevelPanel lvlPnl = new LevelPanel(lvl);
+			
 			levelPanels.add(lvlPnl);
 			getPnlLevelsContain().add(lvlPnl);
 		}
