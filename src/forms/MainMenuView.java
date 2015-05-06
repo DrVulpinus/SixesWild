@@ -21,7 +21,6 @@ public class MainMenuView extends JPanel {
 	public MainMenuView() {
 		setLayout(new MigLayout("", "[grow][grow][grow][grow]", "[grow][grow][grow]"));
 		add(getBtnLevel(), "cell 1 1,grow");
-		add(getBtnAchievments(), "cell 2 1,grow");
 
 	}
 
@@ -35,13 +34,4 @@ public class MainMenuView extends JPanel {
 		return btnLevel;
 	}
 
-	/**
-	 * @return btnAchievements The button that calls the achievement screen when pressed.
-	 */
-	JButton getBtnAchievments() {
-		if (btnAchievments == null) {
-			btnAchievments = new JButton("Achievments");
-		}
-		return btnAchievments;
-	}
 }

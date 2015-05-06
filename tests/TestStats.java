@@ -39,15 +39,22 @@ public class TestStats {
 		assertFalse(ps.winCondition());
 		
 		EliminationStats es = new EliminationStats(0, 0, 10);
+		es.update(10, 10, 0);
+		assertEquals(10, es.getScore());
 		es.setUniqueIntValue(0);
 		assertEquals(0, es.getUniqueIntValue());
 		es.setScore(100);
-		ps.setStarCounts(1, 2, 30);
-		assertFalse(ps.winCondition());
+		es.setStarCounts(1, 2, 30);
+		assertTrue(es.winCondition());
 		
 		ReleaseStats rs = new ReleaseStats(0, 0, 2);
+		rs.update(10, 0, 10);
+		assertEquals(10, rs.getScore());
 		rs.setUniqueIntValue(0);
 		assertEquals(0, rs.getUniqueIntValue());
+		rs.setScore(100);
+		rs.setStarCounts(1, 2, 30);
+		assertFalse(rs.winCondition());
 	}
 
 }

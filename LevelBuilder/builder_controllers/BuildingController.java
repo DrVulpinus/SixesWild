@@ -29,6 +29,7 @@ import forms.EnableSpecialMoveView;
 import forms.LevelPlayView;
 import forms.MainForm;
 import forms.MainFrame;
+import forms.PreviewWindow;
 import forms.ProbabilityBlockView;
 import forms.ProbabilityMultiplierView;
 
@@ -56,6 +57,8 @@ public class BuildingController {
 	ProbabilityMultiplierView probMultView;
 	EnableSpecialMoveView enableSpecialMoveView;
 	AdjustStarView adjustStarView;
+	PreviewWindow previewWindow;
+	
 	ProbabilityController probabilityController;
 	StarPointsController starPointsController;
 
@@ -123,6 +126,15 @@ public class BuildingController {
 				
 				System.out.println("Stats changed: " + level.getStats().getUniqueIntValue());
 			}	
+		});
+		
+		buildLevelView.getBtnPreviewLevel().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				previewWindow = new PreviewWindow(level, window);
+			}
+			
 		});
 		
 		buildLevelView.getBtnEditValue().addActionListener(new ActionListener() {
