@@ -27,6 +27,8 @@ public class LevelStats {
 
 	public boolean updating = false;
 
+	//for puzzle unique means moves left, lightning mean times left, 
+	//elimination means number of marked square left, release means number of release square left
 	public int unique = 0;
 	
 	//TODO: once the overall moves are finished, adjust the point totals accordingly

@@ -27,7 +27,7 @@ public class ReleaseStats extends LevelStats {
 	
 	@Override
 	public boolean winCondition() {
-		return false;
+		return (releaseBlocksLeft != 0 && this.getStarCount() != 0);
 	}
 
 	@Override

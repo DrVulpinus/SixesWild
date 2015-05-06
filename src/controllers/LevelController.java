@@ -198,12 +198,14 @@ public class LevelController implements ChangeLevelPlayState{
 		//check if the game wins
 		if(level.getStats().getUniqueIntValue() <= 0){
 			//also it should be delete this level(or just reset the level stats) and create a new one
-			//go back to the main menu
+			
+			//go back to the main menu if lose or win
 			window.setContentPane(window.getMainMenuView());
 			window.getContentPane().validate();
 			window.getContentPane().repaint();
 			System.out.println("back to main menu");
 			
+			//if the you win the game
 			if(level.getStats().winCondition()){
 				System.out.println("Win the game");
 				 SplashWinView s = new SplashWinView();

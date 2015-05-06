@@ -27,7 +27,7 @@ public class LightningStats extends LevelStats{
 	
 	@Override
 	public boolean winCondition() {
-		return false;
+		return ( this.getStarCount() != 0 && timeLeft <= 0);
 	}
 	
 	public void update(int points, int releases, int eliminations){

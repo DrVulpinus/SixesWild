@@ -31,7 +31,7 @@ public class EliminationStats extends LevelStats{
 	
 	@Override
 	public boolean winCondition() {
-		return (this.markedSquaresLeft >= this.totalSquares);
+		return (this.markedSquaresLeft >= this.totalSquares && this.getStarCount() != 0);
 	}
 	
 	@Override
