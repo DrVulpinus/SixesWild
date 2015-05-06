@@ -1,11 +1,13 @@
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
 import org.junit.Test;
 
+import entities.Grid;
 import entities.Level;
 import entities.LevelType;
+import entities.Location;
 import entities.MoveRegular;
 import entities.MoveRemove;
 import entities.Square;
@@ -18,7 +20,23 @@ public class MoveTest {
 		
 		Level level = new Level(LevelType.PUZZLE);
 		ArrayList<Square> squares = new ArrayList<Square>();
-		MoveRegular moveRegular;
+		MoveRegular moveRegular = null;
+		Grid grid = new Grid();
+		
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				int num = (int) Math.round(Math.random());
+				if (num > 0){
+					Square s = new Square(new Location(row, col));
+					grid.add(s);
+					assertEquals(s, grid.getSquare(s.getLoc()));
+				}
+
+			}
+
+		}
+		
+		assertNull(moveRegular);
 		
 		for(int i = 0; i < 9; i++){
 			Square sq = new Square();

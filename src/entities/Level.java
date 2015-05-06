@@ -161,14 +161,14 @@ public class Level
 		for (Square square : grid) {
 			if (square.getBlock()!= null){
 				if (square.getBlock().getValue() != 6){
-					square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+					square.setBlock(BlockMaker.getInstance().makeBlock(getProbability()));
 					while(square.getBlock().getValue() == 6){
-						square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+						square.setBlock(BlockMaker.getInstance().makeBlock(getProbability()));
 					}
 				}
 			}
 			else{
-				square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+				square.setBlock(BlockMaker.getInstance().makeBlock(getProbability()));
 			}
 		}
 	}

@@ -24,6 +24,9 @@ import builder_entities.LevelBuildState;
 import entities.Grid;
 import entities.Level;
 import entities.LevelType;
+import javax.swing.JTextField;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 /**
  *  The general View for Editing one level 
  *
@@ -61,6 +64,7 @@ public class BuildLevelView extends JPanel{
 	private JDialog settingsDialog;
 	private JButton btnUpdateStats;
 	private JButton btnPreviewLevel;
+	private JTextField txtFileName;
 	//	PuzzleStatsView puzzleStatsView;
 	//	ReleaseStatsView releaseStatsView;
 	//	EliminationStatsView eliminationStatsView;
@@ -103,7 +107,7 @@ public class BuildLevelView extends JPanel{
 			this.level = new Level(new LevelStats(0, 0) , new Grid());
 
 		this.builderGridView = new BuilderGridView(this.level.getGrid(), useTool);
-		setLayout(new MigLayout("", "[][203.00px,grow,fill][300px:n,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][]"));
+		setLayout(new MigLayout("", "[][203.00px,grow,fill][300px:n,grow,left][]", "[37.00px:n,grow,fill][37px:n,grow,fill][][][][]"));
 		add(getBtnEditSpecialMoves(), "cell 1 0");
 		add(getBtnEditValue(), "cell 2 0");
 		add(getBtnEditMultiplier(), "cell 3 0");
@@ -127,7 +131,8 @@ public class BuildLevelView extends JPanel{
 		add(getBtnUpdateStats(), "cell 1 3");
 		add(getBtnPreviewLevel(), "cell 2 3");
 		add(getPanel(), "cell 3 3,grow");
-		add(getPanel_1(), "cell 3 4,grow");
+		add(getTxtFileName(), "cell 2 4,growx");
+		add(getPanel_1(), "cell 3 5,grow");
 		generateLevelStatsView();
 
 		//		
@@ -292,5 +297,13 @@ public class BuildLevelView extends JPanel{
 	
 	public StatsView getStatsView() {
 		return this.statsView;
+	}
+	public JTextField getTxtFileName() {
+		if (txtFileName == null) {
+			txtFileName = new JTextField();
+			txtFileName.setText("Enter File Name Here");
+			txtFileName.setColumns(10);
+		}
+		return txtFileName;
 	}
 }

@@ -20,10 +20,11 @@ public class PreviewWindow extends JDialog {
 		
 		try {
 			this.level = duplicate(level);
-			this.previewView = new GameGridView(level.getGrid());
+			this.level.shuffleBoard();
+			this.previewView = new GameGridView(this.level.getGrid());
 			this.setContentPane(this.previewView);
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
 
 		this.setTitle("Level Preview");
@@ -32,7 +33,7 @@ public class PreviewWindow extends JDialog {
 	}
 	
 	private Level duplicate(Level lvl) throws Exception {
-		SaveLoadLevel.getInstance().saveLevel(lvl, "preview_level");
-		return SaveLoadLevel.getInstance().getLevel(new File("preview_level"));
+		File tmp = SaveLoadLevel.getInstance().saveTempLevel(lvl, "preview_level");
+		return SaveLoadLevel.getInstance().getTempLevel(tmp);
 	}
 }

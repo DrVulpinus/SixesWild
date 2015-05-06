@@ -61,7 +61,10 @@ public class SquareView extends JPanel implements SquareChangeListener
 			public void mouseEntered(MouseEvent arg0) {
 				//Trigger the square selected code
 				for (MoveControlListener moveControlListener : listeners) {
-					moveControlListener.selectBlock(SquareView.this);		
+					if (moveControlListener != null){
+						moveControlListener.selectBlock(SquareView.this);	
+					}
+						
 				}
 			}
 
@@ -69,14 +72,20 @@ public class SquareView extends JPanel implements SquareChangeListener
 			public void mousePressed(MouseEvent arg0) {
 				//Trigger the event to start a move
 				for (MoveControlListener moveControlListener : listeners) {
-					moveControlListener.startMove(SquareView.this);				
+					if (moveControlListener != null){
+						moveControlListener.startMove(SquareView.this);	
+					}
+								
 				}
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				//Trigger the event to end a move
 				for (MoveControlListener moveControlListener : listeners) {
-					moveControlListener.endMove();
+					if (moveControlListener != null){
+						moveControlListener.endMove();
+					}
+					
 
 				}
 			}
@@ -87,7 +96,10 @@ public class SquareView extends JPanel implements SquareChangeListener
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				for (ToolControlListener toolControlListener : toolListeners) {
-					toolControlListener.useTool(SquareView.this.getSquare().getLoc());
+					if (toolControlListener == null){
+						toolControlListener.useTool(SquareView.this.getSquare().getLoc());
+					}
+					
 				}
 			}
 		});
