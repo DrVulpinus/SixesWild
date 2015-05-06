@@ -42,17 +42,18 @@ public class LevelSelectView extends SelectView {
 
 		// initialize the panels of levels
 		levelPanels = new ArrayList<LevelPanel>();
+		for(Level lvl:stockLevel.generateLevels()){
+			LevelPanel lvlPnl = new LevelPanel(lvl);
+			levelPanels.add(lvlPnl);
+			getPnlLevelsContain().add(lvlPnl);
+		}
 		for (Level lvl : sll.getLevels()) {
 			LevelPanel lvlPnl = new LevelPanel(lvl);
 			levelPanels.add(lvlPnl);
 			getPnlLevelsContain().add(lvlPnl);
 		}
 		
-		for(Level lvl:stockLevel.generateLevels()){
-			LevelPanel lvlPnl = new LevelPanel(lvl);
-			levelPanels.add(lvlPnl);
-			getPnlLevelsContain().add(lvlPnl);
-		}
+		
 	}
  
 	ArrayList<Level> levels = new ArrayList<Level>();

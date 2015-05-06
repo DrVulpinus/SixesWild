@@ -2,6 +2,8 @@ package entities;
 
 import java.util.ArrayList;
 
+import src.PuzzleStats;
+
 
 
 public class StockLevels extends ArrayList<Level>{
@@ -67,1565 +69,252 @@ public class StockLevels extends ArrayList<Level>{
 		this.square1 = new Square();
 		this.p = new Probability();
 	}
-
+	
+	
 	public Level generatePuzzle1(){
-		this.puzzle1.setName("Puzzle1");
+puzzle1.setName("Puzzle1");
+this.p.setValueProb(75,25 , 0, 0, 0, 0);
+	this.puzzle1.setProbability(p);
+	for (int row = 0; row < 9; row++) {
+		for (int col = 0; col < 9; col++) {
+			
+				Square s = new Square(new Location(row, col));
+				puzzle1.grid.add(s);
+			}
 
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
-		this.p.setValueProb(75,25 , 0, 0, 0, 0);
-		this.puzzle1.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
-
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y0++;
 		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y7++;
-		}
-		
-		
-			puzzle1.grid.addNeighbors();
-		
-		return puzzle1;
+	return puzzle1;
 	}
-
+	
+	
+	
 	public Level generatePuzzle2(){
-		this.puzzle2.setName("Puzzle2");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		puzzle2.setName("Puzzle2");
 		this.p.setValueProb(17,17,17,17,17,15);
-		this.puzzle2.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+			this.puzzle2.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						puzzle2.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.puzzle1.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.puzzle2.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.puzzle2.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.puzzle2.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.puzzle2.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.puzzle2.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.puzzle2.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.puzzle2.grid.add(square);
-			y7++;
-		}
-		puzzle2.grid.addNeighbors();
-		return puzzle2;
-	}
-
+				}
+			return puzzle2;
+			}
+	
 	public Level generatePuzzle3(){
-		this.puzzle3.setName("Puzzle3");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		puzzle3.setName("Puzzle3");
 		this.p.setValueProb(15,20, 20,7,30,8);
-		this.puzzle3.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.puzzle3.setProbability(p);
+				
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						puzzle3.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.puzzle3.grid.add(square);
-			y7++;
-		}
-		puzzle3.grid.addNeighbors();
-		return puzzle3;
-	}
-
-
+				}
+			return puzzle3;
+			}
+	
 	public Level generatePuzzle4(){
-		this.puzzle4.setName("Puzzle4");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		puzzle4.setName("Puzzle4");
 		this.p.setValueProb(10,20 , 10, 30, 10, 20);
-		this.puzzle4.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.puzzle4.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						puzzle4.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.puzzle4.grid.add(square);
-			y7++;
-		}
-		puzzle4.grid.addNeighbors();
-		return puzzle4;
-	}
-
-	public Level generateElimination1(){
-		this.elimination1.setName("Elimination1");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
-		this.p.setValueProb(10,30 ,30 , 0,20 , 10);
-		this.elimination1.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
-
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.elimination1.grid.add(square);
-			y7++;
-		}
-		elimination1.grid.addNeighbors();
-		return elimination1;
-	}
-
-
-	public Level generateElimination2(){
-		this.elimination2.setName("Elimination2");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
-		this.p.setValueProb(10,10 , 40, 10, 10, 20);
-		this.elimination2.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
-
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.elimination2.grid.add(square);
-			y7++;
-		}
-		elimination2.grid.addNeighbors();
-		return elimination2;
-	}
-
-	public Level generateElimination3(){
-		this.elimination3.setName("Elimination3");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
-		this.p.setValueProb(15,27 , 3, 30, 5, 20);
-		this.elimination3.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
-
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.elimination3.grid.add(square);
-			y7++;
-		}
-		elimination3.grid.addNeighbors();
-		return elimination3;
-	}
-
-	public Level generateElimination4(){
-		this.elimination4.setName("Elimination4");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
-		this.p.setValueProb(40,10 , 10, 10, 10, 20);
-		this.elimination4.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
-
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.elimination4.grid.add(square);
-			y7++;
-		}
-		elimination4.grid.addNeighbors();
-		return elimination4;
-	}
-
+				}
+			return puzzle4;
+			}
+	
 	public Level generateRelease1(){
-		this.release1.setName("Release1");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		release1.setName("Release1");
 		this.p.setValueProb(20,10 , 10, 10, 20, 30);
-		this.release1.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.release1.setProbability(p);
+		
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						release1.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.release1.grid.add(square);
-			y7++;
-		}
-		release1.grid.addNeighbors();
-		return release1;
-	}
+				}
+			return release1;
+			}
 
 	public Level generateRelease2(){
-		this.release2.setName("Release2");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		release2.setName("Release2");
 		this.p.setValueProb(10,10 , 30, 10, 0, 40);
-		this.release2.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.release2.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						release2.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.release2.grid.add(square);
-			y7++;
-		}
-		release2.grid.addNeighbors();
-		return release2;
-	}
-
+				}
+			return release2;
+			}
+	
 	public Level generateRelease3(){
-		this.release3.setName("Release3");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		release3.setName("Release3");
 		this.p.setValueProb(20,10 , 10, 10, 20, 30);
-		this.release3.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.release3.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						release3.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.release3.grid.add(square);
-			y7++;
-		}
-		release3.grid.addNeighbors();
-		return release3;
-	}
-
+				}
+			return release3;
+			}
+	
 	public Level generateRelease4(){
-		this.release4.setName("Release4");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		release4.setName("Release4");
 		this.p.setValueProb(10,20 , 10, 30, 10, 20);
-		this.release4.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.release4.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						release4.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y0++;
-		}
+				}
+			return release4;
+			}
+	
+	public Level generateElimination1(){
+		elimination1.setName("Elimination1");
+		this.p.setValueProb(10,30 ,30 , 0,20 , 10);
+		this.elimination1.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						elimination1.grid.add(s);
+					}
 
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y4++;
-		}
+				}
+			return elimination1;
+			}
+	
+	public Level generateElimination2(){
+		elimination2.setName("Elimination2");
+		this.p.setValueProb(10,10 , 40, 10, 10, 20);
+				this.elimination2.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						elimination2.grid.add(s);
+					}
 
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.release4.grid.add(square);
-			y7++;
-		}
-		release4.grid.addNeighbors();
-		return release4;
-	}
+				}
+			return elimination2;
+			}
 
-	public Level generateLightning1(){
-		this.lightning1.setName("Lightning1");
+	public Level generateElimination3(){
+		elimination3.setName("Elimination3");
+		this.p.setValueProb(15,27 , 3, 30, 5, 20);
+				this.elimination3.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						elimination3.grid.add(s);
+					}
 
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
-		this.p.setValueProb(10,20 , 10, 30, 10, 20);
-		this.lightning1.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
-
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.lightning1.grid.add(square);
-			y7++;
-		}
-		lightning1.grid.addNeighbors();
-		return lightning1;
-	}
-
-	public Level generateLightning2(){
-		this.lightning2.setName("Lightning2");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
-		this.p.setValueProb(20,10 , 10, 10, 20, 30);
-		this.lightning2.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
-
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.lightning2.grid.add(square);
-			y7++;
-		}
-		lightning2.grid.addNeighbors();
-		return lightning2;
-	}
-
-	public Level generateLightning3(){
-		this.lightning3.setName("Lightning3");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+				}
+			return elimination3;
+			}
+	
+	public Level generateElimination4(){
+		elimination4.setName("Elimination4");
 		this.p.setValueProb(40,10 , 10, 10, 10, 20);
-		this.lightning3.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.elimination4.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						elimination4.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y0++;
-		}
+				}
+			return elimination4;
+			}
+	public Level generateLightning1(){
+		lightning1.setName("Lightning1");
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						lightning1.grid.add(s);
+					}
 
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y4++;
-		}
+				}
+			return lightning1;
+			}
+	
+	public Level generateLightning2(){
+		lightning2.setName("Lightning2");
+		this.p.setValueProb(10,20 , 10, 30, 10, 20);
+				this.lightning1.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						lightning2.grid.add(s);
+					}
 
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.lightning3.grid.add(square);
-			y7++;
-		}
-		lightning3.grid.addNeighbors();
-		return lightning3;
-	}
+				}
+			return lightning2;
+			}
+	
+	public Level generateLightning3(){
+		lightning3.setName("Lightning3");
+		this.p.setValueProb(40,10 , 10, 10, 10, 20);
+				this.lightning3.setProbability(p);
+		
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						lightning3.grid.add(s);
+					}
 
+				}
+			return lightning3;
+			}
+	
+	
 	public Level generateLightning4(){
-		this.lightning4.setName("Lightning4");
-
-		int i0;
-		int i1;
-		int i2;
-		int i3;
-		int i4;
-		int i5;
-		int i6;
-		int i7;
-
-
-		int x0=0;
-		int y0=0;
-
-		int y1=0;
-		int y2=0;
-		int y3=0;
-		int y4=0;
-		int y5=0;
-		int y6=0;
-		int y7=0;
-
-		int x1=1;
-		int x2=2;
-		int x3=3;
-		int x4=4;
-		int x5=5;
-		int x6=6;
-		int x7=7;
-
+		lightning4.setName("Lightning4");
 		this.p.setValueProb(17,17,17,17,17,15);
-		this.lightning4.setProbability(p);
-		// adding first column
-		for(i0=0; i0<=9; i0++){
+				this.lightning4.setProbability(p);
+			for (int row = 0; row < 9; row++) {
+				for (int col = 0; col < 9; col++) {
+					
+						Square s = new Square(new Location(row, col));
+						lightning4.grid.add(s);
+					}
 
-			Location location = new Location(x0,y0);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y0++;
-		}
-
-		// adding second column
-		for(i1 =0; i1<=9; i1++){
-			Location location = new Location(x1,y1);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y1++;
-		}
-		// adding 3rd column
-		for(i2 =0; i2<=9; i2++){
-			Location location = new Location(x2,y2);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y2++;
-		}
-		//adding 4th column
-		for(i3 =0; i3<=9; i3++){
-			Location location = new Location(x3,y3);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y3++;
-		}
-		//adding 5th column
-		for(i4 =0; i4<=9; i4++){
-			Location location = new Location(x4,y4);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y4++;
-		}
-
-		//adding 6th column
-		for(i5 =0; i5<=9; i5++){
-			Location location = new Location(x5,y5);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y5++;
-		}
-		//adding 7th column
-		for(i6 =0; i6<=9; i6++){
-			Location location = new Location(x6,y6);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y6++;
-		}
-		// adding 8th column
-		for(i7 =0; i7<=9; i7++){
-			Location location = new Location(x7,y7);
-			Square square =new Square(location);
-			this.lightning4.grid.add(square);
-			y7++;
-		}
-		lightning4.grid.addNeighbors();
-		return lightning4;
-	}
-
-
+				}
+			return lightning4;
+			}
+	
+	
 	public ArrayList<Level>	generateLevels(){
 
 		generatePuzzle1();
