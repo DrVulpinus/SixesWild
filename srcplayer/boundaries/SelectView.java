@@ -67,4 +67,8 @@ public abstract class SelectView extends JPanel {
 	public void setBackground(Color clr){
 		super.setBackground(clr);
 	}
+	
+	public ArrayList<JLabel> getItems() {
+		return items;
+	}
 }

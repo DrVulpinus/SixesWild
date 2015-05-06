@@ -70,10 +70,10 @@ public class BuilderLoadView extends SelectView {
 	 * of items.
 	 */
 	@Override
-	void loadItems() {
+	public void loadItems() {
 		for (Level level : levels) {
 			JLabel label = new JLabel();
-			items.add(label);
+			getItems().add(label);
 		}
 		super.loadItems();//Do this last to add all of the items to the scrollPane
 

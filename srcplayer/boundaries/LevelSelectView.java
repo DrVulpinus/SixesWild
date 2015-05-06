@@ -69,7 +69,7 @@ public class LevelSelectView extends SelectView {
 	 * of items.
 	 */
 	@Override
-	void loadItems() {
+	public void loadItems() {
 		for (Level level : levels) {
 			JLabel label = new JLabel();
 			items.add(label);
