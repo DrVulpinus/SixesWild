@@ -7,6 +7,7 @@ import org.junit.Test;
 import entities.Level;
 import entities.LevelType;
 import entities.MoveRegular;
+import entities.MoveRemove;
 import entities.Square;
 
 
@@ -20,6 +21,10 @@ public class MoveTest {
 		MoveRegular moveRegular =new MoveRegular(level,squares);
 		
 		assertEquals(level,moveRegular.getLevel());
+		
+		MoveRemove remove = new MoveRemove(level, squares);
+		
+		assertEquals(level, remove.getLevel());
 		
 		int eliminations = moveRegular.getEliminations();
 		assertEquals(0,eliminations);

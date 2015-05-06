@@ -26,7 +26,7 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 	ArrayList<SquareView> selectedSquareViews;
 	Level level;
 	LevelPlayState playState;
-	Boolean started;
+	boolean started;
 	GameGridView grid;
 	Move m = null;
 	LevelPlayView levelPlayView;
@@ -233,6 +233,10 @@ public class MoveController implements MoveControlListener, ChangeLevelPlayState
 			startMove(null);
 			endMove();
 		}
+	}
+	
+	public boolean getStarted(){
+		return this.started;
 	}
 
 }

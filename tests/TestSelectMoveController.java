@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import src.EliminationStatsView;
+import src.LevelStats;
+import controllers.MoveController;
 import controllers.SelectMoveController;
 import entities.Level;
 import entities.LevelPlayState;
@@ -13,9 +16,13 @@ public class TestSelectMoveController {
 	public void test() {
 
 		Level level = new Level(LevelType.PUZZLE);
-		LevelPlayView lpv = new LevelPlayView(null, null, null);
+		LevelStats ls = level.getStats();
 		LevelPlayState lps = new LevelPlayState();
-		SelectMoveController smController = new SelectMoveController(null, null);
+		MoveController moveController = new MoveController(level, lps);
+		EliminationStatsView eStatsView = new EliminationStatsView(ls);
+		LevelPlayView lpv = new LevelPlayView(level, moveController, eStatsView);
+		SelectMoveController smController = new SelectMoveController(lpv, lps);
+		
 	}
 
 }
