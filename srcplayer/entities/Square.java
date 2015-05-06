@@ -1,5 +1,7 @@
 package entities;
 
+import interfaces.SquareChangeListener;
+
 import java.util.ArrayList;
 
 /**

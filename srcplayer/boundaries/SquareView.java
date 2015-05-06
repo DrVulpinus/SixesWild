@@ -1,6 +1,7 @@
 package boundaries;
 
 import interfaces.MoveControlListener;
+import interfaces.SquareChangeListener;
 import interfaces.ToolControlListener;
 
 import javax.swing.JPanel;
@@ -14,7 +15,6 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 
 import entities.Square;
-import entities.SquareChangeListener;
 
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
