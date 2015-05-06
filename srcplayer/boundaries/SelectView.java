@@ -42,7 +42,7 @@ public abstract class SelectView extends JPanel {
 	/**
 	 * Adds all JLabels to the panel contained in the view.
 	 */
-	void loadItems(){
+	public void loadItems(){
 		for (JLabel jLabel : items) {
 			getPanel().add(jLabel);
 		}

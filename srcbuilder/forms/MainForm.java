@@ -62,6 +62,7 @@ public class MainForm extends JFrame {
 	/* Button for choosing to build Release */
 	private JButton btnCreateReleaseLevel;
 	MainForm main = this;
+	private JButton btnLoadLevel;
 
 
 	/**
@@ -79,11 +80,12 @@ public class MainForm extends JFrame {
 		setSize(700,700);
 		setVisible(true);
 		getContentPane().setMinimumSize(new Dimension(500, 500));
-		getContentPane().setLayout(new MigLayout("", "[][46.00][48.00][127.00,grow][62.00][][]", "[130.00][34.00][30.00][42.00][101.00,grow][131.00]"));
+		getContentPane().setLayout(new MigLayout("", "[][46.00][48.00][127.00,grow][62.00][][]", "[130.00][34.00][30.00][42.00][101.00,grow][][131.00]"));
 		getContentPane().add(getPanel_2(), "cell 3 1,grow");
 		getContentPane().add(getPanel(), "cell 3 2,grow");
 		getContentPane().add(getPanel_1(), "cell 3 3,grow");
 		getContentPane().add(getPanel_3(), "cell 3 4,grow");
+		getContentPane().add(getBtnLoadLevel(), "cell 3 5");
 
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setBackground(UIManager.getColor("ToolTip.background"));
@@ -316,4 +318,10 @@ public class MainForm extends JFrame {
 	}
 
 
+	private JButton getBtnLoadLevel() {
+		if (btnLoadLevel == null) {
+			btnLoadLevel = new JButton("Load Level");
+		}
+		return btnLoadLevel;
+	}
 }
