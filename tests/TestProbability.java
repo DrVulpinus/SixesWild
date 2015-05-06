@@ -69,5 +69,28 @@ public class TestProbability {
 		
 		assertTrue(testProb.setMultProb(10, 80, 10));
 	}
+	
+	@Test
+	public void testSetMultProb(){
+		
+		Probability probability = new Probability();
+		probability.setMultProb(33, 33, 34);
+		assertEquals(33, probability.getMultProb(1));
+		assertEquals(33, probability.getMultProb(2));
+		assertEquals(34, probability.getMultProb(3));
+		
+	}
 
+	@Test
+	public void testSetValProb(){
+		
+		Probability probability = new Probability();
+		probability.setValueProb(20, 20, 20, 20, 20, 0);
+	assertEquals(20, probability.getValueProb(1));
+		assertEquals(20, probability.getValueProb(2));
+	assertEquals(20, probability.getValueProb(3));	
+		assertEquals(20, probability.getValueProb(4));
+	assertEquals(20, probability.getValueProb(5));
+		assertEquals(0, probability.getValueProb(6));
+}
 }
