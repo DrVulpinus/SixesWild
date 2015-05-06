@@ -9,7 +9,7 @@ import boundaries.SquareView;
 /**
  * An event listener for a move. Contains a number of methods
  * to provide how a move behaves.
- * @author Miya
+ * @author Alex Wald
  *
  */
 public interface MoveControlListener  extends EventListener{
