@@ -8,12 +8,6 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import src.EliminationStatsView;
-import src.LightningStatsView;
-import src.PuzzleStatsView;
-import src.ReleaseStatsView;
-import src.StatsView;
-
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;

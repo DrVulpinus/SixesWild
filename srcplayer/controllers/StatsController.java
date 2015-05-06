@@ -3,6 +3,11 @@ package controllers;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import boundaries.EliminationStatsView;
+import boundaries.LightningStatsView;
+import boundaries.PuzzleStatsView;
+import boundaries.ReleaseStatsView;
+import boundaries.StatsView;
 import entities.EliminationStats;
 import entities.Level;
 import entities.LevelStats;
@@ -10,11 +15,6 @@ import entities.LevelType;
 import entities.LightningStats;
 import entities.PuzzleStats;
 import entities.ReleaseStats;
-import src.EliminationStatsView;
-import src.LightningStatsView;
-import src.PuzzleStatsView;
-import src.ReleaseStatsView;
-import src.StatsView;
 
 /**
  * The StatsController class updates the StatsViews based on the LevelStats entities.

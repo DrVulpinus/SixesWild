@@ -1,4 +1,4 @@
-package src;
+package boundaries;
 
 import entities.LevelStats;
 

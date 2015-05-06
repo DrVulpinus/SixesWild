@@ -2,7 +2,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import src.PuzzleStatsView;
+import boundaries.PuzzleStatsView;
 import controllers.StatsController;
 import entities.Level;
 import entities.LevelStats;

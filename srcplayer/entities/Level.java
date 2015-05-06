@@ -5,11 +5,11 @@ import icons.Icon;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import boundaries.EliminationStatsView;
 import boundaries.LevelPanel;
-import src.EliminationStatsView;
-import src.LightningStatsView;
-import src.PuzzleStatsView;
-import src.ReleaseStatsView;
+import boundaries.LightningStatsView;
+import boundaries.PuzzleStatsView;
+import boundaries.ReleaseStatsView;
 import entities.LevelType;
 
 /**

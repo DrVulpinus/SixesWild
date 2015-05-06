@@ -11,12 +11,12 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
-import src.EliminationStatsView;
-import src.LightningStatsView;
-import src.PuzzleStatsView;
-import src.ReleaseStatsView;
-import src.StatsView;
+import boundaries.EliminationStatsView;
+import boundaries.LightningStatsView;
+import boundaries.PuzzleStatsView;
+import boundaries.ReleaseStatsView;
 import boundaries.SpecialMoveView;
+import boundaries.StatsView;
 import builder_entities.LevelBuildState;
 import entities.EliminationStats;
 import entities.Grid;

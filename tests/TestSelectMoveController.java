@@ -1,7 +1,7 @@
 import org.junit.Test;
 
+import boundaries.EliminationStatsView;
 import boundaries.LevelPlayView;
-import src.EliminationStatsView;
 import controllers.MoveController;
 import controllers.SelectMoveController;
 import entities.Level;

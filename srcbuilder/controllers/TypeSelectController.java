@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JRadioButton;
 
-import src.StatsView;
+import boundaries.StatsView;
 import entities.Level;
 import entities.LevelStats;
 import entities.LevelType;

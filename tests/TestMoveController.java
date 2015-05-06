@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import boundaries.LevelPlayView;
+import boundaries.PuzzleStatsView;
 import boundaries.SquareView;
-import src.PuzzleStatsView;
 import controllers.MoveController;
 import entities.Level;
 import entities.LevelPlayState;

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import boundaries.LevelPlayView;
 import boundaries.MainFrame;
-import src.PuzzleStatsView;
+import boundaries.PuzzleStatsView;
 import controllers.LevelController;
 import controllers.MoveController;
 import entities.Level;
