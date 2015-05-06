@@ -13,7 +13,7 @@ public class LightningStats extends LevelStats{
 	public LightningStats(int initialTime) {
 		super(0);
 		this.initialTime = initialTime;
-		this.initialTime = initialTime;
+		this.timeLeft = timeLeft;
 	}
 	
 	@Override
