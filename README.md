@@ -98,3 +98,10 @@ Moves Remaining/Marked Squares Remaining/Time Remaining/Release Blocks Remaining
 
 FileName - Allows the user to name their customized level, which is displayed when it shows up in the level selection screen. If no name is provided, the default is "New Level". If the file name is the same as a previous level, a message appears in the console that indicates the file has already been written to.
 
+MISSING ITEMS AND OTHER NOTES:
+Lightning levels do not take input in the builder.
+
+If a Release level generates and is already filled in pink, it means that the level generated with a six block above that release block.
+
+Undo/redo is not present in this project.
+
