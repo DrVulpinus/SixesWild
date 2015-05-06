@@ -1,4 +1,4 @@
-package forms;
+package boundaries;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

@@ -3,7 +3,8 @@ package Interfaces;
 import java.util.EventListener;
 
 
-import forms.SquareView;
+
+import boundaries.SquareView;
 
 /**
  * An event listener for a move. Contains a number of methods

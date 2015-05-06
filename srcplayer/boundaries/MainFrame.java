@@ -1,4 +1,4 @@
-package forms;
+package boundaries;
 
 import javax.management.timer.TimerMBean;
 import javax.swing.JFrame;

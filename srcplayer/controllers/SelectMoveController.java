@@ -6,11 +6,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import boundaries.LevelPlayView;
+import boundaries.SpecialMoveView;
 import entities.LevelPlayState;
 import entities.Move;
 import entities.MoveResetBoard;
-import forms.LevelPlayView;
-import forms.SpecialMoveView;
 
 /**
  * The SelectMoveController detects when the user requests to change the currently selected move while

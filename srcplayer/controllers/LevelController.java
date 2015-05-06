@@ -13,9 +13,12 @@ import java.awt.event.ActionListener;
 
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import boundaries.LevelPlayView;
+import boundaries.MainFrame;
 import src.EliminationStats;
 import src.LevelStats;
 import src.LightningStats;
@@ -28,8 +31,6 @@ import entities.LevelPlayState;
 import entities.Location;
 import entities.Square;
 import entities.Timer;
-import forms.LevelPlayView;
-import forms.MainFrame;
 
 /**
  * The top level controller for the entire level. Updates every time an action

@@ -2,6 +2,9 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import boundaries.GameGridView;
+import boundaries.LevelPlayView;
+import boundaries.SquareView;
 import Interfaces.MoveControlListener;
 import entities.Block;
 import entities.Level;
@@ -13,9 +16,6 @@ import entities.MoveRemove;
 import entities.MoveResetBoard;
 import entities.MoveSwap;
 import entities.Square;
-import forms.GameGridView;
-import forms.LevelPlayView;
-import forms.SquareView;
 
 /**
  * The move controller which contains all the methods that update the grid according to the move that is made.

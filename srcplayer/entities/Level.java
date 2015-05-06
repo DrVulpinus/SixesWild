@@ -5,6 +5,7 @@ import icons.Icon;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import boundaries.LevelPanel;
 import src.EliminationStats;
 import src.EliminationStatsView;
 import src.LevelStats;
@@ -15,7 +16,6 @@ import src.PuzzleStatsView;
 import src.ReleaseStats;
 import src.ReleaseStatsView;
 import entities.LevelType;
-import forms.LevelPanel;
 
 /**
  * The Level stores everything that is needed to maintain the current state of play and other properties of game play.

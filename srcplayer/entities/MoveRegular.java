@@ -3,7 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import forms.SquareView;
+import boundaries.SquareView;
 /**
  * 
  * Subclass of move set for regular moves ( not swap,shuffle, or remove)

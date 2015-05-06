@@ -1,4 +1,4 @@
-package forms;
+package boundaries;
 
 import javax.swing.JPanel;
 
