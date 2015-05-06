@@ -20,7 +20,7 @@ import entities.StockLevels;
  * Also contains a state of saved levels.
  * @author Richard Eberheim
  * @author Alex Wald
- *
+ * @author Qiaoyu Liao
  */
 public class LevelSelectView extends SelectView {
 

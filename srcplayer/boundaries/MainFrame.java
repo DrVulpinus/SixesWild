@@ -61,7 +61,7 @@ import java.util.TimerTask;
  *
  * @author Miya Gaskell
  * @author Richard Eberheim
- * @author Agyness Liao
+ * @author Qiaoyu Liao
  * @author Sarah Chamberlain
  */
 public class MainFrame extends JFrame{
