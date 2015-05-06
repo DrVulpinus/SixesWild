@@ -16,55 +16,70 @@ import src.ReleaseStats;
 import src.ReleaseStatsView;
 import src.StatsView;
 
+/**
+ * The StatsController class updates the StatsViews based on the LevelStats entities.
+ *
+ */
+
+
 public class StatsController {
-	EliminationStatsView esv;
-	ReleaseStatsView rsv;
-	PuzzleStatsView psv;
-	LightningStatsView lsv;
+	
+	/** The StatsView that is updated to display the LevelStats data. */
 	StatsView sv;
+	
+	/** The timer that is used in lightning levels */
 	entities.Timer lightningTimer = new entities.Timer();
 	
+	/** The level that contains the stats that are being updated */
 	Level level;
 	
+	/** The LevelStats entity for the level */
 	LevelStats ls;
+	
+	/** a timer that is used to periodically update the StatsView */
 	Timer tmr;
 
 	entities.Timer lightTimer;
 
+	/** 
+	 * Constructs a new StatsController for the given Level 
+	 */
 	public StatsController(Level level){
 		this.level = level;
 		ls = this.level.getStats();
 		switch (this.level.getLvlType()){
 		case ELIMINATION:
-			esv = new EliminationStatsView((EliminationStats)ls);
-			sv = (StatsView)esv;
+			sv = (StatsView) new EliminationStatsView((EliminationStats)ls);
 			break;
 		case LIGHTNING:
-			lsv = new LightningStatsView((LightningStats)ls);
-			sv = (StatsView)lsv;
+			sv = (StatsView) new LightningStatsView((LightningStats)ls);
 			break;
 		case PUZZLE:
-			psv = new PuzzleStatsView((PuzzleStats)ls);
-			sv = (StatsView)psv;
+			sv = (StatsView) new PuzzleStatsView((PuzzleStats)ls);
 			break;
 		case RELEASE:
-			rsv = new ReleaseStatsView((ReleaseStats)ls);
-			sv = (StatsView)rsv;
+			sv = (StatsView) new ReleaseStatsView((ReleaseStats)ls);
 			break;
 		default:
 			break;
 
 		}
 		sv.initializeValueDisplays(this.level.getStats().getScore(), this.level.getStats().getUniqueIntValue());
-//		sv.initializeTimerDisplay(this.level.getStats().getScore(), lightTime);
 		
 		initializeTimer();
 	}
 
+	/**
+	 * Gets the StatsView that this controller updates
+	 * @return the StatsView that this controller updates
+	 */
 	public StatsView getStatsView(){
 		return sv;
 	}
 
+	/**
+	 * Initializes the timer used to update the StatsView and the timer for the lightning levels
+	 */
 	public void initializeTimer(){
 		tmr = new Timer(true);
 		if (level.getLvlType() == LevelType.LIGHTNING){
@@ -81,37 +96,10 @@ public class StatsController {
 					ls.updateUniqueInt(ls.getUniqueIntValue());
 				}
 				
-				//System.out.println(ls.getUniqueIntValue());
 				sv.updateLimitingFactor(ls.getUniqueIntValue());
 				sv.update();
 
 			}
 		}, 500, 250);
 	}
-//	
-//	public void initializeLightTimer(){
-//		lightTimer = new Timer(true);
-//		public void run(){
-//			timer.startCountDownTimer(1000);
-//			while(timer.getTimeMillis() >= 0){
-//				try {
-//					Thread.sleep(500);
-//				}
-//				catch (InterruptedException e){
-//					e.printStackTrace();
-//				}
-//			}
-//			timer.stopTimer();
-//		}
-//		
-//	}
-
-	//	
-	//	public void generateStats(){
-	//		if (ls.getType().equals("Puzzle")){
-	//			ls = new PuzzleStats(0, 30);
-	//			sv = new PuzzleStatsView(ls);
-	//		}
-	//	}
-
 }
