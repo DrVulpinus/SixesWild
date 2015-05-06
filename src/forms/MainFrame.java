@@ -206,7 +206,7 @@ public class MainFrame extends JFrame{
 
 		});
 
-
+		//add mouselistener to the level panels
 		for (int i = 0; i <  lvlSelectView.getLevelPanels().size(); i++) {
 
 			// for every level panel in the level selection screen, add a listener
@@ -217,6 +217,9 @@ public class MainFrame extends JFrame{
 				 */
 				@Override
 				public void mouseClicked(MouseEvent arg0) {
+					if(levelController != null){
+						levelController = null;
+					}
 					levelController = new LevelController(((LevelPanel)arg0.getSource()).getLevel(), MainFrame.this);
 				}
 

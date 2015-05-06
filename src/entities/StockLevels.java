@@ -39,6 +39,7 @@ public class StockLevels extends ArrayList<Level>{
 	
 
 
+	
 
 
 	public StockLevels() {
@@ -99,7 +100,7 @@ public class StockLevels extends ArrayList<Level>{
 		int x6=6;
 		int x7=7;
 
-		this.p.setValueProb(60,20 , 0, 0, 0, 20);
+		this.p.setValueProb(75,25 , 0, 0, 0, 0);
 		this.puzzle1.setProbability(p);
 		// adding first column
 		for(i0=0; i0<=9; i0++){
@@ -453,7 +454,7 @@ public class StockLevels extends ArrayList<Level>{
 	}
 
 	public Level generateElimination1(){
-		this.elimination1.setName("Elimination2");
+		this.elimination1.setName("Elimination1");
 
 		int i0;
 		int i1;

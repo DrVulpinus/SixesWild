@@ -40,6 +40,7 @@ import forms.SplashWinView;
 public class LevelController implements ChangeLevelPlayState{
 
 	Level level;
+	Level original;
 	LevelPlayView levelPlayView;
 	StatsController statsController;
 	MoveController moveController;
@@ -136,12 +137,12 @@ public class LevelController implements ChangeLevelPlayState{
 			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
 				window.setContentPane(window.getMainMenuView());
-
 				window.getContentPane().validate();
 				window.getContentPane().repaint();
-				System.out.println("back to main menu");				
+				System.out.println("back to main menu");
+				//window.remove(this);
+				
 			}
 
 		});
@@ -219,7 +220,17 @@ public class LevelController implements ChangeLevelPlayState{
 						e.printStackTrace();
 					}
 					// remove and replace with MainFrame
-					s.dispose();				
+					s.dispose();
+					
+					if(level.getStats().getStarCount() >= 1){
+						level.lp.getLblStar1();
+						if( level.getStats().getStarCount() >= 2){
+							level.lp.getLblStar2();
+							if( level.getStats().getStarCount() >= 3){
+								level.lp.getLblStar3();
+							}
+						}
+					}
 			}
 			
 		}
