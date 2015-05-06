@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import src.LevelStats;
-import forms.SquareView;
+import src.PuzzleStats;
 
 
 public class TestStats {
@@ -19,12 +19,17 @@ public class TestStats {
 		ls.update(points, markedSquares, releasesLeft);
 		assertEquals(10, ls.getScore());
 		ls = new LevelStats(score, points);
-		assert ls.getPoints() == 10;
+		assertEquals(10, ls.getPoints());
 		
-		score = 10;
+		ls.setScore(10);
 		ls.setStarCounts(1, 2, 30);
 		ls.getStarCount();
-		assert ls.winCondition() == false;
+		assertTrue(ls.winCondition());
+		
+		PuzzleStats ps = new PuzzleStats(30);
+		ps.setNumMovesLeft(0);
+		assertEquals(0, ps.getUniqueIntValue());
+		
 	}
 
 }

@@ -66,6 +66,8 @@ public class TestProbability {
 		
 		testProb.setResetProbabilities(val);
 		assertEquals(0, val[5]);
+		
+		assertTrue(testProb.setMultProb(10, 80, 10));
 	}
 
 }
