@@ -52,8 +52,8 @@ public class TestProbability {
 		assertEquals(200, valNum[2]);
 		assertEquals(200, valNum[3]);
 		assertEquals(200, valNum[4]);
-		assertEquals(200, valNum[5]);
-		assertEquals(0, valNum[6]);
+		assertEquals(0, valNum[5]);
+		assertEquals(200, valNum[6]);
 	}
 
 }
