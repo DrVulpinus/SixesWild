@@ -1,5 +1,7 @@
 package src;
 
+import entities.LevelStats;
+
 public class LightningStatsView extends StatsView {
 	public LightningStatsView(LevelStats stats){
 		super(stats);

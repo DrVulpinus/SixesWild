@@ -8,13 +8,9 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import src.EliminationStats;
 import src.EliminationStatsView;
-import src.LightningStats;
 import src.LightningStatsView;
-import src.PuzzleStats;
 import src.PuzzleStatsView;
-import src.ReleaseStats;
 import src.ReleaseStatsView;
 import src.StatsView;
 
@@ -23,8 +19,12 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
 
+import entities.EliminationStats;
 import entities.Level;
 import entities.LevelType;
+import entities.LightningStats;
+import entities.PuzzleStats;
+import entities.ReleaseStats;
 
 /**
  * The view for an individual level. Contains the views for the stats, the

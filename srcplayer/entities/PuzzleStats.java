@@ -1,10 +1,8 @@
-package src;
+package entities;
 
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
-
-import entities.LevelType;
 
 public class PuzzleStats extends LevelStats {
 

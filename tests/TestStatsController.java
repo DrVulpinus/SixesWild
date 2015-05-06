@@ -2,10 +2,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import src.LevelStats;
 import src.PuzzleStatsView;
 import controllers.StatsController;
 import entities.Level;
+import entities.LevelStats;
 import entities.LevelType;
 import forms.MainForm;
 

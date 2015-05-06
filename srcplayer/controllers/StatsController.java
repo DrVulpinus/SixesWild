@@ -3,16 +3,16 @@ package controllers;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import entities.EliminationStats;
 import entities.Level;
+import entities.LevelStats;
 import entities.LevelType;
-import src.EliminationStats;
+import entities.LightningStats;
+import entities.PuzzleStats;
+import entities.ReleaseStats;
 import src.EliminationStatsView;
-import src.LevelStats;
-import src.LightningStats;
 import src.LightningStatsView;
-import src.PuzzleStats;
 import src.PuzzleStatsView;
-import src.ReleaseStats;
 import src.ReleaseStatsView;
 import src.StatsView;
 

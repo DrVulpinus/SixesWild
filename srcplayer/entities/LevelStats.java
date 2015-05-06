@@ -1,10 +1,8 @@
-package src;
+package entities;
 
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
-
-import entities.Timer;
 
 
 /** The stats for a level. Every type of level contains a score, and accepts a number of points to add

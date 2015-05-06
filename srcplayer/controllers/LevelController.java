@@ -14,21 +14,22 @@ import java.awt.event.ActionListener;
 
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import boundaries.LevelPlayView;
 import boundaries.MainFrame;
-import src.EliminationStats;
-import src.LevelStats;
-import src.LightningStats;
-import src.PuzzleStats;
-import src.ReleaseStats;
 import entities.Block;
+import entities.EliminationStats;
 import entities.Grid;
 import entities.Level;
 import entities.LevelPlayState;
+import entities.LevelStats;
+import entities.LightningStats;
 import entities.Location;
+import entities.PuzzleStats;
+import entities.ReleaseStats;
 import entities.Square;
 import entities.Timer;
 

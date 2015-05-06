@@ -2,11 +2,11 @@ import org.junit.Test;
 
 import boundaries.LevelPlayView;
 import src.EliminationStatsView;
-import src.LevelStats;
 import controllers.MoveController;
 import controllers.SelectMoveController;
 import entities.Level;
 import entities.LevelPlayState;
+import entities.LevelStats;
 import entities.LevelType;
 
 

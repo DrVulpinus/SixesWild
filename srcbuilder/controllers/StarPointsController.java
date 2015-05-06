@@ -7,8 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import entities.LevelStats;
 import forms.AdjustStarView;
-import src.LevelStats;
 
 /**
  * The controller that handles the updates to the star points and adjusts the view accordingly.

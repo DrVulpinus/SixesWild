@@ -11,21 +11,21 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
-import src.EliminationStats;
 import src.EliminationStatsView;
-import src.LevelStats;
-import src.LightningStats;
 import src.LightningStatsView;
-import src.PuzzleStats;
 import src.PuzzleStatsView;
-import src.ReleaseStats;
 import src.ReleaseStatsView;
 import src.StatsView;
 import boundaries.SpecialMoveView;
 import builder_entities.LevelBuildState;
+import entities.EliminationStats;
 import entities.Grid;
 import entities.Level;
+import entities.LevelStats;
 import entities.LevelType;
+import entities.LightningStats;
+import entities.PuzzleStats;
+import entities.ReleaseStats;
 
 import javax.swing.JTextField;
 

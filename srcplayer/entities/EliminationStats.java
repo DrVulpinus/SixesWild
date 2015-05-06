@@ -1,6 +1,5 @@
-package src;
+package entities;
 
-import entities.LevelType;
 
 /**
  * Contains the stats for elimination mode. Has a number of total squares and a number of markedSquares,

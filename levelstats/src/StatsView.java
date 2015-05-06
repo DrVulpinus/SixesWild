@@ -13,6 +13,7 @@ import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import entities.LevelStats;
 import entities.Timer;
 
 public abstract class StatsView extends JPanel {

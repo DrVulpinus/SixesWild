@@ -2,8 +2,6 @@ package entities;
 
 import java.util.ArrayList;
 
-import src.PuzzleStats;
-
 /**
  * StockLevels provides methods for making the built in set of 16 levels
  * and adds the levels to a list.

@@ -26,16 +26,16 @@ import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JButton;
 
-import src.EliminationStats;
-import src.LevelStats;
-import src.LightningStats;
-import src.PuzzleStats;
-import src.ReleaseStats;
 import entities.Block;
+import entities.EliminationStats;
 import entities.Grid;
 import entities.Level;
+import entities.LevelStats;
 import entities.LevelType;
+import entities.LightningStats;
 import entities.Location;
+import entities.PuzzleStats;
+import entities.ReleaseStats;
 import entities.Square;
 import entities.Timer;
 

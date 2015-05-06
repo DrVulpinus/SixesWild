@@ -4,11 +4,11 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import src.EliminationStats;
-import src.LevelStats;
-import src.LightningStats;
-import src.PuzzleStats;
-import src.ReleaseStats;
+import entities.EliminationStats;
+import entities.LevelStats;
+import entities.LightningStats;
+import entities.PuzzleStats;
+import entities.ReleaseStats;
 import entities.Timer;
 
 

@@ -1,6 +1,5 @@
-package src;
+package entities;
 
-import entities.LevelType;
 
 
 public class ReleaseStats extends LevelStats {

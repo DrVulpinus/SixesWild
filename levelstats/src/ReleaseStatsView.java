@@ -1,5 +1,7 @@
 package src;
 
+import entities.LevelStats;
+
 public class ReleaseStatsView extends StatsView {
 	
 	public ReleaseStatsView(LevelStats stats){

@@ -4,11 +4,11 @@ import org.junit.Test;
 
 import boundaries.LevelPlayView;
 import boundaries.SquareView;
-import src.LevelStats;
 import src.PuzzleStatsView;
 import controllers.MoveController;
 import entities.Level;
 import entities.LevelPlayState;
+import entities.LevelStats;
 import entities.LevelType;
 import entities.MoveRegular;
 import entities.Square;

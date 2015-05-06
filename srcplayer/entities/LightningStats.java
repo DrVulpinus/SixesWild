@@ -1,8 +1,6 @@
-package src;
+package entities;
 
 
-import entities.LevelType;
-import entities.Timer;
 
 
 public class LightningStats extends LevelStats{

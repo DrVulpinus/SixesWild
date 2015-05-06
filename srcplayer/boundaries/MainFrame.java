@@ -23,7 +23,6 @@ import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 
 
-import src.LevelStats;
 
 import com.sun.org.apache.xml.internal.serialize.XML11Serializer;
 
@@ -31,6 +30,7 @@ import controllers.LevelController;
 import entities.Block;
 import entities.Grid;
 import entities.Level;
+import entities.LevelStats;
 import entities.Location;
 import entities.Square;
 

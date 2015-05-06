@@ -6,14 +6,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import boundaries.LevelPanel;
-import src.EliminationStats;
 import src.EliminationStatsView;
-import src.LevelStats;
-import src.LightningStats;
 import src.LightningStatsView;
-import src.PuzzleStats;
 import src.PuzzleStatsView;
-import src.ReleaseStats;
 import src.ReleaseStatsView;
 import entities.LevelType;
 

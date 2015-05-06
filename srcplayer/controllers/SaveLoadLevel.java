@@ -10,14 +10,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-import src.LevelStats;
-import src.PuzzleStats;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
 import entities.Level;
+import entities.LevelStats;
 import entities.LevelType;
+import entities.PuzzleStats;
 import entities.XMLFilter;
 
 public class SaveLoadLevel {

@@ -1,5 +1,7 @@
 package src;
 
+import entities.LevelStats;
+
 public class PuzzleStatsView extends StatsView{
 	public PuzzleStatsView(LevelStats stats){
 		super(stats);

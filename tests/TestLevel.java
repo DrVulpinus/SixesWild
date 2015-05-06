@@ -5,15 +5,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import src.EliminationStats;
-import src.LevelStats;
-import src.LightningStats;
-import src.PuzzleStats;
-import src.ReleaseStats;
+import entities.EliminationStats;
 import entities.Grid;
 import entities.Level;
+import entities.LevelStats;
 import entities.LevelType;
+import entities.LightningStats;
 import entities.Probability;
+import entities.PuzzleStats;
+import entities.ReleaseStats;
 
 
 public class TestLevel {
