@@ -183,7 +183,7 @@ public class LevelPanel extends JPanel {
 	public JLabel getLblStar1() {
 		if (lblStar1 == null) {
 			lblStar1 = new JLabel("");
-			lblStar1.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star_icon.png")));
+			lblStar1.setIcon(new ImageIcon(LevelPanel.class.getResource("/images/star_icon.png")));
 			lblStar1.setBounds(10, 60, 40, 40);
 		}
 		return lblStar1;
@@ -196,7 +196,7 @@ public class LevelPanel extends JPanel {
 	public JLabel getLblStar2() {
 		if (lblStar2 == null) {
 			lblStar2 = new JLabel("");
-			lblStar2.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star_icon.png")));
+			lblStar2.setIcon(new ImageIcon(LevelPanel.class.getResource("/images/star_icon.png")));
 			lblStar2.setBounds(55, 60, 40, 40);
 		}
 		return lblStar2;
@@ -209,7 +209,7 @@ public class LevelPanel extends JPanel {
 	public JLabel getLblStar3() {
 		if (lblStar3 == null) {
 			lblStar3 = new JLabel("");
-			lblStar3.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star_icon.png")));
+			lblStar3.setIcon(new ImageIcon(LevelPanel.class.getResource("/images/star_icon.png")));
 			lblStar3.setBounds(100, 60, 40, 40);
 		}
 		return lblStar3;
