@@ -39,6 +39,9 @@ import entities.Timer;
  * Contains the level and everything in it, including the level's view
  * and all other controllers.
  *
+ *@author Agyness Liao
+ *@author Richard Eberheim
+ *@author Alex Wald
  */
 public class LevelController implements ChangeLevelPlayState{
 

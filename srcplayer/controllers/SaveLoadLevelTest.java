@@ -19,7 +19,12 @@ import entities.Timer;
 
 
 
-
+/**
+ * The generator used to create levels that are not pre-made.
+ * @author Richard Eberheim
+ * @author Alex Wald
+ *
+ */
 public class SaveLoadLevelTest {
 
 

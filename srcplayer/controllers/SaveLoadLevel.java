@@ -19,6 +19,11 @@ import entities.LevelType;
 import entities.PuzzleStats;
 import entities.XMLFilter;
 
+/** 
+ * Controls the saving and loading of an individual level in the directory.
+ * @author Richard Eberheim
+ *
+ */
 public class SaveLoadLevel {
 private XStream xstream = null;
 public ArrayList<Level> loadedLevels = new ArrayList<Level>();

@@ -15,6 +15,8 @@ import entities.MoveResetBoard;
 /**
  * The SelectMoveController detects when the user requests to change the currently selected move while
  * playing a level and updates the current move in LevelPlayState
+ * 
+ * @author Richard Eberheim
  *
  */
 

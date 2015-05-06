@@ -19,6 +19,9 @@ import entities.ReleaseStats;
 /**
  * The StatsController class updates the StatsViews based on the LevelStats entities.
  *
+ *@author Miya Gaskell
+ *@author Sarah Chamberlain
+ *@author Richard Eberheim
  */
 
 

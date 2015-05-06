@@ -21,6 +21,9 @@ import entities.Square;
 /**
  * The move controller which contains all the methods that update the grid according to the move that is made.
  *
+ *@author Alex Wald
+ *@author Richard Eberheim
+ *@author Miya Gaskell
  */
 public class MoveController implements MoveControlListener, ChangeLevelPlayState {
 
