@@ -162,6 +162,9 @@ public class Level
 			if (square.getBlock()!= null){
 				if (square.getBlock().getValue() != 6){
 					square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+					while(square.getBlock().getValue() == 6){
+						square.setBlock(BlockMaker.getInstance().makeBlock(probability));
+					}
 				}
 			}
 			else{
