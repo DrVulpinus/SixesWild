@@ -10,14 +10,14 @@ public class TestBuildingController {
 
 
 
-		@Test
-		public void test() {
-			LevelType levelType = LevelType.PUZZLE;
-			Level level = new Level(levelType);
-			MainForm window = new MainForm();
+	@Test
+	public void test() {
+		LevelType levelType = LevelType.PUZZLE;
+		Level level = new Level(levelType);
+		MainForm window = new MainForm();
 		BuildingController buildingController = new BuildingController( level, window);
-		
-		
+
+
 	}
 
 }
