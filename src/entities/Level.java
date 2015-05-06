@@ -15,6 +15,7 @@ import src.PuzzleStatsView;
 import src.ReleaseStats;
 import src.ReleaseStatsView;
 import entities.LevelType;
+import forms.LevelPanel;
 
 /**
  * The Level stores everything that is needed to maintain the current state of play and other properties of game play.
@@ -61,6 +62,11 @@ public class Level
 	 * the probability distribution for making blocks
 	 */
 	Probability probability;
+	
+	/*
+	 * level panel related to the level
+	 */
+	public LevelPanel lp;
 
 	boolean win;
 	/**

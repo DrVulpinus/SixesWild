@@ -62,6 +62,7 @@ public class LevelPanel extends JPanel {
 		});
 
 		level = lvl;
+		lvl.lp = this;
 
 		// sets the original color of the panel to some random color
 		normalColor = Color.getHSBColor((float) Math.random(), 1.0f, 1.0f);
@@ -172,7 +173,7 @@ public class LevelPanel extends JPanel {
 		return lblLeveltype;
 	}
 
-	JLabel getLblStar1() {
+	public JLabel getLblStar1() {
 		if (lblStar1 == null) {
 			lblStar1 = new JLabel("");
 			lblStar1.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
@@ -181,7 +182,7 @@ public class LevelPanel extends JPanel {
 		return lblStar1;
 	}
 
-	JLabel getLblStar2() {
+	public JLabel getLblStar2() {
 		if (lblStar2 == null) {
 			lblStar2 = new JLabel("");
 			lblStar2.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
@@ -190,7 +191,7 @@ public class LevelPanel extends JPanel {
 		return lblStar2;
 	}
 
-	JLabel getLblStar3() {
+	public JLabel getLblStar3() {
 		if (lblStar3 == null) {
 			lblStar3 = new JLabel("");
 			lblStar3.setIcon(new ImageIcon(LevelPanel.class.getResource("/Images/star icon.png")));
