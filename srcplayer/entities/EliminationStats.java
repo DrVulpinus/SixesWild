@@ -4,7 +4,7 @@ package entities;
 /**
  * Contains the stats for elimination mode. Has a number of total squares and a number of markedSquares,
  * which is the number of marked squares remaining.
- * @author Miya
+ * @author Miya Gaskell
  *
  */
 public class EliminationStats extends LevelStats{

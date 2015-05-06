@@ -9,7 +9,7 @@ import controllers.ChangeLevelPlayState;
  * Contains the moves, indicated by integers, 
  * and a list of listeners that indicate when a 
  * level state has been changed.
- *
+ * @author Alex Wald
  */
 public class LevelPlayState {
 

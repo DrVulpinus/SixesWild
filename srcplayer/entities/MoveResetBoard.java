@@ -10,6 +10,8 @@ import controllers.MoveController;
 /**
  * Takes a level and resets all of the blocks and sets the parameters for points back to zero.
  *
+ *@author Alex Wald
+ *@author Miya Gaskell
  */
 public class MoveResetBoard extends Move {
 	

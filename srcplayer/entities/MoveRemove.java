@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * A type of Move that allows the player to remove a block from the board.
  * @author Alex Wald
- *
+ * @author Miya Gaskell
  */
 
 

@@ -18,6 +18,9 @@ import entities.LevelType;
  * and the probability distribution of Blocks.
  * 
  * @author Alex Wald
+ * @author Miya Gaskell
+ * @author Sarah Chamberlain
+ * @author Richard Eberheim
  *
  */
 

@@ -10,7 +10,7 @@ import javax.swing.JButton;
  * or Release, its unique value is an int that either decrements or increments when called; if the level is Lightning,
  * the timer should update every set number of milliseconds.
  * 
- * @author Miya
+ * @author Miya Gaskell
  *
  */
 public class LevelStats {

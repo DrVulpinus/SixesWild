@@ -9,6 +9,8 @@ import java.util.ArrayList;
  * A square knows whether it is a release square, an eliminated square, and whether it is filled.
  * It also contains a probability which affects the frequency of release blocks.
  *
+ *@author Alex Wald
+ *@author Richard Eberheim
  */
 public class Square
 {

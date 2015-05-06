@@ -1,15 +1,22 @@
 package entities;
 
 
-	import javax.swing.JTextField;
+import javax.swing.JTextField;
 
-	public class Timer extends Thread{
-		private long startTime;
-		private long stopTime;
-		private JTextField tf;
-		private boolean running = false;
+/**
+ * The timer implemented for a lightning level. Starts counting down from a given number of seconds.
+ * @author Richard Eberheim
+ * @author Agyness Liao
+ * @author Alex Wald
+ *
+ */
+public class Timer extends Thread{
+	private long startTime;
+	private long stopTime;
+	private JTextField tf;
+	private boolean running = false;
 	public Timer(){
-		
+
 	}
 	public Timer(JTextField _tf){
 		tf = _tf;
@@ -56,22 +63,22 @@ package entities;
 	public boolean getRunning(){
 		return running;
 	}
-	
+
 	@Override
 	public void run(){
 		while(true){
-		if (tf != null){
-			tf.setText(getTimeString());
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			if (this.isInterrupted()){
-				return;
+			if (tf != null){
+				tf.setText(getTimeString());
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				if (this.isInterrupted()){
+					return;
+				}
 			}
 		}
-		}
 	}
-	}
+}
 

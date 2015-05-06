@@ -4,6 +4,12 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 
+/**
+ * The stats for a puzzle level. Contains a number of moves left that decrements when called.
+ * @author Miya Gaskell
+ * @author Agyness Liao
+ *
+ */
 public class PuzzleStats extends LevelStats {
 
 	boolean decrement = true;

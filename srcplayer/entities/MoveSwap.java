@@ -4,6 +4,7 @@ import java.util.ArrayList;
 /**
  * Takes in two adjacent squares and swaps them
  * @author Alex Wald
+ * @author Miya Gaskell
  *
  */
 public class MoveSwap extends Move{

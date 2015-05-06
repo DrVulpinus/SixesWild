@@ -3,7 +3,7 @@ package entities;
  * 
  *Sets up the location attributes that are used to locate squares on the grid.
  *A location has row and a column for the Square on the grid.
- *
+ * @author Alex Wald
  */
 public class Location
 {

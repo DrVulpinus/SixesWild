@@ -11,7 +11,8 @@ import boundaries.SquareView;
  * whose values sum to 6 from the grid
  * 
  * @author Alex Wald
- *
+ * @author Miya Gaskell
+ * @author Richard Eberheim
  */
 
 

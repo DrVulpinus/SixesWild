@@ -4,7 +4,8 @@ package entities;
  * The Probability class stores the probabilities of making each type of Block, which has a value and a multiplier.
  * It also provides methods for choosing a block to randomly generate.
  * @author Alex Wald
- *
+ * @author Miya Gaskell
+ * @author Richard Eberheim
  */
 
 public class Probability {

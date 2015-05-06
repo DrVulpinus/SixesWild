@@ -2,7 +2,13 @@ package entities;
 
 
 
-
+/**
+ * The stats of lightning mode. Contains its unique win condition and a timer that counts down.
+ * @author Miya Gaskell
+ * @author Richard Eberheim
+ * @author Alex Wald
+ *
+ */
 public class LightningStats extends LevelStats{
 
 	int initialTime;

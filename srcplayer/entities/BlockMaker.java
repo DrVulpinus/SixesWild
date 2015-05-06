@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  * Create a block based on a given probability for that block.
- * @author Miya
+ * @author Alex Wald
  *
  */
 public class BlockMaker {
