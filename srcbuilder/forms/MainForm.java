@@ -14,11 +14,15 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 
+import boundaries.LevelPanel;
+import boundaries.MainFrame;
 import builder_controllers.BuildingController;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -63,6 +67,10 @@ public class MainForm extends JFrame {
 	private JButton btnCreateReleaseLevel;
 	MainForm main = this;
 	private JButton btnLoadLevel;
+	
+
+	
+	BuilderLoadView loadView;
 
 
 	/**
@@ -92,8 +100,56 @@ public class MainForm extends JFrame {
 		setSize(800, 550);
 		setLocationRelativeTo(null); //Opens the JFrame in the middle of the screen
 		setTitle("Sixes Wild Builder");
+		
+		this.loadView = new BuilderLoadView();
+		
+		this.getBtnLoadLevel().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				MainForm.this.setContentPane(loadView);
+				MainForm.this.validate();
+				MainForm.this.repaint();
+				System.out.println("to BuilderLoadView");
+			}
+		});
+		
+		
+		for (LevelPanel lp : loadView.getLevelPanels()) {
+			lp.addMouseListener(new MouseListener() {
 
-		/*
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					Level lvl = ((LevelPanel) e.getSource()).getLevel();
+					buildingController = new BuildingController(lvl, MainForm.this);
+				}
+
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					
+				}
+
+				@Override
+				public void mousePressed(MouseEvent e) {
+					
+				}
+
+				@Override
+				public void mouseReleased(MouseEvent e) {
+					
+				}
+				
+			});
+			
+		}
+		
+		
+
+		/**
 		 * add action listener to Puzzle Button
 		 */
 		getBtnCreatePuzzleLevel().addActionListener(new ActionListener(){
@@ -102,12 +158,12 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				//buildingController = new BuildingController(new Level(new PuzzleStats(0,0), new Grid()), MainForm.this);
+				
 				buildingController = new BuildingController(new Level(LevelType.PUZZLE), MainForm.this);
 			}
 		});
 
-		/*
+		/**
 		 * add action listener to lightning button
 		 */
 		getBtnCreateLightningLevel().addActionListener(new ActionListener(){
@@ -116,12 +172,12 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				//buildingController = new BuildingController(new Level(new LightningStats(0, new Timer()), new Grid()), MainForm.this);
+				
 				buildingController = new BuildingController(new Level(LevelType.LIGHTNING), MainForm.this);
 			}
 		});
 
-		/*
+		/**
 		 * add action listener to elimination button
 		 */
 		getBtnCreateEliminationLevel().addActionListener(new ActionListener(){
@@ -130,12 +186,12 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				//buildingController = new BuildingController(new Level(new EliminationStats(0,0), new Grid()), MainForm.this);
+				
 				buildingController = new BuildingController(new Level(LevelType.ELIMINATION), MainForm.this);
 			}
 		});
 
-		/*
+		/**
 		 * add action listener to release button
 		 */
 		getBtnCreateReleaseLevel().addActionListener(new ActionListener(){
@@ -144,7 +200,6 @@ public class MainForm extends JFrame {
 				if(buildingController != null){
 					buildingController = null;
 				}
-				//buildingController = new BuildingController(new Level(new ReleaseStats(0,0), new Grid()), MainForm.this);
 				buildingController = new BuildingController(new Level(LevelType.RELEASE), MainForm.this);
 			}
 		});
@@ -161,57 +216,8 @@ public class MainForm extends JFrame {
 
 
 	}
-	/*
-	private JMenuBar getMenuBar_1() {
-		if (menuBar == null) {
-			menuBar = new JMenuBar();
-			menuBar.setBounds(20, 42, 856, 92);
-			menuBar.add(getMntmChangeWinConditions());
-			menuBar.add(getMntmRemoveSpecialMove());
-			menuBar.add(getMntmAddSpecialMove());
-			menuBar.add(getMntmChangeFrequency());
-			menuBar.add(getMntmRemoveBloc());
-			menuBar.add(getMntmAddBlock());
-		}
-		return menuBar;
-	}
-	private JMenuItem getMntmAddBlock() {
-		if (mntmAddBlock == null) {
-			mntmAddBlock = new JMenuItem("Add Block");
-		}
-		return mntmAddBlock;
-	}
-	private JMenuItem getMntmChangeFrequency() {
-		if (mntmChangeFrequency == null) {
-			mntmChangeFrequency = new JMenuItem("Change Frequency");
-		}
-		return mntmChangeFrequency;
-	}
-	private JMenuItem getMntmAddSpecialMove() {
-		if (mntmAddSpecialMove == null) {
-			mntmAddSpecialMove = new JMenuItem("Add Special Move");
-		}
-		return mntmAddSpecialMove;
-	}
-	private JMenuItem getMntmChangeWinConditions() {
-		if (mntmChangeWinConditions == null) {
-			mntmChangeWinConditions = new JMenuItem("Change Win Conditions");
-		}
-		return mntmChangeWinConditions;
-	}
-	private JMenuItem getMntmRemoveBloc() {
-		if (mntmRemoveBloc == null) {
-			mntmRemoveBloc = new JMenuItem("Remove Bloc");
-		}
-		return mntmRemoveBloc;
-	}
-	private JMenuItem getMntmRemoveSpecialMove() {
-		if (mntmRemoveSpecialMove == null) {
-			mntmRemoveSpecialMove = new JMenuItem("Remove Special Move");
-		}
-		return mntmRemoveSpecialMove;
-	}
-	 */
+
+	
 	/**
 	 * get the Panel contain the Lightning Button
 	 * @return JPanel
