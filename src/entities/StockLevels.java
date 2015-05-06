@@ -415,7 +415,6 @@ public class StockLevels extends ArrayList<Level>{
 		generatePuzzle1();
 		getLevels().add(puzzle1);
 		generateLightning1();
-<<<<<<< HEAD
 		getLevels().add(lightning1);
 		generateElimination1();
 		getLevels().add(elimination1);
@@ -424,44 +423,26 @@ public class StockLevels extends ArrayList<Level>{
 		
 		generatePuzzle2();
 		getLevels().add(puzzle2);
-=======
-		levels.add(lightning1);
-
->>>>>>> origin/master
 		generateLightning2();
 		getLevels().add(lightning2);
 		generateElimination2();
 		getLevels().add(elimination2);
 		generateRelease2();
-<<<<<<< HEAD
 		getLevels().add(release2);
 		
 		
 		generatePuzzle3();
 		getLevels().add(puzzle3);
-=======
-		levels.add(release2);
-		generatePuzzle2();
-		levels.add(puzzle2);
-
-		generateRelease3();
-		levels.add(release3);
->>>>>>> origin/master
 		generateLightning3();
 		getLevels().add(lightning3);
 		generateElimination3();
-<<<<<<< HEAD
 		getLevels().add(elimination3);
 		generateRelease3();
 		getLevels().add(release3);
 		
 	
-=======
-		levels.add(elimination3);
-		generatePuzzle3();
-		levels.add(puzzle3);
 
->>>>>>> origin/master
+		
 		generatePuzzle4();
 		getLevels().add(puzzle4);
 		generateLightning4();
