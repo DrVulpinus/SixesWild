@@ -62,7 +62,7 @@ import java.util.TimerTask;
  */
 public class MainFrame extends JFrame{
 	public LevelSelectView lvlSelectView = new LevelSelectView();
-	public AchievementSelectView achvSelectView = new AchievementSelectView();
+//	public AchievementSelectView achvSelectView = new AchievementSelectView();
 	SplashScreenView splashScreen = new SplashScreenView();
 	MainMenuView mainMenu = new MainMenuView();
 	LevelPlayView levelPlay;
@@ -117,20 +117,20 @@ public class MainFrame extends JFrame{
 		setTitle("Sixes Wild");
 		setResizable(false);
 
-		// add the actionlistener for the back button
-		achvSelectView.getBtnBack().addActionListener(new ActionListener(){
-
-			/**
-			 * Return to the main menu screen when the button is pressed.
-			 */
-			@Override
-			public void actionPerformed(ActionEvent e){
-				MainFrame.this.add(mainMenu);
-				MainFrame.this.validate();
-				MainFrame.this.repaint();
-				System.out.println("back to main menu");
-			}
-		});
+//		// add the actionlistener for the back button
+//		achvSelectView.getBtnBack().addActionListener(new ActionListener(){
+//
+//			/**
+//			 * Return to the main menu screen when the button is pressed.
+//			 */
+//			@Override
+//			public void actionPerformed(ActionEvent e){
+//				MainFrame.this.add(mainMenu);
+//				MainFrame.this.validate();
+//				MainFrame.this.repaint();
+//				System.out.println("back to main menu");
+//			}
+//		});
 
 		// add the actionlistener for the level button
 		mainMenu.getBtnLevel().addMouseListener(new MouseListener() {
@@ -173,22 +173,22 @@ public class MainFrame extends JFrame{
 		});
 
 
-		// add an action listener for the Achievements button
-		mainMenu.getBtnAchievments().addActionListener(new ActionListener() {
-
-			/**
-			 * PUll up a new GUI containing the achievements screen when the Achievements button is pressed.
-			 */
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.setContentPane(achvSelectView);
-				MainFrame.this.validate();
-				MainFrame.this.repaint();
-				System.out.println("to Achievement Select View");
-
-			}
-
-		});
+//		// add an action listener for the Achievements button
+//		mainMenu.getBtnAchievments().addActionListener(new ActionListener() {
+//
+//			/**
+//			 * PUll up a new GUI containing the achievements screen when the Achievements button is pressed.
+//			 */
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				MainFrame.this.setContentPane(achvSelectView);
+//				MainFrame.this.validate();
+//				MainFrame.this.repaint();
+//				System.out.println("to Achievement Select View");
+//
+//			}
+//
+//		});
 
 		// add an action listener for the Back button (in level selection view)
 		lvlSelectView.getBtnBack().addActionListener(new ActionListener(){
