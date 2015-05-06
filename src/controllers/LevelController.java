@@ -200,29 +200,10 @@ public class LevelController implements ChangeLevelPlayState{
 		
 		//check if the game wins
 		if(level.getStats().getUniqueIntValue() <= 0){
-			//also it should be delete this level(or just reset the level stats) and create a new one
-			
-			//go back to the main menu if lose or win
-			window.setContentPane(window.getMainMenuView());
-			window.getContentPane().validate();
-			window.getContentPane().repaint();
-			System.out.println("back to main menu");
 			
 			//if the you win the game
 			if(level.getStats().winCondition()){
 				System.out.println("Win the game");
-				 SplashWinView s = new SplashWinView();
-				// show splash screen
-					s.setVisible(true);
-					try {
-						// stay up for 3000 units of time
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					// remove and replace with MainFrame
-					s.dispose();
 					
 					//show the star in the level select panel
 					if(level.getStats().getStarCount() >= 1){
@@ -248,6 +229,12 @@ public class LevelController implements ChangeLevelPlayState{
 					level.lp.repaint();
 					window.getContentPane().validate();
 			}
+			
+			//go back to the main menu if lose or win
+			window.setContentPane(window.lvlSelectView);
+			window.getContentPane().validate();
+			window.getContentPane().repaint();
+			System.out.println("back to select menu");
 			
 		}
 	}
