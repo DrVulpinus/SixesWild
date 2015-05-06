@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -41,6 +42,17 @@ public static SaveLoadLevel getInstance(){
 
 	public void saveLevel(Level lvl) throws Exception{
 		saveLevel(lvl,lvl.getName());
+	}
+	public void saveTempLevel(Level lvl, String name) throws IOException{
+		File tempFile;
+		tempFile = new File(File.createTempFile(name, ".xml").getAbsolutePath());
+		FileOutputStream fos = new FileOutputStream(tempFile);	
+		xstream.toXML(lvl, fos);		
+	}
+	public Level getTempLevel(String name) throws IOException{
+		File tempFile;
+		tempFile = new File(File.createTempFile(name, ".xml").getAbsolutePath());
+		return (Level) xstream.fromXML(tempFile);
 	}
 
 	public void saveLevel(Level lvl, String lvlName) throws Exception{
