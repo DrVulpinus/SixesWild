@@ -83,6 +83,8 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 			}
 
 		}
+	
+	
 	return puzzle1;
 	}
 	
@@ -147,6 +149,33 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 					}
 
 				}
+			Location location8 = new Location(0,8);
+			release1.grid.getSquare(location8).setRelease(true);
+			
+			Location location7 = new Location(3,7);
+			release1.grid.getSquare(location7).setRelease(true);
+			
+			Location location6 = new Location(2,1);
+			release1.grid.getSquare(location6).setRelease(true);
+			
+			Location location0 = new Location(3,5);
+			release1.grid.getSquare(location0).setRelease(true);
+			
+			Location location1 = new Location(8,4);
+			release1.grid.getSquare(location1).setRelease(true);
+			
+			Location location2 = new Location(3,3);
+			release1.grid.getSquare(location2).setRelease(true);
+			
+			
+			Location location3 = new Location(1,5);
+			release1.grid.getSquare(location3).setRelease(true);
+			
+			Location location4 = new Location(4,6);
+			release1.grid.getSquare(location4).setRelease(true);
+			
+			Location location5 = new Location(0,0);
+			release1.grid.getSquare(location5).setRelease(true);
 			return release1;
 			}
 
@@ -162,6 +191,34 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 					}
 
 				}
+			
+			Location location8 = new Location(8,8);
+			release2.grid.getSquare(location8).setRelease(true);
+			
+			Location location7 = new Location(7,7);
+			release2.grid.getSquare(location7).setRelease(true);
+			
+			Location location6 = new Location(6,6);
+			release2.grid.getSquare(location6).setRelease(true);
+			
+			Location location0 = new Location(5,5);
+			release2.grid.getSquare(location0).setRelease(true);
+			
+			Location location1 = new Location(4,4);
+			release2.grid.getSquare(location1).setRelease(true);
+			
+			Location location2 = new Location(3,3);
+			release2.grid.getSquare(location2).setRelease(true);
+			
+			
+			Location location3 = new Location(2,2);
+			release2.grid.getSquare(location3).setRelease(true);
+			
+			Location location4 = new Location(1,1);
+			release2.grid.getSquare(location4).setRelease(true);
+			
+			Location location5 = new Location(0,0);
+			release2.grid.getSquare(location5).setRelease(true);
 			return release2;
 			}
 	
@@ -177,6 +234,24 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 					}
 
 				}
+			Location location0 = new Location(8,8);
+			release3.grid.getSquare(location0).setRelease(true);
+			
+			Location location1 = new Location(0,3);
+			release3.grid.getSquare(location1).setRelease(true);
+			
+			Location location2 = new Location(5,6);
+			release3.grid.getSquare(location2).setRelease(true);
+			
+			
+			Location location3 = new Location(3,5);
+			release3.grid.getSquare(location3).setRelease(true);
+			
+			Location location4 = new Location(2,7);
+			release3.grid.getSquare(location4).setRelease(true);
+			
+			Location location5 = new Location(6,8);
+			release3.grid.getSquare(location5).setRelease(true);
 			return release3;
 			}
 	
@@ -192,6 +267,25 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 					}
 
 				}
+			
+			Location location0 = new Location(0,0);
+			release4.grid.getSquare(location0).setRelease(true);
+			
+			Location location1 = new Location(5,8);
+			release4.grid.getSquare(location1).setRelease(true);
+			
+			Location location2 = new Location(2,3);
+			release4.grid.getSquare(location2).setRelease(true);
+			
+			
+			Location location3 = new Location(4,4);
+			release4.grid.getSquare(location3).setRelease(true);
+			
+			Location location4 = new Location(3,7);
+			release4.grid.getSquare(location4).setRelease(true);
+			
+			Location location5 = new Location(2,4);
+			release4.grid.getSquare(location5).setRelease(true);
 			return release4;
 			}
 	
@@ -311,6 +405,7 @@ this.p.setValueProb(75,25 , 0, 0, 0, 0);
 					}
 
 				}
+			
 			return lightning4;
 			}
 	
