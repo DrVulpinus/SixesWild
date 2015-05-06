@@ -43,15 +43,19 @@ public static SaveLoadLevel getInstance(){
 	public void saveLevel(Level lvl) throws Exception{
 		saveLevel(lvl,lvl.getName());
 	}
-	public void saveTempLevel(Level lvl, String name) throws IOException{
+	public File saveTempLevel(Level lvl, String name) throws IOException{
 		File tempFile;
 		tempFile = new File(File.createTempFile(name, ".xml").getAbsolutePath());
+		System.out.println(tempFile.getAbsolutePath());
 		FileOutputStream fos = new FileOutputStream(tempFile);	
-		xstream.toXML(lvl, fos);		
+		xstream.toXML(lvl, fos);
+		return tempFile;		
 	}
-	public Level getTempLevel(String name) throws IOException{
-		File tempFile;
-		tempFile = new File(File.createTempFile(name, ".xml").getAbsolutePath());
+	public Level getTempLevel(File tempFile) throws IOException{
+		if (!tempFile.exists()){
+			System.err.println("File not found");
+		}
+		System.out.println(tempFile.getAbsolutePath());
 		return (Level) xstream.fromXML(tempFile);
 	}
 

@@ -33,7 +33,7 @@ public class PreviewWindow extends JDialog {
 	}
 	
 	private Level duplicate(Level lvl) throws Exception {
-		SaveLoadLevel.getInstance().saveTempLevel(lvl, "preview_level");
-		return SaveLoadLevel.getInstance().getTempLevel("preview_level");
+		File tmp = SaveLoadLevel.getInstance().saveTempLevel(lvl, "preview_level");
+		return SaveLoadLevel.getInstance().getTempLevel(tmp);
 	}
 }
