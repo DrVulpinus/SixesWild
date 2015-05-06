@@ -4,6 +4,8 @@ package builder_controllers;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -145,6 +147,15 @@ public class BuildingController {
 				probabilityController.initializeTextFields();
 			}
 		});
+		
+		buildLevelView.getTxtFileName().addKeyListener(new KeyAdapter() {
+				@Override
+				public void keyReleased(KeyEvent arg0) {
+					level.setName(buildLevelView.getTxtFileName().getText());
+					System.out.println("File name set to: " + level.getName());
+				}
+			});
+			
 
 		buildLevelView.getBtnEditMultiplier().addActionListener(new ActionListener() {
 
