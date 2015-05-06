@@ -43,7 +43,7 @@ import forms.ProbabilityMultiplierView;
 /**
  * Building controller for building one level of game and save it
  * @author Alex Wald
- * 
+ * @author Qiaoyu Liao
  */
 public class BuildingController {
 

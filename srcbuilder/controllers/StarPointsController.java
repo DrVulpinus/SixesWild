@@ -15,7 +15,7 @@ import forms.AdjustStarView;
  *
  *@author Alex Wald
  *@author Richard Eberheim
- *@author Agyness Liao
+ *@author Qiaoyu Liao
  */
 public class StarPointsController {
 	
