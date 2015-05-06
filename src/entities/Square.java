@@ -105,6 +105,9 @@ public class Square
 
 	public void setBlock(Block block) {
 		this.block = block;
+		if (this.block.getValue() == 6 && isRelease()){
+			this.block = null;
+			}
 		callChangeListeners();
 		//System.out.println("Block set to " + block);
 	}
