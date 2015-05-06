@@ -264,7 +264,7 @@ public class Level
 
 		case LIGHTNING:
 			//generate lightning stats
-			this.stats = new LightningStats(180);
+			this.stats = new LightningStats(90);
 			break;
 		}
 
