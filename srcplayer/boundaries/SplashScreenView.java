@@ -23,7 +23,7 @@ import java.awt.Font;
 
 /**
  * Contains the JLabel that is the splash screen, which appears for several seconds.
- *
+ * @author Richard Eberheim
  */
 public class SplashScreenView extends JFrame {
 

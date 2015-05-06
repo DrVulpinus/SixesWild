@@ -2,6 +2,11 @@ package boundaries;
 
 import entities.LevelStats;
 
+/**
+ * The view for Lightning Stats.
+ * @author Richard Eberheim
+ *
+ */
 public class LightningStatsView extends StatsView {
 	public LightningStatsView(LevelStats stats){
 		super(stats);

@@ -11,7 +11,8 @@ import java.awt.Dimension;
 
 /**
  * The view of the special moves. The special moves are represented by JButtons.
- *
+ * @author Richard Eberheim
+ * @author Alex Wald
  */
 public class SpecialMoveView extends JPanel {
 

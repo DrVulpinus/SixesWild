@@ -26,7 +26,8 @@ import java.util.ArrayList;
 
 /**
  * The view of a Square. Contains the various colors of squares and the listeners for when a square is selected.
- * @author Miya
+ * @author Richard Eberheim
+ * @author Miya Gaskell
  *
  */
 public class SquareView extends JPanel implements SquareChangeListener

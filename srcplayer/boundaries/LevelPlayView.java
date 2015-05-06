@@ -25,7 +25,9 @@ import entities.ReleaseStats;
  * grid, and the special moves. Also contains the level itself to call the grid
  * and a move control listener to give to the grid, so that it can update itself
  * when moves are made.
- *
+ * @author Sarah Chamberlain
+ * @author Richard Eberheim
+ * @author Miya Gaskell
  */
 public class LevelPlayView extends JPanel {
 	private JButton btnBack;

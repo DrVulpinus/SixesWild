@@ -16,6 +16,13 @@ import javax.swing.SwingConstants;
 import entities.LevelStats;
 import entities.Timer;
 
+/**
+ * The view of the stats. Extends this view and everything in it to every other type of stat.
+ * @author Miya
+ * @author Sarah Chamberlain
+ * @author Richard Eberheim
+ *
+ */
 public abstract class StatsView extends JPanel {
 	private JLabel lblTypelabel;
 	private JLabel lblStar_1;

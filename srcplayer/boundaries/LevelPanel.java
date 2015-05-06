@@ -21,7 +21,7 @@ import java.awt.event.MouseEvent;
 
 /**
  * A panel that can be selected to enter a level.
- *
+ * @author Richard Eberheim
  */
 public class LevelPanel extends JPanel {
 	// set size of the panel

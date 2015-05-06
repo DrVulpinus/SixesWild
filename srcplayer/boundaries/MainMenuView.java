@@ -7,9 +7,9 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 
 /**
- * The main menu screen. Contains a button called Level and a button
- * called Achievements.
- *
+ * The main menu screen. Contains a button called Level.
+ * 
+ * @author Miya Gaskell
  */
 public class MainMenuView extends JPanel {
 	private JButton btnLevel;

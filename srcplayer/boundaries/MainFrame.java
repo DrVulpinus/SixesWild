@@ -59,6 +59,10 @@ import java.util.TimerTask;
  * 
  * Also contains the controller which manages the level itself.
  *
+ * @author Miya Gaskell
+ * @author Richard Eberheim
+ * @author Agyness Liao
+ * @author Sarah Chamberlain
  */
 public class MainFrame extends JFrame{
 	public LevelSelectView lvlSelectView = new LevelSelectView();

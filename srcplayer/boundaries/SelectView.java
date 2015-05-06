@@ -15,6 +15,8 @@ import net.miginfocom.swing.MigLayout;
  * Superclass for LevelSelectView and AchievementSelectView.
  * It contains a panel, the ability to scroll, and a list of items.
  *
+ * @author Richard Eberheim
+ * @author Miya Gaskell
  */
 public abstract class SelectView extends JPanel {
 	private JScrollPane scrollPane;
